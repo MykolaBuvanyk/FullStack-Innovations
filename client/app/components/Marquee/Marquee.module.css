@@ -1,0 +1,108 @@
+/* components/Marquee.module.css */
+.marqueeWrapper {
+    position: relative;
+    width: 100%;
+    height: 150px; /* Висота контейнера для обох стрічок */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent; /* Переконайтеся, що фон не перекриває градієнт */
+  }
+  
+  .marqueeContainer {
+    width: 150%; /* Збільшуємо ширину, щоб градієнт мав простір для відображення */
+    position: absolute;
+    background: linear-gradient(
+      to right,
+      rgba(26, 15, 43, 1) 0%,    /* Темно-фіолетовий з прозорістю 0 */
+      rgba(232, 30, 221, 1) 48%, /* #E81EDD з прозорістю 100% */
+      rgba(26, 15, 43, 1) 100%   /* Темно-фіолетовий з прозорістю 0 */
+    );
+    overflow: hidden;
+  }
+  /* Додаємо тіні зліва і справа за допомогою псевдоелементів */
+.marqueeContainer::before,
+.marqueeContainer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 33%; /* Ширина тіні */
+  z-index: 1; /* Щоб тінь була поверх тексту */
+}
+
+.marqueeContainer::before {
+  left: 0;
+  background: linear-gradient(
+    to right,
+    rgba(15, 15, 33, 1) 0%,    /* #0F0F21 з прозорістю 100% */
+    rgba(15, 15, 33, 0) 100%   /* #0F0F21 з прозорістю 0 */
+  );
+}
+
+.marqueeContainer::after {
+  right: 0;
+  background: linear-gradient(
+    to left,
+    rgba(15, 15, 33, 1) 0%,    /* #0F0F21 з прозорістю 100% */
+    rgba(15, 15, 33, 0) 100%   /* #0F0F21 з прозорістю 0 */
+  );
+}
+  .marquee1 {
+    transform: rotate(-3deg); /* Нахил вниз (зліва направо) */
+    top: 50px;
+  }
+  
+  .marquee2 {
+    transform: rotate(3deg); /* Нахил вгору (справа наліво) */
+    bottom: 50px;
+  }
+  
+  .marquee {
+    display: flex;
+    width: 100%;
+    white-space: nowrap;
+  }
+  
+  .marqueeContent {
+    display: flex;
+  }
+  
+  .marquee1 .marqueeContent {
+    animation: scrollLeft 20s linear infinite; /* Рух зліва направо */
+  }
+  
+  .marquee2 .marqueeContent {
+    animation: scrollRight 20s linear infinite; /* Рух справа наліво */
+  }
+  
+  .textItem {
+    color: white;
+    font-size: 12px;
+    font-weight: medium;
+    margin: 0 50px; /* Відстань між словами */
+    text-transform: uppercase;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    padding: 17px 0;
+  }
+  
+  @keyframes scrollLeft {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%); /* Прокрутка зліва направо */
+    }
+  }
+  
+  @keyframes scrollRight {
+    0% {
+      transform: translateX(-50%);
+    }
+    100% {
+      transform: translateX(0); /* Прокрутка справа наліво */
+    }
+  }

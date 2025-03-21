@@ -30,7 +30,7 @@ const Header = () => {
                 </li>
                 <li className={styles.headerWrapperEl}>
                     <div className={styles.headerTel}>
-                        <a href='tel:+380636826299'>🇺🇦 +(380) 63 682 6299</a>
+                        <a href='tel:+380636826299'><span>🇺🇦</span> +(380) 63 682 6299</a>
                         <i className="fa-solid fa-chevron-down"></i>
                     </div>
                     <div className={styles.headerLang}>

@@ -1,21 +1,15 @@
-@font-face {
-    font-family: 'Helvetica Neue';
-    src: url('/fonts/Helvetica Neue/HelveticaNeue-Light.otf') format('otf');
-    font-weight: 400; /* Regular */
-    font-style: normal;
-}
-  
-@font-face {
-    font-family: 'Helvetica Neue';
-    src: url('/fonts/Helvetica Neue/HelveticaNeue-Bold') format('otf');
-    font-weight: 700; /* Bold */
-    font-style: normal;
-}
+
 
 .header{
-    font-family: 'Helvetica Neue', sans-serif;  
+    font-family:'Helvetica Neue', sans-serif; 
+    font-weight: 400;
+    color: #fff;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
-
+.headerTel span{
+    font-family: 'Noto Color Emoji', 'Helvetica Neue', sans-serif;
+}
 .container{
     padding: 0 12.5vw;
 }
@@ -32,7 +26,7 @@
     justify-content: center;
     align-items: center;
     gap: 2.6vw;
-    font-size: 12px;
+    font-size: 16px;
 }
 
 .headerList{

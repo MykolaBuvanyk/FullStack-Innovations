@@ -1,11 +1,49 @@
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('/fonts/Helvetica Neue/HelveticaNeue-Thin.otf') format('opentype');
+  font-weight: 100;
+  font-style: thin;
+}
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('/fonts/Helvetica Neue/HelveticaNeue-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: light;
+}
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('/fonts/Helvetica Neue/HelveticaNeue-Roman.otf') format('opentype');
+  font-weight: 400;
+  font-style: roman;
+}
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('/fonts/Helvetica Neue/HelveticaNeue-Medium.otf') format('opentype');
+  font-weight: 500; 
+  font-style: medium;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('/fonts/Helvetica Neue/HelveticaNeue-Bold.otf') format('opentype');
+  font-weight: 700; 
+  font-style: bold;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 body {
   font-family: 'Helvetica Neue', sans-serif;
   padding: 0;
   margin: 0;
+  background-color: #0F0F21;
 }
 
 ul{
   list-style: none;
+  padding-inline-start: 0px;
 }
 
 a{

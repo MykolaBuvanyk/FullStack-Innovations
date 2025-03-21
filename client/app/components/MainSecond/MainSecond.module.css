@@ -1,0 +1,101 @@
+.container {
+    font-family: 'Helvetica Neue', sans-serif;
+    display: flex;
+    padding: 0 12.5vw;
+}
+
+.contentLeft {
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: flex-start;
+    width: 50%;
+}
+
+.contentLeft h1 {
+    font-weight: 700;
+    font-size: 70px;
+    background-image: url('/images/abstract-purple-blue-wave-background (2).png');
+    background-size: cover;
+    background-position: center;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.contentLeft .btn {
+    line-height: 22px;
+    font-weight: 400;
+    font-size: 15px;
+    padding: 25px 35px;
+    border-radius: 100px;
+    border: 1px solid rgba(255, 255, 255, 1);
+    color: #fff;
+    margin-top: 40px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.contentRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: flex-start;
+    width: 50%;
+}
+
+.contentList {
+    list-style: none;
+    /* Прибираємо стандартні маркери списку */
+    padding: 0;
+    margin: 0;
+}
+
+.contentList li {
+    display: flex;
+    align-items: flex-start;
+    /* Вирівнювання по верхньому краю */
+    padding-bottom: 40px;
+    /* Відстань між пунктами */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 40px;
+}
+
+.contentList li:first-child {
+    margin-top: 0;
+    /* Прибираємо відступ для останнього елемента */
+}
+
+.contentList img {
+    margin-top: 5px;
+    width: 80px;
+    /* Ширина картинки */
+    height: auto;
+    /* Висота картинки */
+    margin-right: 20px;
+    /* Відстань від картинки до тексту */
+}
+
+
+
+.textContent {
+    flex: 1;
+    /* Текст займає решту простору */
+}
+
+.textContent h3 {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+    color: #fff;
+}
+
+.textContent p {
+    font-size: 16px;
+    /* Розмір тексту */
+    font-weight: 400;
+    margin-top: 30px;
+    color: #d3d3d3;
+    /* Світло-сірий колір тексту */
+}
