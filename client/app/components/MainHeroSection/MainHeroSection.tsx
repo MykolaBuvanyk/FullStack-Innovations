@@ -1,5 +1,5 @@
 import styles from './MainHeroSection.module.css';
-
+import Marquee from "../Marquee/Marquee";
 const MainHeroSection = () => {
     return (
         <section className={styles.hero}>
@@ -52,6 +52,7 @@ const MainHeroSection = () => {
                     </div>
                 </div>
             </div>
+            <Marquee />
         </section>
     );
 };
