@@ -52,6 +52,7 @@ const MainHeroSection = () => {
                     </div>
                 </div>
             </div>
+            <p>xxxxxxxxxxxxxxxxxxxxxxx</p>
         </section>
     );
 };
