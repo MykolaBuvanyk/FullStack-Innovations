@@ -50,7 +50,10 @@ a{
   text-decoration: none;
   color: inherit;
 }
-
+p{
+  padding: 0;
+  margin: 0;
+}
 /* :root {
   --background: #ffffff;
   --foreground: #171717;

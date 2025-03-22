@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Header from "../components/Header/Header";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import "./globals.css";
 import { Noto_Color_Emoji } from 'next/font/google';
 

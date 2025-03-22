@@ -1,0 +1,105 @@
+.blurCircles {
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(232, 30, 221, 1);
+
+}
+
+.circle2 {
+    width: 222.5px;
+    height: 222.5px;
+    top: 10%;
+    left: -10%;
+    filter: blur(140px);
+    background: rgba(232, 30, 221, 0.6);
+    box-shadow: 0 0 30px 3px rgba(232, 30, 221, 1);
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 65vh;
+    padding: 0 12.5vw;
+
+}
+
+.heroContent {
+    font-family: 'Helvetica Neue', sans-serif;
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.contentLeft {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 50%;
+}
+
+.contentLeft h1 {
+    font-weight: 700;
+    font-size: 70px;
+    background-image: url('/images/abstract-purple-blue-wave-background (2).png');
+    background-size: cover;
+    background-position: center;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.contentLeft p {
+    font-weight: 400;
+    font-size: 18px;
+    color: #fff;
+    margin-top: 30px;
+}
+
+.contentLeft span {
+    color: #9f9fa6;
+}
+
+.contentLeft .btn {
+    line-height: 22px;
+    font-weight: 400;
+    font-size: 15px;
+    background: linear-gradient(95.63deg, #C400B9 17.83%, #5D0058 159.96%);
+    padding: 25px 35px;
+    border-radius: 100px;
+    color: #fff;
+    margin-top: 40px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    box-shadow: 0px 20px 40px 0px rgba(196, 1, 185, 0.47);
+}
+
+.contentRight {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+}
+.spheraWrapper{
+    top: 7.5%;
+    position: absolute;
+}
+.scrollDown {
+    display: flex;
+    position: relative;
+    width: 80px;
+    height: 80px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
