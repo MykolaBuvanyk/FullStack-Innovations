@@ -1,0 +1,17 @@
+.buttonTopWrapper{
+    position: absolute;
+    right: 30px;
+  }
+
+  .buttonTop{
+    background-color: transparent;
+    border: 1px solid #e81edd;
+    padding: 30px 34px;
+    color: #ffffff;
+    border-radius: 50%;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;;
+  }
