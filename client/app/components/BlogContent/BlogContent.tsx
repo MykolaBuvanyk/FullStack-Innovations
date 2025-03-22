@@ -14,7 +14,7 @@ interface BlogPost {
     image: string;
   }
 
-  const POSTS_PER_PAGE = 4;
+  const POSTS_PER_PAGE = 6;
   
   const BlogContent = () => {
     const [blogPosts, setBlogPosts] = useState<BlogPost[]>(blogPostsData);

@@ -1,6 +1,7 @@
 .buttonTopWrapper{
-    position: absolute;
-    right: 30px;
+    position: fixed;
+    right: 35px;
+    top: 85%;
   }
 
   .buttonTop{

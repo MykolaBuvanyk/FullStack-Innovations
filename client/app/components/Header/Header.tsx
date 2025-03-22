@@ -17,7 +17,7 @@ const Header = () => {
                 <li className={styles.headerWrapperEl}>
                     <ul className={styles.headerList}>
                         <li className={styles.headerEl}>Головна</li>
-                        <li className={styles.headerEl}>
+                        <li className={[styles.headerEl,styles.headerDropdown].join(' ')}>
                             Послуги
                             <i className="fa-solid fa-chevron-down"></i>
                         </li>

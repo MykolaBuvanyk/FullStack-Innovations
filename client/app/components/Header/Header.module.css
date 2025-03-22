@@ -1,27 +1,34 @@
-
-
-.header{
-    font-family:'Helvetica Neue', sans-serif; 
+.header {
+    font-family: 'Helvetica Neue', sans-serif;
     font-weight: 400;
     color: #fff;
     padding: 15px 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
-.headerTel span{
+
+.headerTel span {
     font-family: 'Noto Color Emoji', 'Helvetica Neue', sans-serif;
 }
-.container{
+
+.container {
     padding: 0 12.5vw;
 }
 
-.headerWrapper{
+.headerLang,.headerTel,.headerDropdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.headerWrapper {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.headerWrapperEl{
+.headerWrapperEl {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,13 +36,13 @@
     font-size: 16px;
 }
 
-.headerList{
+.headerList {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 2.1vw;
 }
 
-.logoImage{
+.logoImage {
     width: 12vw;
 }
