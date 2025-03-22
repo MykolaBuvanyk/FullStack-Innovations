@@ -19,6 +19,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+      <script src="https://kit.fontawesome.com/44ddc9fabc.js" crossOrigin="anonymous" async />
+        <link
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+          rel="stylesheet"
+        />
+      </head>
       <body>
         <Header/>
         {children}

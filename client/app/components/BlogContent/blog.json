@@ -1,0 +1,45 @@
+[
+    {
+      "id": 1,
+      "image": "/images/blog/1.png",
+      "title": "1 стаття",
+      "description": "Короткий опис 1 статті.",
+      "date": "21 березня 2025"
+    },
+    {
+      "id": 2,
+      "image": "/images/blog/2.png",
+      "title": "2 стаття",
+      "description": "Короткий опис 2 статті.",
+      "date": "18 березня 2025"
+    },
+    {
+        "id": 3,
+        "image": "/images/blog/3.png",
+        "title": "3 стаття",
+        "description": "Короткий опис 3 статті.",
+        "date": "21 березня 2025"
+      },
+      {
+        "id": 4,
+        "image": "/images/blog/4.png",
+        "title": "4 стаття",
+        "description": "Короткий опис 4 статті.",
+        "date": "18 березня 2025"
+      },
+      {
+        "id": 5,
+        "image": "/images/blog/5.png",
+        "title": "5 стаття",
+        "description": "Короткий опис 5 статті.",
+        "date": "21 березня 2025"
+      },
+      {
+        "id": 6,
+        "image": "/images/blog/6.png",
+        "title": "6 стаття",
+        "description": "Короткий опис 6 статті.",
+        "date": "18 березня 2025"
+      }
+]
+  
