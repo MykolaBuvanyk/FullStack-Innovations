@@ -1,13 +1,13 @@
 .header {
-    font-family: 'Helvetica Neue', sans-serif;
-    font-weight: 400;
+    font-family: 'Helvetica Neue';
+    font-weight: 300;
     color: #fff;
     padding: 15px 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .headerTel span {
-    font-family: 'Noto Color Emoji', 'Helvetica Neue', sans-serif;
+    font-family: 'Noto Color Emoji', 'Helvetica Neue';
 }
 
 .container {

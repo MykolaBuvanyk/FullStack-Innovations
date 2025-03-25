@@ -12,6 +12,11 @@ const nextConfig: NextConfig = {
     });
     return config;
   },
+  // i18n: {
+  //   locales: ['uk', 'en'],
+  //   defaultLocale: 'uk',
+  //   localeDetection: false,
+  // },
 };
 
 export default nextConfig;

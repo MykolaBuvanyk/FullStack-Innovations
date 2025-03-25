@@ -13,12 +13,12 @@ const MainHeroSection = () => {
                 <div className={styles.contentLeft}>
                     <h1 className={styles.heroHeaderText}>Fullstack innovations</h1>
                     <p>Розробка сайтів <span>та комплексне</span> просування вашого бізнесу <span>в лідери</span></p>
-                    <a href="#" className={styles.btn}>Зв’язатися з нами<img src="/icon/arrow_top_right.svg" alt="" /></a>
+                    <a href="#" className={styles.btn}>Зв’язатися з нами<img src="/images/arrow_top_right.svg" alt="" /></a>
                 </div>
                 <div className={styles.contentRight}>
                     <div className={styles.getOfferWrapper}>
                         <a href="#" className={styles.getOffer}>
-                            <img src="/icon/arrow_top_right.svg" alt="" />
+                            <img src="/images/arrow_top_right.svg" alt="" />
                             <p>
                                 отримати
                             </p>

@@ -50,7 +50,7 @@ interface BlogPost {
                                     <p className={styles.date}>{post.date}</p>
                                     <a href={"#"} className={styles.readMore}>
                                         Детально
-                                        <img src="/icon/arrow_top_right.svg" alt="" />
+                                        <img src="/images/arrow_top_right.svg" alt="" />
                                     </a>
                                 </div>
                             </div>

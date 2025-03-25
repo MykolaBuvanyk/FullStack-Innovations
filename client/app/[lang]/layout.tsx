@@ -3,7 +3,7 @@ import Header from "../components/Header/Header";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./globals.css";
 import { Noto_Color_Emoji } from 'next/font/google';
-
+import { Locale, i18n } from '@/i18n.config';
 const notoEmoji = Noto_Color_Emoji({
     subsets: ['emoji'], 
     weight: ['400'], 
@@ -15,11 +15,15 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+  params,
+}: {
   children: React.ReactNode;
-}>) {
+  params: { lang: Locale };
+}) {
   return (
-    <html lang="en">
+    <html
+    lang={params.lang}
+    >
       <head>
       <script src="https://kit.fontawesome.com/44ddc9fabc.js" crossOrigin="anonymous" async />
         <link
