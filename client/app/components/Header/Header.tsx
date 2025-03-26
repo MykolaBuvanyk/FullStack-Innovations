@@ -38,7 +38,7 @@ const Header = () => {
                 <Link href={`/${currentLang}/about`}>Про нас</Link>
               </li>
               <li className={styles.headerEl}>
-                <Link href={`/${currentLang}/partnership`}>Партнерство</Link>
+                <Link href={`/partnership`}>Партнерство</Link>
               </li>
               <li className={styles.headerEl}>
                 <Link href={`/${currentLang}/blog`}>Блог</Link>
