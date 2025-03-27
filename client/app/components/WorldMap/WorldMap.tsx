@@ -5,7 +5,7 @@ import { useState } from 'react';
 
 const countries = [
   { name: 'USA', x: 145, y: 146 },
-  { name: 'Canada', x: 123, y: 108},
+  { name: 'Canada', x: 123, y: 108 },
   { name: 'Brazil', x: 208, y: 237 },
   { name: 'UK', x: 330, y: 135 },
   { name: 'Germany', x: 349, y: 128 },
@@ -26,31 +26,32 @@ const WorldMap = () => {
     <section className={styles.worldMap}>
       <div className={styles.mapContainer}>
         {/* Зображення мапи */}
-        <div className={styles.mapBackground}></div>
+        <div className={styles.mapBackground}>
 
-        {/* Точки для країн */}
-        {countries.map((country, index) => {
-          // Переводимо координати в пікселях у відсотки
-          const leftPercent = (country.x / 705) * 100;
-          const topPercent = (country.y / 352) * 100;
+          {/* Точки для країн */}
+          {countries.map((country, index) => {
+            // Переводимо координати в пікселях у відсотки
+            const leftPercent = (country.x / 705) * 100;
+            const topPercent = (country.y / 352) * 100;
 
-          return (
-            <div
-              key={index}
-              className={styles.mapPoint}
-              style={{
-                left: `${leftPercent}%`,
-                top: `${topPercent}%`,
-              }}
-              onMouseEnter={() => setHoveredCountry(country.name)}
-              onMouseLeave={() => setHoveredCountry(null)}
-            >
-              {hoveredCountry === country.name && (
-                <div className={styles.tooltip}>{country.name}</div>
-              )}
-            </div>
-          );
-        })}
+            return (
+              <div
+                key={index}
+                className={styles.mapPoint}
+                style={{
+                  left: `${leftPercent}%`,
+                  top: `${topPercent}%`,
+                }}
+                onMouseEnter={() => setHoveredCountry(country.name)}
+                onMouseLeave={() => setHoveredCountry(null)}
+              >
+                {hoveredCountry === country.name && (
+                  <div className={styles.tooltip}>{country.name}</div>
+                )}
+              </div>
+            );
+          })}
+        </div>
       </div>
     </section>
   );
