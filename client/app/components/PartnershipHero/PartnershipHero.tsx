@@ -13,7 +13,7 @@ const MainHeroSection = () => {
                 
                 <div className={styles.contentLeft}>
                     <h1 className={styles.heroHeaderText}>Partnership</h1>
-                    <p>“Business is a game of partnerships. Those who form them well will succeed, those who do not will be left behind” — Bill Gates</p>
+                    <p>“buttonsiness is a game of partnerships. Those who form them well will succeed, those who do not will be left behind” — Bill Gates</p>
                     <a href="#" className={styles.btn}>Зв’язатися з нами<img src="/images/arrow_top_right.svg" alt="" /></a>
                 </div>
                 <div className={styles.contentRight}>
