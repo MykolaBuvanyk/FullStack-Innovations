@@ -1,5 +1,5 @@
 import styles from './PartnershipHero.module.css';
-import NavPath from '../NavPath/NavPath';
+// import NavPath from '../NavPath/NavPath';
 const MainHeroSection = () => {
     return (
         <section className={styles.hero}>

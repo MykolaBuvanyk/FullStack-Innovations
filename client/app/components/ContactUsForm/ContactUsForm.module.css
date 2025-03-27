@@ -1,3 +1,13 @@
+.formContainer{
+  font-family: 'Helvetica Neue', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 12.5vw;
+  color: #ffffff;
+  margin: 30px 0 150px;
+}
 .formContainerLeft{
     display: flex;
     flex-direction: column;
@@ -166,7 +176,7 @@
   .buttonWrapper{
     display: flex;
     gap: 15px;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     margin-top: 40px;
   }

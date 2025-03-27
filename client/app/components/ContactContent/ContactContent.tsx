@@ -3,7 +3,9 @@
 // import { useState } from 'react';
 // import { useRouter } from 'next/navigation';
 import styles from './ContactContent.module.css';
-import ContactUsForm from '../ContactUsForm/ContactUsForm';
+import WorldMap from '../WorldMap/WorldMap';
+
+
 
 
 const ContactContent = () => {
@@ -17,10 +19,9 @@ return (
                 <p>Founded in July 2007, SEVEN is a full-cycle software development company that has served over 180 clients and remains a 360º technological partner for our clients from the USA, Canada, the EU, UAE, Singapore, Australia, and others</p>
             </div>
             <div className={styles.heroSectionRight}>
-                <img src="/images/map.png" alt="" />
+                <WorldMap/>
             </div>
         </div>
-        <ContactUsForm/>
     </div>
 </div>
 )

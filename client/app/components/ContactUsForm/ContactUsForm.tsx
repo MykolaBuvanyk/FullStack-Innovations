@@ -13,11 +13,11 @@ const ContactUsForm = () => {
         policy: false,
     });
     const [errors, setErrors] = useState({
-        name: "Заповніть ім'я",
-        email: 'Заповніть пошту',
-        message: 'Введіть повідомлення',
-        policy: 'Прийміть політику конфіденційності',
-        method: "Оберіть метод зв'язку",
+        name: "",
+        email: '',
+        message: '',
+        policy: '',
+        method: "",
     });
 
     const handleIconClick = (icon) => {
@@ -45,12 +45,12 @@ const ContactUsForm = () => {
         let isValid = true;
 
         if (!formData.name.trim()) {
-            newErrors.name = 'Заповніть обов’язкове поле';
+            newErrors.name = "Заповніть ім'я";
             isValid = false;
         }
 
         if (!formData.email.trim()) {
-            newErrors.email = 'Заповніть обов’язкове поле';
+            newErrors.email = 'Заповніть пошту';
             isValid = false;
         } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
             newErrors.email = 'Введіть коректний E-mail';
@@ -58,7 +58,7 @@ const ContactUsForm = () => {
         }
 
         if (!formData.message.trim()) {
-            newErrors.message = 'Заповніть обов’язкове поле';
+            newErrors.message = 'Введіть повідомлення';
             isValid = false;
         }
 

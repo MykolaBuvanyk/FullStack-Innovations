@@ -4,19 +4,21 @@ import styles from './WorldMap.module.css';
 import { useState } from 'react';
 
 const countries = [
-  { name: 'USA', x: 145, y: 146 },
-  { name: 'Canada', x: 123, y: 108 },
-  { name: 'Brazil', x: 208, y: 237 },
-  { name: 'UK', x: 330, y: 135 },
-  { name: 'Germany', x: 349, y: 128 },
-  { name: 'France', x: 460, y: 160 },
-  { name: 'Italy', x: 490, y: 180 },
-  { name: 'Spain', x: 450, y: 200 },
-  { name: 'South Africa', x: 500, y: 400 },
-  { name: 'Australia', x: 800, y: 450 },
-  { name: 'China', x: 700, y: 200 },
-  { name: 'Japan', x: 750, y: 180 },
-  { name: 'India', x: 650, y: 250 },
+  { name: 'USA', x: 170, y: 130 },
+  { name: 'Canada', x: 130, y: 80 },
+  { name: 'Brazil', x: 220, y: 250 },
+  { name: 'UK', x: 330, y: 115 },
+  { name: 'Germany', x: 350, y: 125 },
+  { name: 'France', x: 330, y: 135 },
+  { name: 'Italy', x: 350, y: 145 },
+  { name: 'Spain', x: 320, y: 145 },
+  { name: 'South Africa', x: 375, y: 280 },
+  { name: 'Australia', x: 590, y: 280 },
+  { name: 'China', x: 550, y: 160 },
+  { name: 'Japan', x: 600, y: 150 },
+  { name: 'India', x: 480, y: 190 },
+  { name : 'Poland', x: 360, y: 120},
+  { name : 'Ukraine', x: 370, y: 135}
 ];
 
 const WorldMap = () => {
