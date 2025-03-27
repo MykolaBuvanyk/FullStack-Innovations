@@ -1,0 +1,72 @@
+.partnershipOptions {
+    padding: 0px 12.5vw;
+    margin-top: 150px;
+
+}
+.partnershipOptionsTitle{
+    width: 60%;
+}
+.partnershipOptionsTitle p{
+    color: #fff;
+    size: 18px;
+    font-weight: 100;
+    margin-top: 25px;
+    line-height: 28px;
+    letter-spacing: 0%;
+    vertical-align: middle;
+}
+
+.partnershipOptions h2 {
+    font-size: 70px;
+    font-weight: 500;
+    background-image: url('/images/abstract-purple-blue-wave-background (2).png');
+    background-size: cover;
+    background-position: center;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.optionsGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 70px;
+}
+
+.optionCard {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 30px;
+    backdrop-filter: blur(10px);
+    text-align: left;
+    height: 250px;
+}
+
+.optionCardImage {
+    margin-bottom: 20px;
+}
+.optionCardArrow{
+    display: flex;
+    justify-content: flex-end;
+    padding: 0;
+    margin: 0;
+}
+.optionCard h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.optionCard p {
+    font-size: 18px;
+    font-weight: 100;
+    color: #fff;
+}
+.optionCard:hover .optionCardArrow svg path,
+.optionCard:hover .optionCardImage svg path {
+    fill: #FFFFFF;
+}
+.optionCard:hover{
+    background: linear-gradient(180deg, #C400B9 0%, #5D0058 119.29%);
+}

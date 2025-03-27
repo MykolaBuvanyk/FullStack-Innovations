@@ -1,0 +1,55 @@
+.partnershipBenefits {
+    padding: 0px 12.5vw;
+    margin-top: 150px;
+
+}
+.partnershipBenefitsTitle{
+    width: 55%;
+}
+.partnershipBenefitsTitle p{
+    color: #fff;
+    size: 18px;
+    font-weight: 100;
+    margin-top: 25px;
+}
+
+.partnershipBenefits h2 {
+    font-size: 70px;
+    font-weight: 500;
+    background-image: url('/images/abstract-purple-blue-wave-background (2).png');
+    background-size: cover;
+    background-position: center;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.benefitsGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* gap: 30px; */
+    grid-gap: 30px 60px;
+    margin-top: 50px;
+}
+.benefitItem{
+    display: flex;
+    color: #fff;
+    gap: 10px;
+}
+.benefitIcon{
+    width: 34px;
+    height: 34px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1%;
+}
+.benefitItem h3 {
+    font-size: 20px;
+    font-weight: 500;
+}
+.benefitItem p {
+    font-size: 18px;
+    font-weight: 100;
+    margin-top: 20px;
+}
