@@ -1,0 +1,33 @@
+.navPath {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 12.5vw;
+    margin-top: 20px;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 0%;
+    color: white;
+    vertical-align: middle;
+
+}
+
+.navpathLink {
+    text-decoration: none;
+    line-height: 2;
+}
+
+.navpathItem {
+    display: flex;
+    align-items: center;
+}
+
+.navpathSeparator {
+    margin-right: 6px;
+}
+
+.navpathActive {
+    text-decoration: none;
+    color: #e81ede;
+}

@@ -1,0 +1,87 @@
+.worldMap {
+    padding: 60px 12.5vw;
+    background: linear-gradient(180deg, #0d0717 0%, #1a0b2e 100%);
+}
+
+.mapContainer {
+    position: relative;
+    width: 100%;
+    padding-bottom: 49.93%; /* Співвідношення сторін 352/705 ≈ 0.4993 */
+    height: 0; /* Висота задається через padding-bottom */
+}
+
+.mapBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/images/map.svg'); /* Шлях до вашої мапи */
+    background-size: cover;
+    background-position: center;
+}
+
+.mapPoint {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: #E81EDD; /* Фіолетовий колір точки */
+    border-radius: 50%;
+    transform: translate(-50%, -50%); /* Центруємо точку */
+    cursor: pointer;
+    box-shadow: 0 0 10px #E81EDD; /* Ефект сяйва */
+}
+
+.tooltip {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    white-space: nowrap;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.mapPoint:hover .tooltip {
+    opacity: 1;
+}
+
+/* Адаптивність */
+@media (max-width: 1440px) {
+    .worldMap {
+        padding: 40px 8vw;
+    }
+
+    .mapPoint {
+        width: 12px;
+        height: 12px;
+    }
+
+    .tooltip {
+        font-size: 12px;
+        padding: 4px 8px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .worldMap {
+        padding: 30px 5vw;
+    }
+
+    .mapPoint {
+        width: 10px;
+        height: 10px;
+    }
+
+    .tooltip {
+        font-size: 10px;
+        padding: 3px 6px;
+    }
+}

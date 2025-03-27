@@ -1,4 +1,5 @@
 import styles from './PartnershipHero.module.css';
+import NavPath from '../NavPath/NavPath';
 const MainHeroSection = () => {
     return (
         <section className={styles.hero}>
@@ -9,7 +10,7 @@ const MainHeroSection = () => {
                 <div className={styles.circle + ' ' + styles.circle4}></div>
             </div> */}
             <div className={styles.heroContent}>
-
+                
                 <div className={styles.contentLeft}>
                     <h1 className={styles.heroHeaderText}>Partnership</h1>
                     <p>“Business is a game of partnerships. Those who form them well will succeed, those who do not will be left behind” — Bill Gates</p>

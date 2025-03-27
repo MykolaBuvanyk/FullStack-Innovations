@@ -1,0 +1,91 @@
+.aboutPeopleSlider {
+    margin-top: 150px;
+    font-family: 'Helvetica Neue', sans-serif;
+
+}
+
+.aboutPeopleSliderTitle {
+    padding: 0px 12.5vw;
+    width: 75%;
+}
+
+.aboutPeopleSliderTitle h2 {
+    font-size: 70px;
+    font-weight: 500;
+    background-image: url('/images/abstract-purple-blue-wave-background (2).png');
+    background-size: cover;
+    background-position: center;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+
+.sliderContainer {
+    margin-top: 70px;
+}
+
+.personCard {
+    display: flex;
+    flex-direction: column;
+    align-items: self-start;
+    text-align: left;
+}
+
+.personImage {
+    position: relative;
+    width: 23.9vw;
+    height: 54vh;
+    overflow: hidden;
+}
+
+.personCard h3 {
+    font-size: 20px;
+    font-weight: 500;
+    color: #fff;
+    margin-top: 40px;
+}
+
+.personCard p {
+    font-size: 18px;
+    font-weight: 100;
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 15px;
+}
+
+.swiperPagination {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.swiperPagination :global(.swiper-pagination-bullet) {
+    background: #fff;
+    opacity: 1;
+    width: 10px;
+    height: 10px;
+    position: relative;
+}
+
+.swiperPagination :global(.swiper-pagination-bullet-active)::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    margin: -3px;
+    border-radius: 50%;
+    background: linear-gradient(180deg, #C400B9 0%, #5D0058 119.29%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: -1;
+}
+
+.swiperPagination :global(.swiper-pagination-bullet-active) {
+    opacity: 1;
+    background: linear-gradient(180deg, #C400B9 0%, #5D0058 119.29%);
+}
+
+.swiperPaginationBulletActive {
+    opacity: 1;
+}

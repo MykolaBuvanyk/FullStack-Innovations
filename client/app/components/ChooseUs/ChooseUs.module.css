@@ -1,0 +1,56 @@
+.chooseUs {
+    padding: 0px 12.5vw;
+    margin-top: 150px;
+
+}
+.chooseUsTitle{
+    width: 55%;
+}
+.chooseUsTitle p{
+    color: #fff;
+    size: 18px;
+    font-weight: 100;
+    margin-top: 25px;
+}
+
+.chooseUs h2 {
+    font-size: 70px;
+    font-weight: 500;
+    background-image: url('/images/abstract-purple-blue-wave-background (2).png');
+    background-size: cover;
+    background-position: center;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.chooseUsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px 30px;
+    margin-top: 70px;
+}
+.chooseUsItem{
+    display: flex;
+    color: #fff;
+    gap: 10px;
+}
+.chooseUsSharpNumber h3{
+    font-size: 30px;
+    font-weight: 700;
+    background: -webkit-linear-gradient(90deg, rgba(93, 0, 88, 1) 0%, rgba(195, 0, 185, 1) 119.29%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+.chooseUsItem h4 {
+    margin-top: 30px;
+    font-size: 25px;
+    font-weight: 400;
+}
+.chooseUsItem p {
+    font-size: 20px;
+    font-weight: 100;
+    margin-top: 20px;
+}

@@ -37,7 +37,6 @@ interface BlogPost {
   return (
     <div className={styles.blogContentWrapper}>
         <div className={styles.container}>
-            <p className={styles.navPath}>Головна - Блог</p>
             <div className={styles.contentWrapper}>
                 <ul className={styles.blogList}>
                     {paginatedPosts.map((post) => (
