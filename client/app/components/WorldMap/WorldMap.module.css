@@ -15,8 +15,6 @@
     background-size: cover;
     background-position: center;
 
-
-
     --parent-width: 705px;
 }
 
@@ -29,10 +27,6 @@
     transform: translate(-50%, -50%);
     cursor: pointer;
     box-shadow: 0 0 10px #E81EDD;
-
-
-
-
     border: calc(var(--parent-width) * 0.005) solid #E81EDD;
 }
 

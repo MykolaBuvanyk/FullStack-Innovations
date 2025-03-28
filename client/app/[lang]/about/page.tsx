@@ -5,6 +5,7 @@ import NavPath from "@/app/components/NavPath/NavPath";
 import AboutPeopleSlider from "@/app/components/AboutPeopleSlider/AboutPeopleSlider";
 import ServicesHero from '@/app/components/ServicesHero/ServicesHero';
 import ChooseUs from '@/app/components/ChooseUs/ChooseUs';
+import TellAboutUs from '@/app/components/TellAboutUs/TellAboutUs';
 type Props = {
     params: { lang: Locale };
 };
@@ -16,6 +17,7 @@ export default function About({ params: { lang } }: Props) {
             <ButtonTop />
             <ServicesHero />
             <ChooseUs />
+            <TellAboutUs />
         </div>
     );
 }
