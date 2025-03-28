@@ -6,6 +6,9 @@ import AboutPeopleSlider from "@/app/components/AboutPeopleSlider/AboutPeopleSli
 import ServicesHero from '@/app/components/ServicesHero/ServicesHero';
 import ChooseUs from '@/app/components/ChooseUs/ChooseUs';
 import TellAboutUs from '@/app/components/TellAboutUs/TellAboutUs';
+import WorkWithUs from '@/app/components/WorkWithUs/WorkWithUs';
+import WorldMapPartnership from '@/app/components/WorldMapPartnership/WorldMapPartnership';
+import ContactUsForm from '@/app/components/ContactUsForm/ContactUsForm';
 type Props = {
     params: { lang: Locale };
 };
@@ -18,6 +21,9 @@ export default function About({ params: { lang } }: Props) {
             <ServicesHero />
             <ChooseUs />
             <TellAboutUs />
+            <WorkWithUs/>
+            <WorldMapPartnership/>
+            <ContactUsForm/>
         </div>
     );
 }
