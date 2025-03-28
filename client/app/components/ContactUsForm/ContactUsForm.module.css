@@ -1,4 +1,4 @@
-.formContainer{
+.formContainer {
   font-family: 'Helvetica Neue', sans-serif;
   display: flex;
   flex-direction: column;
@@ -8,199 +8,200 @@
   color: #ffffff;
   margin: 30px 0 150px;
 }
-.formContainerLeft{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 50px;
-    width: 60%;
+
+.formContainerLeft {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 50px;
+  width: 60%;
 }
 
-.formContainerLeft h2{
-    font-weight: 700;
-    font-size: 50px;
-    background-image: url('/images/abstract-purple-blue-wave-background (2).png');
-    background-size: cover;
-    background-position: center;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+.formContainerLeft h2 {
+  font-weight: 700;
+  font-size: 50px;
+  background-image: url('/images/abstract-purple-blue-wave-background (2).png');
+  background-size: cover;
+  background-position: center;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.formGroupWrapper{
-    display: flex;
-    justify-content: space-between;
-    gap: 50px;
+.formGroupWrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
 }
 
-.formGroupWrapper > *{
-    width: 50%;
-    
+.formGroupWrapper>* {
+  width: 50%;
+
 }
 
-.formWrapper{
-    margin-bottom: 60px;
-    width: 80%;
+.formWrapper {
+  margin-bottom: 60px;
+  width: 80%;
 }
 
 .formGroup {
-    margin-bottom: 15px;
-    text-align: left;
-    position: relative;
-  }
-  
-  .label {
-    color: #888;
-    font-size: 14px;
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    transition: all 0.3s ease;
-    pointer-events: none;
-  }
-
-  .privacyPolicyRef{
-    text-decoration: underline;
-    margin-left: 3px;
-  }
-  
-  .input {
-    width: 100%;
-    padding: 20px 0;
-    border: none;
-    border-bottom: 1px solid #888;
-    background-color: transparent;
-    color: #fff;
-    font-size: 14px;
-    outline: none;
-  }
-  
-  .input::placeholder {
-    color: transparent;
+  margin-bottom: 15px;
+  text-align: left;
+  position: relative;
 }
 
-  .input:focus + .label,
-  .input:not(:placeholder-shown) + .label {
-    color: #fff;
-    font-size: 12px;
-    top: -10px;
-    left: 0;
-  }
-  
-  .input:focus {
-    border-bottom: 1px solid #fff;
-  }
-  
-  .checkboxGroup {
-    display: flex;
-    align-items: center;
-  }
-  
-  .checkbox {
-    appearance: none;
-    width: 20px;
-    height: 20px;
-    border: 2px solid #e81edd;
-    border-radius: 50%;
-    background-color: transparent;
-    cursor: pointer;
-    margin-right: 10px;
-  }
-  
-  .checkbox:checked {
-    background-color: #e81edd;
-    border-color: #e81edd;
-    position: relative;
-  }
-  
-  .checkbox:checked::after {
-    content: "";
-    position: absolute;
-    top: 44%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(-45deg);
-    width: 8px;
-    height: 4px;
-    border: 2px solid #fff;
-    border-top: none;
-    border-right: none;
-  }
-  
-  .checkboxLabel {
-    color: #888;
-    font-size: 14px;
-  }
-  
-  .messengerIcons {
-    display: flex;
-    gap: 15px;
-    justify-content: space-around;
-    width: 100%;
-    margin-top: 30px;
-  }
-
-  .iconPara{
-    color: #FFFFFF66;
-  }
-  
-  .messengerLink {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    flex-direction: column;
-    align-items: center;
-    color: #FFFFFF66;
-    background-color: #FFFFFF05;
-    border-radius: 15px;
-    width: 100%;
-    padding: 15px 0;
-    backdrop-filter: blur(20px);
-    font-size: 12px;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-
-  .messengerLink:hover{
-    transform: translateY(-3px);
-  }
-
-  .messengerLink.active {
-    border: 1px solid #e81edd;
+.label {
+  color: #888;
+  font-size: 14px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  transition: all 0.3s ease;
+  pointer-events: none;
 }
 
-  .messengerIcon {
-    width: 25px;
-  }
-  
-  .buttonWrapper{
-    display: flex;
-    gap: 15px;
-    justify-content: start;
-    align-items: center;
-    margin-top: 40px;
-  }
+.privacyPolicyRef {
+  text-decoration: underline;
+  margin-left: 3px;
+}
 
-  .submitButton {
-    line-height: 22px;
-    font-weight: 400;
-    font-size: 15px;
-    padding: 25px 35px;
-    border-radius: 100px;
-    color: #fff;
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    background-color: transparent;
-    transition: 0.5s;
-    border: 1px solid white;
-    white-space: nowrap;
+.input {
+  width: 100%;
+  padding: 20px 0;
+  border: none;
+  border-bottom: 1px solid #888;
+  background-color: transparent;
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+}
+
+.input::placeholder {
+  color: transparent;
+}
+
+.input:focus+.label,
+.input:not(:placeholder-shown)+.label {
+  color: #fff;
+  font-size: 12px;
+  top: -10px;
+  left: 0;
+}
+
+.input:focus {
+  border-bottom: 1px solid #fff;
+}
+
+.checkboxGroup {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #e81edd;
+  border-radius: 50%;
+  background-color: transparent;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.checkbox:checked {
+  background-color: #e81edd;
+  border-color: #e81edd;
+  position: relative;
+}
+
+.checkbox:checked::after {
+  content: "";
+  position: absolute;
+  top: 44%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  width: 8px;
+  height: 4px;
+  border: 2px solid #fff;
+  border-top: none;
+  border-right: none;
+}
+
+.checkboxLabel {
+  color: #888;
+  font-size: 14px;
+}
+
+.messengerIcons {
+  display: flex;
+  gap: 15px;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.iconPara {
+  color: #FFFFFF66;
+}
+
+.messengerLink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-direction: column;
+  align-items: center;
+  color: #FFFFFF66;
+  background-color: #FFFFFF05;
+  border-radius: 15px;
+  width: 100%;
+  padding: 15px 0;
+  backdrop-filter: blur(20px);
+  font-size: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.messengerLink:hover {
+  transform: translateY(-3px);
+}
+
+.messengerLink.active {
+  border: 1px solid #e81edd;
+}
+
+.messengerIcon {
+  width: 25px;
+}
+
+.buttonWrapper {
+  display: flex;
+  gap: 15px;
+  justify-content: start;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.submitButton {
+  line-height: 22px;
+  font-weight: 400;
+  font-size: 15px;
+  padding: 25px 35px;
+  border-radius: 100px;
+  color: #fff;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  background-color: transparent;
+  transition: 0.5s;
+  border: 1px solid white;
+  white-space: nowrap;
 }
 
 .submitButton:hover {
-    background: linear-gradient(95.63deg, #C400B9 17.83%, #5D0058 159.96%);
-    box-shadow: 0px 20px 40px rgba(196, 1, 185, 0.6);
-    border: 1px solid rgba(196, 1, 185, 0.6);
+  background: linear-gradient(95.63deg, #C400B9 17.83%, #5D0058 159.96%);
+  box-shadow: 0px 20px 40px rgba(196, 1, 185, 0.6);
+  border: 1px solid rgba(196, 1, 185, 0.6);
 }
 
 .submitWrapper {
