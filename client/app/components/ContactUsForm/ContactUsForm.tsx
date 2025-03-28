@@ -194,7 +194,20 @@ const ContactUsForm = () => {
                     </div>
                 </form>
             </div>
-            <div className={styles.formContainerRight}></div>
+            <div className={styles.formContainerRight}>               
+                    <div className={styles.spheraWrapper}>
+                        <div className={styles.sphereLarge}>
+                            <img src="/images/green_abstract_shape.png" alt="" />
+                        </div>
+                        <div className={styles.sphereMedium}>
+                            <img src="/images/hero-sphera-2.png" alt="" />
+                        </div>
+                        <div className={styles.sphereSmall}>
+                            <img src="/images/hero-sphera-4.png" alt="" />
+                        </div>
+                        <div className={styles.backgroundElipse}></div>
+                </div>
+            </div>
         </div>
     );
 };
