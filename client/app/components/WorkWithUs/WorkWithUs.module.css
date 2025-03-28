@@ -1,0 +1,142 @@
+.workWithUsWrapper{
+    padding: 0 12.5vw;
+    margin: 200px 0 150px;
+}
+
+.tellAboutUsTitleButton{
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+.tellAboutUsTitle p {
+    color: #fff;
+    size: 20px;
+    font-weight: 100;
+    margin-top: 20px;
+    width: 55%;
+}
+
+.tellAboutUsTitle h2 {
+    width: 55%;
+    font-size: 70px;
+    font-weight: 500;
+    background-image: url('/images/abstract-purple-blue-wave-background (2).png');
+    background-size: cover;
+    background-position: center;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.submitButton {
+    line-height: 22px;
+    font-weight: 400;
+    font-size: 15px;
+    padding: 25px 35px;
+    border-radius: 100px;
+    color: #fff;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    background-color: transparent;
+    transition: 0.5s;
+    border: 1px solid white;
+    white-space: nowrap;
+}
+
+.submitButton:hover {
+    background: linear-gradient(95.63deg, #C400B9 17.83%, #5D0058 159.96%);
+    box-shadow: 0px 20px 40px rgba(196, 1, 185, 0.6);
+    border: 1px solid rgba(196, 1, 185, 0.6);
+}
+
+.workWithUsList{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    gap: 100px;
+}
+
+
+
+
+
+
+
+
+
+
+.workWithUsWrapper {
+    padding: 0 12.5vw;
+    margin: 200px 0 150px;
+}
+
+.tellAboutUsTitleButton {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.tellAboutUsTitle p {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 100;
+    margin-top: 20px;
+    width: 55%;
+}
+
+.tellAboutUsTitle h2 {
+    width: 55%;
+    font-size: 70px;
+    font-weight: 500;
+    background-image: url('/images/abstract-purple-blue-wave-background (2).png');
+    background-size: cover;
+    background-position: center;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.submitButton {
+    line-height: 22px;
+    font-weight: 400;
+    font-size: 15px;
+    padding: 25px 35px;
+    border-radius: 100px;
+    color: #fff;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    background-color: transparent;
+    transition: 0.5s;
+    border: 1px solid white;
+    white-space: nowrap;
+}
+
+.submitButton:hover {
+    background: linear-gradient(95.63deg, #C400B9 17.83%, #5D0058 159.96%);
+    box-shadow: 0px 20px 40px rgba(196, 1, 185, 0.6);
+    border: 1px solid rgba(196, 1, 185, 0.6);
+}
+
+.workWithUsContainer {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+
+.workWithUsList {
+    display: flex;
+    gap: 100px;
+    padding: 0;
+    margin: 0;
+    white-space: nowrap;
+    will-change: transform;
+}
+
+.workWithUsEl {
+    flex: 0 0 auto;
+    transition: opacity 0.3s ease-in-out; /* Плавний перехід для прозорості */
+}

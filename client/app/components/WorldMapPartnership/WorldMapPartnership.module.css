@@ -84,7 +84,6 @@
     display: flex;
     left: 33%;
     top: 70%;
-    backdrop-filter: blur(6px)
 }
 
 .getOffer {
@@ -100,6 +99,9 @@
     color: #fff;
     flex-direction: column;
     position: relative;
+    background-color: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(2px);
+    border-radius: 50%;
     z-index: 1;
 }
 
@@ -115,8 +117,8 @@
     background: linear-gradient(180deg, #C400B9 0%, #5D0058 100%);
     /* Градієнт */
     -webkit-mask:
-        linear-gradient(#fff 0 0) content-box,
-        linear-gradient(#fff 0 0);
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
     /* Маска для створення "межі" */
     -webkit-mask-composite: xor;
     mask-composite: exclude;

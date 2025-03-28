@@ -20,7 +20,9 @@ const Header = () => {
       <div className={styles.container}>
         <ul className={styles.headerWrapper}>
           <li className={styles.headerWrapperEl}>
-            <img className={styles.logoImage} src="/images/logo.png" alt="" />
+            <Link href={`/${currentLang}`}>
+              <img className={styles.logoImage} src="/images/logo.png" alt="" />
+            </Link>
           </li>
           <li className={styles.headerWrapperEl}>
             <ul className={styles.headerList}>
