@@ -96,7 +96,7 @@ const ContactUsForm = () => {
 
         setTimeout(() => {
             setIsSubmitted(false);
-        }, 5000000000);
+        }, 5000);
     };
 
     const handleResubmit = () => {

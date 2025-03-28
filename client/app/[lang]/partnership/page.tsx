@@ -5,7 +5,8 @@ import PartnershipBenefits from '@/app/components/PartnershipBenefits/Partnershi
 import { Locale } from '@/i18n.config';
 import ButtonTop from "@/app/components/ButtonTop/ButtonTop";
 import NavPath from "@/app/components/NavPath/NavPath";
-import WorldMap from "@/app/components/WorldMap/WorldMap";
+import WorldMapPartnership from "@/app/components/WorldMapPartnership/WorldMapPartnership";
+import ContactUsForm from "@/app/components/ContactUsForm/ContactUsForm";
 type Props = {
   params: { lang: Locale };
 };
@@ -18,7 +19,8 @@ export default function Partnership({ params: { lang } }: Props) {
       <PartnershipOptions />
       <PartnershipBenefits />
       <ButtonTop/>
-      <WorldMap />
+      <WorldMapPartnership />
+      <ContactUsForm/>
     </div>
   );
 }
