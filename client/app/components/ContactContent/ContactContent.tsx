@@ -12,7 +12,6 @@ const ContactContent = () => {
 return (
 <div className={styles.ContactContentWrapper}>
     <div className={styles.container}>
-        <p className={styles.navPath}>Головна - Контакти</p>
         <div className={styles.mainContent}>
             <div className={styles.heroSectionLeft}>
                 <h1>Contact Us</h1>
