@@ -13,7 +13,7 @@
   flex-direction: column;
   justify-content: center;
   gap: 50px;
-  width: 50%;
+  /* width: 40vw; */
 }
 
 .formContainerLeft h2 {
@@ -40,7 +40,7 @@
 
 .formWrapper {
   margin-bottom: 60px;
-  width: 80%;
+  width: 70%;
 }
 
 .formGroup {
@@ -51,10 +51,10 @@
 
 .label {
   color: #888;
-  font-size: 14px;
+  font-size: 20px;
   position: absolute;
-  top: 10px;
-  left: 10px;
+  bottom: 20px;
+  left: 0px;
   transition: all 0.3s ease;
   pointer-events: none;
 }
@@ -71,7 +71,7 @@
   border-bottom: 1px solid #888;
   background-color: transparent;
   color: #fff;
-  font-size: 14px;
+  font-size: 20px;
   outline: none;
 }
 
@@ -81,10 +81,7 @@
 
 .input:focus+.label,
 .input:not(:placeholder-shown)+.label {
-  color: #fff;
-  font-size: 12px;
-  top: -10px;
-  left: 0;
+  display: none;
 }
 
 .input:focus {
@@ -128,18 +125,19 @@
 
 .checkboxLabel {
   color: #888;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .messengerIcons {
   display: flex;
-  gap: 15px;
+  gap: 0.78vw;
   justify-content: space-around;
   width: 100%;
   margin-top: 30px;
 }
 
 .iconPara {
+  font-size: 20px;
   color: #FFFFFF66;
 }
 
@@ -154,11 +152,15 @@
   background-color: #FFFFFF05;
   border-radius: 15px;
   width: 100%;
-  padding: 15px 0;
+  padding: 0.78vw 2vw;
   backdrop-filter: blur(20px);
   font-size: 12px;
   cursor: pointer;
   transition: 0.3s;
+}
+
+.messengerLink img{
+  width: 1.19vw;
 }
 
 .messengerLink:hover {
@@ -358,4 +360,21 @@
   right: 0;
   filter: blur(120px);
   transform: translate(-50%, 70%);
+}
+
+@media(max-width:1440px){
+  .formContainerLeft h2 {
+    font-size: 30px;
+  }
+  .label {
+    font-size: 14px;
+    bottom: 15px;
+  }
+  .input {
+    padding: 15px 0;
+    font-size: 14px;
+  }
+  .iconPara {
+    font-size: 14px;
+  }
 }

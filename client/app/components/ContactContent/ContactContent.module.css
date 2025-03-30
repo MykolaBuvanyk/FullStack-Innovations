@@ -10,8 +10,8 @@
 }
 
 .mainContent{
+    margin-top: 50px;
     display: flex;
-    justify-content: center;
     align-items: center;
     gap: 20px;
 }
@@ -21,10 +21,11 @@
 }
 
 .heroSectionLeft{
+    margin-top: 1.5vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 40px;
+    gap: 2vh;
 }
 
 .heroSectionLeft h1{
@@ -39,11 +40,21 @@
 }
 
 .heroSectionLeft p{
-    font-weight: 400;
+    font-weight: 100;
     font-size: 18px;
 }
 
 
 .heroSectionRight img{
     width: 100%;
+}
+
+@media(max-width: 1440px){
+    .heroSectionLeft h1{
+        font-size: 50px;
+    }
+
+    .heroSectionLeft p{
+        font-size: 14px;
+    }
 }

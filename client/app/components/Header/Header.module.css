@@ -44,6 +44,15 @@
     gap: 1.2vw;
 }
 
+.headerEl{
+    transition: 0.35s;
+}
+
+.headerEl:hover{
+    color: rgba(232, 30, 221, 1);
+    cursor: pointer;
+}
+
 .logoImage {
     width: 12vw;
 }
