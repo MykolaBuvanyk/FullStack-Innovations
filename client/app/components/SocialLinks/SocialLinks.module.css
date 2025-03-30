@@ -1,0 +1,38 @@
+.socialLinksWrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    position: absolute;
+    right: 0px;
+    top: 8vw;
+    gap: 0.26vw;
+    z-index: 10000;
+}
+
+.xmarkWrapper{
+    color: #ffffff;
+    font-weight: 100;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 1px solid rgba(231, 30, 220, 0.07);
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+}
+
+.socialLinksList{
+    padding: 0.78vw;
+    border-radius: 20px;
+    border: 1px solid rgba(231, 30, 220, 0.07);
+    background-color: rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.26vw;
+}

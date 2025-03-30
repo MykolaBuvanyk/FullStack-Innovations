@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "./globals.css";
 import { Noto_Color_Emoji } from 'next/font/google';
 import { Locale, i18n } from '@/i18n.config';
+import SocialLinks from "../components/SocialLinks/SocialLinks";
 const notoEmoji = Noto_Color_Emoji({
     subsets: ['emoji'], 
     weight: ['400'], 
@@ -34,7 +35,7 @@ export default function RootLayout({
       </head>
       <body>
         <Header/>
-        
+        <SocialLinks/>
         {children}
         
       </body>
