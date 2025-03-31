@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import styles from './NavPath.module.css';
+import { i18n } from '@/i18n.config'; // Шлях до вашого конфігу i18n
 
 const NavPathMap: Record<string, string> = {
   about: 'Про нас',
@@ -20,19 +21,32 @@ const NavPathMap: Record<string, string> = {
 
 export default function NavPath() {
   const pathname = usePathname();
+  const currentLang = pathname.split('/')[1] || i18n.defaultLocale;
 
+  // Перевіряємо, чи є перший сегмент шляху кодом мови
+  const isFirstSegmentLocale = i18n.locales.includes(pathname.split('/')[1] as any);
+  
+  // Отримуємо сегменти шляху, виключаючи коди мов
   const pathSegments = pathname
     .split('/')
-    .filter((segment) => segment && !['ru', 'uk'].includes(segment));
+    .filter((segment, index) => {
+      // Залишаємо сегмент, якщо він не порожній і 
+      // (не є першим сегментом, або якщо перший, то не є кодом мови)
+      return segment && !(index === 1 && isFirstSegmentLocale);
+    });
 
   return (
     <nav className={styles.navPath}>
-      <Link href="/" className={styles.navpathLink}>
+      <Link href={`/${currentLang}`} className={styles.navpathLink}>
         Головна
       </Link>
       {pathSegments.map((segment, index) => {
         const translatedName = NavPathMap[segment] || segment;
-        const href = '/' + pathSegments.slice(0, index + 1).join('/');
+        
+        // Будуємо href з врахуванням поточної мови
+        const href = isFirstSegmentLocale
+          ? `/${currentLang}/${pathSegments.slice(1, index + 1).join('/')}`
+          : `/${pathSegments.slice(0, index + 1).join('/')}`;
 
         return (
           <span key={index} className={styles.navpathItem}>

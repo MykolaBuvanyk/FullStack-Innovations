@@ -1,6 +1,13 @@
+.hero {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
 .blurCircles {
     width: 100%;
     height: 100%;
+    position: absolute;
     z-index: 0;
 }
 
@@ -8,7 +15,6 @@
     position: absolute;
     border-radius: 50%;
     background: rgba(232, 30, 221, 1);
-
 }
 
 .circle2 {
@@ -25,7 +31,8 @@
     font-family: 'Helvetica Neue', sans-serif;
     display: flex;
     padding: 0 12.5vw;
-    height: 75vh;
+    min-height: 75vh;
+    position: relative;
 }
 
 .contentLeft {
@@ -39,17 +46,6 @@
 .contentLeft h1 {
     font-weight: 700;
     font-size: 70px;
-    /* background: linear-gradient(90deg,
-            rgba(75, 0, 122, 1) 0%,
-            rgba(211, 0, 224, 1) 30%,
-            #7202ab 75%,
-            #9e00cf 85%,
-            rgba(79, 0, 140, 1) 100%); */
-    /* background: radial-gradient(circle, rgba(75,0,122,1) 0%, rgba(211,0,224,1) 50%, rgba(79,0,140,1) 100%); */
-    /* -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent; */
     background-image: url('/images/abstract-purple-blue-wave-background (2).png');
     background-size: cover;
     background-position: center;
@@ -73,7 +69,7 @@
     line-height: 22px;
     font-weight: 400;
     font-size: 15px;
-    background: linear-gradient(95.63deg, #C400B9 17.83%, #5D0058 159.96%);
+    background-color: transparent;
     padding: 25px 35px;
     border-radius: 100px;
     color: #fff;
@@ -81,26 +77,33 @@
     display: flex;
     gap: 10px;
     align-items: center;
-    box-shadow: 0px 20px 40px 0px rgba(196, 1, 185, 0.47);
+    border: 1px solid white;
+    white-space: nowrap;
+    transition: 0.5s;
+}
+
+.contentLeft .btn:hover {
+    background: linear-gradient(95.63deg, #C400B9 17.83%, #5D0058 159.96%);
+    box-shadow: 0px 20px 40px rgba(196, 1, 185, 0.6);
+    border: 1px solid rgba(196, 1, 185, 0.6);
 }
 
 .contentRight {
+
     width: 50%;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
 
 }
 
 .spheraWrapper {
     position: relative;
     width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+    aspect-ratio: 1 / 1;
+    max-width: 800px;
+    max-height: 800px;
 }
 
 /* Загальні стилі для сфер */
@@ -113,36 +116,29 @@
     z-index: 0;
 }
 
-/* Перша сфера */
+/* Позиціонування сфер у відсотках відносно .spheraWrapper */
 .spheraFirst {
-    width: 2.9vw;
-    height: auto;
+    width: 5.75%;
     top: 60%;
     left: 30%;
 }
 
-/* Друга сфера */
 .spheraSecond {
-    width: 7.5vw;
-    height: auto;
+    width: 19.3%;
     top: 5%;
-    right: -10%;
+    right: 5%;
 }
 
-/* Третя сфера (велика) */
 .spheraThird {
-    width: 23.65vw;
-    height: auto;
+    width: 56%;
     top: 20%;
-    right: 0%;
+    right: 10%;
 }
 
-/* Четверта сфера */
 .spheraFourth {
-    width: 4vw;
-    height: auto;
+    width: 8.75%;
     top: 50%;
-    left: 20%;
+    left: 22%;
 }
 
 .iconProgramming,
@@ -157,22 +153,26 @@
 }
 
 .iconProgramming {
-    top: 70%;
-    left: 25%;
-    width: 130px;
-    height: 124px;
+    top: 65%;
+    left: 24%;
+    width: 20%;
+    height: 20%;
 }
+
 .iconSettings {
     top: 8%;
-    width: 114px;
-    height: 109px;
+    left: 40%;
+    width: 15%;
+    height: 15%;
 }
+
 .iconOther {
     top: 30%;
-    right: -20%;
-    width: 117.5px;
-    height: 117.5px;
+    right: -10%;
+    width: 18%;
+    height: 18%;
 }
+
 .backgroundImage {
     position: absolute;
     top: 0;
@@ -191,44 +191,15 @@
     width: 22px;
     height: auto;
 }
-.iconProgramming img:not(.backgroundImage){
+
+.iconProgramming img:not(.backgroundImage) {
     margin-bottom: 5px;
     margin-left: 12.5px;
 }
-.iconSettings img:not(.backgroundImage){
+
+.iconSettings img:not(.backgroundImage) {
     margin-top: 10px;
 }
-/* .spheraFirst {
-    position: absolute;
-    width: 46px;
-    height: 44px;
-    top: 60%;
-    right: 70%;
-}
-
-.spheraSecond {
-    position: absolute;
-    width: 137px;
-    height: 144px;
-    top: 10%;
-    right: -10%;
-}
-
-.spheraThird {
-    position: absolute;
-    width: 454px;
-    height: 432px;
-    top: 20%;
-    right: 0%;
-}
-
-.spheraFourth {
-    position: absolute;
-    width: 70px;
-    height: 67px;
-    top: 50%;
-    right: 75%;
-} */
 
 .developCount {
     position: absolute;
@@ -240,9 +211,9 @@
     border: 1px solid rgba(231, 30, 220, 0.07);
     border-radius: 30px;
     backdrop-filter: blur(10px);
-    padding: 25px 35px;
+    padding: 1.3vw 1.82vw;
     right: 0;
-    top: 28vw;
+    bottom: 14%;
 }
 
 .developCount h1 {
@@ -255,22 +226,21 @@
     font-size: 18px;
     font-weight: 400;
     color: #fff;
-    ;
 }
 
 .getOfferWrapper {
     position: absolute;
     display: flex;
-    left: 8%;
-    top: 28%;
+    left: 10%;
+    top: 30%;
 }
 
 .getOffer {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
     font-size: 12px;
     font-weight: 500;
     text-transform: uppercase;
@@ -285,20 +255,15 @@
     content: '';
     position: absolute;
     inset: 0;
-    /* Займає весь простір елемента */
     padding: 2px;
     margin: -2px;
     border-radius: 50%;
-    /* Кругла форма для "межі" */
     background: linear-gradient(180deg, #C400B9 0%, #5D0058 100%);
-    /* Градієнт */
     -webkit-mask:
         linear-gradient(#fff 0 0) content-box,
         linear-gradient(#fff 0 0);
-    /* Маска для створення "межі" */
     -webkit-mask-composite: xor;
     mask-composite: exclude;
-    /* Виключаємо внутрішню частину */
     z-index: 1;
 }
 
@@ -307,7 +272,117 @@
 }
 
 .getOffer img {
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     margin-bottom: 5px;
+}
+
+/* Медіа-запити для адаптивності */
+@media (max-width: 1200px) {
+    .contentLeft h1 {
+        font-size: 50px;
+    }
+
+    .contentLeft p {
+        font-size: 24px;
+    }
+
+    .spheraWrapper {
+        max-width: 400px;
+        max-height: 400px;
+    }
+
+    .developCount h1 {
+        font-size: 50px;
+    }
+
+    .developCount p {
+        font-size: 16px;
+    }
+
+    .getOffer {
+        width: 80px;
+        height: 80px;
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .heroContent {
+        flex-direction: column;
+        padding: 0 5vw;
+        height: auto;
+    }
+
+    .contentLeft {
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    .contentRight {
+        width: 100%;
+        height: 50vh;
+    }
+
+    .spheraWrapper {
+        max-width: 300px;
+        max-height: 300px;
+        margin: 0 auto;
+    }
+
+    .contentLeft h1 {
+        font-size: 40px;
+    }
+
+    .contentLeft p {
+        font-size: 20px;
+    }
+
+    .developCount {
+        position: relative;
+        right: auto;
+        bottom: auto;
+        margin: 20px auto;
+    }
+
+    .getOfferWrapper {
+        left: 5%;
+        top: 20%;
+    }
+}
+
+@media (max-width: 480px) {
+    .contentLeft h1 {
+        font-size: 30px;
+    }
+
+    .contentLeft p {
+        font-size: 16px;
+    }
+
+    .spheraWrapper {
+        max-width: 250px;
+        max-height: 250px;
+    }
+
+    .developCount h1 {
+        font-size: 40px;
+    }
+
+    .developCount p {
+        font-size: 14px;
+    }
+
+    .getOffer {
+        width: 60px;
+        height: 60px;
+        font-size: 8px;
+    }
+
+    .getOffer img {
+        width: 10px;
+        height: 10px;
+    }
 }

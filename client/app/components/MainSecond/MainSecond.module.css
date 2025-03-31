@@ -2,6 +2,8 @@
     font-family: 'Helvetica Neue', sans-serif;
     display: flex;
     padding: 0 12.5vw;
+    margin-top: 150px;
+    flex-direction: column;
 }
 
 .contentLeft {
@@ -45,11 +47,11 @@
 }
 
 .contentRight {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    
     justify-content: top;
     align-items: flex-start;
-    width: 50%;
+    width: 100%;
 }
 
 .contentList {

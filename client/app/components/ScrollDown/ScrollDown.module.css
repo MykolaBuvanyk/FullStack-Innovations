@@ -1,0 +1,44 @@
+.button {
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    color: #fff;
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+    position: absolute;
+    display: grid;
+    place-content: center;
+    transition: transform 200ms;
+}
+
+.buttonText {
+    position: absolute;
+    inset: 0;
+    animation: text-rotation 8s linear infinite;
+}
+
+
+.buttonCircle {
+    position: relative;
+    background: transparent;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttonIcon {
+    stroke: white;
+    fill: white;
+}
+
+.button:hover {
+    transform: scale(1.05);
+}
+
+@keyframes text-rotation {
+    to {
+        rotate: 360deg;
+    }
+}

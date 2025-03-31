@@ -10,7 +10,7 @@ type Props = {
 export default function Home({ params }: { params: { lang: Locale } }) {
   return (
     <div className={styles.page}>
-      <MainHeroSection />
+      <MainHeroSection />  
       <MainSecond />
       <MainService/>
     </div>
