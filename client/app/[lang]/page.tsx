@@ -4,6 +4,7 @@ import MainSecond from "../components/MainSecond/MainSecond";
 import MainService from "../components/MainService/MainService";
 import Link from 'next/link';
 import { Locale } from '@/i18n.config';
+import OurPortfolioSlider from "../components/OurPortfolioSlider/OurPortfolioSlider";
 type Props = {
   params: { lang: Locale };
 };
@@ -13,6 +14,7 @@ export default function Home({ params }: { params: { lang: Locale } }) {
       <MainHeroSection />  
       <MainSecond />
       <MainService/>
+      <OurPortfolioSlider/>
     </div>
   );
 }

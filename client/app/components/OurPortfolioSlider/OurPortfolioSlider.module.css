@@ -1,0 +1,128 @@
+.ourPortfolio {
+    padding: 0px 12.5vw;
+    margin-top: 150px;
+
+}
+
+.ourPortfolioTitle {
+
+}
+.ourPortfolioTitleButton{
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+.ourPortfolioTitle p {
+    color: #fff;
+    size: 20px;
+    font-weight: 100;
+    margin-top: 20px;
+    width: 55%;
+}
+
+.ourPortfolioTitle h2 {
+    width: 55%;
+    font-size: 70px;
+    font-weight: 500;
+    background-image: url('/images/abstract-purple-blue-wave-background (2).png');
+    background-size: cover;
+    background-position: center;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.ourPortfolioSlider{
+    margin-top: 70px;
+}
+.ourPortfolioSliderItem {
+    display: flex;
+    justify-content: center;
+    width: 24vw;
+    height: auto;
+    color: #fff;
+}
+
+.ourPortfolioSliderItem i {
+    color: rgba(232, 30, 221, 1);
+}
+
+.ourPortfolioSliderItemFirst {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.ourPortfolioSliderItem img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+
+
+
+
+
+/* .ourPortfolioSliderItem h4 {
+    font-size: 18px;
+    font-weight: 300;
+    margin-bottom: 10px;
+} */
+
+.swiperPagination {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.swiperPagination :global(.swiper-pagination-bullet) {
+    background: #fff;
+    opacity: 1;
+    width: 10px;
+    height: 10px;
+    position: relative;
+}
+
+.swiperPagination :global(.swiper-pagination-bullet-active)::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    margin: -3px;
+    border-radius: 50%;
+    background: linear-gradient(180deg, #C400B9 0%, #5D0058 119.29%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: -1;
+}
+
+.swiperPagination :global(.swiper-pagination-bullet-active) {
+    opacity: 1;
+    background: linear-gradient(180deg, #C400B9 0%, #5D0058 119.29%);
+}
+
+.swiperPaginationBulletActive {
+    opacity: 1;
+}
+
+.submitButton {
+    line-height: 22px;
+    font-weight: 400;
+    font-size: 15px;
+    padding: 25px 35px;
+    border-radius: 100px;
+    color: #fff;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    background-color: transparent;
+    transition: 0.5s;
+    border: 1px solid white;
+    white-space: nowrap;
+}
+
+.submitButton:hover {
+    background: linear-gradient(95.63deg, #C400B9 17.83%, #5D0058 159.96%);
+    box-shadow: 0px 20px 40px rgba(196, 1, 185, 0.6);
+    border: 1px solid rgba(196, 1, 185, 0.6);
+}

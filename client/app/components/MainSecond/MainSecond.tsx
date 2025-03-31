@@ -19,7 +19,7 @@ const MainSecond = () => {
                     <a href="#" className={styles.btn}>Розкажіть про свій проєкт<img src="/images/arrow_top_right.svg" alt="" /></a>
                 </div>
                 <div className={styles.contentRight}>
-                <ul className={styles.contentList}>
+                    <ul className={styles.contentList}>
                         <li>
                             <img src="/images/01.svg" alt="images 01" />
                             <div className={styles.textContent}>
