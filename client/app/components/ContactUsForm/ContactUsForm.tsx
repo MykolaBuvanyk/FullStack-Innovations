@@ -107,8 +107,9 @@ const ContactUsForm = () => {
     <div className={styles.formContainer}>
       <div className={styles.formContainerLeft}>
         <form className={styles.form} onSubmit={handleSubmit} noValidate>
+        <h2>СВЯЖИТЕСЬ С НАМИ ДЛЯ РАСЧЕТА СТОИМОСТИ</h2>
           <div className={styles.formWrapper}>
-            <h2>СВЯЖИТЕСЬ С НАМИ ДЛЯ РАСЧЕТА СТОИМОСТИ</h2>
+            
             <div className={styles.formGroupWrapper}>
               <div className={styles.formGroup}>
                 <input
