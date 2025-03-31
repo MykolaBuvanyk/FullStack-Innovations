@@ -13,7 +13,7 @@
   flex-direction: column;
   justify-content: center;
   gap: 50px;
-  width: 50%;
+  /* width: 50%; */
 }
 
 .formContainerLeft h2 {
