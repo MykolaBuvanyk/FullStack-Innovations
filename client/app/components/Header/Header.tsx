@@ -5,12 +5,13 @@ import { usePathname, useRouter } from 'next/navigation';
 import Link from 'next/link';
 
 const Header = () => {
+  
   const pathname = usePathname();
   const router = useRouter();
   const currentLang = pathname.split('/')[1] || 'uk';
   const [isLangDropdownOpen, setIsLangDropdownOpen] = useState(false);
   const [isTelDropdownOpen, setIsTelDropdownOpen] = useState(false);
-  const langDropdownRef = useRef(null);
+  const langDropdownRef = useRef<HTMLDivElement | null>(null);
   
   const languages = [
     { code: 'uk', name: 'Українська', flag: '🇺🇦' },
@@ -36,11 +37,11 @@ const Header = () => {
   ];
 
   // Перевіряємо, чи код є дійсним кодом мови з нашого списку
-  const isValidLanguageCode = (code) => {
+  const isValidLanguageCode = (code: string) => {
     return languages.some(lang => lang.code === code);
   };
 
-  const getNewPath = (langCode) => {
+  const getNewPath = (langCode: string) => {
     // Початковий шлях без лідируючого "/"
     const pathWithoutLeadingSlash = pathname.startsWith('/') ? pathname.slice(1) : pathname;
     
@@ -60,7 +61,7 @@ const Header = () => {
     return '/' + pathParts.join('/');
   };
 
-  const handleLanguageChange = (langCode) => {
+  const handleLanguageChange = (langCode: string) => {
     document.cookie = `preferred-locale=${langCode}; path=/; max-age=${60 * 60 * 24 * 30}`; // 30 днів
     
     // Використовуємо програмну навігацію замість Link для кращого контролю
@@ -71,8 +72,8 @@ const Header = () => {
   };
 
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (langDropdownRef.current && !langDropdownRef.current.contains(event.target)) {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (langDropdownRef.current && !langDropdownRef.current.contains(event.target as Node)) {
         setIsLangDropdownOpen(false);
       }
     };

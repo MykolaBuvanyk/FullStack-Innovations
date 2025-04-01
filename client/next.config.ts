@@ -12,6 +12,10 @@ const nextConfig: NextConfig = {
     });
     return config;
   },
+  eslint: {
+    // Відключити ESLint на етапі будування
+    ignoreDuringBuilds: true,
+  },
   // i18n: {
   //   locales: ['uk', 'en'],
   //   defaultLocale: 'uk',

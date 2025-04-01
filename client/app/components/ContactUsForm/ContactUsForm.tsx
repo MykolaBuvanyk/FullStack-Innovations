@@ -4,7 +4,7 @@ import { useState } from "react";
 import styles from "./ContactUsForm.module.css";
 
 const ContactUsForm = () => {
-  const [activeIcon, setActiveIcon] = useState(null);
+  const [activeIcon, setActiveIcon] = useState<string | null>(null);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -20,12 +20,12 @@ const ContactUsForm = () => {
     method: "",
   });
 
-  const handleIconClick = (icon) => {
-    setActiveIcon(icon);
+  const handleIconClick = (iicon: string) => { // Use the correct parameter name
+    setActiveIcon(iicon); // Replace 'icon' with 'iicon'
     setErrors((prev) => ({ ...prev, method: "" }));
   };
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value, type, checked } = e.target;
     setFormData((prev) => ({
       ...prev,

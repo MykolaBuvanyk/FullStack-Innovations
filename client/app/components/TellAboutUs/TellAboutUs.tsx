@@ -93,7 +93,7 @@ const reviews = [
 ];
 
 const TellAboutUs = () => {
-    const renderStars = (rating) => {
+    const renderStars = (rating: number) => {
         const fullStars = rating;
         const emptyStars = 5 - fullStars;
 

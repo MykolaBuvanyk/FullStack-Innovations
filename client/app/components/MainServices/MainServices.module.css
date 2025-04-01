@@ -1,0 +1,343 @@
+/* .mainServices {
+    padding: 0 12.5vw;
+    margin-top: 150px;
+    height: 330px;
+    font-family: 'Helvetica Neue', sans-serif;
+    color: #fff;
+    margin-top: 150px;
+}
+
+.heroContainer {
+    display: flex;
+    gap: 5.7vw;
+    align-items: flex-start;
+}
+
+.heroContent {
+    width: 100%;
+}
+
+.heroText {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.heroText p {
+    align-items: center;
+    font-weight: 500;
+    font-size: 20px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.heroTitle {
+    display: flex;
+    font-weight: 700;
+    font-size: 70px;
+    background-image: url('/images/abstract-purple-blue-wave-background (2).png');
+    background-size: cover;
+    background-position: center;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.tabs {
+    display: flex;
+    gap: 10px;
+    margin-top: 2.8vh;
+}
+
+.tabButton {
+    padding: 10px 30px;
+    font-size: 18px;
+    font-weight: 300;
+    color: #fff;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 1);
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.tabButton:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.tabButton.active {
+    background: linear-gradient(180deg, #C400B9 0%, #5D0058 119.29%);
+    border: none;
+}
+
+.servicesList {
+    list-style: none;
+    padding: 0;
+    justify-content: start;
+    display: flex;
+    gap: 15px;
+    width: 50%;
+    flex-wrap: wrap;
+    margin-top: 3.7vh;
+}
+
+.serviceItem {
+    white-space: nowrap;
+    font-size: 18px;
+    font-weight: 100;
+    width: 45%;
+    box-sizing: border-box;
+    position: relative;
+    display: inline;
+    padding-left: 15px;
+}
+
+.serviceItem::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: rgba(195, 0, 185, 1);
+} */
+.mainServices {
+    padding: 0 12.5vw;
+    margin-top: 150px;
+    font-family: "Helvetica Neue", sans-serif;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.heroContainer {
+    display: flex;
+    gap: 5.7vw;
+    align-items: flex-start;
+}
+
+.heroContent {
+    width: 100%;
+}
+
+.heroText {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.heroText p {
+    align-items: center;
+    font-weight: 500;
+    font-size: 20px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.heroTitle {
+    display: flex;
+    font-weight: 700;
+    font-size: 70px;
+    background-image: url("/images/abstract-purple-blue-wave-background (2).png");
+    background-size: cover;
+    background-position: center;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.tabs {
+    display: flex;
+    gap: 10px;
+    margin-top: 50px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.tabButton {
+    padding: 10px 30px;
+    font-size: 18px;
+    font-weight: 300;
+    color: #fff;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 1);
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.tabButton:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.tabButton.active {
+    background: linear-gradient(180deg, #c400b9 0%, #5d0058 119.29%);
+    border: none;
+}
+
+.servicesList {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); */
+    grid-template-columns: repeat(2, 1fr);
+    /* Адаптивна сітка */
+    gap: 30px;
+    margin-top: 50px;
+
+}
+
+.serviceItem {
+    background: linear-gradient(180deg, #2a2a3e 0%, #1a1a2e 100%);
+    /* Градієнтний фон картки */
+    border-radius: 10px;
+    overflow: visible;
+    transition: transform 0.3s ease;
+}
+
+.serviceItem:hover {
+    transform: translateY(-5px);
+}
+
+.serviceCard {
+    display: flex;
+    width: 36.7vw;
+    aspect-ratio: 1/0.5;
+    padding-left: 40px;
+    overflow: visible;
+    position: relative;
+}
+
+.serviceCardText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.serviceCardImageWrapper {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    overflow: visible;
+}
+
+.serviceCardImage {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+.serviceImage {
+    position: absolute;
+    z-index: 2;
+    object-fit: contain;
+}
+
+.landingImage{
+    width: 128%;
+    height: auto;
+    top: -10%;
+    right: -5%;
+
+}
+
+.multipageImage {
+    height: 220px;
+    object-position: center right;
+    /* Зображення зміщене вправо */
+}
+
+.onlineStoreImage {
+    height: 180px;
+    object-position: center center;
+}
+
+.deliverySiteImage {
+    height: 200px;
+    object-position: bottom center;
+    /* Зображення вирівняне по нижньому центру */
+}
+
+.businessSiteImage {
+    height: 190px;
+    object-position: top left;
+    /* Зображення зміщене вліво */
+}
+
+.mobileAppsImage {
+    height: 210px;
+    object-position: center center;
+}
+
+.googleAdsImage {
+    height: 150px;
+    object-position: center center;
+}
+
+.seoImage {
+    height: 150px;
+    object-position: center right;
+}
+
+.modeling2DImage {
+    height: 150px;
+    object-position: center center;
+}
+
+.modeling3DImage {
+    height: 150px;
+    object-position: center left;
+    /* Зображення зміщене вліво */
+}
+
+.serviceTitle {
+    font-size: 30px;
+    font-weight: 700;
+    color: #fff;
+    /* margin: 15px 15px 10px; */
+}
+
+.serviceDescription {
+    font-size: 18px;
+    font-weight: 100;
+    margin-top: 15px;
+}
+
+.serviceDescription span {
+    font-weight: 700;
+}
+
+.serviceButton {
+    padding: 15px 0;
+    width: 55%;
+    background: transparent;
+    /* Рожевий колір кнопки */
+    color: #fff;
+    border: none;
+    border-radius: 100px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    border: #fff 1px solid;
+    transition: background 0.3s ease;
+    text-align: center;
+    margin-top: 30px;
+
+}
+
+.serviceButton:hover {
+    background: #c61bc7;
+    /* Темніший відтінок при наведенні */
+}
+
+.emptyCard {
+    height: 100%;
+    background: transparent;
+}
