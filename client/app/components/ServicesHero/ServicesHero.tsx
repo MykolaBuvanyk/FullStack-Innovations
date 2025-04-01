@@ -35,7 +35,7 @@ const services = {
 };
 
 const ServicesHero = () => {
-    const [activeTab, setActiveTab] = useState('websites');
+    const [activeTab, setActiveTab] = useState<keyof typeof services>('websites');
     const currentServices = [...services[activeTab]];
     while (currentServices.length < 4) {
       currentServices.push('');
@@ -61,7 +61,7 @@ const ServicesHero = () => {
                                 key={tab.value}
                                 className={`${styles.tabButton} ${activeTab === tab.value ? styles.active : ''
                                     }`}
-                                onClick={() => setActiveTab(tab.value)}
+                                onClick={() => setActiveTab(tab.value as keyof typeof services)}
                             >
                                 {tab.label}
                             </button>

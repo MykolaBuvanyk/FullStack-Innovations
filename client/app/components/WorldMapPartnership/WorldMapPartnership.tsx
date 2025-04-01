@@ -22,7 +22,7 @@ const countries = [
 ];
 
 const WorldMapPartnership = () => {
-  const [hoveredCountry, setHoveredCountry] = useState(null);
+  const [hoveredCountry, setHoveredCountry] = useState<string | null>(null);
 
   return (
     <section className={styles.worldMap}>

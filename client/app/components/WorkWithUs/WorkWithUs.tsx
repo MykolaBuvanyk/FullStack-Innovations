@@ -5,13 +5,13 @@ import styles from "./WorkWithUs.module.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
-
+import type { Swiper as SwiperType } from "swiper";
 const WorkWithUs = () => {
-    const swiperRef = useRef(null);
+    const swiperRef = useRef<SwiperType | null>(null); // Explicitly type the ref
 
     useEffect(() => {
-        if (swiperRef.current && swiperRef.current.swiper) {
-            swiperRef.current.swiper.autoplay.start();
+        if (swiperRef.current) {
+            swiperRef.current.autoplay.start(); // Access the Swiper instance safely
         }
     }, []);
 
@@ -29,9 +29,9 @@ const WorkWithUs = () => {
             </div>
             <div className={styles.workWithUsContainer}>
                 <Swiper
-                    ref={swiperRef}
+                    onSwiper={(swiper) => (swiperRef.current = swiper)}
                     modules={[Autoplay]}
-                    spaceBetween={20}
+                    spaceBetween={90}
                     slidesPerView={6}
                     loop={true}
                     freeMode={true}
@@ -60,7 +60,7 @@ const WorkWithUs = () => {
                     <SwiperSlide className={styles.workWithUsEl}>
                         <img src="/images/WorkWithUs/6.svg" alt="" />
                     </SwiperSlide>
-                                        <SwiperSlide className={styles.workWithUsEl}>
+                    <SwiperSlide className={styles.workWithUsEl}>
                         <img src="/images/WorkWithUs/1.svg" alt="" />
                     </SwiperSlide>
                     <SwiperSlide className={styles.workWithUsEl}>
