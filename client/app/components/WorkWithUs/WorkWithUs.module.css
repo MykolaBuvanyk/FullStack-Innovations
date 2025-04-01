@@ -64,18 +64,18 @@
 }
 
 .workWithUsEl {
-    /* flex: 0 0 auto; */
+    flex: 0 0 auto;
     transition: opacity 0.3s ease-in-out;
-    /* width: 16%; */
-    display: inline-flex;
+    width: 16%;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.workWithUsEl svg {
-    height: auto;
-    /* object-fit: contain; */
-    /* max-width: 13.12vw; */
+.workWithUsEl img {
+    width: 100%;
+    object-fit: contain;
+    max-width: 13.12vw;
     filter: invert(50%) sepia(0%) saturate(100%) hue-rotate(0deg) brightness(90%) contrast(85%);
     opacity: 0.5;
     mix-blend-mode: color-burn;
