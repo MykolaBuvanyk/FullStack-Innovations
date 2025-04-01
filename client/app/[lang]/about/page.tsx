@@ -9,6 +9,7 @@ import TellAboutUs from '@/app/components/TellAboutUs/TellAboutUs';
 import WorkWithUs from '@/app/components/WorkWithUs/WorkWithUs';
 import WorldMapPartnership from '@/app/components/WorldMapPartnership/WorldMapPartnership';
 import ContactUsForm from '@/app/components/ContactUsForm/ContactUsForm';
+import AboutHero from "@/app/components/AboutHero/AboutHero";
 // type Props = {
 //     params: { lang: Locale };
 // };
@@ -16,6 +17,7 @@ export default function About() {
     return (
         <div>
             <NavPath />
+            <AboutHero/>
             <AboutPeopleSlider/>
             <ButtonTop />
             <ServicesHero />
