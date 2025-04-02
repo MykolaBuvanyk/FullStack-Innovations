@@ -12,7 +12,7 @@ const allServices = [
         image: "/images/MainServices/landing.png",
         h1: "Лендінг",
         p: "до 20 робочих днів",
-        buttonText: "Вартість від 1 300$",
+        buttonText: "від 1 300$",
         imageClass: "landingImage", // Індивідуальний клас для Лендінгу
     },
     {
@@ -21,7 +21,7 @@ const allServices = [
         image: "/images/MainServices/multipage.png",
         h1: "Багатосторінковий",
         p: "до 35 робочих днів",
-        buttonText: "Вартість від 2 000$",
+        buttonText: "від 2 000$",
         imageClass: "multipageImage", // Індивідуальний клас для Багатосторінкового
     },
     {
@@ -30,7 +30,7 @@ const allServices = [
         image: "/images/MainServices/online-store.png",
         h1: "Інтернет-магазин",
         p: "до 20 робочих днів",
-        buttonText: "Вартість від 2 000$",
+        buttonText: "від 2 000$",
         imageClass: "onlineStoreImage", // Індивідуальний клас для Інтернет-магазину
     },
     {
@@ -39,7 +39,7 @@ const allServices = [
         image: "/images/MainServices/delivery-site.png",
         h1: "Сайт для доставки",
         p: "до 20 робочих днів",
-        buttonText: "Вартість від 2 000$",
+        buttonText: "від 2 000$",
         imageClass: "deliverySiteImage", // Індивідуальний клас для Сайту для доставки
     },
     {
@@ -48,7 +48,7 @@ const allServices = [
         image: "/images/MainServices/business-site.png",
         h1: "Бізнес сайт",
         p: "до 20 робочих днів",
-        buttonText: "Вартість від 1 300$",
+        buttonText: "від 1 300$",
         imageClass: "businessSiteImage", // Індивідуальний клас для Бізнес сайту
     },
     {
@@ -57,7 +57,7 @@ const allServices = [
         image: "/images/MainServices/mobile-apps.png",
         h1: "Мобільні застосунки",
         p: "до 35 робочих днів",
-        buttonText: "Вартість від 2 000$",
+        buttonText: "від 2 000$",
         imageClass: "mobileAppsImage", // Індивідуальний клас для Мобільних застосунків
     },
     {
@@ -66,7 +66,7 @@ const allServices = [
         image: "/images/MainServices/google-ads.png",
         h1: "Google Ads",
         p: "до 20 робочих днів",
-        buttonText: "Вартість від 2 000$",
+        buttonText: "від 2 000$",
         imageClass: "googleAdsImage", // Індивідуальний клас для Google Ads
     },
     {
@@ -75,7 +75,7 @@ const allServices = [
         image: "/images/MainServices/seo.png",
         h1: "SEO-просування",
         p: "до 20 робочих днів",
-        buttonText: "Вартість від 1 300$",
+        buttonText: "від 1 300$",
         imageClass: "seoImage", // Індивідуальний клас для SEO-просування
     },
     {
@@ -84,7 +84,7 @@ const allServices = [
         image: "/images/MainServices/3d-modeling.png",
         h1: "2D моделювання",
         p: "до 20 робочих днів",
-        buttonText: "Вартість від 1 300$",
+        buttonText: "від 1 300$",
         imageClass: "modeling2DImage", // Індивідуальний клас для 2D моделювання
     },
     {
@@ -93,7 +93,7 @@ const allServices = [
         image: "/images/MainServices/3d-modeling.png",
         h1: "3D моделювання",
         p: "до 35 робочих днів",
-        buttonText: "Вартість від 2 000$",
+        buttonText: "від 2 000$",
         imageClass: "modeling3DImage", // Індивідуальний клас для 3D моделювання
     },
 ];
@@ -179,12 +179,12 @@ const MainServices = () => {
                         {currentServices.map((service) => (
                             <li key={service.id} className={styles.serviceItem}>
                                 <div className={styles.serviceCard}>
-
+                                    
                                     <div className={styles.serviceCardText}>
                                         <h2 className={styles.serviceTitle}>{service.h1}</h2>
                                         <p className={styles.serviceDescription}>Термін реалізації: <span>{service.p}</span></p>
                                         <button className={styles.serviceButton}>
-                                            {service.buttonText}
+                                            Вартість <span>{service.buttonText}</span>
                                         </button>
                                     </div>
                                     <div className={styles.serviceCardImageWrapper}>

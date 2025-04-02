@@ -98,7 +98,7 @@
 
 .aboutHeroSphereWrapper {
     display: flex;
-    width: 40%;
+    width: 20.5vw;
     position: relative;
     aspect-ratio: 1/1;
   }
@@ -106,13 +106,14 @@
   .spheraAdditionalWrapper{
     position: absolute;
     right: 0%;
+    
   }
   
   .spheraWrapper {
     position: absolute;
-    width: 50%;
-    height: auto;
-    right: 0%;
+    aspect-ratio: 1/1;
+    width: 20vw;
+    top: 0;
   }
   
   @media screen and (min-aspect-ratio: 16/9) {
@@ -139,20 +140,24 @@
   
   .sphereLarge {
     width: 19.9vw;
-    right: -1vw;
+    right: 0;
     top: 0;
   }
   
   .sphereMedium {
     width: 2.7vw;
-    left: -19.5vw;
-    top: -2vh;
+    /* left: -19.5vw;
+    top: -2vh; */
+    top: 0%;
+    left: 0%;
   }
   
   .sphereSmall {
     width: 1.4vw;
-    top: 29vh;
-    right: -1vw;
+    /* top: 29vh;
+    right: -1vw; */
+    bottom: 8%;
+    right: 0%;
   }
   
   .backgroundElipse {

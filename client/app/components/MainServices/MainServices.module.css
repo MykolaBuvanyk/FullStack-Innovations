@@ -143,6 +143,7 @@
     display: flex;
     font-weight: 700;
     font-size: 70px;
+    
     background-image: url("/images/abstract-purple-blue-wave-background (2).png");
     background-size: cover;
     background-position: center;
@@ -150,7 +151,6 @@
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-
 .tabs {
     display: flex;
     gap: 10px;
@@ -194,17 +194,21 @@
 }
 
 .serviceItem {
-    background: linear-gradient(180deg, #2a2a3e 0%, #1a1a2e 100%);
-    /* Градієнтний фон картки */
-    border-radius: 10px;
     overflow: visible;
     transition: transform 0.3s ease;
 }
 
-.serviceItem:hover {
+.serviceCard:hover {
     transform: translateY(-5px);
+    background: none;
+    background-color: #C500BA;
+    
 }
-
+.serviceCard:hover .serviceButton {
+    color: #C500BA;
+    background-color: #fff;
+    
+}
 .serviceCard {
     display: flex;
     width: 36.7vw;
@@ -212,10 +216,31 @@
     padding-left: 40px;
     overflow: visible;
     position: relative;
-}
+    border-radius: 10px;
+    /* background: rgb(24,16,32);
+    background: linear-gradient(156deg, rgba(24,16,32,1) 0%, rgba(24,16,32,1) 50%, rgba(63,12,64,1) 100%);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px); */
+    
+    background: radial-gradient(circle at 83% 100%, rgba(79, 9, 84, 0.7), rgba(24, 16, 41, 0.7) 70%), rgba(24, 16, 41, 0.7);
+    -webkit-backdrop-filter: blur(50px);
+    backdrop-filter: blur(50px);
+
+  }
+
+/* .serviceCard {
+    display: flex;
+    width: 36.7vw;
+    aspect-ratio: 1/0.5;
+    padding-left: 40px;
+    border-radius: 10px;
+    overflow: visible;
+    position: relative;
+} */
 
 .serviceCardText {
     display: flex;
+    width: 50%;
     flex-direction: column;
     justify-content: center;
 }
@@ -241,66 +266,82 @@
 }
 
 .landingImage{
-    width: 128%;
+    width: 21.72vw;
     height: auto;
-    top: -10%;
-    right: -5%;
+    /* top: -10%; */
+    bottom: 0%;
+    right: 0%;
 
 }
 
 .multipageImage {
-    height: 220px;
-    object-position: center right;
-    /* Зображення зміщене вправо */
+    width: 17.24vw;
+    height: auto;
+    top: 0%;
+    right: -2%;
 }
 
 .onlineStoreImage {
-    height: 180px;
-    object-position: center center;
+    width: 12.34vw;
+    height: auto;
+    bottom: 0%;
+    right: 10%;
 }
 
 .deliverySiteImage {
-    height: 200px;
-    object-position: bottom center;
-    /* Зображення вирівняне по нижньому центру */
+    width: 23.8vw;
+    height: auto;
+    bottom: 0%;
+    right: -15%;
 }
 
 .businessSiteImage {
-    height: 190px;
-    object-position: top left;
-    /* Зображення зміщене вліво */
+    width: 22vw;
+    height: auto;
+    bottom: 0%;
+    right: 0%;
 }
 
 .mobileAppsImage {
-    height: 210px;
-    object-position: center center;
+    width: 19.5vw;
+    height: auto;
+    bottom: 0%;
+    right: 0%;
 }
 
 .googleAdsImage {
-    height: 150px;
-    object-position: center center;
+    width: 13vw;
+    height: auto;
+    bottom: 20%;
+    right: 3%;
 }
 
 .seoImage {
-    height: 150px;
-    object-position: center right;
+    width: 22vw;
+    height: auto;
+    bottom: 10%;
+    right: -15%;
 }
 
 .modeling2DImage {
-    height: 150px;
-    object-position: center center;
+    width: 20.5vw;
+    height: auto;
+    bottom: 0%;
+    right: -5%;
 }
 
 .modeling3DImage {
-    height: 150px;
-    object-position: center left;
-    /* Зображення зміщене вліво */
+    width: 20.5vw;
+    height: auto;
+    bottom: 0%;
+    right: -5%;
 }
 
 .serviceTitle {
     font-size: 30px;
     font-weight: 700;
     color: #fff;
+    hyphens: auto;
     /* margin: 15px 15px 10px; */
 }
 
@@ -312,10 +353,11 @@
 
 .serviceDescription span {
     font-weight: 700;
+
 }
 
 .serviceButton {
-    padding: 15px 0;
+    padding: 15px 0px;
     width: 55%;
     background: transparent;
     /* Рожевий колір кнопки */
@@ -326,18 +368,16 @@
     font-weight: 700;
     cursor: pointer;
     border: #fff 1px solid;
-    transition: background 0.3s ease;
+    transition: 0.3s ease;
     text-align: center;
     margin-top: 30px;
+    
 
 }
-
+.serviceButton span{
+    white-space: nowrap;
+}
 .serviceButton:hover {
     background: #c61bc7;
     /* Темніший відтінок при наведенні */
-}
-
-.emptyCard {
-    height: 100%;
-    background: transparent;
 }
