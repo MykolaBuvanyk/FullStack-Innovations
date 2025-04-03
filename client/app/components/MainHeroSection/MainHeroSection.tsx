@@ -1,6 +1,13 @@
+'use client';
+
 import styles from './MainHeroSection.module.css';
 import Marquee from "../Marquee/Marquee";
-const MainHeroSection = () => {
+
+type Props = {
+  dictionary: any;
+};
+
+const MainHeroSection: React.FC<Props> = ({ dictionary }) => {
     return (
         <section className={styles.hero}>
             <div className={styles.blurCircles}>
@@ -11,20 +18,19 @@ const MainHeroSection = () => {
             </div>
             <div className={styles.heroContent}>
                 <div className={styles.contentLeft}>
-                    <h1 className={styles.heroHeaderText}>Fullstack innovations</h1>
-                    <p>Розробка сайтів <span>та комплексне</span> просування вашого бізнесу <span>в лідери</span></p>
-                    <a href="#" className={styles.btn}>Зв’язатися з нами<img src="/images/arrow_top_right.svg" alt="" /></a>
+                    <h1 className={styles.heroHeaderText}>{dictionary.header}</h1>
+                    <p dangerouslySetInnerHTML={{ __html: dictionary.description }}></p>
+                    <a href="#" className={styles.btn}>
+                        {dictionary.contactButton}
+                        <img src="/images/arrow_top_right.svg" alt="" />
+                    </a>
                 </div>
                 <div className={styles.contentRight}>
                     <div className={styles.getOfferWrapper}>
                         <a href="#" className={styles.getOffer}>
                             <img src="/images/arrow_top_right.svg" alt="" />
-                            <p>
-                                отримати
-                            </p>
-                            <p>
-                                пропозицію
-                            </p>
+                            <p>{dictionary.getOffer}</p>
+                            <p>{dictionary.offer}</p>
                         </a>
                     </div>
 
@@ -47,8 +53,8 @@ const MainHeroSection = () => {
                         </div>
                     </div>
                     <div className={styles.developCount}>
-                        <p>Кількість розроблених сайтів</p>
-                        <h1>200 +</h1>
+                        <p>{dictionary.developedSitesLabel}</p>
+                        <h1>{dictionary.developedSitesCount}</h1>
                     </div>
                 </div>
             </div>

@@ -3,7 +3,11 @@
 import { useState } from "react";
 import styles from "./ContactUsForm.module.css";
 
-const ContactUsForm = () => {
+type Props = {
+  dictionary: any;
+};
+
+const ContactUsForm: React.FC<Props> = ({ dictionary }) => {
   const [activeIcon, setActiveIcon] = useState<string | null>(null);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [formData, setFormData] = useState({
@@ -20,8 +24,8 @@ const ContactUsForm = () => {
     method: "",
   });
 
-  const handleIconClick = (iicon: string) => { // Use the correct parameter name
-    setActiveIcon(iicon); // Replace 'icon' with 'iicon'
+  const handleIconClick = (iicon: string) => {
+    setActiveIcon(iicon);
     setErrors((prev) => ({ ...prev, method: "" }));
   };
 
@@ -45,30 +49,30 @@ const ContactUsForm = () => {
     let isValid = true;
 
     if (!formData.name.trim()) {
-      newErrors.name = "Заповніть ім'я";
+      newErrors.name = dictionary.errors.name;
       isValid = false;
     }
 
     if (!formData.email.trim()) {
-      newErrors.email = "Заповніть пошту";
+      newErrors.email = dictionary.errors.email;
       isValid = false;
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = "Введіть коректний E-mail";
+      newErrors.email = dictionary.errors.emailInvalid;
       isValid = false;
     }
 
     if (!formData.message.trim()) {
-      newErrors.message = "Введіть повідомлення";
+      newErrors.message = dictionary.errors.message;
       isValid = false;
     }
 
     if (!formData.policy) {
-      newErrors.policy = "Погодьтеся з політикою конфіденційності";
+      newErrors.policy = dictionary.errors.policy;
       isValid = false;
     }
 
     if (!activeIcon) {
-      newErrors.method = "Виберіть спосіб зв’язку";
+      newErrors.method = dictionary.errors.method;
       isValid = false;
     }
 
@@ -99,17 +103,12 @@ const ContactUsForm = () => {
     }, 5000);
   };
 
-  const handleResubmit = () => {
-    setIsSubmitted(false);
-  };
-
   return (
     <div className={styles.formContainer}>
       <div className={styles.formContainerLeft}>
         <form className={styles.form} onSubmit={handleSubmit} noValidate>
-        <h2>СВЯЖИТЕСЬ С НАМИ ДЛЯ РАСЧЕТА СТОИМОСТИ</h2>
+          <h2>{dictionary.title}</h2>
           <div className={styles.formWrapper}>
-            
             <div className={styles.formGroupWrapper}>
               <div className={styles.formGroup}>
                 <input
@@ -122,7 +121,7 @@ const ContactUsForm = () => {
                   onChange={handleChange}
                 />
                 <label htmlFor="name" className={styles.label}>
-                  Ваше имя
+                  {dictionary.fields.name}
                 </label>
                 {errors.name && (
                   <div className={styles.error}>{errors.name}</div>
@@ -139,7 +138,7 @@ const ContactUsForm = () => {
                   onChange={handleChange}
                 />
                 <label htmlFor="email" className={styles.label}>
-                  Ваш E-mail
+                  {dictionary.fields.email}
                 </label>
                 {errors.email && (
                   <div className={styles.error}>{errors.email}</div>
@@ -157,7 +156,7 @@ const ContactUsForm = () => {
                 onChange={handleChange}
               />
               <label htmlFor="message" className={styles.label}>
-                Напишите все что Вам нужно
+                {dictionary.fields.message}
               </label>
               {errors.message && (
                 <div className={styles.error}>{errors.message}</div>
@@ -173,14 +172,14 @@ const ContactUsForm = () => {
                 onChange={handleChange}
               />
               <label htmlFor="policy" className={styles.checkboxLabel}>
-                Я принимаю Политику конфиденциальности
+                {dictionary.fields.policy}
               </label>
             </div>
             {errors.policy && (
               <div className={styles.error}>{errors.policy}</div>
             )}
           </div>
-          <p className={styles.iconPara}>Виберіть зручний спосіб зв'язку</p>
+          <p className={styles.iconPara}>{dictionary.methodLabel}</p>
           <div className={styles.messengerIcons}>
             {["telegram", "whatsapp", "viber", "phone", "email"].map((icon) => (
               <div
@@ -196,7 +195,7 @@ const ContactUsForm = () => {
                   className={styles.messengerIcon}
                 />
                 <span className={styles.messengerLabel}>
-                  {icon.charAt(0).toUpperCase() + icon.slice(1)}
+                  {dictionary.methods[icon]}
                 </span>
               </div>
             ))}
@@ -204,7 +203,7 @@ const ContactUsForm = () => {
           {errors.method && <div className={styles.error}>{errors.method}</div>}
           <div className={styles.buttonWrapper}>
             <button type="submit" className={styles.submitButton}>
-              Подать заявку
+              {dictionary.submitButton}
               <img src="/images/arrow_top_right.svg" alt="" />
             </button>
             {isSubmitted && (
@@ -215,7 +214,7 @@ const ContactUsForm = () => {
                     alt="Bell"
                     className={styles.notificationIcon}
                   />
-                  <span>Ваше повідомлення успішно надіслано. Дякуємо!</span>
+                  <span>{dictionary.successMessage}</span>
                 </div>
               </div>
             )}

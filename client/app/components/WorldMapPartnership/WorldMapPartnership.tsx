@@ -3,6 +3,10 @@
 import styles from './WorldMapPartnership.module.css';
 import { useState } from 'react';
 
+type Props = {
+  dictionary: any;
+};
+
 const countries = [
   { name: 'USA', x: 170, y: 130 },
   { name: 'Canada', x: 130, y: 80 },
@@ -17,23 +21,19 @@ const countries = [
   { name: 'China', x: 550, y: 160 },
   { name: 'Japan', x: 600, y: 150 },
   { name: 'India', x: 480, y: 190 },
-  { name : 'Poland', x: 360, y: 120},
-  { name : 'Ukraine', x: 370, y: 135}
+  { name: 'Poland', x: 360, y: 120 },
+  { name: 'Ukraine', x: 370, y: 135 },
 ];
 
-const WorldMapPartnership = () => {
+const WorldMapPartnership: React.FC<Props> = ({ dictionary }) => {
   const [hoveredCountry, setHoveredCountry] = useState<string | null>(null);
 
   return (
     <section className={styles.worldMap}>
-        <h2 className={styles.worldMapTitle}>Клієнти зі всього світу</h2>
+      <h2 className={styles.worldMapTitle}>{dictionary.title}</h2>
       <div className={styles.mapContainer}>
-        {/* Зображення мапи */}
         <div className={styles.mapBackground}>
-
-          {/* Точки для країн */}
           {countries.map((country, index) => {
-            // Переводимо координати в пікселях у відсотки
             const leftPercent = (country.x / 705) * 100;
             const topPercent = (country.y / 352) * 100;
 
@@ -54,17 +54,13 @@ const WorldMapPartnership = () => {
               </div>
             );
           })}
-        <div className={styles.getOfferWrapper}>
+          <div className={styles.getOfferWrapper}>
             <a href="#" className={styles.getOffer}>
-                <img src="/images/arrow_top_right.svg" alt="" />
-                <p>
-                    отримати
-                </p>
-                <p>
-                    пропозицію
-                </p>
+              <img src="/images/arrow_top_right.svg" alt="" />
+              <p>{dictionary.getOffer}</p>
+              <p>{dictionary.offer}</p>
             </a>
-        </div>
+          </div>
         </div>
       </div>
     </section>
