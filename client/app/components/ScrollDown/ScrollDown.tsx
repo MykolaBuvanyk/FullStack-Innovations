@@ -39,7 +39,7 @@ const ScrollDown = () => {
             {/* Іконка миші */}
             <div className={styles.buttonCircle}>
                 <svg width="14" height="22" viewBox="0 0 14 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="0.481533" y="0.701489" width="12.9731" height="20.4838" rx="6.48654" stroke="white" stroke-width="0.682793" />
+                    <rect x="0.481533" y="0.701489" width="12.9731" height="20.4838" rx="6.48654" stroke="white" strokeWidth="0.682793" />
                     <rect x="6.28503" y="4.4568" width="1.36559" height="2.73117" rx="0.682793" fill="white" />
                 </svg>
             </div>

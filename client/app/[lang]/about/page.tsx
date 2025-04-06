@@ -23,7 +23,11 @@ export default async function About({ params }: Props) {
             <NavPath />
             <AboutHero dictionary={aboutHero} />
             <AboutPeopleSlider />
+<<<<<<< HEAD
             {/* <ButtonTop /> */}
+=======
+            <ButtonTop />
+>>>>>>> b60723971ff622d21e0372d65d9055b21554c989
             <ServicesHero />
             <ChooseUs />
             <TellAboutUs dictionary={tellAboutUs} />
