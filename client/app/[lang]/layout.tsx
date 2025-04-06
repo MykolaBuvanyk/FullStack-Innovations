@@ -4,13 +4,14 @@ import Header from "../components/Header/Header";
 import "./globals.css";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
-import { Noto_Color_Emoji } from 'next/font/google';
+import {Noto_Color_Emoji } from 'next/font/google';
 import { Locale, i18n } from '@/i18n.config';
 import SocialLinks from "../components/SocialLinks/SocialLinks";
 import Footer from "../components/Footer/Footer";
 import { getDictionary } from '../../lib/dictionary';
 import { headers } from "next/headers";
 import ButtonTop from "../components/ButtonTop/ButtonTop";
+import Cookie from "../components/Cookie/Cookie";
 const notoEmoji = Noto_Color_Emoji({
   subsets: ['emoji'],
   weight: ['400'],
@@ -28,7 +29,7 @@ export default async function RootLayout({
   params: { lang: Locale };
 }) {
   const dictionary: any = await getDictionary(params.lang);
-  const { header, footer } = dictionary;
+  const { header, footer,cookie } = dictionary;
   return (
     <html
       lang={params.lang}
@@ -43,6 +44,7 @@ export default async function RootLayout({
       <body>
         <Header dictionary={header} />
         <SocialLinks />
+        <Cookie dictionary={cookie} />
         <ButtonTop/>
         {children}
         <Footer dictionary={footer} />

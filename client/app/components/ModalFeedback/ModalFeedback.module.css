@@ -1,184 +1,259 @@
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100000;
+  padding: 2.08vw;
+}
+
 .modalFeedbackWrapper {
-    font-family: 'Helvetica Neue', sans-serif;
-    background-color: #1a1f2e;
-    color: #ffffff;
-    padding: 20px;
-    border-radius: 15px;
-    max-width: 400px;
-    position: relative;
-    width: 28.3vw;
-    height: 100vh;
-  }
+  position: fixed;
+  height: 100vh;
+  width: 28.3vw;
+  font-family: 'Helvetica Neue', sans-serif;
+  background-color: #1a1f2e;
+  color: #ffffff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  right: 0;
+  z-index: 100000;
+}
+
+.backButton {
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 1);
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: rgba(255, 255, 255, 1);
+  font-weight: 100;
+}
+
+.titleWrapper {
+  margin: 2.81vw 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.title {
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 35px;
+}
+
+.titlePara {
+  font-size: 18px;
+  font-weight: 100;
+}
+
+.feedbackForm {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.formGroupWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2vw;
+}
+
+.formGroup {
+  position: relative;
+}
+
+.label {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 18px;
+  position: absolute;
+  bottom: 15px;
+  left: 0px;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.input {
+  width: 100%;
+  padding: 15px 0;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  background-color: transparent;
+  color: #fff;
+  font-size: 18px;
+  outline: none;
+}
+
+.input::placeholder {
+  color: transparent;
+}
+
+.input:focus+.label,
+.input:not(:placeholder-shown)+.label {
+  display: none;
+}
+
+.input:focus {
+  border-bottom: 1px solid #fff;
+}
+
+.select {
+  color: rgba(255, 255, 255, 0.4)8;
+  background: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4)8;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.select:focus {
+  color: #fff;
+  border-bottom: 1px solid #fff;
+}
+
+.options{
+  margin-bottom: 0.78vw;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5vw;
+  cursor: pointer;
+}
+
+.select option {
+  background: #1a1f2e;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.select option:checked {
+  background: #e71edc;
+  color: #fff;
+}
+
+.dropdownOpen {
+  color: white;
+  border-bottom: 1px solid white;
+}
+
+.dropdownClosed {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.dropDownClosedPara{
+  color: rgba(255, 255, 255, 0.4);
   
-  .backButton {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 5px;
+}
+
+.customSelect {
+  padding: 0.5rem 0;
+}
+
+.dropDownPara{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 2.6vw 0 1vw;
+}
+
+.active {
+  color: rgba(232, 30, 221, 1);
+}
+
+.error {
+  color: #ff4d4f;
+  font-size: 12px;
+  margin-top: 5px;
+  text-decoration: underline;
+
+  position: absolute;
+}
+
+.buttonWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.submitBtn {
+  font-size: 16px;
+  padding: 12px 24px;
+  border-radius: 50px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(95.63deg, #C400B9 17.83%, #5D0058 159.96%);
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 2.08vw;
+}
+
+.submitButton:hover {
+  box-shadow: 0px 10px 20px rgba(196, 1, 185, 0.4);
+}
+
+.submitButton img {
+  width: 16px;
+  height: 16px;
+  filter: invert(1);
+}
+
+.notification {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #E71EDC12;
+  backdrop-filter: blur(20px);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 15px;
+  font-size: 14px;
+}
+
+.notificationIcon {
+  width: 16px;
+  height: 16px;
+}
+
+@media (max-width: 768px) {
+  .modalFeedbackWrapper {
+    max-width: 90%;
+    padding: 15px;
   }
-  
-  .backButton img {
-    width: 20px;
-    height: 20px;
-    filter: invert(1);
-  }
-  
-  .titleWrapper {
-    text-align: center;
-    margin-bottom: 30px;
-  }
-  
+
   .title {
-    font-size: 24px;
-    font-weight: 700;
-    margin-bottom: 10px;
+    font-size: 20px;
   }
-  
+
   .titlePara {
-    font-size: 16px;
-    color: #888;
-  }
-  
-  .feedbackForm {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  
-  .inputWrapper {
-    position: relative;
-    margin-bottom: 20px;
-  }
-  
-  .label {
-    color: #888;
-    font-size: 16px;
-    position: absolute;
-    bottom: 10px;
-    left: 0;
-    transition: all 0.3s ease;
-    pointer-events: none;
-  }
-  
-  .input,
-  .select {
-    width: 100%;
-    padding: 10px 0;
-    border: none;
-    border-bottom: 1px solid #888;
-    background-color: transparent;
-    color: #fff;
-    font-size: 16px;
-    outline: none;
-  }
-  
-  .input::placeholder,
-  .select::placeholder {
-    color: transparent;
-  }
-  
-  .input:focus + .label,
-  .input:not(:placeholder-shown) + .label {
-    display: none;
-  }
-  
-  .select {
-    appearance: none;
-    background: url('/images/chevron-down.svg') no-repeat right center;
-    background-size: 16px;
-    padding-right: 20px;
-    cursor: pointer;
-  }
-  
-  .input:focus,
-  .select:focus {
-    border-bottom: 1px solid #fff;
-  }
-  
-  .error {
-    color: #ff4d4f;
-    font-size: 12px;
-    margin-top: 5px;
-    text-decoration: underline;
-  }
-  
-  .buttonWrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    margin-top: 20px;
-  }
-  
-  .submitButton {
-    font-size: 16px;
-    padding: 12px 24px;
-    border-radius: 50px;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background: linear-gradient(95.63deg, #C400B9 17.83%, #5D0058 159.96%);
-    border: none;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-  
-  .submitButton:hover {
-    box-shadow: 0px 10px 20px rgba(196, 1, 185, 0.4);
-  }
-  
-  .submitButton img {
-    width: 16px;
-    height: 16px;
-    filter: invert(1);
-  }
-  
-  .notification {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background-color: #E71EDC12;
-    backdrop-filter: blur(20px);
-    color: white;
-    padding: 10px 15px;
-    border-radius: 15px;
     font-size: 14px;
   }
-  
-  .notificationIcon {
-    width: 16px;
-    height: 16px;
+
+  .input,
+  .select {
+    font-size: 14px;
   }
-  
-  @media (max-width: 768px) {
-    .modalFeedbackWrapper {
-      max-width: 90%;
-      padding: 15px;
-    }
-  
-    .title {
-      font-size: 20px;
-    }
-  
-    .titlePara {
-      font-size: 14px;
-    }
-  
-    .input,
-    .select {
-      font-size: 14px;
-    }
-  
-    .label {
-      font-size: 14px;
-    }
-  
-    .submitButton {
-      font-size: 14px;
-      padding: 10px 20px;
-    }
+
+  .label {
+    font-size: 14px;
   }
+
+  .submitButton {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+}

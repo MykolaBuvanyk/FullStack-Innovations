@@ -8,6 +8,7 @@ import { Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import ModalFeedback from '../ModalFeedback/ModalFeedback';
+import { useState } from 'react';
 
 type Props = {
   dictionary: any;
@@ -15,7 +16,7 @@ type Props = {
 
 const reviews = [
   {
-    logo: '/images/logo.svg', 
+    logo: '/images/logo.svg',
   },
   {
     logo: '/images/logo.svg',
@@ -29,10 +30,13 @@ const reviews = [
 ];
 
 const TellAboutUs: React.FC<Props> = ({ dictionary }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
   const renderStars = (rating: number) => {
     const fullStars = rating;
     const emptyStars = 5 - fullStars;
-
     return (
       <div className={styles.ItemPointStar}>
         {[...Array(fullStars)].map((_, index) => (
@@ -54,7 +58,7 @@ const TellAboutUs: React.FC<Props> = ({ dictionary }) => {
       <div className={styles.tellAboutUsTitle}>
         <div className={styles.tellAboutUsTitleButton}>
           <h2 dangerouslySetInnerHTML={{ __html: dictionary.title }}></h2>
-          <button className={styles.submitButton}>
+          <button className={styles.submitButton} onClick={openModal}>
             {dictionary.buttonText}
             <img src="/images/arrow_top_right.svg" alt="" />
           </button>
@@ -106,7 +110,7 @@ const TellAboutUs: React.FC<Props> = ({ dictionary }) => {
         </Swiper>
         <div className={styles.swiperPagination}></div>
       </div>
-      {/* <ModalFeedback/> */}
+      <ModalFeedback isOpen={isModalOpen} closeModal={closeModal} />
     </section>
   );
 };

@@ -26,8 +26,7 @@ export default async function About({ params }: Props) {
             {/* <ButtonTop /> */}
             <ServicesHero />
             <ChooseUs />
-            <TellAboutUs dictionary={tellAboutUs} />
-            
+            <TellAboutUs dictionary={tellAboutUs} />    
             <WorkWithUs />
             <WorldMapPartnership dictionary={worldMapPartnership} />
             <ContactUsForm dictionary={contactUsForm} />
