@@ -10,22 +10,27 @@ import WorkWithUs from '@/app/components/WorkWithUs/WorkWithUs';
 import WorldMapPartnership from '@/app/components/WorldMapPartnership/WorldMapPartnership';
 import ContactUsForm from '@/app/components/ContactUsForm/ContactUsForm';
 import AboutHero from "@/app/components/AboutHero/AboutHero";
-// type Props = {
-//     params: { lang: Locale };
-// };
-export default function About() {
+import { getDictionary } from "@/lib/dictionary";
+import { Locale } from "@/i18n.config";
+type Props = {
+    params: { lang: Locale };
+};
+export default async function About({ params }: Props) {
+    const dictionary: any = await getDictionary(params.lang);
+    const { aboutHero, aboutPeopleSlider, servicesHero, chooseUs, tellAboutUs, workWithUs, worldMapPartnership, contactUsForm } = dictionary;
     return (
         <div>
             <NavPath />
-            <AboutHero/>
-            <AboutPeopleSlider/>
-            <ButtonTop />
+            <AboutHero dictionary={aboutHero} />
+            <AboutPeopleSlider />
+            {/* <ButtonTop /> */}
             <ServicesHero />
             <ChooseUs />
-            <TellAboutUs />
-            <WorkWithUs/>
-            <WorldMapPartnership/>
-            <ContactUsForm/>
+            <TellAboutUs dictionary={tellAboutUs} />
+            
+            <WorkWithUs />
+            <WorldMapPartnership dictionary={worldMapPartnership} />
+            <ContactUsForm dictionary={contactUsForm} />
         </div>
     );
 }
