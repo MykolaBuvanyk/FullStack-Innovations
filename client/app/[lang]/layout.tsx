@@ -4,18 +4,14 @@ import Header from "../components/Header/Header";
 import "./globals.css";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
-import { Noto_Color_Emoji } from 'next/font/google';
+import {Noto_Color_Emoji } from 'next/font/google';
 import { Locale, i18n } from '@/i18n.config';
 import SocialLinks from "../components/SocialLinks/SocialLinks";
 import Footer from "../components/Footer/Footer";
 import { getDictionary } from '../../lib/dictionary';
-<<<<<<< HEAD
 import { headers } from "next/headers";
 import ButtonTop from "../components/ButtonTop/ButtonTop";
-=======
-import { cookies, headers } from "next/headers";
-import Cookie from "../components/Coockie/Cookie";
->>>>>>> b60723971ff622d21e0372d65d9055b21554c989
+import Cookie from "../components/Cookie/Cookie";
 const notoEmoji = Noto_Color_Emoji({
   subsets: ['emoji'],
   weight: ['400'],
@@ -33,7 +29,7 @@ export default async function RootLayout({
   params: { lang: Locale };
 }) {
   const dictionary: any = await getDictionary(params.lang);
-  const { header, footer, cookie } = dictionary;
+  const { header, footer,cookie } = dictionary;
   return (
     <html
       lang={params.lang}
@@ -41,18 +37,15 @@ export default async function RootLayout({
       <head>
         <script src="https://kit.fontawesome.com/44ddc9fabc.js" crossOrigin="anonymous" async />
         <link
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-            rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+          rel="stylesheet"
         />
       </head>
       <body>
         <Header dictionary={header} />
         <SocialLinks />
-<<<<<<< HEAD
+        <Cookie dictionary={cookie} />
         <ButtonTop/>
-=======
-        <Cookie dictionary={cookie}/>
->>>>>>> b60723971ff622d21e0372d65d9055b21554c989
         {children}
         <Footer dictionary={footer} />
       </body>

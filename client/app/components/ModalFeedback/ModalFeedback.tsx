@@ -3,13 +3,6 @@
 import { useState } from "react";
 import styles from "./ModalFeedback.module.css";
 
-<<<<<<< HEAD
-const ModalFeedback = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    feedbackType: "1", // Default to first option
-=======
 const ModalFeedback: React.FC<ModalFeedbackProps> = ({
   isOpen,
   closeModal,
@@ -19,22 +12,15 @@ const ModalFeedback: React.FC<ModalFeedbackProps> = ({
     email: "",
     message: "",
     feedbackType: "1",
->>>>>>> b60723971ff622d21e0372d65d9055b21554c989
   });
   const [errors, setErrors] = useState({
     name: "",
     email: "",
-<<<<<<< HEAD
-    feedbackType: "",
-  });
-  const [isSubmitted, setIsSubmitted] = useState(false);
-=======
     message: "",
     feedbackType: "",
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [focused, setFocused] = useState({ feedbackType: true });
->>>>>>> b60723971ff622d21e0372d65d9055b21554c989
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -49,10 +35,7 @@ const ModalFeedback: React.FC<ModalFeedbackProps> = ({
     const newErrors = {
       name: "",
       email: "",
-<<<<<<< HEAD
-=======
       message: "",
->>>>>>> b60723971ff622d21e0372d65d9055b21554c989
       feedbackType: "",
     };
     let isValid = true;
@@ -75,14 +58,11 @@ const ModalFeedback: React.FC<ModalFeedbackProps> = ({
       isValid = false;
     }
 
-<<<<<<< HEAD
-=======
     if (!formData.message.trim()) {
       newErrors.message = "Заповніть відгук або пропозицію";
       isValid = false;
     }
     
->>>>>>> b60723971ff622d21e0372d65d9055b21554c989
     setErrors(newErrors);
     return isValid;
   };
@@ -100,98 +80,12 @@ const ModalFeedback: React.FC<ModalFeedbackProps> = ({
     setFormData({
       name: "",
       email: "",
-<<<<<<< HEAD
-=======
       message: "",
->>>>>>> b60723971ff622d21e0372d65d9055b21554c989
       feedbackType: "1",
     });
 
     setTimeout(() => {
       setIsSubmitted(false);
-<<<<<<< HEAD
-    }, 5000);
-  };
-
-  return (
-    <div className={styles.modalFeedbackWrapper}>
-      <button className={styles.backButton}>
-        <img src="/images/arrow-left.svg" alt="Back" />
-      </button>
-      <div className={styles.titleWrapper}>
-        <h2 className={styles.title}>Відгук або пропозиція щодо роботи</h2>
-        <p className={styles.titlePara}>Нам важлива, ваша думка</p>
-      </div>
-      <form className={styles.feedbackForm} onSubmit={handleSubmit} noValidate>
-        <div className={styles.inputWrapper}>
-          <label htmlFor="name" className={styles.label}>
-            Ваше ім'я
-          </label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            className={styles.input}
-            placeholder=" "
-            value={formData.name}
-            onChange={handleChange}
-          />
-          {errors.name && <div className={styles.error}>{errors.name}</div>}
-        </div>
-        <div className={styles.inputWrapper}>
-          <label htmlFor="email" className={styles.label}>
-            Ваш e-mail
-          </label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            className={styles.input}
-            placeholder=" "
-            value={formData.email}
-            onChange={handleChange}
-          />
-          {errors.email && <div className={styles.error}>{errors.email}</div>}
-        </div>
-        <div className={styles.inputWrapper}>
-          <label htmlFor="feedbackType" className={styles.label}>
-            Відгук або пропозиція
-          </label>
-          <select
-            id="feedbackType"
-            name="feedbackType"
-            className={styles.select}
-            value={formData.feedbackType}
-            onChange={handleChange}
-          >
-            <option value="1">1 — Погано</option>
-            <option value="2">2 — Можливо краще</option>
-            <option value="3">3 — Терпимо</option>
-            <option value="4">4 — Добре</option>
-            <option value="5">5 — Відмінно</option>
-          </select>
-          {errors.feedbackType && (
-            <div className={styles.error}>{errors.feedbackType}</div>
-          )}
-        </div>
-        <div className={styles.buttonWrapper}>
-          <button type="submit" className={styles.submitButton}>
-            Відправити
-            <img src="/images/arrow-right.svg" alt="Arrow" />
-          </button>
-          {isSubmitted && (
-            <div className={styles.notification}>
-              <img
-                src="/images/bell.svg"
-                alt="Bell"
-                className={styles.notificationIcon}
-              />
-              <span>Ваше повідомлення успішно надіслано. Дякуємо!</span>
-            </div>
-          )}
-        </div>
-      </form>
-=======
       closeModal();
     }, 5000);
   };
@@ -202,7 +96,7 @@ const ModalFeedback: React.FC<ModalFeedbackProps> = ({
     <div className={styles.modalOverlay}>
       <div className={styles.modalFeedbackWrapper}>
         <button className={styles.backButton} onClick={closeModal}>
-          <i className="fa-solid fa-arrow-left"></i>
+          <i className="fa-solid fa-arrow-right"></i>
         </button>
         <div className={styles.titleWrapper}>
           <h2 className={styles.title}>Відгук або пропозиція щодо роботи</h2>
@@ -333,13 +227,8 @@ const ModalFeedback: React.FC<ModalFeedbackProps> = ({
           </button>
         </form>
       </div>
->>>>>>> b60723971ff622d21e0372d65d9055b21554c989
     </div>
   );
 };
 
-<<<<<<< HEAD
 export default ModalFeedback;
-=======
-export default ModalFeedback;
->>>>>>> b60723971ff622d21e0372d65d9055b21554c989
