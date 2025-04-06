@@ -10,6 +10,7 @@ import SocialLinks from "../components/SocialLinks/SocialLinks";
 import Footer from "../components/Footer/Footer";
 import { getDictionary } from '../../lib/dictionary';
 import { headers } from "next/headers";
+import ButtonTop from "../components/ButtonTop/ButtonTop";
 const notoEmoji = Noto_Color_Emoji({
   subsets: ['emoji'],
   weight: ['400'],
@@ -42,6 +43,7 @@ export default async function RootLayout({
       <body>
         <Header dictionary={header} />
         <SocialLinks />
+        <ButtonTop/>
         {children}
         <Footer dictionary={footer} />
       </body>

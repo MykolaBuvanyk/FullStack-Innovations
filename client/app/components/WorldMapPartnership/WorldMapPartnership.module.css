@@ -6,6 +6,7 @@
 .worldMapTitle{
     font-size: 70px;
     font-weight: 500;
+    line-height: 80px;
     background-image: url('/images/abstract-purple-blue-wave-background (2).png');
     background-size: cover;
     background-position: center;

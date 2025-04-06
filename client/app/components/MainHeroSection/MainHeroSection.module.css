@@ -59,6 +59,7 @@
     font-size: 30px;
     color: #fff;
     margin-top: 30px;
+    line-height: 40px;
 }
 
 .contentLeft span {
@@ -204,6 +205,7 @@
 .developCount {
     position: absolute;
     display: flex;
+    gap: 15px;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -211,7 +213,9 @@
     border: 1px solid rgba(231, 30, 220, 0.07);
     border-radius: 30px;
     backdrop-filter: blur(10px);
-    padding: 1.3vw 1.82vw;
+    /* padding: 1.3vw 1.82vw; */
+    width: 16.7vw;
+    aspect-ratio: 1 / 0.47;
     right: 0;
     bottom: 14%;
 }
@@ -219,6 +223,7 @@
 .developCount h1 {
     font-size: 70px;
     font-weight: 700;
+    line-height: 60px;
     color: rgba(232, 30, 221, 1);
 }
 

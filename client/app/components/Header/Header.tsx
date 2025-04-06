@@ -94,9 +94,9 @@ const Header: React.FC<Props> = ({ dictionary }) => {
           </li>
           <li className={styles.headerWrapperEl}>
             <ul className={styles.headerList}>
-              <li className={styles.headerEl}>
+              {/* <li className={styles.headerEl}>
                 <Link href={`/${currentLang}`}>{dictionary.nav.home}</Link>
-              </li>
+              </li> */}
               <li className={[styles.headerEl, styles.headerDropdown].join(" ")}>
                 {dictionary.nav.services}
                 <i className="fa-solid fa-chevron-down"></i>

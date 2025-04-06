@@ -1,0 +1,295 @@
+{
+    "header": {
+        "nav": {
+            "home": "Main",
+            "services": "Services",
+            "portfolio": "Portfolio",
+            "about": "About us",
+            "partnership": "Partnership",
+            "blog": "Blog",
+            "contacts": "Contacts"
+        }
+    },
+    "footer": {
+        "links": {
+            "sitemap": "Sitemap",
+            "terms": "Terms of use",
+            "privacy": "Privacy policy",
+            "cookies": "Cookies"
+        }
+    },
+    "mainHero": {
+        "header": "Fullstack innovations",
+        "description": "Website development <span>and comprehensive</span> promotion of your business <span>to the top</span>",
+        "contactButton": "Contact us",
+        "getOffer": "get",
+        "offer": "a proposal",
+        "developedSitesLabel": "Number of developed websites",
+        "developedSitesCount": "200 +"
+    },
+    "mainSecond": {
+        "title": "You need us if",
+        "buttonText": "Tell us about your project",
+        "listItems": [
+            {
+                "title": "Do not have a website or are thinking about creating one",
+                "description": "You have opened a new business or direction and are not ready to invest tens of thousands of dollars in the first website, it is better to invest this amount in business development, but making a website for $300 is not a solution, you know what the quality will be. We are just the golden mean and do not use expensive technologies, we manage to give the quality of top sites for adequate money."
+            },
+            {
+                "title": "Outdated website design and functionality",
+                "description": "Your website was created several years ago and no longer meets current requirements. Competitors have updated their resources, and their sites look more modern, work faster, and attract more customers. Updating your website will improve its design, functionality, and adapt it to new technologies, which will help you attract a larger audience and increase business efficiency."
+            },
+            {
+                "title": "Change the platform",
+                "description": "Is your website on platforms like Tilda, Bitrix, Wix? Most of these sites have limitations: they are not practical, do not support functionality, often have problems, and conversion rates are low. These platforms require payment or take a percentage of sales. Sometimes access is limited and you need to use a VPN. Updating the website or switching to another platform will improve business efficiency."
+            },
+            {
+                "title": "Creating design packaging for business",
+                "description": "Our team will be able to cover all types of designs for your business on a turnkey basis. We create a new style of design, logo, branded elements, fonts, banners, covers, presentations, promotional materials, and everything related to the visual identity of your brand. We work to create a stylish and modern look for your business so that it meets all market requirements and is attractive to customers."
+            }
+        ]
+    },
+    "mainServices": {
+        "title": "Services",
+        "subtitle": "Fullstack innovations",
+        "tabs": [
+            {
+                "label": "All services",
+                "value": "all"
+            },
+            {
+                "label": "Web development",
+                "value": "web-development"
+            },
+            {
+                "label": "SEO promotion",
+                "value": "seo"
+            },
+            {
+                "label": "Google Ads",
+                "value": "ads"
+            },
+            {
+                "label": "Mobile applications",
+                "value": "mobile-apps"
+            },
+            {
+                "label": "2D design",
+                "value": "design"
+            },
+            {
+                "label": "3D modeling",
+                "value": "modeling"
+            }
+        ],
+        "costLabel": "Cost",
+        "deadlineLabel": "Realization period",
+        "detailsButton": "Read more",
+        "services": [
+            {
+                "id": 1,
+                "name": "Landing page",
+                "image": "/images/MainServices/landing.png",
+                "h1": "Landing page",
+                "p": "up to 10 working days",
+                "buttonText": "from $1300",
+                "imageClass": "landingImage"
+            },
+            {
+                "id": 2,
+                "name": "Multi-page website",
+                "image": "/images/MainServices/multipage.png",
+                "h1": "Multi-page website",
+                "p": "up to 35 working days",
+                "buttonText": "from $2000",
+                "imageClass": "multipageImage"
+            },
+            {
+                "id": 3,
+                "name": "E-commerce store",
+                "image": "/images/MainServices/online-store.png",
+                "h1": "E-commerce store",
+                "p": "up to 35 working days",
+                "buttonText": "from $2000",
+                "imageClass": "onlineStoreImage"
+            },
+            {
+                "id": 4,
+                "name": "Delivery website",
+                "image": "/images/MainServices/delivery-site.png",
+                "h1": "Delivery website",
+                "p": "up to 20 working days",
+                "buttonText": "from $2000",
+                "imageClass": "deliverySiteImage"
+            },
+            {
+                "id": 5,
+                "name": "Business website",
+                "image": "/images/MainServices/business-site.png",
+                "h1": "Business website",
+                "p": "up to 20 working days",
+                "buttonText": "from $1300",
+                "imageClass": "businessSiteImage"
+            },
+            {
+                "id": 6,
+                "name": "Mobile applications",
+                "image": "/images/MainServices/mobile-apps.png",
+                "h1": "Mobile applications",
+                "p": "up to 60 working days",
+                "buttonText": "from $6000",
+                "imageClass": "mobileAppsImage"
+            },
+            {
+                "id": 7,
+                "name": "Google Ads",
+                "image": "/images/MainServices/google-ads.png",
+                "h1": "Google Ads",
+                "p": "up to 10 working days",
+                "buttonText": "from $600",
+                "imageClass": "googleAdsImage"
+            },
+            {
+                "id": 8,
+                "name": "SEO promotion",
+                "image": "/images/MainServices/seo.png",
+                "h1": "SEO promotion",
+                "p": "monthly partnership",
+                "buttonText": "from $1300",
+                "imageClass": "seoImage"
+            },
+            {
+                "id": 9,
+                "name": "2D design",
+                "image": "/images/MainServices/3d-modeling.png",
+                "h1": "2D design",
+                "p": "up to 5 working days",
+                "buttonText": "from $300",
+                "imageClass": "modeling2DImage"
+            },
+            {
+                "id": 10,
+                "name": "3D modeling",
+                "image": "/images/MainServices/3d-modeling.png",
+                "h1": "3D modeling",
+                "p": "up to 7 working days",
+                "buttonText": "from $350",
+                "imageClass": "modeling3DImage"
+            }
+        ]
+    },
+    "ourPortfolioSlider": {
+        "title": "Our portfolio",
+        "buttonText": "Tell us about your project"
+    },
+    "aboutHero": {
+        "title": "Fullstack innovations<br />— is a unique agency",
+        "buttonText": "Tell us about your project",
+        "paragraphs": [
+            "We are a team of web development and innovation professionals ready to turn your concepts into successful and profitable projects. Since the end of 2021, we have already implemented more than 75 successful websites, which demonstrates our high level of expertise and professionalism.",
+            "Our approach is based on an individualized approach to each client, ensuring the development of modern, productive, and unique web solutions. We definitely take into account the latest trends and industry requirements to give your project a competitive edge."
+        ],
+        "stats": [
+            {
+                "value": "200",
+                "label": "Completed projects"
+            },
+            {
+                "value": "25",
+                "label": "Experienced specialists"
+            },
+            {
+                "value": "8",
+                "label": "Years of experience"
+            },
+            {
+                "value": "99%",
+                "label": "Satisfied customers"
+            }
+        ]
+    },
+    "partnershipCards": {
+        "title": "We are open to partnership opportunities with like-minded companies or individuals. So, as we see it, partnership with us can be interesting for:",
+        "cards": [
+            {
+                "title": "Startup founders",
+                "description": "When it is beneficial to leverage our resources and expertise in exchange for shares or to grow a joint business."
+            },
+            {
+                "title": "Business Owners",
+                "description": "Whom our expertise is profitable for and who can provide us with a range of benefits in selling our services."
+            },
+            {
+                "title": "Affiliate Sellers",
+                "description": "Who is interested in selling our software solutions and services and receiving a commission on sales made."
+            }
+        ]
+    },
+    "tellAboutUs": {
+        "title": "What customers say<br />about us",
+        "buttonText": "Leave a review",
+        "description": "We have been designing, creating, and maintaining it-products since the beginning of 2017. We can provide a new cycle of services - from planning and ideas to product launch.",
+        "reviews": [
+            {
+                "rating": 5,
+                "text": "With Codeks support, the client's website was functioning perfectly, and customers could easily place orders on the platform. Codeks effectively and promptly corrected the mistakes of previous developers. The service provider's professionalism and client-oriented approach were exemplary.",
+                "name": "Alina Melnyk",
+                "position": "CEO",
+                "date": "10.10.2023"
+            },
+            {
+                "rating": 5,
+                "text": "With Codeks support, the client's website was functioning perfectly, and customers could easily place orders on the platform. Codeks effectively and promptly corrected the mistakes of previous developers. The service provider's professionalism and client-oriented approach were exemplary.",
+                "name": "Alina Melnyk",
+                "position": "CEO",
+                "date": "10.10.2023"
+            },
+            {
+                "rating": 5,
+                "text": "With Codeks support, the client's website was functioning perfectly, and customers could easily place orders on the platform. Codeks effectively and promptly corrected the mistakes of previous developers. The service provider's professionalism and client-oriented approach were exemplary.",
+                "name": "Alina Melnyk",
+                "position": "CEO",
+                "date": "10.10.2023"
+            },
+            {
+                "rating": 5,
+                "text": "With Codeks support, the client's website was functioning perfectly, and customers could easily place orders on the platform. Codeks effectively and promptly corrected the mistakes of previous developers. The service provider's professionalism and client-oriented approach were exemplary.",
+                "name": "Alina Melnyk",
+                "position": "CEO",
+                "date": "10.10.2023"
+            }
+        ]
+    },
+    "worldMapPartnership": {
+        "title": "Clients from all over the world",
+        "getOffer": "get",
+        "offer": "a proposal"
+    },
+    "contactUsForm": {
+        "title": "Contact us to calculate the cost",
+        "fields": {
+            "name": "Your name",
+            "email": "Your E-mail",
+            "message": "What business solution do you need?",
+            "policy": "I accept the Privacy Policy"
+        },
+        "errors": {
+            "name": "Enter your name",
+            "email": "Enter your E-mail",
+            "emailInvalid": "Enter a valid e-mail address",
+            "message": "Enter a message",
+            "policy": "Agree to the privacy policy",
+            "method": "Choose a communication method"
+        },
+        "methodLabel": "Choose a convenient way to communicate",
+        "methods": {
+            "telegram": "Telegram",
+            "whatsapp": "Whatsapp",
+            "viber": "Viber",
+            "phone": "Phone",
+            "email": "Email"
+        },
+        "submitButton": "Send a message",
+        "successMessage": "Your message has been successfully sent. Thank you!"
+    }
+}

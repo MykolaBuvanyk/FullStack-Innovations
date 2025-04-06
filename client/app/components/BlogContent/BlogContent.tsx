@@ -91,10 +91,6 @@ interface BlogPost {
                         <i className="fa-solid fa-arrow-right"></i>
                     </button>
                 </div>
-                <ButtonTop/>    
-                <footer className={styles.footer}>
-                    <p>*футер*</p>
-                </footer>
             </div>
         </div>
     </div>

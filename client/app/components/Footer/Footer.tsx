@@ -40,7 +40,7 @@ const Footer: React.FC<Props> = ({ dictionary }) => {
             </a>
           </div>
           <div className={styles.footerText}>
-            <p>© 2017–2025 «FullStack-Innovations»,</p>
+            <p>© 2017–2025 «FullStack-Innovations»</p>
           </div>
           <div className={styles.footerSocials}>
             <ul className={styles.socialsList}>

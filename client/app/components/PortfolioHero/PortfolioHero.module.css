@@ -1,0 +1,151 @@
+.portfolioHeroWrapper {
+    padding: 0 12.5vw;
+    /* margin-bottom: 150px; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* gap: 10.4vw; */
+}
+
+
+
+.portfolioHeroTitle {
+    max-width: 55%;
+    font-size: 70px;
+    font-weight: 500;
+    line-height: 80px;
+    background-image: url('/images/abstract-purple-blue-wave-background (2).png');
+    background-size: cover;
+    background-position: center;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.portfolioHeroDescription {
+    font-weight: 100;
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: 0%;
+    vertical-align: middle;
+
+}
+
+.btn {
+    line-height: 22px;
+    font-weight: 400;
+    font-size: 15px;
+    padding: 25px 35px;
+    border-radius: 100px;
+    color: #fff;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    background-color: transparent;
+    transition: 0.5s;
+    border: 1px solid white;
+    white-space: nowrap;
+    align-self: flex-start;
+}
+
+.btn:hover {
+    background: linear-gradient(95.63deg, #C400B9 17.83%, #5D0058 159.96%);
+    box-shadow: 0px 20px 40px rgba(196, 1, 185, 0.6);
+    border: 1px solid rgba(196, 1, 185, 0.6);
+}
+
+
+
+.portfolioHeroTextWrapper {
+    display: flex;
+    gap: 2.1vw;
+    flex-direction: column;
+    color: rgba(255, 255, 255, 1);
+    width: 55%;
+}
+
+
+
+.portfolioHeroSphereWrapper {
+    display: flex;
+    width: 26vw;
+    position: relative;
+    aspect-ratio: 1/1;
+}
+
+
+.spheraWrapper {
+    position: absolute;
+    aspect-ratio: 1/1;
+    width: 26vw;
+    top: 0;
+}
+
+@media screen and (min-aspect-ratio: 16/9) {
+    .spheraWrapper {
+        top: calc(0px + (1920px - 100vw) * 0.0);
+    }
+}
+
+.sphereSmall,
+.sphereMedium,
+.sphereLarge {
+    position: absolute;
+}
+
+.sphereSmall img,
+.sphereMedium img,
+.sphereLarge img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+.sphereLarge {
+    width: 19.2vw;
+    top: 10%;
+    right: 10%;
+}
+
+.sphereMedium {
+    width: 3.15vw;
+    /* left: -19.5vw;
+    top: -2vh; */
+    top: 35%;
+    left: 5%;
+}
+
+.sphereSmall {
+    width: 2.92vw;
+    /* top: 29vh;
+    right: -1vw; */
+    top: 60%;
+    right: 0%;
+}
+
+.backgroundElipse {
+    position: absolute;
+    z-index: -1;
+    width: 11.5vw;
+    height: 11.5vw;
+    background: rgba(232, 30, 221, 1);
+    border-radius: 50%;
+    top: 0;
+    right: 0;
+    filter: blur(120px);
+    transform: translate(-50%, 70%);
+}
+
+.scrollDownWrapper{
+    /* position: absolute; */
+    width: 80px;
+    height: 80px;
+    margin: 0 50%;
+  }
+@media(max-width:1440px) {
+    .portfolioHeroTitle {
+        font-size: 50px;
+    }
+}

@@ -13,6 +13,7 @@
     max-width: 55%;
     font-size: 70px;
     font-weight: 500;
+    line-height: 80px;
     background-image: url('/images/abstract-purple-blue-wave-background (2).png');
     background-size: cover;
     background-position: center;
@@ -68,6 +69,7 @@
 .aboutHeroPara{
     font-weight: 100;
     font-size: 18px;
+    line-height: 28px;
 }
 
 .aboutHeroList{
