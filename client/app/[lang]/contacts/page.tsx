@@ -2,13 +2,19 @@
 import NavPath from "@/app/components/NavPath/NavPath";
 import ContactContent from "../../components/ContactContent/ContactContent"
 import ContactUsForm from '../../components/ContactUsForm/ContactUsForm';
-
-export default function Home() {
+import { Locale } from "@/i18n.config";
+import { getDictionary } from "@/lib/dictionary";
+type Props = {
+  params: { lang: Locale };
+};
+export default async function Home({ params }: Props) {
+  const dictionary: any = await getDictionary(params.lang);
+  const { contactUsForm } = dictionary;
   return (
     <div>
-      <NavPath/>
-      <ContactContent/>
-      <ContactUsForm/>
+      <NavPath />
+      <ContactContent />
+      <ContactUsForm dictionary={contactUsForm} />
     </div>
   );
 }
