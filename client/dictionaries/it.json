@@ -269,14 +269,14 @@
         "title": "Contact us to calculate the cost",
         "fields": {
             "name": "Your name",
-            "email": "Your E-mail",
+            "email": "Your Email",
             "message": "What business solution do you need?",
             "policy": "I accept the Privacy Policy"
         },
         "errors": {
             "name": "Enter your name",
-            "email": "Enter your E-mail",
-            "emailInvalid": "Enter a valid e-mail address",
+            "email": "Enter your Email",
+            "emailInvalid": "Enter a valid email address",
             "message": "Enter a message",
             "policy": "Agree to the privacy policy",
             "method": "Choose a communication method"

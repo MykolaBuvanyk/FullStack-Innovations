@@ -48,10 +48,7 @@
     transform: translate(-50%, -50%);
     cursor: pointer;
     box-shadow: 0 0 10px #E81EDD;
-
-
-
-
+    z-index: 2;
     border: calc(var(--parent-width) * 0.005) solid #E81EDD;
 }
 
@@ -70,10 +67,12 @@
     border: 1px solid rgba(255, 255, 255, 0.2);
     opacity: 0;
     transition: opacity 0.3s ease;
+    z-index: 3;
 }
 
 .mapPoint:hover .tooltip {
     opacity: 1;
+    z-index: 10;
 }
 
 

@@ -91,7 +91,7 @@
                 "name": "Landing page",
                 "image": "/images/MainServices/landing.png",
                 "h1": "Landing page",
-                "p": "10 working days",
+                "p": "up to 10 working days",
                 "buttonText": "from $1300",
                 "imageClass": "landingImage"
             },
@@ -100,7 +100,7 @@
                 "name": "Multi-page website",
                 "image": "/images/MainServices/multipage.png",
                 "h1": "Multi-page website",
-                "p": "35 working days",
+                "p": "up to 35 working days",
                 "buttonText": "from $2000",
                 "imageClass": "multipageImage"
             },
@@ -109,7 +109,7 @@
                 "name": "E-commerce store",
                 "image": "/images/MainServices/online-store.png",
                 "h1": "E-commerce store",
-                "p": "35 working days",
+                "p": "up to 35 working days",
                 "buttonText": "from $2000",
                 "imageClass": "onlineStoreImage"
             },
@@ -118,7 +118,7 @@
                 "name": "Delivery website",
                 "image": "/images/MainServices/delivery-site.png",
                 "h1": "Delivery website",
-                "p": "20 working days",
+                "p": "up to 20 working days",
                 "buttonText": "from $2000",
                 "imageClass": "deliverySiteImage"
             },
@@ -127,7 +127,7 @@
                 "name": "Business website",
                 "image": "/images/MainServices/business-site.png",
                 "h1": "Business website",
-                "p": "20 working days",
+                "p": "up to 20 working days",
                 "buttonText": "from $1300",
                 "imageClass": "businessSiteImage"
             },
@@ -136,7 +136,7 @@
                 "name": "Mobile applications",
                 "image": "/images/MainServices/mobile-apps.png",
                 "h1": "Mobile applications",
-                "p": "60 working days",
+                "p": "up to 60 working days",
                 "buttonText": "from $6000",
                 "imageClass": "mobileAppsImage"
             },
@@ -145,7 +145,7 @@
                 "name": "Google Ads",
                 "image": "/images/MainServices/google-ads.png",
                 "h1": "Google Ads",
-                "p": "10 working days",
+                "p": "up to 10 working days",
                 "buttonText": "from $600",
                 "imageClass": "googleAdsImage"
             },
@@ -163,7 +163,7 @@
                 "name": "2D design",
                 "image": "/images/MainServices/3d-modeling.png",
                 "h1": "2D design",
-                "p": "5 working days",
+                "p": "up to 5 working days",
                 "buttonText": "from $300",
                 "imageClass": "modeling2DImage"
             },
@@ -172,7 +172,7 @@
                 "name": "3D modeling",
                 "image": "/images/MainServices/3d-modeling.png",
                 "h1": "3D modeling",
-                "p": "7 working days",
+                "p": "up to 7 working days",
                 "buttonText": "from $350",
                 "imageClass": "modeling3DImage"
             }
@@ -269,14 +269,14 @@
         "title": "Contact us to calculate the cost",
         "fields": {
             "name": "Your name",
-            "email": "Your E-mail",
+            "email": "Your Email",
             "message": "What business solution do you need?",
             "policy": "I accept the Privacy Policy"
         },
         "errors": {
             "name": "Enter your name",
-            "email": "Enter your E-mail",
-            "emailInvalid": "Enter a valid e-mail address",
+            "email": "Enter your Email",
+            "emailInvalid": "Enter a valid email address",
             "message": "Enter a message",
             "policy": "Agree to the privacy policy",
             "method": "Choose a communication method"

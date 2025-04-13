@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import styles from "./ContactUsForm.module.css";
 
 type Props = {
@@ -29,14 +29,37 @@ const ContactUsForm: React.FC<Props> = ({ dictionary }) => {
     setErrors((prev) => ({ ...prev, method: "" }));
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value, type, checked } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: type === "checkbox" ? checked : value,
-    }));
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value, type } = e.target;
+    const isCheckbox = type === "checkbox";
+  
+    if (name === "name") {
+      const lettersOnly = value.replace(/[^a-zA-Zа-яА-ЯїЇіІєЄґҐʼ'’\s]/g, "");
+      setFormData((prev) => ({
+        ...prev,
+        [name]: lettersOnly,
+      }));
+    } else {
+      setFormData((prev) => ({
+        ...prev,
+        [name]: isCheckbox ? (e.target as HTMLInputElement).checked : value,
+      }));
+    }
+  
     setErrors((prev) => ({ ...prev, [name]: "" }));
   };
+  
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
+
+  useEffect(() => {
+    if (textareaRef.current) {
+      textareaRef.current.style.height = "auto";
+      textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`;
+    }
+  }, [formData.message]);
+
 
   const validateForm = () => {
     const newErrors = {
@@ -146,15 +169,20 @@ const ContactUsForm: React.FC<Props> = ({ dictionary }) => {
               </div>
             </div>
             <div className={styles.formGroup}>
-              <input
-                type="text"
-                id="message"
-                name="message"
-                placeholder=" "
-                className={styles.input}
-                value={formData.message}
-                onChange={handleChange}
-              />
+            <textarea
+              id="message"
+              name="message"
+              placeholder=" "
+              ref={textareaRef}
+              className={`${styles.input} ${
+                formData.message.includes("\n") || formData.message.length > 40
+                  ? styles.multiline
+                  : ""
+              }`}
+              value={formData.message}
+              onChange={handleChange}
+            />
+
               <label htmlFor="message" className={styles.label}>
                 {dictionary.fields.message}
               </label>
@@ -173,6 +201,7 @@ const ContactUsForm: React.FC<Props> = ({ dictionary }) => {
               />
               <label htmlFor="policy" className={styles.checkboxLabel}>
                 {dictionary.fields.policy}
+                <a href="#" className={styles.policyRef}>{dictionary.fields.policyRef}</a>
               </label>
             </div>
             {errors.policy && (

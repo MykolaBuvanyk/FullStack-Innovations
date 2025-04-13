@@ -279,14 +279,15 @@
         "title": "Зв’яжіться з нами для розрахунку вартості",
         "fields": {
             "name": "Ваше ім’я",
-            "email": "Ваш E-mail",
-            "message": "Напишіть все, що вам потрібно",
-            "policy": "Я приймаю Політику конфіденційності"
+            "email": "Ваш Email",
+            "message": "Яке бізнес-рішення Вас цікавить?",
+            "policy": "Я приймаю",
+            "policyRef": "Політику конфіденційності"
         },
         "errors": {
             "name": "Заповніть ім’я",
             "email": "Заповніть пошту",
-            "emailInvalid": "Введіть коректний E-mail",
+            "emailInvalid": "Введіть коректний Email",
             "message": "Введіть повідомлення",
             "policy": "Погодьтеся з політикою конфіденційності",
             "method": "Виберіть спосіб зв’язку"
@@ -294,12 +295,12 @@
         "methodLabel": "Виберіть зручний спосіб зв’язку",
         "methods": {
             "telegram": "Telegram",
-            "whatsapp": "Whatsapp",
+            "whatsapp": "WhatsApp",
             "viber": "Viber",
             "phone": "Phone",
             "email": "Email"
         },
-        "submitButton": "Подати заявку",
+        "submitButton": "Надіслати заявку",
         "successMessage": "Ваше повідомлення успішно надіслано. Дякуємо!"
     },
     "portfolioHero": {
