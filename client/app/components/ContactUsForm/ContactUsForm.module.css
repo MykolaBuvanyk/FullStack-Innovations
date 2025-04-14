@@ -70,13 +70,15 @@
 
 .input {
   width: 100%;
-  padding: 20px 0;
+  padding: 10px 0; /* Зменшуємо padding для точнішого розташування тексту */
   border: none;
   border-bottom: 1px solid #888;
   background-color: transparent;
   color: #fff;
   font-size: 20px;
   outline: none;
+  resize: none; /* Забороняємо ручне змінення розміру */
+  line-height: 1.5; /* Контролюємо висоту рядка */
 }
 
 .input::placeholder {
@@ -100,9 +102,13 @@
 }
 
 .input.multiline {
-  padding-top: 16px;
-  padding-bottom: 16px;
+  overflow: hidden;         /* Прибираємо скролбар */
+  resize: none;             /* Забороняємо ручну зміну висоти */
+  transition: height 0.2s ease, padding 0.2s ease;
+  line-height: 1.5;         /* або конкретне значення — 24px */
+  min-height: 3.5em;        /* або підбери за дизайном */
 }
+
 
 .checkboxGroup {
   display: flex;

@@ -55,8 +55,8 @@ const ContactUsForm: React.FC<Props> = ({ dictionary }) => {
 
   useEffect(() => {
     if (textareaRef.current) {
-      textareaRef.current.style.height = "auto";
-      textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`;
+      const textarea = textareaRef.current;
+      textarea.style.height = "4vw"; 
     }
   }, [formData.message]);
 
@@ -175,9 +175,7 @@ const ContactUsForm: React.FC<Props> = ({ dictionary }) => {
               placeholder=" "
               ref={textareaRef}
               className={`${styles.input} ${
-                formData.message.includes("\n") || formData.message.length > 40
-                  ? styles.multiline
-                  : ""
+                formData.message.includes("\n") || formData.message.length > 40 ? styles.multiline : ""
               }`}
               value={formData.message}
               onChange={handleChange}
