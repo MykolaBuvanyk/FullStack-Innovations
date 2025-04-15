@@ -9,11 +9,11 @@ type Props = {
 };
 export default async function Home({ params }: Props) {
   const dictionary: any = await getDictionary(params.lang);
-  const { contactUsForm } = dictionary;
+  const { contactUsForm, contactUs } = dictionary;
   return (
     <div>
       <NavPath />
-      <ContactContent />
+      <ContactContent dictionary={contactUs}/>
       <ContactUsForm dictionary={contactUsForm} />
     </div>
   );

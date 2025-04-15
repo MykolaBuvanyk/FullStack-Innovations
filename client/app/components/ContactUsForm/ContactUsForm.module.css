@@ -60,6 +60,7 @@
   left: 0px;
   transition: all 0.3s ease;
   pointer-events: none;
+  margin-bottom: 10px;
 }
 
 .policyRef {
@@ -269,16 +270,19 @@
 }
 
 
+.inputError {
+  border-bottom: 1px solid #ff4d4f !important;
+}
 
-
-
+.labelError {
+  color: #ff4d4f;
+}
 
 
 .error {
   color: #ff4d4f;
   font-size: 12px;
-  margin-top: 5px;
-  text-decoration: underline;
+  margin-top: 10px;
   white-space: nowrap;
 }
 

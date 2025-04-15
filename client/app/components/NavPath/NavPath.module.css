@@ -16,6 +16,11 @@
 .navpathLink {
     text-decoration: none;
     line-height: 2;
+    transition: all 0.4s;
+}
+
+.navpathLink:hover{
+    color: #e81ede;
 }
 
 .navpathItem {

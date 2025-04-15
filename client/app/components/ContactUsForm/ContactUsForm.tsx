@@ -110,7 +110,6 @@ const ContactUsForm: React.FC<Props> = ({ dictionary }) => {
       return;
     }
 
-    console.log("Форма відправлена:", { ...formData, method: activeIcon });
     setIsSubmitted(true);
 
     setFormData({
@@ -139,53 +138,76 @@ const ContactUsForm: React.FC<Props> = ({ dictionary }) => {
                   id="name"
                   name="name"
                   placeholder=" "
-                  className={styles.input}
+                  className={`${styles.input} ${
+                    errors.name ? styles.inputError : ""
+                  }`}
                   value={formData.name}
                   onChange={handleChange}
                 />
-                <label htmlFor="name" className={styles.label}>
+                <label
+                  htmlFor="name"
+                  className={`${styles.label} ${
+                    errors.name ? styles.labelError : ""
+                  }`}
+                >
                   {dictionary.fields.name}
                 </label>
+
                 {errors.name && (
-                  <div className={styles.error}>{errors.name}</div>
+                  <div className={styles.error}>*{errors.name}</div>
                 )}
               </div>
               <div className={styles.formGroup}>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder=" "
-                  className={styles.input}
-                  value={formData.email}
-                  onChange={handleChange}
-                />
-                <label htmlFor="email" className={styles.label}>
-                  {dictionary.fields.email}
-                </label>
+                <div className={styles.inputGroup}>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder=" "
+                    className={`${styles.input} ${
+                      errors.email ? styles.inputError : ""
+                    }`}
+                    value={formData.email}
+                    onChange={handleChange}
+                  />
+                  <label
+                    htmlFor="email"
+                    className={`${styles.label} ${
+                      errors.email ? styles.labelError : ""
+                    }`}
+                  >
+                    {dictionary.fields.email}
+                  </label>
+                </div>
+
                 {errors.email && (
-                  <div className={styles.error}>{errors.email}</div>
+                  <div className={styles.error}>*{errors.email}</div>
                 )}
               </div>
             </div>
             <div className={styles.formGroup}>
-            <textarea
-              id="message"
-              name="message"
-              placeholder=" "
-              ref={textareaRef}
-              className={`${styles.input} ${
-                formData.message.includes("\n") || formData.message.length > 40 ? styles.multiline : ""
-              }`}
-              value={formData.message}
-              onChange={handleChange}
-            />
-
-              <label htmlFor="message" className={styles.label}>
-                {dictionary.fields.message}
-              </label>
+              <div className={styles.inputGroup}>
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder=" "
+                  className={`${styles.input} ${
+                    errors.message ? styles.inputError : ""
+                  }`}
+                  value={formData.message}
+                  onChange={handleChange}
+                />
+                <label
+                  htmlFor="message"
+                  className={`${styles.label} ${
+                    errors.message ? styles.labelError : ""
+                  }`}
+                >
+                  {dictionary.fields.message}
+                </label>
+              </div>
               {errors.message && (
-                <div className={styles.error}>{errors.message}</div>
+                <div className={styles.error}>*{errors.message}</div>
               )}
             </div>
             <div className={styles.checkboxGroup}>
@@ -199,11 +221,13 @@ const ContactUsForm: React.FC<Props> = ({ dictionary }) => {
               />
               <label htmlFor="policy" className={styles.checkboxLabel}>
                 {dictionary.fields.policy}
-                <a href="#" className={styles.policyRef}>{dictionary.fields.policyRef}</a>
+                <a href="#" className={styles.policyRef}>
+                  {dictionary.fields.policyRef}
+                </a>
               </label>
             </div>
             {errors.policy && (
-              <div className={styles.error}>{errors.policy}</div>
+              <div className={styles.error}>*{errors.policy}</div>
             )}
           </div>
           <p className={styles.iconPara}>{dictionary.methodLabel}</p>
@@ -227,7 +251,9 @@ const ContactUsForm: React.FC<Props> = ({ dictionary }) => {
               </div>
             ))}
           </div>
-          {errors.method && <div className={styles.error}>{errors.method}</div>}
+          {errors.method && (
+            <div className={styles.error}>*{errors.method}</div>
+          )}
           <div className={styles.buttonWrapper}>
             <button type="submit" className={styles.submitButton}>
               {dictionary.submitButton}
