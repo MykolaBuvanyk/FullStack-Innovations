@@ -13,14 +13,14 @@ type Props = {
 };
 export default async  function Partnership({ params }: Props) {
    const dictionary: any = await getDictionary(params.lang);
-    const { partnershipCards,worldMapPartnership,contactUsForm} = dictionary;
+    const { partnershipCards,worldMapPartnership,contactUsForm, partnershipHero, partnershipOptions, partnershipBenefits} = dictionary;
   return (
     <div>
       <NavPath />
-      <PartnershipHero />
+      <PartnershipHero dictionary={partnershipHero}/>
       <PartnershipCards dictionary={partnershipCards} />
-      <PartnershipOptions />
-      <PartnershipBenefits />
+      <PartnershipOptions dictionary={partnershipOptions} />
+      <PartnershipBenefits dictionary={partnershipBenefits} />
       <ButtonTop/>
       <WorldMapPartnership dictionary={worldMapPartnership} />
       <ContactUsForm dictionary={contactUsForm}/>
