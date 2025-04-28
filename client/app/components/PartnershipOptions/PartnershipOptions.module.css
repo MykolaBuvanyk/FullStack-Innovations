@@ -8,7 +8,7 @@
 }
 .partnershipOptionsTitle p{
     color: #fff;
-    size: 18px;
+    font-size: 22px;
     font-weight: 100;
     margin-top: 25px;
     line-height: 28px;
@@ -62,6 +62,7 @@
     font-size: 18px;
     font-weight: 100;
     color: #fff;
+    line-height: 28px;
 }
 .optionCard:hover .optionCardArrow svg path,
 .optionCard:hover .optionCardImage svg path {

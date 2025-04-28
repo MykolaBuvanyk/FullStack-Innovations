@@ -96,7 +96,7 @@ const ModalFeedback: React.FC<ModalFeedbackProps> = ({
     <div className={styles.modalOverlay}>
       <div className={styles.modalFeedbackWrapper}>
         <button className={styles.backButton} onClick={closeModal}>
-          <i className="fa-solid fa-arrow-right"></i>
+          <i className="fa-solid fa-arrow-left"></i>
         </button>
         <div className={styles.titleWrapper}>
           <h2 className={styles.title}>Відгук або пропозиція щодо роботи</h2>

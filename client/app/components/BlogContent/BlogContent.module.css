@@ -62,6 +62,15 @@
     font-size: 16px;
   }
 
+  .truncatedDescription {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
   .blogItemMeta{
     width: 100%;
     display: flex;
@@ -75,10 +84,18 @@
     align-items: center;
   }
 
+  .readMore:hover{
+    color:#e81edd;
+  }
+
   .readMore img{
     margin-left: 10px;
     border-radius: 0;
   }
+  .readMore:hover img{
+    filter: invert(47%) sepia(87%) saturate(7225%) hue-rotate(289deg) brightness(98%) contrast(105%);
+  }
+
   
   .pagination{
     width: 100%;
