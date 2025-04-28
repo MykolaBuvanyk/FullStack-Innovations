@@ -3,7 +3,7 @@
 import ButtonTop from "@/app/components/ButtonTop/ButtonTop";
 import NavPath from "@/app/components/NavPath/NavPath";
 import AboutPeopleSlider from "@/app/components/AboutPeopleSlider/AboutPeopleSlider";
-import ServicesHero from '@/app/components/ServicesHero/ServicesHero';
+import AboutServicesHero from '@/app/components/AboutServicesHero/AboutServicesHero';
 import ChooseUs from '@/app/components/ChooseUs/ChooseUs';
 import TellAboutUs from '@/app/components/TellAboutUs/TellAboutUs';
 import WorkWithUs from '@/app/components/WorkWithUs/WorkWithUs';
@@ -24,7 +24,7 @@ export default async function About({ params }: Props) {
             <AboutHero dictionary={aboutHero} />
             <AboutPeopleSlider />
             {/* <ButtonTop /> */}
-            <ServicesHero />
+            {/* <AboutServicesHero /> */}
             <ChooseUs />
             <TellAboutUs dictionary={tellAboutUs} />    
             <WorkWithUs />

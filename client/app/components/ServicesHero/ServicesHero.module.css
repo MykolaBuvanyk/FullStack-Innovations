@@ -1,33 +1,19 @@
-.servicesHero {
+.portfolioHeroWrapper {
     padding: 0 12.5vw;
-    margin-top: 150px;
-    height: 330px;
-    font-family: 'Helvetica Neue', sans-serif;
-    color: #fff;
-
-}
-
-.heroContainer {
+    /* margin-bottom: 150px; */
     display: flex;
-    gap: 5.7vw;
-    align-items: flex-start;
+    justify-content: space-between;
+    align-items: center;
+    /* gap: 10.4vw; */
 }
 
-.heroImage img{
-    position: relative;
-    width: 30.4vw; /* Ширина зображення */
-    height: auto; /* Висота зображення */
-    overflow: hidden;
-}
 
-.heroContent {
-    width: 50%;
-}
 
-.heroTitle {
-    display: flex;
-    font-weight: 700;
+.portfolioHeroTitle {
+    max-width: 55%;
     font-size: 70px;
+    font-weight: 500;
+    line-height: 80px;
     background-image: url('/images/abstract-purple-blue-wave-background (2).png');
     background-size: cover;
     background-position: center;
@@ -36,58 +22,132 @@
     -webkit-text-fill-color: transparent;
 }
 
-.tabs {
+.portfolioHeroDescription {
+    font-weight: 100;
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: 0%;
+    vertical-align: middle;
+
+}
+
+.btn {
+    line-height: 22px;
+    font-weight: 400;
+    font-size: 15px;
+    padding: 25px 35px;
+    border-radius: 100px;
+    color: #fff;
     display: flex;
     gap: 10px;
-    margin-top: 2.8vh;
-}
-
-.tabButton {
-    padding: 10px 30px;
-    font-size: 18px;
-    font-weight: 300;
-    color: #fff;
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 1);
-    border-radius: 100px;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    align-items: center;
+    background-color: transparent;
+    transition: 0.5s;
+    border: 1px solid white;
     white-space: nowrap;
+    align-self: flex-start;
 }
 
-.tabButton:hover {
-    background: rgba(255, 255, 255, 0.1);
+.btn:hover {
+    background: linear-gradient(95.63deg, #C400B9 17.83%, #5D0058 159.96%);
+    box-shadow: 0px 20px 40px rgba(196, 1, 185, 0.6);
+    border: 1px solid rgba(196, 1, 185, 0.6);
 }
 
-.tabButton.active {
-    background: linear-gradient(180deg, #C400B9 0%, #5D0058 119.29%);
-    border: none;
+
+
+.portfolioHeroTextWrapper {
+    display: flex;
+    gap: 2.1vw;
+    flex-direction: column;
+    color: rgba(255, 255, 255, 1);
+    width: 55%;
 }
 
-.servicesList {
-    list-style: none;
-    padding: 0;
-    justify-content: start;
-    display: flex; /* Два стовпці однакової ширини */
-    gap: 15px; /* Відстань між елементами */
-    width: 50%;
-    flex-wrap: wrap;
-    margin-top: 3.7vh;
-}
 
-.serviceItem {
-    white-space: nowrap;
-    font-size: 18px;
-    font-weight: 100;
-    width: 45%;
-    box-sizing: border-box;
+
+.portfolioHeroSphereWrapper {
+    display: flex;
+    width: 26vw;
     position: relative;
-    display: inline;
-    padding-left: 15px;
+    aspect-ratio: 1/1;
 }
-.serviceItem::before {
-    content: '•';
+
+
+.spheraWrapper {
     position: absolute;
-    left: 0;
-    color: rgba(195, 0, 185, 1); /* Фіолетова крапка */
+    aspect-ratio: 1/1;
+    width: 26vw;
+    top: 5%;
+}
+
+@media(max-width:1440px) {
+    .spheraWrapper {
+        top: calc(0px + (1920px - 100vw) * 0.1);
+    }
+}
+
+
+.sphereSmall,
+.sphereMedium,
+.sphereLarge {
+    position: absolute;
+}
+
+.sphereSmall img,
+.sphereMedium img,
+.sphereLarge img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+.sphereLarge {
+    width: 18.125vw;
+    top: 10%;
+    right: 15%;
+}
+
+.sphereMedium {
+    width: 4.57vw;
+    /* left: -19.5vw;
+    top: -2vh; */
+    top: 0%;
+    right: 0%;
+}
+
+.sphereSmall {
+    width: 3.4vw;
+    /* top: 29vh;
+    right: -1vw; */
+    bottom: 20%;
+    left: 0%;
+}
+
+.backgroundElipse {
+    position: absolute;
+    z-index: -1;
+    width: 11.5vw;
+    height: 11.5vw;
+    background: rgba(232, 30, 221, 1);
+    border-radius: 50%;
+    top: 0;
+    right: 0;
+    filter: blur(120px);
+    transform: translate(-50%, 70%);
+}
+
+.scrollDownWrapper {
+    /* position: absolute; */
+    width: 80px;
+    height: 80px;
+    margin: 0 50%;
+}
+
+@media(max-width:1440px) {
+    .portfolioHeroTitle {
+        font-size: 50px;
+    }
 }
