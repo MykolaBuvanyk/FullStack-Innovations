@@ -188,13 +188,13 @@
 
 .submitBtn {
   font-size: 16px;
-  padding: 12px 24px;
+  padding: 25px 60px;
   border-radius: 50px;
   color: #fff;
   display: flex;
   align-items: center;
   gap: 8px;
-  background: linear-gradient(95.63deg, #C400B9 17.83%, #5D0058 159.96%);
+  background: linear-gradient(to right, #C300B8, #8c0285);
   border: none;
   cursor: pointer;
   transition: 0.3s;
