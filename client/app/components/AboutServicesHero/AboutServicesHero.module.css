@@ -1,0 +1,93 @@
+.servicesHero {
+    padding: 0 12.5vw;
+    margin-top: 150px;
+    height: 330px;
+    font-family: 'Helvetica Neue', sans-serif;
+    color: #fff;
+
+}
+
+.heroContainer {
+    display: flex;
+    gap: 5.7vw;
+    align-items: flex-start;
+}
+
+.heroImage img{
+    position: relative;
+    width: 30.4vw; /* Ширина зображення */
+    height: auto; /* Висота зображення */
+    overflow: hidden;
+}
+
+.heroContent {
+    width: 50%;
+}
+
+.heroTitle {
+    display: flex;
+    font-weight: 700;
+    font-size: 70px;
+    background-image: url('/images/abstract-purple-blue-wave-background (2).png');
+    background-size: cover;
+    background-position: center;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.tabs {
+    display: flex;
+    gap: 10px;
+    margin-top: 2.8vh;
+}
+
+.tabButton {
+    padding: 10px 30px;
+    font-size: 18px;
+    font-weight: 300;
+    color: #fff;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 1);
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.tabButton:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.tabButton.active {
+    background: linear-gradient(180deg, #C400B9 0%, #5D0058 119.29%);
+    border: none;
+}
+
+.servicesList {
+    list-style: none;
+    padding: 0;
+    justify-content: start;
+    display: flex; /* Два стовпці однакової ширини */
+    gap: 15px; /* Відстань між елементами */
+    width: 50%;
+    flex-wrap: wrap;
+    margin-top: 3.7vh;
+}
+
+.serviceItem {
+    white-space: nowrap;
+    font-size: 18px;
+    font-weight: 100;
+    width: 45%;
+    box-sizing: border-box;
+    position: relative;
+    display: inline;
+    padding-left: 15px;
+}
+.serviceItem::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: rgba(195, 0, 185, 1); /* Фіолетова крапка */
+}

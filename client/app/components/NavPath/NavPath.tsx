@@ -17,6 +17,8 @@ const NavPathMap: Record<string, string> = {
   cart: 'Оформлення замовлення',
   privacy_policy: 'Політика конфіденційності',
   offer_agreement: 'Договір Оферти',
+  services: 'Послуги',
+  portfolio: 'Портфоліо',
 };
 
 export default function NavPath() {

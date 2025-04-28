@@ -1,0 +1,79 @@
+.servicesSecond {
+    padding: 0px 12.5vw;
+    margin-top: 150px;
+
+}
+
+.servicesSecondTitle {
+    width: 55%;
+}
+
+.servicesSecondTitle p {
+    color: #fff;
+    size: 18px;
+    font-weight: 100;
+    margin-top: 25px;
+}
+
+.servicesSecond h2 {
+    font-size: 70px;
+    font-weight: 500;
+    background-image: url('/images/abstract-purple-blue-wave-background (2).png');
+    background-size: cover;
+    background-position: center;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.servicesSecondGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px 30px;
+    margin-top: 70px;
+}
+
+.servicesSecondItem {
+    display: flex;
+    color: #fff;
+    gap: 10px;
+}
+
+.servicesSecondSharpNumber h3 {
+
+    font-family: 'Arial Black', sans-serif;
+    /* Жирний сучасний шрифт */
+    font-size: 48px;
+    /* Розмір шрифту */
+    text-transform: uppercase;
+    /* Перетворює текст на великі літери */
+    color: transparent;
+    /* Прозорий текст */
+    background: linear-gradient(45deg, #ff00ff, #00ffff);
+    /* Градієнт для контуру */
+    -webkit-background-clip: text;
+    /* Обрізає градієнт до тексту */
+    background-clip: text;
+    /* Стандартна властивість */
+    -webkit-text-stroke: 3px transparent;
+    /* Прозорий контур */
+    text-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
+    /* Неонове сяйво */
+
+    font-size: 50px;
+    font-weight: 700;
+
+
+}
+
+.servicesSecondItem h4 {
+    /* margin-top: 30px; */
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.servicesSecondItem p {
+    font-size: 20px;
+    font-weight: 100;
+    margin-top: 20px;
+}
