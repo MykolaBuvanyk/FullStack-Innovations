@@ -368,5 +368,15 @@
         "title": "Портфоліо",
         "buttonText": "Зв’язатися з нами",
         "description": "“Business is a game of partnerships. Those who form them well will succeed, those who do not will be left behind” — Bill Gates"
+    },
+    "servicesHero": {
+        "title": "Послуги",
+        "buttonText": "Зв’язатися з нами",
+        "description": "“Business is a game of partnerships. Those who form them well will succeed, those who do not will be left behind” — Bill Gates"
+    },
+    "servicesThird": {
+        "title": "Чи вірите ви в найм професіоналів?",
+        "buttonText": "Зв’язатися з нами",
+        "description": "Ми — команда із значним досвідом у розробці індивідуальних програмних інженерних рішень щодо веб-сайтів, використовуючи різноманітні технології. Наші експерти володіють різнобічним стеком, включаючи JavaScript, Python, PHP, та використовують фреймворки, такі як React, Django, Next.js та Laravel.<br /> <br />Ми ставимо перед собою важливі завдання забезпечити стабільність та продуктивність для кожного проєкту, використовуючи оптимізований код та передові техніки кешування, для того, щоб забезпечити швидке завантаження сторінок та ефективну роботу веб-сайтів."
     }
 }
