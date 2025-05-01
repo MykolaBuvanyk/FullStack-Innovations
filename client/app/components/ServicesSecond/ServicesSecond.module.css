@@ -39,29 +39,8 @@
     gap: 10px;
 }
 
-.servicesSecondSharpNumber h3 {
-
-    font-family: 'Arial Black', sans-serif;
-    /* Жирний сучасний шрифт */
-    font-size: 48px;
-    /* Розмір шрифту */
-    text-transform: uppercase;
-    /* Перетворює текст на великі літери */
-    color: transparent;
-    /* Прозорий текст */
-    background: linear-gradient(45deg, #ff00ff, #00ffff);
-    /* Градієнт для контуру */
-    -webkit-background-clip: text;
-    /* Обрізає градієнт до тексту */
-    background-clip: text;
-    /* Стандартна властивість */
-    -webkit-text-stroke: 3px transparent;
-    /* Прозорий контур */
-    text-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
-    /* Неонове сяйво */
-
-    font-size: 50px;
-    font-weight: 700;
+.servicesSecondSharpNumber {
+    margin-bottom: 5px;
 
 
 }

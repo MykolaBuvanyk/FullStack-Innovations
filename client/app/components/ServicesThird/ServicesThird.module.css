@@ -1,0 +1,39 @@
+.servicesThirdWrapper {
+    padding: 0px 12.5vw;
+    margin-top: 150px;
+    margin-bottom: 150px;
+    display: flex;
+    gap: 30px;
+    color: #fff;
+}
+
+.servicesThirdTitle {
+    font-size: 70px;
+    font-weight: 500;
+    line-height: 80px;
+    background-image: url('/images/abstract-purple-blue-wave-background (2).png');
+    background-size: cover;
+    background-position: center;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.servicesThirdDescription {
+    font-weight: 100;
+    font-size: 18px;
+    line-height: 28px;
+}
+
+.servicesThirdTextWrapper {
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 40px;
+}
+
+.servicesThirdImgWrapper {
+    display: flex;
+    align-items: flex-end;
+}
