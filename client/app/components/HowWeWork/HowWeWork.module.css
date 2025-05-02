@@ -1,0 +1,90 @@
+.howWeWorkWrapper{
+    padding: 0 12.5vw;
+    margin-top: 14vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6.5vh;
+    color: white;
+}
+
+.firstPart{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.firstPart > *{
+    width: 50%;
+}
+
+.title{
+    font-size: 70px;
+    font-weight: 500;
+    line-height: 80px;
+    background-image: url('/images/abstract-purple-blue-wave-background (2).png');
+    background-size: cover;
+    background-position: center;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.para{
+    font-weight: 100;
+    font-style: 18px;
+    line-height: 24px;
+}
+
+.secondPart{
+    width: 100%;
+}
+
+.howWeWorkList {
+    display: flex;
+    width: 100%;
+    padding: 0;
+    list-style: none;
+    background: #1a1a3d;
+}
+
+.howWeWorkEl {
+    flex: 1;
+    aspect-ratio: 1 / 1;
+    max-width: 22%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    border-radius: 50%;
+    border: none;
+    font-size: clamp(12px, 2.5vw, 16px);
+    position: relative;
+    overflow: hidden;
+    margin-left: -2%;
+}
+
+.howWeWorkEl:first-child {
+    margin-left: 0;
+}
+
+.howWeWorkEl:nth-child(odd) {
+    background: linear-gradient(to bottom, #C300B9, #5D0058);
+    z-index: 1;
+}
+
+.howWeWorkEl:nth-child(even) {
+    background: linear-gradient(to bottom, #C300B9, #5D0058);
+    filter: blur(81.96px);
+    -webkit-filter: blur(81.96px);
+    z-index: 2;
+}
+
+.howWeWorkEl span {
+    position: relative;
+    z-index: 1;
+    padding: 0 5%;
+    white-space: normal;
+}
