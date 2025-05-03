@@ -18,7 +18,7 @@ const HowWeWork: React.FC<Props> = ({ dictionary }) => {
         <ul className={styles.howWeWorkList}>
           {dictionary.howWeWorkEl.map((item: string, index: number) => (
             <li key={index} className={styles.howWeWorkEl}>
-              {item}
+              <span>{item}</span>
             </li>
           ))}
         </ul>

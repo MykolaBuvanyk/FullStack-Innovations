@@ -70,3 +70,19 @@
     font-style: 16px;
     line-height: 26px;
 }
+
+
+.numberPrefix {
+    color: #E81EDD;
+    font-weight: 700;
+    font-size: 70px;
+    line-height: 28px;
+}
+
+
+@supports (-webkit-text-stroke: 1px #E81EDD) {
+    .numberPrefix {
+        color: transparent;
+        -webkit-text-stroke: 1px #E81EDD;
+    }
+}

@@ -5,6 +5,9 @@ import SpecificServiceHero from "@/app/components/SpecificServiceHero/SpecificSe
 import SpecificServiceProcess from "@/app/components/SpecificServiceProcess/SpecificServiceProcess";
 import ChooseUs from "@/app/components/ChooseUs/ChooseUs";
 import HowWeWork from "@/app/components/HowWeWork/HowWeWork";
+import OurProjects from "@/app/components/OurProjects/OurProjects";
+import OurPortfolioSlider from "@/app/components/OurPortfolioSlider/OurPortfolioSlider";
+import WhatWeUse from "@/app/components/WhatWeUse/WhatWeUse";
 
 type Props = {
   params: { lang: Locale };
@@ -55,10 +58,31 @@ export default async function Home({ params }: Props) {
         "Дизайн та розробка",
         "Інтеграція контенту",
         "Тестування та оптимізація",
-        "Розгортання та обслуговування"
+        "Розгортання та обслуговування",
       ],
     },
+    ourProjects: {
+      title: "Наші проекти",
+      list: [
+        {
+          title: "Редизайн веб-сайту",
+          para: "Якщо придивитися, можна помітити, що ребрендинг став справжнім трендом серед багатьох великих корпорацій. Бренди оновлюють свої логотипи, розробляють нові стратегії та впроваджують сучасні технології, аби зберегти і підвищити свою впізнаваність на ринку.<br /><br />Зміни є єдиною постійною в нашому світі, і це особливо очевидно на прикладі інтернет-технологій. Багато компаній потребують редизайну своїх сайтів з різних причин: одні намагаються випередити конкурентів, інші – зберегти свою аудиторію або привернути нових користувачів.",
+          img: "/images/OurProjects/1.png",
+        },
+        {
+          title: "Редизайн веб-сайту",
+          para: "Якщо придивитися, можна помітити, що ребрендинг став справжнім трендом серед багатьох великих корпорацій. Бренди оновлюють свої логотипи, розробляють нові стратегії та впроваджують сучасні технології, аби зберегти і підвищити свою впізнаваність на ринку.<br /><br />Зміни є єдиною постійною в нашому світі, і це особливо очевидно на прикладі інтернет-технологій. Багато компаній потребують редизайну своїх сайтів з різних причин: одні намагаються випередити конкурентів, інші – зберегти свою аудиторію або привернути нових користувачів.",
+          img: "/images/OurProjects/2.png",
+        },
+      ],
+      button: "Переглянути роботу"
+    },
+    whatWeUse: {
+
+    }
   };
+
+  const { ourPortfolioSlider } = dictionary;
 
   return (
     <div>
@@ -66,6 +90,9 @@ export default async function Home({ params }: Props) {
       <SpecificServiceProcess dictionary={data.process} />
       <ChooseUs />
       <HowWeWork dictionary={data.howWeWork} />
+      <OurProjects dictionary={data.ourProjects} />
+      <OurPortfolioSlider dictionary={ourPortfolioSlider} />
+      <WhatWeUse dictionary={data.whatWeUse} />
     </div>
   );
 }

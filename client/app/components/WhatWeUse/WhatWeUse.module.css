@@ -1,0 +1,51 @@
+.whatWeUseWrapper {
+    padding: 0 12.5vw;
+    margin-top: 14vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6.5vh;
+}
+
+.title {
+    font-size: 70px;
+    font-weight: 500;
+    line-height: 80px;
+    background-image: url('/images/abstract-purple-blue-wave-background (2).png');
+    background-size: cover;
+    background-position: center;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.logosWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 2vh;
+}
+
+.logoRow {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 1vw;
+}
+
+.logoCard {
+    flex: 1;
+    max-width: calc(12.5% - (1vw * 7 / 8));
+    aspect-ratio: 1 / 1;
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.logo{
+    width: 50px !important;
+    height: 50px !important;
+}
