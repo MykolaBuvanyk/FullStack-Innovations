@@ -1,6 +1,7 @@
 .whatWeUseWrapper {
     padding: 0 12.5vw;
-    margin-top: 14vh;
+    margin-top: 150px;
+    margin-bottom: 150px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -30,7 +31,7 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
-    gap: 1vw;
+    gap: 10px;
 }
 
 .logoCard {
@@ -44,8 +45,31 @@
     overflow: hidden;
     border-radius: 10px;
 }
+.logoWrapper {
+    display: flex;
+    height: auto;
+    width: 11.8%;
+    aspect-ratio: 1 / 1;
+    justify-content: center;
+    align-items: center;
+    background: #FFFFFF05;
+    padding: 20px;
+    transition: background 0.3s ease; /* Плавна анімація фону */
+}
 
-.logo{
-    width: 50px !important;
-    height: 50px !important;
+.logoWrapper .logo {
+    width: auto !important;
+    height: 40% !important;
+    opacity: 0.4 !important;
+    transition: opacity 0.3s ease; /* Плавна анімація прозорості */
+}
+
+/* При наведенні */
+.logoWrapper:hover {
+    background: #E81EDD;
+    scale: 1.05;
+}
+
+.logoWrapper:hover .logo {
+    opacity: 1 !important;
 }

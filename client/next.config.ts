@@ -8,7 +8,24 @@ const nextConfig: NextConfig = {
     config.module.rules.push({
       test: /\.svg$/,
       issuer: /\.[jt]sx?$/,
-      use: ['@svgr/webpack'],
+      use: [{
+        loader: '@svgr/webpack',
+        options: {
+          svgo: true,
+          svgoConfig: {
+            plugins: [
+              { name: 'removeDimensions', active: true },
+              { name: 'removeViewBox', active: false },
+              {
+                name: 'removeAttrs',
+                params: {
+                  attrs: '(opacity|fill-opacity|stroke-opacity)'   // видалить усі opacity
+                }
+              }
+            ]
+          }
+        }
+      }]
     });
     return config;
   },

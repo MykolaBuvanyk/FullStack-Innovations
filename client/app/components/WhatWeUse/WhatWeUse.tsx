@@ -117,7 +117,9 @@ const WhatWeUse: React.FC<Props> = ({ dictionary }) => {
               const logoIndex = rowIndex * 8 + colIndex;
               const LogoComponent = allLogos[logoIndex];
               return logoIndex < allLogos.length ? (
-                <LogoComponent key={colIndex} className={styles.logo} />
+                <div className={styles.logoWrapper}>
+                  <LogoComponent key={colIndex} className={styles.logo} />
+                </div>
               ) : null;
             })}
           </div>
