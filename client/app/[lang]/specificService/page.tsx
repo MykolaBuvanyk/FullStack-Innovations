@@ -8,6 +8,9 @@ import HowWeWork from "@/app/components/HowWeWork/HowWeWork";
 import OurProjects from "@/app/components/OurProjects/OurProjects";
 import OurPortfolioSlider from "@/app/components/OurPortfolioSlider/OurPortfolioSlider";
 import WhatWeUse from "@/app/components/WhatWeUse/WhatWeUse";
+import CommonQuestions from "@/app/components/CommonQuestions/CommonQuestions";
+import ContactUsForm from "@/app/components/ContactUsForm/ContactUsForm";
+import { title } from "process";
 
 type Props = {
   params: { lang: Locale };
@@ -78,11 +81,22 @@ export default async function Home({ params }: Props) {
       button: "Переглянути роботу"
     },
     whatWeUse: {
-
+      title: "Що ми використовуємо у роботі"
+    },
+    commonQuestions: {
+      title: "Поширені запитання та відповіді",
+      para: [
+        "Яка вартість розробки веб-сайту?",
+        "Чи пропонуєте ви послуги з просування веб-сайту?",
+        "Які послуги надає служба підтримки?",
+        "Які терміни ви пропонуєте?",
+        "Як ви розраховуєте вартість?",
+        "Який процес ведення проекту ви пропонуєте?"
+      ]
     }
   };
 
-  const { ourPortfolioSlider } = dictionary;
+  const { ourPortfolioSlider, contactUsForm } = dictionary;
 
   return (
     <div>
@@ -93,6 +107,8 @@ export default async function Home({ params }: Props) {
       <OurProjects dictionary={data.ourProjects} />
       <OurPortfolioSlider dictionary={ourPortfolioSlider} />
       <WhatWeUse dictionary={data.whatWeUse} />
+      <CommonQuestions dictionary={data.commonQuestions} />
+      <ContactUsForm dictionary={contactUsForm} />
     </div>
   );
 }
