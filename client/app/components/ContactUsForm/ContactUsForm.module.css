@@ -49,6 +49,8 @@
   text-align: left;
   position: relative;
   min-height: 3.5em;
+  padding-bottom: 20px;
+  /* Резервуємо місце для помилок */
 }
 
 .label {
@@ -59,7 +61,7 @@
   left: 0px;
   transition: all 0.3s ease;
   pointer-events: none;
-  margin-bottom: 10px;
+  margin-bottom: 25px;
 }
 
 .policyRef {
@@ -78,6 +80,10 @@
   font-size: 20px;
   outline: none;
   line-height: 1.5;
+  resize: none;
+  min-height: 1.5em;
+  height: auto;
+  overflow: hidden;
 }
 
 .input::placeholder {
@@ -89,6 +95,10 @@
   display: none;
 }
 
+textarea.input:not(:empty)+.label {
+  display: none;
+}
+
 .input:focus {
   border-bottom: 1px solid #fff;
 }
@@ -97,16 +107,12 @@
   border-bottom: 1px solid #fff;
 }
 
-textarea.input {
-  resize: none;
-  overflow: hidden;
-  min-height: 40px;
-  transition: height 0.2s ease;
-}
-
 .checkboxGroup {
   display: flex;
   align-items: center;
+  padding-bottom: 20px;
+  position: relative;
+  /* Резервуємо місце для помилки */
 }
 
 .checkbox {
@@ -149,6 +155,9 @@ textarea.input {
   width: 100%;
   margin-top: 30px;
   justify-content: space-between;
+  padding-bottom: 20px;
+  position: relative;
+  /* Резервуємо місце для помилки */
 }
 
 .iconPara {
@@ -273,26 +282,39 @@ textarea.input {
   color: #ff4d4f;
   font-size: 12px;
   position: absolute;
-  top: 100%;
+  bottom: 0;
   left: 0;
   white-space: nowrap;
 }
 
-.formGroup {
-  margin-bottom: 2.5vw;
-  text-align: left;
-  position: relative;
-  min-height: 3.5em;
-}
-
 .checkboxGroup+.error {
-  top: auto;
-  bottom: -1.5em;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 
 .messengerIcons+.error {
-  top: auto;
-  bottom: -1.5em;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.charLimitNotification {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #ff4d4f12;
+  backdrop-filter: blur(20px);
+  color: red;
+  padding: 15px;
+  border-radius: 20px;
+  font-size: 14px;
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 300px;
+  z-index: 1000;
 }
 
 .formContainerRight {
@@ -377,9 +399,5 @@ textarea.input {
 
   .iconPara {
     font-size: 14px;
-  }
-
-  textarea.input {
-    min-height: 0px;
   }
 }

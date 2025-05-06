@@ -9,6 +9,8 @@ type Props = {
 
 const ContactUsForm: React.FC<Props> = ({ dictionary }) => {
   const [activeIcon, setActiveIcon] = useState<string | null>(null);
+  const [showCharLimitNotification, setShowCharLimitNotification] =
+    useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -37,6 +39,11 @@ const ContactUsForm: React.FC<Props> = ({ dictionary }) => {
     const { name, value, type } = e.target;
     const isCheckbox = type === "checkbox";
 
+    if (name === "message" && value.length === 500) {
+      setShowCharLimitNotification(true);
+      setTimeout(() => setShowCharLimitNotification(false), 5000);
+    }
+
     if (name === "name") {
       const lettersOnly = value.replace(/[^a-zA-Zа-яА-ЯїЇіІєЄґҐʼ'’\s]/g, "");
       setFormData((prev) => ({
@@ -61,22 +68,6 @@ const ContactUsForm: React.FC<Props> = ({ dictionary }) => {
 
     setErrors((prev) => ({ ...prev, [name]: "" }));
   };
-
-  const textareaRef = useRef<HTMLTextAreaElement>(null);
-
-  useEffect(() => {
-    if (textareaRef.current) {
-      const textarea = textareaRef.current;
-      textarea.style.height = "auto";
-      const fontSize = window.innerWidth <= 1440 ? 14 : 20;
-      const singleLineHeight = fontSize * 1.5;
-      const scrollHeight = textarea.scrollHeight;
-      const lines = textarea.value.split("\n").length;
-      textarea.style.height = `${
-        lines <= 1 ? singleLineHeight : scrollHeight
-      }px`;
-    }
-  }, [formData.message]);
 
   const validateForm = () => {
     const newErrors = {
@@ -111,7 +102,7 @@ const ContactUsForm: React.FC<Props> = ({ dictionary }) => {
     }
 
     if (!formData.message.trim()) {
-      newErrors.message = dictionary.errors.message;
+      newErrors.message = dictionary.errors.message || "Message is required";
       isValid = false;
     }
 
@@ -247,10 +238,22 @@ const ContactUsForm: React.FC<Props> = ({ dictionary }) => {
                   }`}
                   value={formData.message}
                   onChange={handleChange}
-                  ref={textareaRef}
+                  rows={1}
+                  maxLength={500}
+                  onInput={(e) => {
+                    const textarea = e.target as HTMLTextAreaElement;
+                    textarea.style.height = "auto";
+                    textarea.style.height = `${textarea.scrollHeight}px`;
+                  }}
                 />
                 <label
                   htmlFor="message"
+                  style={{
+                    display:
+                      formData.message || showCharLimitNotification
+                        ? "none"
+                        : "block",
+                  }}
                   className={`${styles.label} ${
                     errors.message ? styles.labelError : ""
                   }`}
@@ -277,9 +280,17 @@ const ContactUsForm: React.FC<Props> = ({ dictionary }) => {
                   {dictionary.fields.policyRef}
                 </a>
               </label>
-            </div>
             {errors.policy && (
               <div className={styles.error}>*{errors.policy}</div>
+            )}
+            </div>
+            {showCharLimitNotification && (
+              <div className={styles.charLimitNotification}>
+                <span>
+                  {dictionary.charLimitMessage ||
+                    "Maximum 500 characters reached"}
+                </span>
+              </div>
             )}
           </div>
           <p className={styles.iconPara}>{dictionary.methodLabel}</p>
@@ -302,10 +313,10 @@ const ContactUsForm: React.FC<Props> = ({ dictionary }) => {
                 </span>
               </div>
             ))}
-          </div>
           {errors.method && (
             <div className={styles.error}>*{errors.method}</div>
           )}
+          </div>
           <div className={styles.buttonWrapper}>
             <button type="submit" className={styles.submitButton}>
               {dictionary.submitButton}
