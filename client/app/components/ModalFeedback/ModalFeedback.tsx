@@ -1,7 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "./ModalFeedback.module.css";
+
+interface ModalFeedbackProps {
+  isOpen: boolean;
+  closeModal: () => void;
+}
 
 const ModalFeedback: React.FC<ModalFeedbackProps> = ({
   isOpen,
@@ -21,8 +26,9 @@ const ModalFeedback: React.FC<ModalFeedbackProps> = ({
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [focused, setFocused] = useState({ feedbackType: true });
+  const [isFormValid, setIsFormValid] = useState(false);
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
@@ -62,15 +68,20 @@ const ModalFeedback: React.FC<ModalFeedbackProps> = ({
       newErrors.message = "Заповніть відгук або пропозицію";
       isValid = false;
     }
-    
+
     setErrors(newErrors);
     return isValid;
   };
 
-  const handleSubmit = (e) => {
+  useEffect(() => {
+    setIsFormValid(validateForm());
+  }, [formData]);
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (!validateForm()) {
+    if (!isFormValid) {
+      validateForm();
       return;
     }
 
@@ -115,12 +126,9 @@ const ModalFeedback: React.FC<ModalFeedbackProps> = ({
                 onChange={handleChange}
               />
               <label htmlFor="name" className={styles.label}>
-                {/* {dictionary.fields.name} */}
                 Імя
               </label>
-              {errors.name && (
-                <div className={styles.error}>{errors.name}</div>
-              )}
+              {errors.name && <div className={styles.error}>{errors.name}</div>}
             </div>
             <div className={styles.formGroup}>
               <input
@@ -133,7 +141,6 @@ const ModalFeedback: React.FC<ModalFeedbackProps> = ({
                 onChange={handleChange}
               />
               <label htmlFor="email" className={styles.label}>
-                {/* {dictionary.fields.email} */}
                 Емейл
               </label>
               {errors.email && (
@@ -221,7 +228,13 @@ const ModalFeedback: React.FC<ModalFeedbackProps> = ({
               <div className={styles.error}>{errors.feedbackType}</div>
             )}
           </div>
-          <button type="submit" className={styles.submitBtn}>
+          <button
+            type="submit"
+            className={`${styles.submitBtn} ${
+              isFormValid ? styles.active : styles.inactive
+            }`}
+            disabled={!isFormValid}
+          >
             Відправити
             <img src="/images/arrow_top_right.svg" alt="" />
           </button>

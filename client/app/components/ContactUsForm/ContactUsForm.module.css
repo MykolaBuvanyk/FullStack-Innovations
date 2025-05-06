@@ -20,7 +20,6 @@
   font-weight: 700;
   font-size: 50px;
   width: 90%;
-  /* line-height: 60px; */
   background-image: url('/images/abstract-purple-blue-wave-background (2).png');
   background-size: cover;
   background-position: center;
@@ -38,7 +37,6 @@
 
 .formGroupWrapper>* {
   width: 50%;
-
 }
 
 .formWrapper {
@@ -47,9 +45,10 @@
 }
 
 .formGroup {
-  margin-bottom: 1.56vw;
+  margin-bottom: 2.5vw;
   text-align: left;
   position: relative;
+  min-height: 3.5em;
 }
 
 .label {
@@ -71,15 +70,14 @@
 
 .input {
   width: 100%;
-  padding: 10px 0; /* Зменшуємо padding для точнішого розташування тексту */
+  padding: 10px 0;
   border: none;
   border-bottom: 1px solid #888;
   background-color: transparent;
   color: #fff;
   font-size: 20px;
   outline: none;
-  resize: none; /* Забороняємо ручне змінення розміру */
-  line-height: 1.5; /* Контролюємо висоту рядка */
+  line-height: 1.5;
 }
 
 .input::placeholder {
@@ -90,10 +88,7 @@
 .input:not(:placeholder-shown)+.label {
   display: none;
 }
-.input:focus + .label,
-.input:not(:placeholder-shown) + .label {
-  display: none;
-}
+
 .input:focus {
   border-bottom: 1px solid #fff;
 }
@@ -102,14 +97,12 @@
   border-bottom: 1px solid #fff;
 }
 
-.input.multiline {
-  overflow: hidden;         /* Прибираємо скролбар */
-  resize: none;             /* Забороняємо ручну зміну висоти */
-  transition: height 0.2s ease, padding 0.2s ease;
-  line-height: 1.5;         /* або конкретне значення — 24px */
-  min-height: 3.5em;        /* або підбери за дизайном */
+textarea.input {
+  resize: none;
+  overflow: hidden;
+  min-height: 40px;
+  transition: height 0.2s ease;
 }
-
 
 .checkboxGroup {
   display: flex;
@@ -168,7 +161,6 @@
   justify-content: center;
   align-items: center;
   gap: 7%;
-
   flex-direction: column;
   align-items: center;
   color: #FFFFFF66;
@@ -182,7 +174,7 @@
   aspect-ratio: 1/0.52;
 }
 
-.messengerLink img{
+.messengerLink img {
   width: 1.19vw;
 }
 
@@ -269,7 +261,6 @@
   height: 16px;
 }
 
-
 .inputError {
   border-bottom: 1px solid #ff4d4f !important;
 }
@@ -278,15 +269,31 @@
   color: #ff4d4f;
 }
 
-
 .error {
   color: #ff4d4f;
   font-size: 12px;
-  margin-top: 10px;
+  position: absolute;
+  top: 100%;
+  left: 0;
   white-space: nowrap;
 }
 
+.formGroup {
+  margin-bottom: 2.5vw;
+  text-align: left;
+  position: relative;
+  min-height: 3.5em;
+}
 
+.checkboxGroup+.error {
+  top: auto;
+  bottom: -1.5em;
+}
+
+.messengerIcons+.error {
+  top: auto;
+  bottom: -1.5em;
+}
 
 .formContainerRight {
   display: flex;
@@ -296,35 +303,11 @@
 }
 
 .spheraWrapper {
-  /* width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: right;
-  align-items: center;
-  position: relative;
-  padding-top: 50%; */
   width: 50%;
   height: auto;
   position: absolute;
   right: 0%;
-  /* top: calc(0 + (1920px - 100vw) * 0.1042); */
 }
-
-/* @media screen and (device-aspect-ratio: 16/10) {
-  .spheraWrapper {
-      top: calc(0px);
-  }
-}
-@media screen and (device-aspect-ratio: 16/9) {
-  .spheraWrapper {
-      top: calc(0px + (1920px - 100vw) * 0.5);
-  }
-} */
-/* @media screen and (max-aspect-ratio: 16/10) {
-  .spheraWrapper {
-      top: calc(0px + (1920px - 100vw) * 0.12);
-  }
-} */
 
 @media screen and (min-aspect-ratio: 16/9) {
   .spheraWrapper {
@@ -336,8 +319,6 @@
 .sphereMedium,
 .sphereLarge {
   position: absolute;
-
-
 }
 
 .sphereSmall img,
@@ -348,30 +329,21 @@
   object-fit: cover;
 }
 
-
-
 .sphereLarge {
   width: 19.3vw;
-  /* width: 353px; */
   right: 4vw;
-  /* top: 20%; */
   top: 7vh;
 }
 
 .sphereMedium {
   width: 5.73vw;
-  /* width: 107px; */
   left: -12vw;
-  /* top: 2.5%; */
   top: 3vh;
 }
 
 .sphereSmall {
   width: 3vw;
-  /* width: 65px; */
-  /* top: 85%; */
   top: 30vh;
-  /* right: 330px; */
   right: 0vw;
 }
 
@@ -388,19 +360,26 @@
   transform: translate(-50%, 70%);
 }
 
-@media(max-width:1440px){
+@media(max-width:1440px) {
   .formContainerLeft h2 {
     font-size: 30px;
   }
+
   .label {
     font-size: 14px;
     bottom: 15px;
   }
+
   .input {
     padding: 15px 0;
     font-size: 14px;
   }
+
   .iconPara {
     font-size: 14px;
+  }
+
+  textarea.input {
+    min-height: 0px;
   }
 }

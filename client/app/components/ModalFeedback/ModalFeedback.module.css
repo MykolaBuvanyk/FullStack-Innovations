@@ -109,9 +109,9 @@
 }
 
 .select {
-  color: rgba(255, 255, 255, 0.4)8;
+  color: rgba(255, 255, 255, 0.4);
   background: transparent;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.4)8;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
   transition: all 0.3s ease;
   cursor: pointer;
 }
@@ -121,7 +121,7 @@
   border-bottom: 1px solid #fff;
 }
 
-.options{
+.options {
   margin-bottom: 0.78vw;
   display: flex;
   flex-direction: column;
@@ -148,16 +148,15 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.4);
 }
 
-.dropDownClosedPara{
+.dropDownClosedPara {
   color: rgba(255, 255, 255, 0.4);
-  
 }
 
 .customSelect {
   padding: 0.5rem 0;
 }
 
-.dropDownPara{
+.dropDownPara {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -174,7 +173,6 @@
   font-size: 12px;
   margin-top: 5px;
   text-decoration: underline;
-
   position: absolute;
 }
 
@@ -187,28 +185,40 @@
 }
 
 .submitBtn {
-  font-size: 16px;
-  padding: 25px 60px;
-  border-radius: 50px;
-  color: #fff;
   display: flex;
   align-items: center;
-  gap: 8px;
-  background: linear-gradient(to right, #C300B8, #8c0285);
-  border: none;
-  cursor: pointer;
-  transition: 0.3s;
-  margin-top: 2.08vw;
+  gap: 10px;
+  white-space: nowrap;
+  transition: 0.5s;
 }
 
-.submitButton:hover {
+.submitBtn {
+  line-height: 22px;
+  font-weight: 400;
+  font-size: 16px;
+  background-color: transparent;
+  padding: 25px 60px;
+  border-radius: 100px;
+  color: #fff;
+  margin-top: 40px;
+  border: 1px solid white;
+  cursor: not-allowed;
+}
+
+.submitBtn.active {
+  color: #fff;
+  background: linear-gradient(to right, #C300B8, #8c0285);
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.submitBtn.active:hover {
   box-shadow: 0px 10px 20px rgba(196, 1, 185, 0.4);
 }
 
-.submitButton img {
+.submitBtn img {
   width: 16px;
   height: 16px;
-  filter: invert(1);
 }
 
 .notification {
@@ -226,33 +236,4 @@
 .notificationIcon {
   width: 16px;
   height: 16px;
-}
-
-@media (max-width: 768px) {
-  .modalFeedbackWrapper {
-    max-width: 90%;
-    padding: 15px;
-  }
-
-  .title {
-    font-size: 20px;
-  }
-
-  .titlePara {
-    font-size: 14px;
-  }
-
-  .input,
-  .select {
-    font-size: 14px;
-  }
-
-  .label {
-    font-size: 14px;
-  }
-
-  .submitButton {
-    font-size: 14px;
-    padding: 10px 20px;
-  }
 }

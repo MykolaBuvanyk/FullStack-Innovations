@@ -1,4 +1,4 @@
-.cookieWrapper{
+.cookieWrapper {
     padding: 1vw;
     display: flex;
     justify-content: center;
@@ -14,14 +14,22 @@
     border-radius: 30px;
     font-size: 16px;
     line-height: 26px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-.cookieText a{
+.cookieWrapper.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.cookieText a {
     margin-left: 4px;
     color: rgba(232, 30, 221, 1);
 }
 
-.cookieButton button{
+.cookieButton button {
     background: linear-gradient(90deg, rgba(195, 0, 185, 1) 0%, rgba(93, 0, 88, 1) 100%);
     border: none;
     padding: 0.625vw 1.82vw;

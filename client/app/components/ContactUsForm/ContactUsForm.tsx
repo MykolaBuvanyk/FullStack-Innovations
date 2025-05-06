@@ -13,19 +13,21 @@ const ContactUsForm: React.FC<Props> = ({ dictionary }) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
     message: "",
     policy: false,
   });
   const [errors, setErrors] = useState({
     name: "",
     email: "",
+    phone: "",
     message: "",
     policy: "",
     method: "",
   });
 
-  const handleIconClick = (iicon: string) => {
-    setActiveIcon(iicon);
+  const handleIconClick = (icon: string) => {
+    setActiveIcon(icon);
     setErrors((prev) => ({ ...prev, method: "" }));
   };
 
@@ -34,12 +36,21 @@ const ContactUsForm: React.FC<Props> = ({ dictionary }) => {
   ) => {
     const { name, value, type } = e.target;
     const isCheckbox = type === "checkbox";
-  
+
     if (name === "name") {
       const lettersOnly = value.replace(/[^a-zA-Zа-яА-ЯїЇіІєЄґҐʼ'’\s]/g, "");
       setFormData((prev) => ({
         ...prev,
         [name]: lettersOnly,
+      }));
+    } else if (name === "phone") {
+      let cleanedValue = value.replace(/[^0-9+()-]/g, "");
+      if (cleanedValue && !cleanedValue.startsWith("+")) {
+        cleanedValue = `+${cleanedValue}`;
+      }
+      setFormData((prev) => ({
+        ...prev,
+        [name]: cleanedValue,
       }));
     } else {
       setFormData((prev) => ({
@@ -47,24 +58,31 @@ const ContactUsForm: React.FC<Props> = ({ dictionary }) => {
         [name]: isCheckbox ? (e.target as HTMLInputElement).checked : value,
       }));
     }
-  
+
     setErrors((prev) => ({ ...prev, [name]: "" }));
   };
-  
+
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
   useEffect(() => {
     if (textareaRef.current) {
       const textarea = textareaRef.current;
-      textarea.style.height = "4vw"; 
+      textarea.style.height = "auto";
+      const fontSize = window.innerWidth <= 1440 ? 14 : 20;
+      const singleLineHeight = fontSize * 1.5;
+      const scrollHeight = textarea.scrollHeight;
+      const lines = textarea.value.split("\n").length;
+      textarea.style.height = `${
+        lines <= 1 ? singleLineHeight : scrollHeight
+      }px`;
     }
   }, [formData.message]);
-
 
   const validateForm = () => {
     const newErrors = {
       name: "",
       email: "",
+      phone: "",
       message: "",
       policy: "",
       method: "",
@@ -81,6 +99,14 @@ const ContactUsForm: React.FC<Props> = ({ dictionary }) => {
       isValid = false;
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       newErrors.email = dictionary.errors.emailInvalid;
+      isValid = false;
+    }
+
+    if (!formData.phone.trim()) {
+      newErrors.phone = dictionary.errors.phone;
+      isValid = false;
+    } else if (!/^\+\d{1,3}[0-9()-]{7,15}$/.test(formData.phone)) {
+      newErrors.phone = dictionary.errors.phoneInvalid;
       isValid = false;
     }
 
@@ -115,6 +141,7 @@ const ContactUsForm: React.FC<Props> = ({ dictionary }) => {
     setFormData({
       name: "",
       email: "",
+      phone: "",
       message: "",
       policy: false,
     });
@@ -152,7 +179,6 @@ const ContactUsForm: React.FC<Props> = ({ dictionary }) => {
                 >
                   {dictionary.fields.name}
                 </label>
-
                 {errors.name && (
                   <div className={styles.error}>*{errors.name}</div>
                 )}
@@ -179,11 +205,36 @@ const ContactUsForm: React.FC<Props> = ({ dictionary }) => {
                     {dictionary.fields.email}
                   </label>
                 </div>
-
                 {errors.email && (
                   <div className={styles.error}>*{errors.email}</div>
                 )}
               </div>
+            </div>
+            <div className={styles.formGroup}>
+              <div className={styles.inputGroup}>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder=" "
+                  className={`${styles.input} ${
+                    errors.phone ? styles.inputError : ""
+                  }`}
+                  value={formData.phone}
+                  onChange={handleChange}
+                />
+                <label
+                  htmlFor="phone"
+                  className={`${styles.label} ${
+                    errors.phone ? styles.labelError : ""
+                  }`}
+                >
+                  {dictionary.fields.phone}
+                </label>
+              </div>
+              {errors.phone && (
+                <div className={styles.error}>*{errors.phone}</div>
+              )}
             </div>
             <div className={styles.formGroup}>
               <div className={styles.inputGroup}>
@@ -196,6 +247,7 @@ const ContactUsForm: React.FC<Props> = ({ dictionary }) => {
                   }`}
                   value={formData.message}
                   onChange={handleChange}
+                  ref={textareaRef}
                 />
                 <label
                   htmlFor="message"
