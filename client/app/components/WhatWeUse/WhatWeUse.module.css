@@ -4,11 +4,11 @@
     margin-bottom: 150px;
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 6.5vh;
 }
 
 .title {
+    width: 560px;
     font-size: 70px;
     font-weight: 500;
     line-height: 80px;

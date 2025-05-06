@@ -51,7 +51,7 @@ const AboutServicesHero = () => {
                 {/* Контент */}
                 <div className={styles.heroContent}>
                     <h1 className={styles.heroTitle}>
-                        Послуги<br />Fullstack innovations
+                        Послуги<br />Fullstack Innovations
                     </h1>
 
                     {/* Вкладки */}
