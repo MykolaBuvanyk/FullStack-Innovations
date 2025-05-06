@@ -29,8 +29,8 @@
         "button": "Приймаю"
     },
     "mainHero": {
-        "header": "Fullstack innovations",
-        "description": "Розробка сайтів <span>та комплексне</span> просування вашого бізнесу <span>в лідери</span>",
+        "header": "Fullstack Innovations",
+        "description": "Розробка сучасних сайтів <span>та комплексне</span> просування вашого бізнесу <span>в лідери</span>",
         "contactButton": "Зв’язатися з нами",
         "getOffer": "отримати",
         "offer": "пропозицію",
@@ -61,7 +61,7 @@
     },
     "mainServices": {
         "title": "Послуги",
-        "subtitle": "Fullstack innovations",
+        "subtitle": "Fullstack Innovations",
         "tabs": [
             {
                 "label": "Всі послуги",
@@ -193,7 +193,7 @@
         "buttonText": "Розкажіть про свій проект"
     },
     "aboutHero": {
-        "title": "Fullstack innovations<br />— це унікальна агенція",
+        "title": "Fullstack Innovations<br />— це унікальна агенція",
         "buttonText": "Розкажіть про свій проект",
         "paragraphs": [
             "Ми - команда професіоналів у галузі веб-розробки та інновацій, яка готова перетворити ваші концепції в успішні та прибуткові проєкти. З кінця 2021 року ми вже реалізували понад 75 успішних веб-сайтів, що свідчить про наш високий рівень експертизи та професіоналізму.",

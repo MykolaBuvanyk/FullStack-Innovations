@@ -12,6 +12,7 @@ import { getDictionary } from '../../lib/dictionary';
 import { headers } from "next/headers";
 import ButtonTop from "../components/ButtonTop/ButtonTop";
 import Cookie from "../components/Cookie/Cookie";
+import { useEffect, useState } from "react";
 const notoEmoji = Noto_Color_Emoji({
   subsets: ['emoji'],
   weight: ['400'],
@@ -29,6 +30,7 @@ export default async function RootLayout({
   params: { lang: Locale };
 }) {
   const dictionary: any = await getDictionary(params.lang);
+
   const { header, footer,cookie } = dictionary;
   return (
     <html

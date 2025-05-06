@@ -214,8 +214,7 @@
     border-radius: 30px;
     backdrop-filter: blur(10px);
     /* padding: 1.3vw 1.82vw; */
-    width: 16.7vw;
-    aspect-ratio: 1 / 0.47;
+    padding: 25px 35px;
     right: 0;
     bottom: 14%;
 }
@@ -236,7 +235,7 @@
 .getOfferWrapper {
     position: absolute;
     display: flex;
-    left: 10%;
+    left: 6%;
     top: 30%;
 }
 
@@ -244,8 +243,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     font-size: 12px;
     font-weight: 500;
     text-transform: uppercase;
@@ -282,81 +281,7 @@
     margin-bottom: 5px;
 }
 
-/* Медіа-запити для адаптивності */
-@media (max-width: 1200px) {
-    .contentLeft h1 {
-        font-size: 50px;
-    }
 
-    .contentLeft p {
-        font-size: 24px;
-    }
-
-    .spheraWrapper {
-        max-width: 400px;
-        max-height: 400px;
-    }
-
-    .developCount h1 {
-        font-size: 50px;
-    }
-
-    .developCount p {
-        font-size: 16px;
-    }
-
-    .getOffer {
-        width: 80px;
-        height: 80px;
-        font-size: 10px;
-    }
-}
-
-@media (max-width: 768px) {
-    .heroContent {
-        flex-direction: column;
-        padding: 0 5vw;
-        height: auto;
-    }
-
-    .contentLeft {
-        width: 100%;
-        align-items: center;
-        text-align: center;
-        padding: 20px 0;
-    }
-
-    .contentRight {
-        width: 100%;
-        height: 50vh;
-    }
-
-    .spheraWrapper {
-        max-width: 300px;
-        max-height: 300px;
-        margin: 0 auto;
-    }
-
-    .contentLeft h1 {
-        font-size: 40px;
-    }
-
-    .contentLeft p {
-        font-size: 20px;
-    }
-
-    .developCount {
-        position: relative;
-        right: auto;
-        bottom: auto;
-        margin: 20px auto;
-    }
-
-    .getOfferWrapper {
-        left: 5%;
-        top: 20%;
-    }
-}
 
 @media (max-width: 480px) {
     .contentLeft h1 {

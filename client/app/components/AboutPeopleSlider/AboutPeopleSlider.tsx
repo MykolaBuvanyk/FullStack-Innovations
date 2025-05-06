@@ -28,7 +28,7 @@ const AboutPeopleSlider = () => {
   return (
     <section className={styles.aboutPeopleSlider}>
       <div className={styles.aboutPeopleSliderTitle}>
-        <h2>Обличчя компанії Fullstack innovations</h2>
+        <h2>Обличчя компанії Fullstack Innovations</h2>
       </div>
 
       <div className={styles.sliderContainer}>

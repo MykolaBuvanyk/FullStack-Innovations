@@ -19,7 +19,7 @@
         }
     },
     "mainHero": {
-        "header": "Fullstack innovations",
+        "header": "Fullstack Innovations",
         "description": "Website development <span>and comprehensive</span> promotion of your business <span>to the top</span>",
         "contactButton": "Contact us",
         "getOffer": "get",
@@ -51,7 +51,7 @@
     },
     "mainServices": {
         "title": "Services",
-        "subtitle": "Fullstack innovations",
+        "subtitle": "Fullstack Innovations",
         "tabs": [
             {
                 "label": "All services",
@@ -183,7 +183,7 @@
         "buttonText": "Tell us about your project"
     },
     "aboutHero": {
-        "title": "Fullstack innovations<br />— is a unique agency",
+        "title": "Fullstack Innovations<br />— is a unique agency",
         "buttonText": "Tell us about your project",
         "paragraphs": [
             "We are a team of web development and innovation professionals ready to turn your concepts into successful and profitable projects. Since the end of 2021, we have already implemented more than 75 successful websites, which demonstrates our high level of expertise and professionalism.",
