@@ -9,14 +9,15 @@ import WorldMapPartnership from "@/app/components/WorldMapPartnership/WorldMapPa
 import ContactUsForm from "@/app/components/ContactUsForm/ContactUsForm";
 import { getDictionary } from "@/lib/dictionary";
 type Props = {
-  params: { lang: Locale };
+  params: Promise<{ lang: Locale }>;
 };
 export default async  function Partnership({ params }: Props) {
-   const dictionary: any = await getDictionary(params.lang);
-    const { partnershipCards,worldMapPartnership,contactUsForm, partnershipHero, partnershipOptions, partnershipBenefits} = dictionary;
+  const { lang } = await params;
+   const dictionary: any = await getDictionary(lang);
+    const { navPath,partnershipCards,worldMapPartnership,contactUsForm, partnershipHero, partnershipOptions, partnershipBenefits} = dictionary;
   return (
     <div>
-      <NavPath />
+      <NavPath dictionary={navPath}/>
       <PartnershipHero dictionary={partnershipHero}/>
       <PartnershipCards dictionary={partnershipCards} />
       <PartnershipOptions dictionary={partnershipOptions} />

@@ -253,6 +253,9 @@
     flex-direction: column;
     position: relative;
     z-index: 1;
+    background-color: rgba(255, 255, 255, 0.06);
+    border-radius: 50%;
+    backdrop-filter: blur(20px);
 }
 
 .getOffer::before {
@@ -280,7 +283,54 @@
     height: 15px;
     margin-bottom: 5px;
 }
-
+@media (max-width: 1024px){
+    .heroContent {
+        padding: 0 20px;
+    }
+    .contentLeft h1 {
+        font-size: 35px;
+        line-height: 35px;
+    }
+    .contentLeft{
+        width: 45%;
+    }
+    .contentLeft p {
+        font-size: 16px;
+        line-height: 26px;
+        margin-top: 15px;
+    }
+    .heroContent {
+        min-height: auto;
+    }
+    .developCount h1{
+        font-size: 35px;
+        line-height: 35px;
+    }
+    .developCount p{
+        font-size: 10px;
+    }
+    .developCount{
+        gap: 10px;
+        padding: 15px;
+        left: -20%;
+        right: auto;
+        bottom: 12.5%;
+    }
+    .getOfferWrapper {
+        left: auto;
+        right: 15%;
+        top: 15%;
+    }
+    .getOffer {
+        width: 75px;
+        height: 75px;
+        font-size: 8px;
+    }
+    /* .spheraWrapper {
+        height: 364px;
+        width: 364px;
+    } */
+}
 
 
 @media (max-width: 480px) {

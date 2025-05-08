@@ -3,25 +3,13 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import styles from './NavPath.module.css';
-import { i18n } from '@/i18n.config'; // Шлях до вашого конфігу i18n
+import { i18n } from '@/i18n.config';
 
-const NavPathMap: Record<string, string> = {
-  about: 'Про нас',
-  blog: 'Блог',
-  catalog: 'Каталог',
-  delivery: 'Оплата і доставка',
-  guarantees: 'Гарантія',
-  news: 'Новини',
-  partnership: 'Партнерство',
-  contacts: 'Контакти',
-  cart: 'Оформлення замовлення',
-  privacy_policy: 'Політика конфіденційності',
-  offer_agreement: 'Договір Оферти',
-  services: 'Послуги',
-  portfolio: 'Портфоліо',
+type Props = {
+  dictionary: any;
 };
 
-export default function NavPath() {
+const NavPath: React.FC<Props> = ({ dictionary }) => {
   const pathname = usePathname();
   const currentLang = pathname.split('/')[1] || i18n.defaultLocale;
 
@@ -40,10 +28,10 @@ export default function NavPath() {
   return (
     <nav className={styles.navPath}>
       <Link href={`/${currentLang}`} className={styles.navpathLink}>
-        Головна
+        {dictionary.home}
       </Link>
       {pathSegments.map((segment, index) => {
-        const translatedName = NavPathMap[segment] || segment;
+        const translatedName = dictionary.navPathMap[segment] || segment;
         
         // Будуємо href з врахуванням поточної мови
         const href = isFirstSegmentLocale
@@ -61,4 +49,6 @@ export default function NavPath() {
       })}
     </nav>
   );
-}
+};
+
+export default NavPath;

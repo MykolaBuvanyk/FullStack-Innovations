@@ -1,7 +1,9 @@
 import styles from './Technologies.module.css';
 import Image from 'next/image';
-
-const Technologies = () => {
+type Props = {
+    dictionary: any;
+  };
+const Technologies: React.FC<Props> = ({ dictionary }) => {
     const techCategories = [
         {
             category: 'Backend',
@@ -118,7 +120,7 @@ const Technologies = () => {
 
     return (
         <section className={styles.technologies}>
-            <h2 className={styles.title}>Технології</h2>
+            <h2 className={styles.title}>{dictionary.title}</h2>
             <div className={styles.grid}>
                 {techCategories.map((category, index) => (
                     <div key={index} className={styles.categoryRow}>

@@ -6,12 +6,16 @@ import styles from "./ModalFeedback.module.css";
 interface ModalFeedbackProps {
   isOpen: boolean;
   closeModal: () => void;
+  dictionary: any;
 }
 
 const ModalFeedback: React.FC<ModalFeedbackProps> = ({
   isOpen,
   closeModal,
+  dictionary,
 }) => {
+  console.log("DICTIONARY")
+  console.log(dictionary);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -47,25 +51,25 @@ const ModalFeedback: React.FC<ModalFeedbackProps> = ({
     let isValid = true;
 
     if (!formData.name.trim()) {
-      newErrors.name = "Заповніть ім'я";
+      newErrors.name = dictionary.errors.nameRequired;
       isValid = false;
     }
 
     if (!formData.email.trim()) {
-      newErrors.email = "Заповніть пошту";
+      newErrors.email = dictionary.errors.emailRequired;
       isValid = false;
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = "Введіть коректний E-mail";
+      newErrors.email = dictionary.errors.emailInvalid;
       isValid = false;
     }
 
     if (!formData.feedbackType) {
-      newErrors.feedbackType = "Виберіть оцінку";
+      newErrors.feedbackType = dictionary.errors.feedbackTypeRequired;
       isValid = false;
     }
 
     if (!formData.message.trim()) {
-      newErrors.message = "Заповніть відгук або пропозицію";
+      newErrors.message = dictionary.errors.messageRequired;
       isValid = false;
     }
 
@@ -110,8 +114,8 @@ const ModalFeedback: React.FC<ModalFeedbackProps> = ({
           <i className="fa-solid fa-arrow-left"></i>
         </button>
         <div className={styles.titleWrapper}>
-          <h2 className={styles.title}>Відгук або пропозиція щодо роботи</h2>
-          <p className={styles.titlePara}>Нам важлива, ваша думка</p>
+          <h2 className={styles.title}>{dictionary.title}</h2>
+          <p className={styles.titlePara}>{dictionary.subtitle}</p>
         </div>
         <form className={styles.form} onSubmit={handleSubmit} noValidate>
           <div className={styles.formGroupWrapper}>
@@ -126,7 +130,7 @@ const ModalFeedback: React.FC<ModalFeedbackProps> = ({
                 onChange={handleChange}
               />
               <label htmlFor="name" className={styles.label}>
-                Імя
+                {dictionary.labels.name}
               </label>
               {errors.name && <div className={styles.error}>{errors.name}</div>}
             </div>
@@ -141,7 +145,7 @@ const ModalFeedback: React.FC<ModalFeedbackProps> = ({
                 onChange={handleChange}
               />
               <label htmlFor="email" className={styles.label}>
-                Емейл
+                {dictionary.labels.email}
               </label>
               {errors.email && (
                 <div className={styles.error}>{errors.email}</div>
@@ -158,7 +162,7 @@ const ModalFeedback: React.FC<ModalFeedbackProps> = ({
                 onChange={handleChange}
               />
               <label htmlFor="message" className={styles.label}>
-                Відгук або пропозиція
+                {dictionary.labels.message}
               </label>
               {errors.message && (
                 <div className={styles.error}>{errors.message}</div>
@@ -179,7 +183,7 @@ const ModalFeedback: React.FC<ModalFeedbackProps> = ({
                 }))
               }
             >
-              Ваша оцінка
+              {dictionary.labels.feedbackType}
               <i className="fa-solid fa-chevron-down"></i>
             </p>
 
@@ -194,32 +198,23 @@ const ModalFeedback: React.FC<ModalFeedbackProps> = ({
             >
               {focused.feedbackType && (
                 <div className={styles.options}>
-                  {["1", "2", "3", "4", "5"].map((val, idx) => {
-                    const labels = [
-                      "1 — Погано",
-                      "2 — Можливо краще",
-                      "3 — Терпимо",
-                      "4 — Добре",
-                      "5 — Відмінно",
-                    ];
-                    return (
-                      <div
-                        key={val}
-                        className={`${styles.option} ${
-                          formData.feedbackType === val ? styles.active : ""
-                        }`}
-                        onClick={() => {
-                          setFormData((prev) => ({
-                            ...prev,
-                            feedbackType: val,
-                          }));
-                          setErrors((prev) => ({ ...prev, feedbackType: "" }));
-                        }}
-                      >
-                        {labels[idx]}
-                      </div>
-                    );
-                  })}
+                  {["1", "2", "3", "4", "5"].map((val, idx) => (
+                    <div
+                      key={val}
+                      className={`${styles.option} ${
+                        formData.feedbackType === val ? styles.active : ""
+                      }`}
+                      onClick={() => {
+                        setFormData((prev) => ({
+                          ...prev,
+                          feedbackType: val,
+                        }));
+                        setErrors((prev) => ({ ...prev, feedbackType: "" }));
+                      }}
+                    >
+                      {dictionary.feedbackOptions[idx]}
+                    </div>
+                  ))}
                 </div>
               )}
             </div>
@@ -235,7 +230,7 @@ const ModalFeedback: React.FC<ModalFeedbackProps> = ({
             }`}
             disabled={!isFormValid}
           >
-            Відправити
+            {dictionary.submitButton}
             <img src="/images/arrow_top_right.svg" alt="" />
           </button>
         </form>

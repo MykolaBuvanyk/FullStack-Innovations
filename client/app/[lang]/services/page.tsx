@@ -9,17 +9,18 @@ import { Locale } from "@/i18n.config";
 import { getDictionary } from '@/lib/dictionary';
 
 type Props = {
-  params: { lang: Locale };
+  params: Promise<{ lang: Locale }>;
 };
 export default async function Home({ params }: Props) {
-  const dictionary: any = await getDictionary(params.lang);
-  const { tellAboutUs,servicesHero, contactUsForm, servicesThird } = dictionary;
+  const { lang } = await params;
+  const dictionary: any = await getDictionary(lang);
+  const { navPath,servicesSecond,technologies,tellAboutUs,servicesHero, contactUsForm, servicesThird } = dictionary;
   return (
     <div>
-      <NavPath />
+      <NavPath dictionary={navPath}/>
       <ServicesHero dictionary={servicesHero} />
-      <ServicesSecond />
-      <Technologies />
+      <ServicesSecond dictionary={servicesSecond}/>
+      <Technologies dictionary={technologies}/>
       <ServicesThird dictionary={servicesThird} />
       <TellAboutUs dictionary={tellAboutUs} />
       <ContactUsForm dictionary={contactUsForm} />

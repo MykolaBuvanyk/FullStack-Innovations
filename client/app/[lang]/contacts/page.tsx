@@ -5,14 +5,15 @@ import ContactUsForm from '../../components/ContactUsForm/ContactUsForm';
 import { Locale } from "@/i18n.config";
 import { getDictionary } from "@/lib/dictionary";
 type Props = {
-  params: { lang: Locale };
+  params: Promise<{ lang: Locale }>;
 };
 export default async function Home({ params }: Props) {
-  const dictionary: any = await getDictionary(params.lang);
-  const { contactUsForm, contactUs } = dictionary;
+  const { lang } = await params;
+  const dictionary: any = await getDictionary(lang);
+  const {navPath,contactUsForm, contactUs } = dictionary;
   return (
     <div>
-      <NavPath />
+      <NavPath dictionary={navPath}/>
       <ContactContent dictionary={contactUs}/>
       <ContactUsForm dictionary={contactUsForm} />
     </div>

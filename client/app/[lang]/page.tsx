@@ -12,10 +12,11 @@ import WorldMapPartnership from "../components/WorldMapPartnership/WorldMapPartn
 import ContactUsForm from "../components/ContactUsForm/ContactUsForm";
 import { getDictionary } from '../../lib/dictionary';
 type Props = {
-  params: { lang: Locale };
+  params: Promise<{ lang: Locale }>;
 };
 export default async function Home({ params }: Props) {
-  const dictionary: any = await getDictionary(params.lang);
+  const { lang } = await params;
+  const dictionary: any = await getDictionary(lang);
   const { mainHero,mainSecond,mainServices,ourPortfolioSlider,aboutHero,partnershipCards,tellAboutUs,worldMapPartnership,contactUsForm} = dictionary;
   return (
     <div className={styles.page}>

@@ -58,7 +58,7 @@ const MainHeroSection: React.FC<Props> = ({ dictionary }) => {
                     </div>
                 </div>
             </div>
-            <Marquee />
+            <Marquee dictionary={dictionary.marquee}/>
         </section>
     );
 };

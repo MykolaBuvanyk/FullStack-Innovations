@@ -9,26 +9,21 @@ import { Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
-// Зображення людей (замініть на ваші реальні шляхи)
 import person1 from '../../../public/images/first-person.png';
 import person2 from '../../../public/images/second-person.png';
 import person3 from '../../../public/images/third-person.png';
 import person4 from '../../../public/images/fourth-person.png';
 import person5 from '../../../public/images/fifth-person.png';
 
-const people = [
-  { name: 'Діана Кравець', position: 'Team manager', image: person1 },
-  { name: 'Дарья Клименко', position: 'Sales Manager', image: person2 },
-  { name: 'Bладислав Кириленко', position: 'Senior HR Generalist', image: person3 },
-  { name: 'Аліна Маренюк', position: 'Project manager', image: person4 },
-    { name: 'Кирилл Павленко', position: 'Business Analyst', image: person5 },
-];
+type Props = {
+  dictionary: any;
+};
 
-const AboutPeopleSlider = () => {
+const AboutPeopleSlider: React.FC<Props> = ({ dictionary }) => {
   return (
     <section className={styles.aboutPeopleSlider}>
       <div className={styles.aboutPeopleSliderTitle}>
-        <h2>Обличчя компанії Fullstack Innovations</h2>
+        <h2>{dictionary.title}</h2>
       </div>
 
       <div className={styles.sliderContainer}>
@@ -38,7 +33,7 @@ const AboutPeopleSlider = () => {
           slidesPerView={4}
           pagination={{
             clickable: true,
-            el: `.${styles.swiperPagination}`, // Прив’язуємо пагінацію до кастомного елемента
+            el: `.${styles.swiperPagination}`, 
           }}
           breakpoints={{
             1100: { slidesPerView: 4 },
@@ -46,7 +41,7 @@ const AboutPeopleSlider = () => {
             0: { slidesPerView: 1 },
           }}
         >
-          {people.map((person, index) => (
+          {dictionary.people.map((person: { name: string; position: string; image: any }, index: number) => (
             <SwiperSlide key={index}>
               <div className={styles.personCard}>
                 <div className={styles.personImage}>
@@ -64,7 +59,6 @@ const AboutPeopleSlider = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-        {/* Додаємо елемент для пагінації */}
         <div className={styles.swiperPagination}></div>
       </div>
     </section>

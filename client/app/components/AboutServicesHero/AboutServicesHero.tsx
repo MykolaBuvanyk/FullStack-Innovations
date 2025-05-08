@@ -7,36 +7,13 @@ import styles from './AboutServicesHero.module.css';
 // Зображення робочого місця (замініть на ваш шлях)
 import workspaceImage from '../../../public/images/workspace.png';
 
-const tabs = [
-    { label: 'Веб-сайти', value: 'websites' },
-    { label: 'Дизайн', value: 'design' },
-    { label: 'Розробка', value: 'development' },
-    { label: 'Маркетинг', value: 'marketing' },
-];
-
-// Список послуг для кожної вкладки (можна розширити)
-const services = {
-    websites: [
-        'UI/UX дизайн',
-        '2D дизайн',
-    ],
-    design: [
-        'UI/UX дизайн',
-        '3D моделювання',
-        '2D дизайн',
-        'Маркетинг',
-    ],
-    development: [
-        'Розробка логіки',
-    ],
-    marketing: [
-        'Маркетинг',
-    ],
+type Props = {
+  dictionary: any;
 };
 
-const AboutServicesHero = () => {
-    const [activeTab, setActiveTab] = useState<keyof typeof services>('websites');
-    const currentServices = [...services[activeTab]];
+const AboutServicesHero: React.FC<Props> = ({ dictionary }) => {
+    const [activeTab, setActiveTab] = useState<string>(dictionary.tabs[0].value);
+    const currentServices = [...dictionary.services[activeTab]];
     while (currentServices.length < 4) {
       currentServices.push('');
     }
@@ -50,18 +27,15 @@ const AboutServicesHero = () => {
 
                 {/* Контент */}
                 <div className={styles.heroContent}>
-                    <h1 className={styles.heroTitle}>
-                        Послуги<br />Fullstack Innovations
-                    </h1>
+                    <h1 className={styles.heroTitle} dangerouslySetInnerHTML={{ __html: dictionary.title }}></h1>
 
                     {/* Вкладки */}
                     <div className={styles.tabs}>
-                        {tabs.map((tab) => (
+                        {dictionary.tabs.map((tab: { label: string; value: string }) => (
                             <button
                                 key={tab.value}
-                                className={`${styles.tabButton} ${activeTab === tab.value ? styles.active : ''
-                                    }`}
-                                onClick={() => setActiveTab(tab.value as keyof typeof services)}
+                                className={`${styles.tabButton} ${activeTab === tab.value ? styles.active : ''}`}
+                                onClick={() => setActiveTab(tab.value)}
                             >
                                 {tab.label}
                             </button>
@@ -70,9 +44,9 @@ const AboutServicesHero = () => {
 
                     {/* Список послуг */}
                     <ul className={styles.servicesList}>
-                        {services[activeTab].map((service, index) => (
+                        {currentServices.map((service: string, index: number) => (
                             <li key={index} className={styles.serviceItem}>
-                                {service || <span>&nbsp;</span>}
+                                {service || <span> </span>}
                             </li>
                         ))}
                     </ul>

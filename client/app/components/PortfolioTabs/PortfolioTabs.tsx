@@ -1,47 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import styles from './PortfolioTabs.module.css'; // Використовуємо ваші стилі
-
-// Дані для портфоліо (замініть на ваші дані)
-const portfolioData = [
-    {
-        id: 1,
-        category: 'Веб-дизайн',
-        title: 'ВЕБ-ДИЗАЙН ДЛЯ КОМПАНІЇ - ELITY+',
-        image: '/images/blog/1.png',
-    },
-    {
-        id: 2,
-        category: 'Веб-розробка',
-        title: 'ВЕБ-ДИЗАЙН ДЛЯ КОМПАНІЇ - PRESSWAVE+',
-        image: '/images/blog/2.png',
-    },
-    {
-        id: 3,
-        category: 'Лого',
-        title: 'ВЕБ-ДИЗАЙН ДЛЯ КОМПАНІЇ - ALLEVA+',
-        image: '/images/blog/3.png',
-    },
-    {
-        id: 4,
-        category: 'Веб-розробка',
-        title: 'ВЕБ-ДИЗАЙН ДЛЯ КОМПАНІЇ - PRESSWAVE+',
-        image: '/images/blog/4.png',
-    },
-    {
-        id: 5,
-        category: 'Веб-дизайн',
-        title: 'ВЕБ-ДИЗАЙН ДЛЯ КОМПАНІЇ - ELITY+',
-        image: '/images/blog/5.png',
-    },
-    {
-        id: 6,
-        category: 'Лого',
-        title: 'ВЕБ-ДИЗАЙН ДЛЯ КОМПАНІЇ - ALLEVA+',
-        image: '/images/blog/6.png',
-    },
-];
+import styles from './PortfolioTabs.module.css';
 
 interface PortfolioItem {
     id: number;
@@ -50,14 +10,17 @@ interface PortfolioItem {
     image: string;
 }
 
+type Props = {
+  dictionary: any;
+};
+
 const POSTS_PER_PAGE = 6;
 
-const PortfolioTabs = () => {
-    const [portfolioItems, setPortfolioItems] = useState<PortfolioItem[]>(portfolioData);
+const PortfolioTabs: React.FC<Props> = ({ dictionary }) => {
+    const [portfolioItems] = useState<PortfolioItem[]>(dictionary.portfolioData);
     const [currentPage, setCurrentPage] = useState(1);
-    const [activeTab, setActiveTab] = useState('Усе');
-    const tabs = ['Усе', 'Веб-дизайн', 'Веб-розробка', 'Лого', 'Бізнес-картки'];
-    const filteredItems = activeTab === 'Усе'
+    const [activeTab, setActiveTab] = useState(dictionary.tabs[0]);
+    const filteredItems = activeTab === dictionary.tabs[0]
         ? portfolioItems
         : portfolioItems.filter(item => item.category === activeTab);
     const totalPages = Math.ceil(filteredItems.length / POSTS_PER_PAGE);
@@ -82,7 +45,7 @@ const PortfolioTabs = () => {
         <div className={styles.blogContentWrapper}>
             <div className={styles.container}>
                 <div className={styles.tabsWrapper}>
-                    {tabs.map((tab) => (
+                    {dictionary.tabs.map((tab: string) => (
                         <button
                             key={tab}
                             className={`${styles.tab} ${activeTab === tab ? styles.activeTab : ''}`}
@@ -103,7 +66,7 @@ const PortfolioTabs = () => {
                                     <p>{item.category}</p>
                                     <div className={styles.blogItemMeta}>
                                         <a href={"#"} className={styles.readMore}>
-                                            Перейти на сайт
+                                            {dictionary.readMore}
                                             <img src="/images/arrow_top_right.svg" alt="" />
                                         </a>
                                     </div>
@@ -115,18 +78,16 @@ const PortfolioTabs = () => {
                         <button
                             onClick={() => handlePageChange(currentPage - 1)}
                             disabled={currentPage === 1}
-                            className={`${styles.paginationButton} ${styles.prevButton} ${currentPage === 1 ? styles.disabled : styles.active
-                                }`}
+                            className={`${styles.paginationButton} ${styles.prevButton} ${currentPage === 1 ? styles.disabled : styles.active}`}
                         >
                             <i className="fa-solid fa-arrow-left"></i>
-                            <span>Попередня сторінка</span>
+                            <span>{dictionary.prevButton}</span>
                         </button>
                         <ul className={styles.pageNumbers}>
                             {pageNumbers.map((page) => (
                                 <li
                                     key={page}
-                                    className={`${styles.pageItem} ${currentPage === page ? styles.active : ''
-                                        }`}
+                                    className={`${styles.pageItem} ${currentPage === page ? styles.active : ''}`}
                                     onClick={() => handlePageChange(page)}
                                 >
                                     {page}
@@ -136,10 +97,9 @@ const PortfolioTabs = () => {
                         <button
                             onClick={() => handlePageChange(currentPage + 1)}
                             disabled={currentPage === totalPages}
-                            className={`${styles.paginationButton} ${styles.nextButton} ${currentPage === totalPages ? styles.disabled : styles.active
-                                }`}
+                            className={`${styles.paginationButton} ${styles.nextButton} ${currentPage === totalPages ? styles.disabled : styles.active}`}
                         >
-                            <span>Наступна сторінка</span>
+                            <span>{dictionary.nextButton}</span>
                             <i className="fa-solid fa-arrow-right"></i>
                         </button>
                     </div>

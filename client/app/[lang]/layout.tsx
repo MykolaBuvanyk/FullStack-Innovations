@@ -27,14 +27,15 @@ export default async function RootLayout({
   params,
 }: {
   children: React.ReactNode;
-  params: { lang: Locale };
+  params: Promise<{ lang: Locale }>;
 }) {
-  const dictionary: any = await getDictionary(params.lang);
+  const { lang } = await params;
+  const dictionary: any = await getDictionary(lang);
 
   const { header, footer,cookie } = dictionary;
   return (
     <html
-      lang={params.lang}
+      lang={lang}
     >
       <head>
         <script src="https://kit.fontawesome.com/44ddc9fabc.js" crossOrigin="anonymous" async />

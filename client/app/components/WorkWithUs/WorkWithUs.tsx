@@ -6,12 +6,17 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import type { Swiper as SwiperType } from "swiper";
-const WorkWithUs = () => {
-    const swiperRef = useRef<SwiperType | null>(null); // Explicitly type the ref
+
+type Props = {
+  dictionary: any;
+};
+
+const WorkWithUs: React.FC<Props> = ({ dictionary }) => {
+    const swiperRef = useRef<SwiperType | null>(null);
 
     useEffect(() => {
         if (swiperRef.current) {
-            swiperRef.current.autoplay.start(); // Access the Swiper instance safely
+            swiperRef.current.autoplay.start();
         }
     }, []);
 
@@ -19,13 +24,13 @@ const WorkWithUs = () => {
         <section className={styles.workWithUsWrapper}>
             <div className={styles.tellAboutUsTitle}>
                 <div className={styles.tellAboutUsTitleButton}>
-                    <h2>З нами<br /> співпрацюють</h2>
+                    <h2 dangerouslySetInnerHTML={{ __html: dictionary.title }}></h2>
                     <button className={styles.submitButton}>
-                        Залишити відгук
+                        {dictionary.buttonText}
                         <img src="/images/arrow_top_right.svg" alt="" />
                     </button>
                 </div>
-                <p>Клієнти довіряють нам свою рекламу із США, Австралії та Європи.</p>
+                <p>{dictionary.description}</p>
             </div>
             <div className={styles.workWithUsContainer}>
                 <Swiper

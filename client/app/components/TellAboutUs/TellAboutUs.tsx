@@ -110,7 +110,7 @@ const TellAboutUs: React.FC<Props> = ({ dictionary }) => {
         </Swiper>
         <div className={styles.swiperPagination}></div>
       </div>
-      <ModalFeedback isOpen={isModalOpen} closeModal={closeModal} />
+      <ModalFeedback isOpen={isModalOpen} closeModal={closeModal} dictionary={dictionary.modalFeedback}/>
     </section>
   );
 };
