@@ -217,6 +217,7 @@
     padding: 25px 35px;
     right: 0;
     bottom: 14%;
+    z-index: 5;
 }
 
 .developCount h1 {
@@ -283,49 +284,81 @@
     height: 15px;
     margin-bottom: 5px;
 }
-@media (max-width: 1024px){
+
+@media (max-width: 1024px) {
     .heroContent {
         padding: 0 20px;
+        display: flex;
+        justify-content: space-between;
+        min-height: 364px;
     }
+
     .contentLeft h1 {
         font-size: 35px;
         line-height: 35px;
     }
-    .contentLeft{
-        width: 45%;
+
+    .spheraWrapper {
+        /* width: 364px;
+        height: 364px; */
+        margin-right: 9%;
     }
+
+    .contentLeft {
+        width: 55%;
+    }
+
     .contentLeft p {
         font-size: 16px;
         line-height: 26px;
         margin-top: 15px;
     }
-    .heroContent {
-        min-height: auto;
-    }
-    .developCount h1{
+
+    .developCount h1 {
         font-size: 35px;
         line-height: 35px;
     }
-    .developCount p{
+
+    .developCount p {
         font-size: 10px;
     }
-    .developCount{
+
+    .developCount {
         gap: 10px;
         padding: 15px;
         left: -20%;
         right: auto;
-        bottom: 12.5%;
+        bottom: 18.5%;
     }
+
     .getOfferWrapper {
         left: auto;
         right: 15%;
         top: 15%;
     }
+
     .getOffer {
         width: 75px;
         height: 75px;
         font-size: 8px;
     }
+
+    .iconProgramming img:not(.backgroundImage),
+    .iconSettings img:not(.backgroundImage),
+    .iconOther img:not(.backgroundImage) {
+        width: 10px;
+    }
+
+    .iconProgramming img:not(.backgroundImage) {
+        margin-bottom: 2px;
+        margin-left: 8px;
+        width: 18px;
+    }
+
+    .iconSettings img:not(.backgroundImage) {
+        margin-top: 4.5px;
+    }
+
     /* .spheraWrapper {
         height: 364px;
         width: 364px;
@@ -333,36 +366,24 @@
 }
 
 
-@media (max-width: 480px) {
-    .contentLeft h1 {
-        font-size: 30px;
+@media (max-width: 650px) {
+    .heroContent{
+        flex-direction: column-reverse;
     }
-
-    .contentLeft p {
-        font-size: 16px;
+    .contentLeft {
+        width: 100%;
     }
-
-    .spheraWrapper {
-        max-width: 250px;
-        max-height: 250px;
+    .developCount{
+        display: none;
     }
-
-    .developCount h1 {
-        font-size: 40px;
+    .spheraWrapper{
+        margin: 0;
+        right: 15%;
     }
-
-    .developCount p {
-        font-size: 14px;
-    }
-
-    .getOffer {
-        width: 60px;
-        height: 60px;
-        font-size: 8px;
-    }
-
-    .getOffer img {
-        width: 10px;
-        height: 10px;
+    .contentRight{
+        width: 105%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }

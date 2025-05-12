@@ -7,15 +7,17 @@ import images03 from '@/public/images/03.svg';
 import images04 from '@/public/images/04.svg';
 
 type Props = {
-  dictionary: any;
+    dictionary: any;
 };
 
 const MainSecond: React.FC<Props> = ({ dictionary }) => {
     return (
         <section className={styles.mainSecondSection}>
             <div className={styles.container}>
-                <div className={styles.contentLeft}>
-                    <h1 className={styles.title}>{dictionary.title}</h1>
+                {/* <div className={styles.contentLeft}>
+                </div> */}
+                <h1 className={styles.title}>{dictionary.title}</h1>
+                <div className={styles.btnWrapper}>
                     <a href="#" className={styles.btn}>
                         {dictionary.buttonText}
                         <img src="/images/arrow_top_right.svg" alt="" />

@@ -1,8 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import styles from "./MainServices.module.css";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
 
 type Props = {
   dictionary: any;
@@ -35,7 +39,21 @@ const getServicesByCategory = (category: Category, services: any[]) => {
 const MainServices: React.FC<Props> = ({ dictionary }) => {
   const [activeTab, setActiveTab] = useState<Category>("all");
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
   const currentServices = getServicesByCategory(activeTab, dictionary.services);
+
+  useEffect(() => {
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth <= 650);
+    };
+    
+    checkIfMobile();
+    window.addEventListener("resize", checkIfMobile);
+    
+    return () => {
+      window.removeEventListener("resize", checkIfMobile);
+    };
+  }, []);
 
   return (
     <section className={styles.mainServices}>
@@ -59,51 +77,117 @@ const MainServices: React.FC<Props> = ({ dictionary }) => {
             </p>
           </div>
 
-          <div className={styles.tabs}>
-            {dictionary.tabs.map((tab: { label: string; value: string }) => (
-              <button
-                key={tab.value}
-                className={`${styles.tabButton} ${activeTab === tab.value ? styles.active : ""}`}
-                onClick={() => setActiveTab(tab.value as Category)}
+          {isMobile ? (
+            <Swiper
+              slidesPerView="auto"
+              spaceBetween={5}
+              className={styles.tabsSwiper}
+            >
+              {dictionary.tabs.map((tab: { label: string; value: string }) => (
+                <SwiperSlide key={tab.value} className={styles.tabSlide}>
+                  <button
+                    className={`${styles.tabButton} ${activeTab === tab.value ? styles.active : ""}`}
+                    onClick={() => setActiveTab(tab.value as Category)}
+                  >
+                    {tab.label}
+                  </button>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          ) : (
+            <div className={styles.tabs}>
+              {dictionary.tabs.map((tab: { label: string; value: string }) => (
+                <button
+                  key={tab.value}
+                  className={`${styles.tabButton} ${activeTab === tab.value ? styles.active : ""}`}
+                  onClick={() => setActiveTab(tab.value as Category)}
+                >
+                  {tab.label}
+                </button>
+              ))}
+            </div>
+          )}
+
+          {isMobile ? (
+            <div className={styles.servicesSliderContainer}>
+              <Swiper
+                modules={[Pagination]}
+                spaceBetween={20}
+                slidesPerView={1}
+                pagination={{
+                  clickable: true,
+                  el: `.${styles.swiperPagination}`,
+                }}
+                className={styles.servicesSwiper}
               >
-                {tab.label}
-              </button>
-            ))}
-          </div>
-          <ul className={styles.servicesList}>
-            {currentServices.map((service: any) => (
-              <li
-                key={service.id}
-                className={styles.serviceItem}
-                onMouseEnter={() => setHoveredCard(service.id)}
-                onMouseLeave={() => setHoveredCard(null)}
-              >
-                <div className={styles.serviceCard}>
-                  <div className={styles.serviceCardText}>
-                    <h2 className={styles.serviceTitle}>{service.h1}</h2>
-                    <p className={styles.serviceDescription}>
-                      {dictionary.deadlineLabel}: <span>{service.p}</span>
-                    </p>
-                    <button className={styles.serviceButton}>
-                      {hoveredCard === service.id
-                        ? dictionary.detailsButton
-                        : `${dictionary.costLabel} ${service.buttonText}`}
-                      {/* <span>{service.buttonText}</span> */}
-                    </button>
-                  </div>
-                  <div className={styles.serviceCardImageWrapper}>
-                    <div className={styles.serviceCardImage}>
-                      <img
-                        src={service.image}
-                        alt={service.name}
-                        className={`${styles.serviceImage} ${styles[service.imageClass]}`}
-                      />
+                {currentServices.map((service: any) => (
+                  <SwiperSlide key={service.id}>
+                    <div
+                      className={styles.serviceCard}
+                      onMouseEnter={() => setHoveredCard(service.id)}
+                      onMouseLeave={() => setHoveredCard(null)}
+                    >
+                      <div className={styles.serviceCardText}>
+                        <h2 className={styles.serviceTitle}>{service.h1}</h2>
+                        <p className={styles.serviceDescription}>
+                          {dictionary.deadlineLabel}: <span>{service.p}</span>
+                        </p>
+                        <button className={styles.serviceButton}>
+                          {hoveredCard === service.id
+                            ? dictionary.detailsButton
+                            : `${dictionary.costLabel} ${service.buttonText}`}
+                        </button>
+                      </div>
+                      <div className={styles.serviceCardImageWrapper}>
+                        <div className={styles.serviceCardImage}>
+                          <img
+                            src={service.image}
+                            alt={service.name}
+                            className={`${styles.serviceImage} ${styles[service.imageClass]}`}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+              <div className={styles.swiperPagination}></div>
+            </div>
+          ) : (
+            <ul className={styles.servicesList}>
+              {currentServices.map((service: any) => (
+                <li
+                  key={service.id}
+                  className={styles.serviceItem}
+                  onMouseEnter={() => setHoveredCard(service.id)}
+                  onMouseLeave={() => setHoveredCard(null)}
+                >
+                  <div className={styles.serviceCard}>
+                    <div className={styles.serviceCardText}>
+                      <h2 className={styles.serviceTitle}>{service.h1}</h2>
+                      <p className={styles.serviceDescription}>
+                        {dictionary.deadlineLabel}: <span>{service.p}</span>
+                      </p>
+                      <button className={styles.serviceButton}>
+                        {hoveredCard === service.id
+                          ? dictionary.detailsButton
+                          : `${dictionary.costLabel} ${service.buttonText}`}
+                      </button>
+                    </div>
+                    <div className={styles.serviceCardImageWrapper}>
+                      <div className={styles.serviceCardImage}>
+                        <img
+                          src={service.image}
+                          alt={service.name}
+                          className={`${styles.serviceImage} ${styles[service.imageClass]}`}
+                        />
+                      </div>
                     </div>
                   </div>
-                </div>
-              </li>
-            ))}
-          </ul>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
       </div>
     </section>

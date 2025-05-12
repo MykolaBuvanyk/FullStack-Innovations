@@ -40,16 +40,16 @@ const MainHeroSection: React.FC<Props> = ({ dictionary }) => {
                         <img className={styles.spheraThird} src="/images/hero-sphera-3.png" alt="" />
                         <img className={styles.spheraFourth} src="/images/hero-sphera-4.png" alt="" />
                         <div className={styles.iconProgramming}>
-                            <img className={styles.backgroundImage} src="/images/code-wrapper.png" alt="" />
-                            <img src="/images/icon-programming.png" alt="" />
+                            <img className={styles.backgroundImage} src="/images/code-wrapper.svg" alt="" />
+                            {/* <img src="/images/icon-programming.png" alt="" /> */}
                         </div>
                         <div className={styles.iconSettings}>
-                            <img className={styles.backgroundImage} src="/images/settings-wrapper.png" alt="" />
-                            <img src="/images/icon-settings.png" alt="" />
+                            <img className={styles.backgroundImage} src="/images/settings-wrapper.svg" alt="" />
+                            {/* <img src="/images/icon-settings.png" alt="" /> */}
                         </div>
                         <div className={styles.iconOther}>
-                            <img className={styles.backgroundImage} src="/images/other-wrapper.png" alt="" />
-                            <img src="/images/icon-other.png" alt="" />
+                            <img className={styles.backgroundImage} src="/images/other-wrapper.svg" alt="" />
+                            {/* <img src="/images/icon-other.png" alt="" /> */}
                         </div>
                     </div>
                     <div className={styles.developCount}>

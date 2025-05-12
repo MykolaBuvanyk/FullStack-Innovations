@@ -1,26 +1,16 @@
 .ourPortfolio {
-    padding: 0px 12.5vw;
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+.container {
+    padding: 0 12.5vw;
     margin-top: 150px;
+    display: grid;
+    grid-template-columns: 1.3fr 0.5fr;
+    grid-template-rows: auto auto;
 }
 
-.ourPortfolioTitle {
-
-}
-.ourPortfolioTitleButton{
-    display: flex;
-    justify-content: space-between;
-    align-items: end;
-}
-.ourPortfolioTitle p {
-    color: #fff;
-    size: 20px;
-    font-weight: 100;
-    margin-top: 20px;
-    width: 55%;
-}
-
-.ourPortfolioTitle h2 {
-    width: 55%;
+.title {
     font-size: 70px;
     font-weight: 500;
     background-image: url('/images/abstract-purple-blue-wave-background (2).png');
@@ -29,44 +19,61 @@
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    grid-area: 1 / 1 / 2 / 2;
 }
-.ourPortfolioSlider{
+
+.btnWrapper {
+    display: flex;
+    justify-content: flex-end;
+    align-items: top;
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+.btn {
+    line-height: 22px;
+    font-weight: 400;
+    font-size: 15px;
+    padding: 25px 35px;
+    border-radius: 100px;
+    color: #fff;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    background-color: transparent;
+    transition: 0.5s;
+    border: 1px solid white;
+    white-space: nowrap;
+}
+
+.btn:hover {
+    background: linear-gradient(95.63deg, #C400B9 17.83%, #5D0058 159.96%);
+    box-shadow: 0px 20px 40px rgba(196, 1, 185, 0.6);
+    border: 1px solid rgba(196, 1, 185, 0.6);
+}
+
+.sliderContainer {
     margin-top: 70px;
+    grid-area: 2 / 1 / 3 / 3;
+    width: 100%;
 }
-.ourPortfolioSliderItem {
+
+.sliderItem {
     display: flex;
     justify-content: center;
-    width: 24vw;
-    height: auto;
-    color: #fff;
+    width: 100%;
 }
 
-.ourPortfolioSliderItem i {
-    color: rgba(232, 30, 221, 1);
+.itemLogo {
+    width: 100%;
+    height: 100%;
 }
 
-.ourPortfolioSliderItemFirst {
-    display: flex;
-    justify-content: space-between;
-
-}
-
-.ourPortfolioSliderItem img {
+.itemLogo img {
     width: 100%;
     height: auto;
     border-radius: 10px;
+    object-fit: cover;
 }
-
-
-
-
-
-
-/* .ourPortfolioSliderItem h4 {
-    font-size: 18px;
-    font-weight: 300;
-    margin-bottom: 10px;
-} */
 
 .swiperPagination {
     margin-top: 20px;
@@ -100,28 +107,62 @@
     background: linear-gradient(180deg, #C400B9 0%, #5D0058 119.29%);
 }
 
-.swiperPaginationBulletActive {
-    opacity: 1;
+@media (max-width: 1440px) {
+    .title {
+        font-size: 35px;
+        line-height: 45px;
+    }
 }
 
-.submitButton {
-    line-height: 22px;
-    font-weight: 400;
-    font-size: 15px;
-    padding: 25px 35px;
-    border-radius: 100px;
-    color: #fff;
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    background-color: transparent;
-    transition: 0.5s;
-    border: 1px solid white;
-    white-space: nowrap;
+@media (max-width: 1150px) {
+    .container {
+        padding: 0 20px;
+        padding-right: 0;
+        margin-top: 70px;
+    }
+
+    .btn {
+        padding: 15px 30px;
+    }
 }
 
-.submitButton:hover {
-    background: linear-gradient(95.63deg, #C400B9 17.83%, #5D0058 159.96%);
-    box-shadow: 0px 20px 40px rgba(196, 1, 185, 0.6);
-    border: 1px solid rgba(196, 1, 185, 0.6);
+@media screen and (max-width: 650px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+    }
+
+    .title {
+        grid-area: 1 / 1 / 2 / 2;
+        font-size: 35px;
+        line-height: 35px;
+        text-align: left;
+    }
+
+    .sliderContainer {
+        grid-area: 2 / 1 / 3 / 2;
+        margin-top: 30px;
+        max-width: fit-content;
+        max-height: fit-content;
+    }
+
+    .btnWrapper {
+        grid-area: 3 / 1 / 4 / 2;
+        justify-content: flex-start;
+        margin-top: 40px;
+    }
+
+    .btn {
+        padding: 20px 35px;
+        font-size: 14px;
+    }
+    /* .itemLogo img{
+        width: 240px;
+        height: 300px;
+    } */
+    .container>:nth-child(3){
+        min-width: 0;
+        min-height: 0;
+    }
+
 }

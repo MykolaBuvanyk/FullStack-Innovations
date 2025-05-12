@@ -1,7 +1,6 @@
 'use client';
 
 import styles from './OurPortfolioSlider.module.css';
-import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 
@@ -30,43 +29,45 @@ const reviews = [
 const OurPortfolioSlider: React.FC<Props> = ({ dictionary }) => {
   return (
     <section className={styles.ourPortfolio}>
-      <div className={styles.ourPortfolioTitle}>
-        <div className={styles.ourPortfolioTitleButton}>
-          <h2>{dictionary.title}</h2>
-          <button className={styles.submitButton}>
+      <div className={styles.container}>
+        <h2 className={styles.title}>{dictionary.title}</h2>
+        <div className={styles.btnWrapper}>
+          <button className={styles.btn}>
             {dictionary.buttonText}
             <img src="/images/arrow_top_right.svg" alt="" />
           </button>
         </div>
-      </div>
-      <div className={styles.ourPortfolioSlider}>
-        <Swiper
-          modules={[Pagination]}
-          spaceBetween={20}
-          slidesPerView={1}
-          pagination={{
-            clickable: true,
-            el: `.${styles.swiperPagination}`,
-          }}
-          breakpoints={{
-            1100: { slidesPerView: 3 },
-            768: { slidesPerView: 3 },
-            0: { slidesPerView: 1 },
-          }}
-        >
-          {reviews.map((review, index) => (
-            <SwiperSlide key={index}>
-              <div className={styles.ourPortfolioSliderItem}>
-                <div className={styles.ourPortfolioSliderItem}>
-                  <div className={styles.ItemLogo}>
+        <div className={styles.sliderContainer}>
+          <Swiper
+            modules={[Pagination]}
+            spaceBetween={20}
+            slidesPerView={1}
+            autoHeight={true}
+            pagination={{
+              clickable: true,
+              el: `.${styles.swiperPagination}`,
+            }}
+            breakpoints={{
+              0: { slidesPerView: 1.5, spaceBetween: 10 },
+              650: { slidesPerView: 3, spaceBetween: 20 },
+              1100: { slidesPerView: 3 },
+            }}
+            observer={true} // Додаємо observer
+            observeParents={true} // Спостерігати за батьківськими елементами
+            className={styles.swiper}
+          >
+            {reviews.map((review, index) => (
+              <SwiperSlide key={index}>
+                <div className={styles.sliderItem}>
+                  <div className={styles.itemLogo}>
                     <img src={review.logo} alt="Company Logo" />
                   </div>
                 </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-        <div className={styles.swiperPagination}></div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+          <div className={styles.swiperPagination}></div>
+        </div>
       </div>
     </section>
   );
