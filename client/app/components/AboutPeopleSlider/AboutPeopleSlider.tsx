@@ -36,13 +36,22 @@ const AboutPeopleSlider: React.FC<Props> = ({ dictionary }) => {
             el: `.${styles.swiperPagination}`, 
           }}
           breakpoints={{
-            1100: { slidesPerView: 4 },
-            768: { slidesPerView: 2 },
-            0: { slidesPerView: 1 },
+            1100: {
+              slidesPerView: 2.3,
+              spaceBetween: 10
+             },
+            768: {
+              slidesPerView: 2.3,
+              spaceBetween: 10
+             },
+            0: {
+              slidesPerView: 2.3,
+              spaceBetween: 10
+             },
           }}
         >
           {dictionary.people.map((person: { name: string; position: string; image: any }, index: number) => (
-            <SwiperSlide key={index}>
+            <SwiperSlide className={styles.swiperSlide} key={index}>
               <div className={styles.personCard}>
                 <div className={styles.personImage}>
                   <Image

@@ -178,6 +178,38 @@
 
 @media(max-width:1440px){
     .aboutHeroTitle{
-        font-size: 50px;
+        font-size: 35px;
+        line-height: 45px;
+    }
+
+    .aboutHeroPara,
+    .btn{
+      font-size: 14px;
+      line-height: 22px;
+    }
+
+    .aboutHeroEl{
+      font-size: 14px;
+    }
+
+    .aboutHeroEl span {
+      font-size: 50px;
+      line-height: 80px;
+    }
+
+    @media(max-width:1150px){
+      .aboutHeroWrapper {
+        padding: 0 20px;
+        margin-top: 45px;
+      }
+      .aboutHeroTextWrapper{
+        width: 90%;
+      }
+      .aboutHeroParaWrapper{
+        width: 85%;
+      }
+      .btn{
+        padding: 15px 35px;
+      }
     }
 }

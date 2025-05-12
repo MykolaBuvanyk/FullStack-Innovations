@@ -45,12 +45,12 @@ export default async function RootLayout({
         />
       </head>
       <body>
-        <Header dictionary={header} />
-        <SocialLinks />
-        <Cookie dictionary={cookie} />
-        <ButtonTop/>
+        {/* <Header dictionary={header} /> */}
+        {/* <SocialLinks /> */}
+        {/* <Cookie dictionary={cookie} /> */}
+        {/* <ButtonTop/> */}
         {children}
-        <Footer dictionary={footer} />
+        {/* <Footer dictionary={footer} /> */}
       </body>
     </html>
   );
