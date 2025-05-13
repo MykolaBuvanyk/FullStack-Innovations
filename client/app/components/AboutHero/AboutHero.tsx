@@ -14,10 +14,6 @@ const AboutHero: React.FC<Props> = ({ dictionary }) => {
           className={styles.aboutHeroTitle}
           dangerouslySetInnerHTML={{ __html: dictionary.title }}
         ></h2>
-        <button className={styles.btn}>
-          {dictionary.buttonText}
-          <img src="/images/arrow_top_right.svg" alt="" />
-        </button>
       </div>
       <div className={styles.aboutHeroBottomWrapper}>
         <div className={styles.aboutHeroTextWrapper}>
@@ -28,30 +24,36 @@ const AboutHero: React.FC<Props> = ({ dictionary }) => {
               </p>
             ))}
           </div>
-          <ul className={styles.aboutHeroList}>
-            {dictionary.stats.map((stat: { value: string; label: string }, index: number) => (
-              <li key={index} className={styles.aboutHeroEl}>
-                <span>{stat.value}</span>
-                {stat.label}
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className={styles.aboutHeroSphereWrapper}>
-          <div className={styles.spheraWrapper}>
-            <div className={styles.sphereLarge}>
-              <img src="/images/AboutHeroSphere/2.png" alt="" />
-            </div>
-            <div className={styles.sphereMedium}>
-              <img src="/images/AboutHeroSphere/1.png" alt="" />
-            </div>
-            <div className={styles.sphereSmall}>
-              <img src="/images/AboutHeroSphere/3.png" alt="" />
-            </div>
-            <div className={styles.backgroundElipse}></div>
-          </div>
         </div>
       </div>
+      <ul className={styles.aboutHeroList}>
+        {dictionary.stats.map(
+          (stat: { value: string; label: string }, index: number) => (
+            <li key={index} className={styles.aboutHeroEl}>
+              <span>{stat.value}</span>
+              {stat.label}
+            </li>
+          )
+        )}
+      </ul>
+      <div className={styles.aboutHeroSphereWrapper}>
+        <div className={styles.spheraWrapper}>
+          <div className={styles.sphereLarge}>
+            <img src="/images/AboutHeroSphere/2.png" alt="" />
+          </div>
+          <div className={styles.sphereMedium}>
+            <img src="/images/AboutHeroSphere/1.png" alt="" />
+          </div>
+          <div className={styles.sphereSmall}>
+            <img src="/images/AboutHeroSphere/3.png" alt="" />
+          </div>
+          <div className={styles.backgroundElipse}></div>
+        </div>
+      </div>
+      <button className={styles.btn}>
+        {dictionary.buttonText}
+        <img src="/images/arrow_top_right.svg" alt="" />
+      </button>
     </section>
   );
 };
