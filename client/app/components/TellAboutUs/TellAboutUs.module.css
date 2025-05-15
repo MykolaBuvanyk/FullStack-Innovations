@@ -1,157 +1,287 @@
+
 .tellAboutUs {
-    padding: 0px 12.5vw;
-    margin-top: 150px;
-    margin-bottom: 150px;
+  font-family: 'Helvetica Neue', sans-serif;
+  margin-bottom: 150px;
+  overflow: hidden;
 }
 
-.tellAboutUsTitleButton{
-    display: flex;
-    justify-content: space-between;
-    align-items: end;
-}
-.tellAboutUsTitle p {
-    color: #fff;
-    size: 20px;
-    font-weight: 100;
-    margin-top: 20px;
-    width: 55%;
-    line-height: 30px;
+.container {
+  padding: 0 12.5vw;
+  margin-top: 150px;
+  display: grid;
+  grid-template-columns: 1.3fr 0.5fr;
+  grid-template-rows: auto auto auto;
 }
 
-.tellAboutUsTitle h2 {
-    width: 55%;
-    font-size: 70px;
-    font-weight: 500;
-    line-height: 80px;
-    background-image: url('/images/abstract-purple-blue-wave-background (2).png');
-    background-size: cover;
-    background-position: center;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+.title {
+  font-size: 70px;
+  font-weight: 500;
+  line-height: 80px;
+  grid-area: 1 / 1 / 2 / 2;
+  background-image: url('/images/abstract-purple-blue-wave-background (2).png');
+  background-size: cover;
+  background-position: center;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.tellAboutUsSliderItem {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 24vw;
-    height: 39vh;
-    border-radius: 38px;
-    background: rgba(22, 22, 45, 1);
-    padding: 30px 20px;
-    color: #fff;
-    margin-top: 70px;
+.btnWrapper {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  grid-area: 1 / 2 / 2 / 3;
 }
 
-.tellAboutUsSliderItem i {
-    color: rgba(232, 30, 221, 1);
+.description {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 100;
+  margin-top: 20px;
+  width: 55%;
+  line-height: 30px;
+  grid-area: 2 / 1 / 3 / 3;
 }
 
-.tellAboutUsSliderItemFirst {
-    display: flex;
-    justify-content: space-between;
-
+.reviewsContainer {
+  margin-top: 70px;
+  grid-area: 3 / 1 / 4 / 3;
+  width: 100%;
 }
 
-.tellAboutUsSliderItemFirst img {
-    width: 9.1vw;
-    height: auto;
+.btn {
+  line-height: 22px;
+  font-weight: 400;
+  font-size: 15px;
+  padding: 25px 35px;
+  border-radius: 100px;
+  color: #fff;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  background-color: transparent;
+  transition: 0.5s;
+  border: 1px solid white;
+  white-space: nowrap;
+}
+
+.btn:hover {
+  background: linear-gradient(95.63deg, #C400B9 17.83%, #5D0058 159.96%);
+  box-shadow: 0px 20px 40px rgba(196, 1, 185, 0.6);
+  border: 1px solid rgba(196, 1, 185, 0.6);
+}
+
+.swiper {
+  width: 100%;
+  min-height: 200px; /* Запобігає зникненню слайдера */
+  overflow: visible;
+}
+
+.swiper-wrapper {
+  width: 100%;
+  height: auto;
+}
+
+.swiper-slide {
+  width: 100% !important;
+  height: auto !important; /* Висота визначається reviewCard */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.reviewCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: auto; /* Висота встановлюється JavaScript */
+  min-height: 200px; /* Мінімальна висота для безпеки */
+  border-radius: 38px;
+  background: rgba(22, 22, 45, 1);
+  padding: 30px 20px;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+.reviewCard i {
+  color: rgba(232, 30, 221, 1);
+}
+
+.reviewCardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.reviewCardHeader img {
+  width: 9.1vw;
+  height: auto;
+  max-width: 150px; /* Обмежуємо розмір логотипу */
 }
 
 .ItemPoint {
-    display: flex;
-    align-items: center;
-    gap: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
 .ItemPointStar {
-    display: flex;
+  display: flex;
 }
 
-.tellAboutUsSliderItemSecond {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    /* margin-top: 12.5%; */
+.reviewCardContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-grow: 1;
+  margin: 20px 0; /* Додаємо відступи для стабільності */
 }
 
-.tellAboutUsSliderItem p {
-    font-size: 15px;
-    font-weight: 100;
-    
-
-}
-.tellAboutUsSliderItemSecond p {
-    line-height: 25px;
-}
-.tellAboutUsSliderItem h4 {
-    font-size: 18px;
-    font-weight: 300;
-    margin-bottom: 10px;
+.reviewCard p {
+  font-size: 15px;
+  font-weight: 100;
 }
 
-.tellAboutUsSliderItemThird {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    /* margin-top: 6.25%; */
+.reviewCardContent p {
+  line-height: 25px;
+}
+
+.reviewCard h4 {
+  font-size: 18px;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+.reviewCardFooter {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
 }
 
 .swiperPagination {
-    margin-top: 20px;
-    text-align: center;
+  margin-top: 20px;
+  text-align: center;
 }
 
 .swiperPagination :global(.swiper-pagination-bullet) {
-    background: #fff;
-    opacity: 1;
-    width: 10px;
-    height: 10px;
-    position: relative;
+  background: #fff;
+  opacity: 1;
+  width: 10px;
+  height: 10px;
+  position: relative;
 }
 
 .swiperPagination :global(.swiper-pagination-bullet-active)::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    padding: 1px;
-    margin: -3px;
-    border-radius: 50%;
-    background: linear-gradient(180deg, #C400B9 0%, #5D0058 119.29%);
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    z-index: -1;
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  margin: -3px;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #C400B9 0%, #5D0058 119.29%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: -1;
 }
 
 .swiperPagination :global(.swiper-pagination-bullet-active) {
-    opacity: 1;
-    background: linear-gradient(180deg, #C400B9 0%, #5D0058 119.29%);
+  opacity: 1;
+  background: linear-gradient(180deg, #C400B9 0%, #5D0058 119.29%);
 }
 
-.swiperPaginationBulletActive {
-    opacity: 1;
+@media (max-width: 1440px) {
+  .title {
+    font-size: 35px;
+    line-height: 45px;
+  }
+
+  .reviewCard h4 {
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+  .description,
+  .reviewCard p {
+    font-size: 14px;
+    line-height: 24px;
+  }
 }
 
-.submitButton {
-    line-height: 22px;
-    font-weight: 400;
-    font-size: 15px;
-    padding: 25px 35px;
-    border-radius: 100px;
-    color: #fff;
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    background-color: transparent;
-    transition: 0.5s;
-    border: 1px solid white;
-    white-space: nowrap;
+@media (max-width: 1150px) {
+  .container {
+    padding: 0 20px;
+    margin-top: 70px;
+  }
+  .tellAboutUs{
+    margin-bottom: 70px;
+  }
+  .btn {
+    padding: 15px 30px;
+  }
+
+  .reviewCardHeader img {
+    width: 120px;
+  }
 }
 
-.submitButton:hover {
-    background: linear-gradient(95.63deg, #C400B9 17.83%, #5D0058 159.96%);
-    box-shadow: 0px 20px 40px rgba(196, 1, 185, 0.6);
-    border: 1px solid rgba(196, 1, 185, 0.6);
+@media screen and (max-width: 650px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+  }
+
+  .title {
+    grid-area: 1 / 1 / 2 / 2;
+    font-size: 35px;
+    line-height: 35px;
+    text-align: left;
+  }
+
+  .description {
+    grid-area: 2 / 1 / 3 / 2;
+    width: 100%;
+    font-size: 16px;
+    line-height: 26px;
+    margin-top: 20px;
+  }
+
+  .btnWrapper {
+    grid-area: 4 / 1 / 5 / 2;
+    justify-content: flex-start;
+    margin-top: 40px;
+  }
+
+  .reviewsContainer {
+    grid-area: 3 / 1 / 4 / 2;
+    margin-top: 30px;
+    min-width: 0;
+    min-height: 0;
+  }
+
+  .btn {
+    padding: 20px 35px;
+    font-size: 14px;
+  }
+
+  .reviewCard {
+    width: 100%;
+  }
+
+  .swiper {
+    width: 100%;
+    min-height: 200px;
+  }
+
+  .swiper-slide {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .reviewCardHeader img {
+    width: auto;
+    height: 30px;
+    max-width: 100px;
+  }
 }

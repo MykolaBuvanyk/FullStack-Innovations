@@ -10,7 +10,6 @@
 
 .footerWrapper {
     margin: 0 auto;
-    padding: 0 20px;
 }
 
 .footerLogoAndSocials {
@@ -180,4 +179,93 @@
 .socialsItem:hover svg path,
 .socialsItem:hover svg g path {
     fill: url(#shared-gradient); /* Повертаємо оригінальний градієнт, визначений у SVG */
+}
+
+@media (max-width: 1440px) {
+    .footerText p {
+        font-size: 16px;
+        line-height: 26px;
+    }
+
+    .linksItem a {
+        font-size: 14px;
+        line-height: 24px;
+    }
+
+    .languagesList a {
+        font-size: 14px;
+        line-height: 24px;
+    }
+}
+
+@media (max-width: 1150px) {
+    .footer{
+        padding: 20px 0 0 0;
+        margin-top: 70px;
+    }
+    .footerSocials{
+        display: none;
+        
+    }
+    .languagesWrapper{
+        padding: 0;
+        width: 100%;
+        gap: 10px;
+    }
+    .languagesList{
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .footerLogoAndSocials{
+        margin-bottom: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .footerLinks{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .languagesWrapper{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .footerText p {
+        font-size: 14px;
+        line-height: 28px;
+    }
+    .footerLinks{
+        white-space: nowrap;
+    }
+    .linksList li a{
+        padding-right: 5px;
+    }
+    .footerLogo img{
+        width: 25vw;
+    }
+}
+
+@media (max-width: 650px) {
+    .linksItem a {
+        font-size: 11px;
+        line-height: 22px;
+    }
+    .linksItem{
+        margin-left: 5px;
+    }
+    .linksList{
+        flex-wrap: wrap;
+    }
+    .languagesList a {
+        font-size: 12px;
+        line-height: 22px;
+    }
+    .footerLogo img{
+        width: 33vw;
+    }
+    .languagesList{
+        flex-wrap: wrap;
+        justify-content:flex-start;
+        row-gap: 10px;
+        column-gap: 20px;
+    }
 }

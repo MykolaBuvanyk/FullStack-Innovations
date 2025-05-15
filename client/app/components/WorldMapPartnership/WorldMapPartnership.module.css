@@ -1,9 +1,9 @@
-.worldMap{
+.worldMap {
     padding: 0 12.5vw;
     margin: 150px 0;
 }
 
-.worldMapTitle{
+.worldMapTitle {
     font-size: 70px;
     font-weight: 500;
     line-height: 80px;
@@ -19,8 +19,10 @@
 .mapContainer {
     position: relative;
     width: 100%;
-    padding-bottom: 49.93%; /* Співвідношення сторін 352/705 ≈ 0.4993 */
-    height: 0; /* Висота задається через padding-bottom */
+    padding-bottom: 49.93%;
+    /* Співвідношення сторін 352/705 ≈ 0.4993 */
+    height: 0;
+    /* Висота задається через padding-bottom */
     margin-top: 70px;
 }
 
@@ -30,7 +32,8 @@
     right: 0;
     width: 100%;
     height: 100%;
-    background-image: url('/images/map.svg'); /* Шлях до вашої мапи */
+    background-image: url('/images/map.svg');
+    /* Шлях до вашої мапи */
     background-size: cover;
     background-position: center;
 
@@ -117,8 +120,8 @@
     background: linear-gradient(180deg, #C400B9 0%, #5D0058 100%);
     /* Градієнт */
     -webkit-mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
     /* Маска для створення "межі" */
     -webkit-mask-composite: xor;
     mask-composite: exclude;
@@ -134,4 +137,26 @@
     width: 20px;
     height: 20px;
     margin-bottom: 5px;
+}
+
+@media (max-width: 1440px) {
+    .worldMapTitle {
+        font-size: 35px;
+        line-height: 45px;
+    }
+}
+
+@media (max-width: 1150px) {
+    .worldMap {
+        padding-left: 20px;
+        padding-right: 20px;
+        margin: 70px 0;
+    }
+    .mapContainer{
+        margin-top: 50px;
+    }
+    .getOffer{
+        display: none;
+    }
+
 }
