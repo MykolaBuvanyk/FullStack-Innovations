@@ -45,7 +45,7 @@ export default async function RootLayout({
         />
       </head>
       <body>
-        {/* <Header dictionary={header} /> */}
+        <Header dictionary={header} />
         {/* <SocialLinks /> */}
         {/* <Cookie dictionary={cookie} /> */}
         {/* <ButtonTop/> */}

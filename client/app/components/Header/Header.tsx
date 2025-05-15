@@ -15,6 +15,7 @@ const Header: React.FC<Props> = ({ dictionary }) => {
   const currentLang = pathname.split("/")[1] || "uk";
   const [isLangDropdownOpen, setIsLangDropdownOpen] = useState(false);
   const [isTelDropdownOpen, setIsTelDropdownOpen] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const langDropdownRef = useRef<HTMLDivElement | null>(null);
 
   const languages = [
@@ -40,7 +41,6 @@ const Header: React.FC<Props> = ({ dictionary }) => {
     { code: "no", name: "Norsk", flag: "🇳🇴" },
   ];
 
-  // Перевіряємо, чи код є дійсним кодом мови з нашого списку
   const isValidLanguageCode = (code: string) => {
     return languages.some((lang) => lang.code === code);
   };
@@ -61,10 +61,13 @@ const Header: React.FC<Props> = ({ dictionary }) => {
   };
 
   const handleLanguageChange = (langCode: string) => {
-    document.cookie = `preferred-locale=${langCode}; path=/; max-age=${60 * 60 * 24 * 30}`; // 30 днів
+    document.cookie = `preferred-locale=${langCode}; path=/; max-age=${
+      60 * 60 * 24 * 30
+    }`;
     const newPath = getNewPath(langCode);
     router.push(newPath);
     setIsLangDropdownOpen(false);
+    setIsSidebarOpen(false);
   };
 
   useEffect(() => {
@@ -83,6 +86,11 @@ const Header: React.FC<Props> = ({ dictionary }) => {
     };
   }, []);
 
+  const icons = Array.from(
+    { length: 10 },
+    (_, i) => `/images/HeaderIcons/${i + 1}.svg`
+  );
+
   return (
     <header className={styles.header}>
       <div className={styles.container}>
@@ -94,10 +102,9 @@ const Header: React.FC<Props> = ({ dictionary }) => {
           </li>
           <li className={styles.headerWrapperEl}>
             <ul className={styles.headerList}>
-              {/* <li className={styles.headerEl}>
-                <Link href={`/${currentLang}`}>{dictionary.nav.home}</Link>
-              </li> */}
-              <li className={[styles.headerEl, styles.headerDropdown].join(" ")}>
+              <li
+                className={[styles.headerEl, styles.headerDropdown].join(" ")}
+              >
                 <Link href={`/${currentLang}/services`}>
                   {dictionary.nav.services}
                 </Link>
@@ -109,7 +116,9 @@ const Header: React.FC<Props> = ({ dictionary }) => {
                 </Link>
               </li>
               <li className={styles.headerEl}>
-                <Link href={`/${currentLang}/about`}>{dictionary.nav.about}</Link>
+                <Link href={`/${currentLang}/about`}>
+                  {dictionary.nav.about}
+                </Link>
               </li>
               <li className={styles.headerEl}>
                 <Link href={`/partnership`}>{dictionary.nav.partnership}</Link>
@@ -130,7 +139,9 @@ const Header: React.FC<Props> = ({ dictionary }) => {
                 <span>🇺🇦</span> +(380) 63 682 6299
               </a>
               <i
-                className={`fa-solid fa-chevron-${isTelDropdownOpen ? "up" : "down"}`}
+                className={`fa-solid fa-chevron-${
+                  isTelDropdownOpen ? "up" : "down"
+                }`}
                 onClick={() => setIsTelDropdownOpen(!isTelDropdownOpen)}
               ></i>
             </div>
@@ -141,7 +152,9 @@ const Header: React.FC<Props> = ({ dictionary }) => {
               >
                 <span>{currentLang.toUpperCase()}</span>
                 <i
-                  className={`fa-solid fa-chevron-${isLangDropdownOpen ? "up" : "down"}`}
+                  className={`fa-solid fa-chevron-${
+                    isLangDropdownOpen ? "up" : "down"
+                  }`}
                 ></i>
               </div>
               {isLangDropdownOpen && (
@@ -161,6 +174,152 @@ const Header: React.FC<Props> = ({ dictionary }) => {
             </div>
           </li>
         </ul>
+      </div>
+      <div className={styles.tabletMobileContainer}>
+        <div className={styles.leftSideWrapper}>
+          <Link href={`/${currentLang}`}>
+            <img className={styles.logoImage} src="/images/logo.svg" alt="" />
+          </Link>
+        </div>
+        <div className={styles.rightSideWrapper}>
+          <div className={styles.headerLang} ref={langDropdownRef}>
+            <div
+              className={styles.langSelector}
+              onClick={() => setIsLangDropdownOpen(!isLangDropdownOpen)}
+            >
+              <span>{currentLang.toUpperCase()}</span>
+              <i
+                className={`fa-solid fa-chevron-${
+                  isLangDropdownOpen ? "up" : "down"
+                }`}
+              ></i>
+            </div>
+            {isLangDropdownOpen && (
+              <div className={styles.langDropdown}>
+                {languages.map((lang) => (
+                  <div
+                    key={lang.code}
+                    onClick={() => handleLanguageChange(lang.code)}
+                    className={styles.langOption}
+                  >
+                    <span>{lang.flag}</span>
+                    <span>{lang.name}</span>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+          <img
+            className={`${styles.menuBtn} ${
+              isSidebarOpen ? styles.menuBtnActive : ""
+            }`}
+            src="/images/mobile-header-menu-icon.svg"
+            alt=""
+            onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+          />
+        </div>
+      </div>
+      <div
+        className={`${styles.sideBar} ${
+          isSidebarOpen ? styles.sideBarOpen : ""
+        }`}
+      >
+        <div className={styles.sideBarLogoWrapper}>
+          <Link
+            href={`/${currentLang}`}
+            onClick={() => setIsSidebarOpen(false)}
+          >
+            <img className={styles.logoImage} src="/images/logo.svg" alt="" />
+          </Link>
+          <div className={styles.arrowLeftWrapper}>
+            <i
+              className="fa-solid fa-arrow-left"
+              onClick={() => setIsSidebarOpen(false)}
+            ></i>
+          </div>
+        </div>
+        <ul className={styles.headerList}>
+          <li className={styles.headerEl}>
+            <Link
+              href={`/${currentLang}`}
+              onClick={() => setIsSidebarOpen(false)}
+            >
+              {dictionary.nav.home}
+            </Link>
+          </li>
+          <li className={[styles.headerEl, styles.headerDropdown].join(" ")}>
+            <Link
+              href={`/${currentLang}/services`}
+              onClick={() => setIsSidebarOpen(false)}
+            >
+              {dictionary.nav.services}
+            </Link>
+            <i className="fa-solid fa-chevron-down"></i>
+          </li>
+          <li className={styles.headerEl}>
+            <Link
+              href={`/${currentLang}/portfolio`}
+              onClick={() => setIsSidebarOpen(false)}
+            >
+              {dictionary.nav.portfolio}
+            </Link>
+          </li>
+          <li className={styles.headerEl}>
+            <Link
+              href={`/${currentLang}/about`}
+              onClick={() => setIsSidebarOpen(false)}
+            >
+              {dictionary.nav.about}
+            </Link>
+          </li>
+          <li className={styles.headerEl}>
+            <Link href={`/partnership`} onClick={() => setIsSidebarOpen(false)}>
+              {dictionary.nav.partnership}
+            </Link>
+          </li>
+          <li className={styles.headerEl}>
+            <Link
+              href={`/${currentLang}/blog`}
+              onClick={() => setIsSidebarOpen(false)}
+            >
+              {dictionary.nav.blog}
+            </Link>
+          </li>
+          <li className={styles.headerEl}>
+            <Link
+              href={`/${currentLang}/contacts`}
+              onClick={() => setIsSidebarOpen(false)}
+            >
+              {dictionary.nav.contacts}
+            </Link>
+          </li>
+        </ul>
+        <div className={styles.contactUsWrapper}>
+          <div className={styles.contactUs}>
+            <p className={styles.contactUsWrapperPara}>Зв'язатись з нами</p>
+            <div className={styles.headerTel}>
+              <a href="tel:+380636826299">
+                <span>🇺🇦</span> +(380) 63 682 6299
+              </a>
+              <i
+                className={`fa-solid fa-chevron-${
+                  isTelDropdownOpen ? "up" : "down"
+                }`}
+                onClick={() => setIsTelDropdownOpen(!isTelDropdownOpen)}
+              ></i>
+            </div>
+          </div>
+          <div className={styles.socialNetwork}>
+            <p className={styles.contactUsWrapperPara}>Наші соціальні мережі</p>
+            <ul className={styles.socialNetworkList}>
+              {icons.map((icon: string, index: number) => (
+                <li key={index}>
+                  <img src={icon} alt="" />
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </div>
     </header>
   );
