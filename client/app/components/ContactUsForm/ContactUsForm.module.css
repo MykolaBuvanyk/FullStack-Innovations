@@ -401,3 +401,101 @@ textarea.input:not(:empty)+.label {
     font-size: 14px;
   }
 }
+
+@media(max-width: 1150px){
+  .formContainer{
+    padding: 0 20px;
+  }
+  .formContainerLeft {
+    width: 60%;
+  }
+  .formContainerLeft h2{
+    font-size: 35px;
+    line-height: 45px;
+    margin-bottom: 50px;
+  }
+  .formWrapper{
+    width: 100%;
+    margin-bottom: 35px;
+  }
+  .formGroupWrapper{
+    flex-direction: column;
+    gap: 0px;
+  }
+  .formGroupWrapper > *{
+    width: 100%;
+  }
+  .formGroup{
+    margin: 0;
+    padding: 0;
+    margin-bottom: 20px;
+    min-height: 2.5em;
+  }
+  .input {
+    padding: 5px;
+  }
+  .label{
+    padding: 0;
+    margin: 0;
+  }
+  .formContainerRight {
+    width: 40%;
+    top: 100px;
+  }
+    .sphereLarge {
+      width: 24vw;
+      right: 5vw;
+      top: 5vh;
+    }
+  
+    .sphereMedium {
+      width: 7.5vw;
+      left: -16vw;
+      top: 2vh;
+    }
+  
+    .sphereSmall {
+      width: 5vw;
+      top: 17vh;
+      right: 1vw;
+    }
+  
+    .backgroundElipse {
+      width: 15vw;
+      height: 15vw;
+      filter: blur(100px);
+    }
+    .messengerLink{
+      padding: 10px 25px;
+      font-size: 8px;
+    }
+    .messengerLink img{
+      width: 17px;
+      height: 17px;
+    }
+    .notification {
+      width: 50vw;   
+    }
+    .error{
+      bottom: -10px;
+    }
+}
+@media(max-width:650px){
+  .formContainerLeft{
+    width: 100%;
+  }
+  .formContainerRight{
+    display: none;
+  }
+  .formContainerLeft h2 {
+    margin-bottom: 40px;
+  }
+  .buttonWrapper{
+    flex-direction: column;
+    align-items: start;
+    gap: 40px;
+  }
+  .notification{
+    width: 100%;
+  }
+}
