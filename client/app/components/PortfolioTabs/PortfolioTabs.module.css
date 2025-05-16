@@ -57,7 +57,6 @@
     letter-spacing: 0%;
     vertical-align: middle;
     text-transform: uppercase;
-
 }
 
 .blogItem p {
@@ -80,7 +79,6 @@
     margin-top: 30px;
 }
 
-
 .readMore {
     display: flex;
     align-items: center;
@@ -91,18 +89,18 @@
     font-weight: 300;
     line-height: 28px;
 }
+
 .readMore img {
     margin-left: 10px;
     border-radius: 0;
 }
 
 .pagination {
-    width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
-    padding: 40px 25%;
-    margin-top: 100px;
+    padding: 40px 0;
+    margin: 100px 12.5vw 0;
     border-top: 1px solid #F3F4F866;
     border-bottom: 1px solid #F3F4F866;
 }
@@ -154,7 +152,7 @@
 .tab {
     background: transparent;
     border: none;
-    color: #575763;
+    color: white;
     font-size: 18px;
     cursor: pointer;
     padding: 10px 20px;
@@ -167,5 +165,76 @@
 
 .activeTab {
     color: #e81edd;
-    /* Колір активної вкладки, як у пагінації */
+}
+
+@media(max-width:1400px) {
+    .tab {
+        font-size: 16px;
+    }
+
+    .blogItem h2 {
+        font-size: 14px;
+    }
+
+    .readMore {
+        font-size: 14px;
+    }
+}
+
+@media(max-width:1150px) {
+    .blogContentWrapper {
+        margin: 70px 0;
+    }
+
+    .container {
+        padding: 0 20px;
+    }
+
+    .tabsWrapper {
+        justify-content: flex-start;
+        white-space: nowrap;
+        gap: 20px;
+    }
+
+    .tab {
+        padding: 0;
+    }
+
+    .blogList {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .pagination {
+        margin: 50px 0 0;
+        padding: 20px 0;
+    }
+}
+
+@media(max-width:650px) {
+    .tabsWrapper {
+        display: flex;
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        scroll-behavior: smooth;
+        touch-action: pan-x;
+        user-select: none;
+    }
+
+    .tabsWrapper::-webkit-scrollbar {
+        display: none;
+    }
+
+    .tab {
+        flex: 0 0 auto;
+        font-size: 16px;
+    }
+    .blogList {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 10px;
+        margin-top: 30px;
+    }
 }
