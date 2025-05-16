@@ -7,8 +7,6 @@
     /* gap: 10.4vw; */
 }
 
-
-
 .portfolioHeroTitle {
     max-width: 55%;
     font-size: 70px;
@@ -147,5 +145,81 @@
 @media(max-width:1440px) {
     .portfolioHeroTitle {
         font-size: 50px;
+    }
+}
+@media(max-width:1150px){
+    .portfolioHeroWrapper {
+        padding: 0 20px;
+        margin-top: 70px;
+    }
+    .portfolioHeroTextWrapper{
+        width: 45%;
+    }
+    .portfolioHeroSphereWrapper{
+        width: 50%;
+    }
+    .portfolioHeroTitle {
+        max-width: fit-content;
+    }
+    .portfolioHeroDescription {
+        font-size: 16px;
+    }
+    .btn {
+        padding: 15px 25px;
+    }
+    .spheraWrapper{
+        width: 35vw;
+        top: 7%;
+        right: 15%;
+    }
+    .sphereLarge{
+        width: 32vw;
+    }
+    .sphereMedium{
+        width: 8vw;
+        left: -20%;
+    }
+    .sphereSmall{
+        width: 7.5vw;
+        right: -7%;
+    }
+}
+@media(max-width: 650px){
+    .portfolioHeroWrapper{
+        flex-direction: column-reverse;
+        margin: 0;
+    }
+    .portfolioHeroTextWrapper,
+    .portfolioHeroSphereWrapper {
+        width: 100%;
+    }
+    .portfolioHeroTextWrapper{
+        gap: 0;
+    }
+    .portfolioHeroDescription {
+        margin: 20px 0 30px;
+    }
+    .portfolioHeroSphereWrapper{
+        aspect-ratio: 1/0.75;
+    }
+    .spheraWrapper {
+        width: 100%;
+        top: -5%;
+    }
+
+    .sphereLarge {
+        width: 52vw;
+    }
+
+    .sphereMedium {
+        width: 12.5vw;
+        left: 20%;
+        top: 25%;
+    }
+
+    .sphereSmall {
+        width: 10vw;
+        right: 2%;
+        top: 48%;
     }
 }
