@@ -22,10 +22,8 @@ const SpecificServiceProcess: React.FC<Props> = ({ dictionary }) => {
                 <span className={styles.numberPrefix}>
                   {(index + 1).toString().padStart(2, "0")}
                 </span>
-                <div className={styles.processElTextWrapper}>
-                  <h3>{item.title}</h3>
-                  <p>{item.para}</p>
-                </div>
+                <h3 className={styles.processElTitle}>{item.title}</h3>
+                <p className={styles.processElPara}>{item.para}</p>
               </li>
             )
           )}

@@ -76,11 +76,6 @@
     margin: 0;
 }
 
-.contentList li {
-    display: flex;
-    align-items: flex-start;
-}
-
 
 .contentList img {
     width: 80px;
@@ -88,24 +83,35 @@
     margin-right: 20px;
 }
 
+.processEl {
+    grid-gap: 20px;
 
-
-.textContent {
-    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(2, auto);
+    color: #fff;
 }
 
-.textContent h3 {
+.number{
+    grid-area: 1 / 1 / 3 / 2;
+}
+
+.processElTitle {
     font-weight: 700;
     font-size: 20px;
-    color: #fff;
+    line-height: 30px;
+
+    grid-area: 1 / 2 / 2 / 3;
+    align-items: center;
+    align-self: center;
 }
 
-.textContent p {
-    font-size: 16px;
-    font-weight: 300;
-    margin-top: 20px;
-    color: #fff;
+.processElPara {
+    font-weight: 100;
+    font-style: 16px;
     line-height: 26px;
+
+    grid-area: 2 / 2 / 3 / 3;
 }
 
 @media (max-width: 1440px) {
@@ -185,6 +191,28 @@
 
     .contentLeft {
         grid-area: 2 / 1 / 3 / 2;
+    }
+
+    .processEl {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-template-rows: repeat(2, auto);
+        grid-column-gap: 15px;
+        grid-row-gap: 20px;
+    }
+
+    .number {
+        grid-area: 1 / 1 / 2 / 2;
+        width: auto;
+    }
+
+    .processElTitle {
+        grid-area: 1 / 2 / 2 / 3;
+        align-self: center;
+    }
+
+    .processElPara {
+        grid-area: 2 / 1 / 3 / 3;
     }
 
     .btnWrapper {
