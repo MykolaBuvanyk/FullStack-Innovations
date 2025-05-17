@@ -199,6 +199,9 @@
     .portfolioHeroDescription {
         margin: 20px 0 30px;
     }
+    .portfolioHeroTitle{
+        font-size: 35px;
+    }
     .portfolioHeroSphereWrapper{
         aspect-ratio: 1/0.75;
     }

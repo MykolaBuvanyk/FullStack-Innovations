@@ -121,7 +121,7 @@ const PortfolioTabs: React.FC<Props> = ({ dictionary }) => {
           }`}
         >
           <i className="fa-solid fa-arrow-left"></i>
-          <span>{dictionary.prevButton}</span>
+          {/* <span>{dictionary.prevButton}</span> */}
         </button>
         <ul className={styles.pageNumbers}>
           {pageNumbers.map((page) => (
@@ -143,7 +143,7 @@ const PortfolioTabs: React.FC<Props> = ({ dictionary }) => {
             currentPage === totalPages ? styles.disabled : styles.active
           }`}
         >
-          <span>{dictionary.nextButton}</span>
+          {/* <span>{dictionary.nextButton}</span> */}
           <i className="fa-solid fa-arrow-right"></i>
         </button>
       </div>

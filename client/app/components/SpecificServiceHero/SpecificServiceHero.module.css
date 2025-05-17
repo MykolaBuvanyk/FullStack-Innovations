@@ -146,6 +146,83 @@
   }
 @media(max-width:1440px) {
     .portfolioHeroTitle {
-        font-size: 50px;
+        font-size: 45px;
+    }
+}
+@media(max-width:1150px){
+    .portfolioHeroWrapper {
+        padding: 0 20px;
+    }
+    .portfolioHeroDescription{
+        font-size: 16px;
+    }
+    .btn{
+        padding: 15px 25px;
+    }
+    .spheraWrapper {
+        width: 30vw;
+        top: -10%;
+        right: 15%;
+    }
+
+    .sphereLarge {
+        width: 28vw;
+    }
+
+    .sphereMedium {
+        width: 8vw;
+        left: -27%;
+    }
+
+    .sphereSmall {
+        width: 7.5vw;
+        right: -10%;
+        top: 70%;
+    }
+}
+@media(max-width:650px){
+    .portfolioHeroWrapper{
+        flex-direction: column-reverse;
+        margin: 0;
+    }
+    .portfolioHeroTextWrapper,
+    .portfolioHeroSphereWrapper{
+        width: 100%;
+    }
+    .portfolioHeroTextWrapper {
+        gap: 0;
+    }
+
+    .portfolioHeroTitle{
+        font-size: 35px;
+    }
+
+    .portfolioHeroDescription {
+        margin: 20px 0 30px;
+    }
+
+    .portfolioHeroSphereWrapper {
+        aspect-ratio: 1/0.75;
+    }
+
+    .spheraWrapper {
+        width: 100%;
+        top: -5%;
+    }
+
+    .sphereLarge {
+        width: 52vw;
+    }
+
+    .sphereMedium {
+        width: 12.5vw;
+        left: 20%;
+        top: 25%;
+    }
+
+    .sphereSmall {
+        width: 10vw;
+        right: 2%;
+        top: 48%;
     }
 }

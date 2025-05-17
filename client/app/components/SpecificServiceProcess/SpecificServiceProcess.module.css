@@ -47,42 +47,108 @@
 }
 
 .processEl{
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
+    grid-gap: 20px;
 
-.processElTextWrapper{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(2, auto);
 }
-
-.processElTextWrapper h3{
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 30px;
-}
-
-.processElTextWrapper p{
-    font-weight: 100;
-    font-style: 16px;
-    line-height: 26px;
-}
-
 
 .numberPrefix {
     color: #E81EDD;
     font-weight: 700;
     font-size: 70px;
-    line-height: 28px;
-}
 
+    grid-area: 1 / 1 / 3 / 2;
+}
 
 @supports (-webkit-text-stroke: 1px #E81EDD) {
     .numberPrefix {
         color: transparent;
         -webkit-text-stroke: 1px #E81EDD;
+    }
+}
+
+.processElTitle {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+.processElPara {
+    font-weight: 100;
+    font-style: 16px;
+    line-height: 26px;
+
+    grid-area: 2 / 2 / 3 / 3;
+}
+
+@media(max-width:1440px){
+    .processTitle{
+        font-size: 50px;
+    }
+}
+@media(max-width:1150px){
+    .processWrapper {
+        padding: 0 20px;
+        margin-top: 150px;
+    }
+    .processWrapper{
+        flex-direction: column;
+    }
+    .leftSideWrapper{
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .leftSideWrapper img {
+        width: 50%;
+    }
+    .leftSideWrapper img:nth-child(2) {
+        margin: 0;  
+    }
+}
+@media(max-width:650px) {
+    .processWrapper {
+        margin-top: 70px;
+    }
+
+    .leftSideWrapper img {
+        width: 100%;
+    }
+
+    .leftSideWrapper img:nth-child(2) {
+        display: none;
+    }
+
+    .processTitle {
+        font-size: 35px;
+        line-height: 45px;
+    }
+
+    .processEl {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-template-rows: repeat(2, auto);
+        grid-column-gap: 15px;
+        grid-row-gap: 20px;
+    }
+
+    .numberPrefix {
+        grid-area: 1 / 1 / 2 / 2;
+        width: auto;
+    }
+
+    .processElTitle {
+        grid-area: 1 / 2 / 2 / 3;
+        align-self: center;
+    }
+
+    .processElPara {
+        grid-area: 2 / 1 / 3 / 3;
     }
 }
