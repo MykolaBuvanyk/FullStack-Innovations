@@ -285,7 +285,7 @@
     margin-bottom: 5px;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1150px) {
     .heroContent {
         padding: 0 20px;
         display: flex;

@@ -3,10 +3,12 @@
     margin-top: 150px;
 
 }
-.partnershipBenefitsTitle{
+
+.partnershipBenefitsTitle {
     width: 55%;
 }
-.partnershipBenefitsTitle p{
+
+.partnershipBenefitsTitle p {
     color: #fff;
     size: 18px;
     font-weight: 100;
@@ -32,12 +34,14 @@
     grid-gap: 30px 60px;
     margin-top: 50px;
 }
-.benefitItem{
+
+.benefitItem {
     display: flex;
     color: #fff;
     gap: 10px;
 }
-.benefitIcon{
+
+.benefitIcon {
     width: 34px;
     height: 34px;
     display: flex;
@@ -45,12 +49,59 @@
     align-items: center;
     padding-top: 1%;
 }
+
 .benefitItem h3 {
     font-size: 20px;
     font-weight: 500;
 }
+
 .benefitItem p {
     font-size: 18px;
     font-weight: 100;
     margin-top: 20px;
+}
+
+@media (max-width: 1150px) {
+    .partnershipBenefitsTitle {
+        width: 100%;
+    }
+
+    .partnershipBenefits {
+        padding: 0px 20px;
+        margin-top: 70px;
+    }
+
+    .benefitIcon {
+        padding: 0;
+    }
+
+    .partnershipBenefitsTitle h2 {
+        font-size: 35px;
+        line-height: 35px;
+    }
+
+    .partnershipBenefitsTitle p {
+        font-size: 16px;
+        line-height: 26px;
+        margin-top: 20px;
+    }
+
+    .benefitsGrid {
+        margin-top: 30px;
+        grid-gap: 20px;
+    }
+
+
+    .benefitItem p {
+        margin-top: 10px;
+    }
+
+}
+
+@media (max-width: 650px) {
+    .benefitsGrid {
+        grid-template-columns: repeat(1, 1fr);
+        margin-top: 30px;
+        grid-gap: 20px;
+    }
 }

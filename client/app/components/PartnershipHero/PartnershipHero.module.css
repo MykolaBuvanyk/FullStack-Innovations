@@ -85,7 +85,7 @@
     transition: 0.5s;
 }
 
-.contentLeft .btn:hover{
+.contentLeft .btn:hover {
     box-shadow: 0px 20px 40px 0px rgba(196, 1, 185, 0.47);
     background: linear-gradient(95.63deg, #C400B9 17.83%, #5D0058 159.96%);
     border: 1px solid rgba(196, 1, 185, 0.6);
@@ -134,6 +134,7 @@
         top: calc(0px + (1920px - 100vw) * 0.0);
     }
 }
+
 .sphereSmall,
 .sphereMedium,
 .sphereLarge {
@@ -154,27 +155,20 @@
 
 .sphereLarge {
     width: 23.6vw;
-    /* width: 353px; */
     right: 4.5vw;
-    /* top: 20%; */
     top: 5vw;
 }
 
 .sphereMedium {
     width: 4.2vw;
-    /* width: 107px; */
     left: -12vw;
-    /* top: 2.5%; */
     top: 4vw;
 }
 
 .sphereSmall {
     width: 2.86vw;
-    /* width: 65px; */
-    /* top: 85%; */
     top: 11.25vw;
-    /* right: 330px; */
-    right:2vw;
+    right: 2vw;
 }
 
 .scrollDown {
@@ -186,4 +180,102 @@
     align-items: center;
     margin: 0 auto;
     bottom: 0%;
+}
+
+@media (max-width: 1150px) {
+    .hero {
+        padding: 0 20px;
+        height: 320px;
+    }
+
+    .contentLeft {
+        width: 55%;
+        justify-content: flex-end;
+    }
+
+    .scrollDown {
+        display: none;
+    }
+
+    .spheraWrapper {
+        top: calc(0px + (1920px - 100vw) * 0.045);
+    }
+
+    .contentLeft h1 {
+        font-size: 35px;
+        line-height: 35px;
+    }
+
+    .contentLeft p {
+        font-size: 16px;
+        line-height: 24px;
+        margin-top: 15px;
+    }
+
+    .contentLeft .btn {
+        padding: 15px 25px;
+        font-size: 14px;
+        line-height: 22px;
+        margin-top: 30px;
+    }
+
+    .sphereLarge {
+        width: 30.77vw;
+        right: 4.5vw;
+        top: 5vw;
+    }
+
+    .sphereMedium {
+        width: 5.47vw;
+        left: -17vw;
+        top: 2vw;
+    }
+
+    .sphereSmall {
+        width: 3.73vw;
+        top: 13.25vw;
+        right: 1vw;
+    }
+}
+
+@media (max-width: 650px) {
+    .hero {
+        height: 520px;
+    }
+
+    .heroContent {
+        flex-direction: column-reverse;
+    }
+
+    .contentLeft {
+        width: 100%;
+    }
+
+    .spheraWrapper {
+        width: 100%;
+        aspect-ratio: 1/1;
+        top: 8vw;
+    }
+
+    .contentRight {
+        width: 100%;
+    }
+
+    .sphereLarge {
+        width: 60vw;
+        right: 20%;
+        top: 5vw;
+    }
+
+    .sphereMedium {
+        width: 12vw;
+        left: 1vw;
+        top: 2vw;
+    }
+
+    .sphereSmall {
+        width: 9vw;
+        top: 26vw;
+        right: 7.5vw;
+    }
 }

@@ -3,10 +3,12 @@
     margin-top: 150px;
 
 }
-.partnershipOptionsTitle{
+
+.partnershipOptionsTitle {
     width: 60%;
 }
-.partnershipOptionsTitle p{
+
+.partnershipOptionsTitle p {
     color: #fff;
     font-size: 22px;
     font-weight: 100;
@@ -45,12 +47,14 @@
 .optionCardImage {
     margin-bottom: 20px;
 }
-.optionCardArrow{
+
+.optionCardArrow {
     display: flex;
     justify-content: flex-end;
     padding: 0;
     margin: 0;
 }
+
 .optionCard h3 {
     font-size: 20px;
     font-weight: 600;
@@ -64,10 +68,67 @@
     color: #fff;
     line-height: 28px;
 }
+
 .optionCard:hover .optionCardArrow svg path,
 .optionCard:hover .optionCardImage svg path {
     fill: #FFFFFF;
 }
-.optionCard:hover{
+
+.optionCard:hover {
     background: linear-gradient(180deg, #C400B9 0%, #5D0058 119.29%);
+}
+
+@media (max-width: 1150px) {
+    .partnershipOptions {
+        padding: 0px 20px;
+        margin-top: 70px;
+    }
+
+    .partnershipOptionsTitle h2 {
+        font-size: 35px;
+        line-height: 35px;
+    }
+
+    .partnershipOptionsTitle p {
+        font-size: 16px;
+        line-height: 26px;
+        margin-top: 20px;
+    }
+
+    .optionsGrid {
+        margin-top: 30px;
+        grid-gap: 20px;
+    }
+
+    .optionCard {
+        height: 100%;
+    }
+
+    .optionCard h3 {
+        font-size: 18px;
+        line-height: 28px;
+        margin-bottom: 15px;
+    }
+
+    .optionCard p {
+        font-size: 14px;
+        line-height: 24px;
+    }
+}
+
+@media (max-width: 650px) {
+    .optionsGrid {
+        grid-template-columns: repeat(1, 1fr);
+        margin-top: 35px;
+        grid-gap: 10px;
+    }
+    .partnershipOptionsTitle{
+        width: 100%;
+    }
+    .optionCard{
+        padding: 25px 20px; 
+    }
+    .optionCardImage{
+        margin-bottom: 15px;
+    }
 }

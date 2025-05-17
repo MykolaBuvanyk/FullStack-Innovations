@@ -22,7 +22,7 @@ export default async function Home({ params }: Props) {
     <div className={styles.page}>
       <MainHeroSection dictionary={mainHero} />
       <MainSecond dictionary={mainSecond}/>
-      {/* <MainServices dictionary={mainServices}/> */}
+      <MainServices dictionary={mainServices}/>
       <OurPortfolioSlider dictionary={ourPortfolioSlider}/>
       <AboutHero dictionary={aboutHero}/>
       <PartnershipCards dictionary={partnershipCards}/>
