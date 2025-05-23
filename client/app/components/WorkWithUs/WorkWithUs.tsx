@@ -8,7 +8,7 @@ import "swiper/css";
 import type { Swiper as SwiperType } from "swiper";
 
 type Props = {
-  dictionary: any;
+    dictionary: any;
 };
 
 const WorkWithUs: React.FC<Props> = ({ dictionary }) => {
@@ -23,20 +23,20 @@ const WorkWithUs: React.FC<Props> = ({ dictionary }) => {
     return (
         <section className={styles.workWithUsWrapper}>
             <div className={styles.tellAboutUsTitle}>
-                <div className={styles.tellAboutUsTitleButton}>
-                    <h2 dangerouslySetInnerHTML={{ __html: dictionary.title }}></h2>
-                    <button className={styles.submitButton}>
-                        {dictionary.buttonText}
-                        <img src="/images/arrow_top_right.svg" alt="" />
-                    </button>
-                </div>
+                <h2 dangerouslySetInnerHTML={{ __html: dictionary.title }}></h2>
                 <p>{dictionary.description}</p>
+            </div>
+            <div className={styles.tellAboutUsTitleButton}>
+                <button className={styles.submitButton}>
+                    {dictionary.buttonText}
+                    <img src="/images/arrow_top_right.svg" alt="" />
+                </button>
             </div>
             <div className={styles.workWithUsContainer}>
                 <Swiper
                     onSwiper={(swiper) => (swiperRef.current = swiper)}
                     modules={[Autoplay]}
-                    spaceBetween={90}
+                    spaceBetween={10}
                     slidesPerView={6}
                     loop={true}
                     freeMode={true}
@@ -44,6 +44,16 @@ const WorkWithUs: React.FC<Props> = ({ dictionary }) => {
                     autoplay={{
                         delay: 0,
                         disableOnInteraction: false,
+                    }}
+                    breakpoints={{
+                        650: {
+                            slidesPerView: 6,
+                            spaceBetween: 10
+                        },
+                        0: {
+                            slidesPerView: 3,
+                            spaceBetween: 20
+                        },
                     }}
                     className={styles.workWithUsList}
                 >

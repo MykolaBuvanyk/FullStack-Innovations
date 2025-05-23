@@ -29,7 +29,7 @@ const AboutPeopleSlider: React.FC<Props> = ({ dictionary }) => {
       <div className={styles.sliderContainer}>
         <Swiper
           modules={[Pagination]}
-          spaceBetween={20}
+          spaceBetween={0}
           slidesPerView={4}
           pagination={{
             clickable: true,
@@ -37,15 +37,15 @@ const AboutPeopleSlider: React.FC<Props> = ({ dictionary }) => {
           }}
           breakpoints={{
             1100: {
-              slidesPerView: 2.3,
-              spaceBetween: 10
+              slidesPerView: 4,
+              spaceBetween: 0
              },
             768: {
-              slidesPerView: 2.3,
+              slidesPerView: 2.45,
               spaceBetween: 10
              },
             0: {
-              slidesPerView: 2.3,
+              slidesPerView: 1.4,
               spaceBetween: 10
              },
           }}

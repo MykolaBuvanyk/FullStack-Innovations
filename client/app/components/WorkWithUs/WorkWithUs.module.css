@@ -1,19 +1,28 @@
-.workWithUsWrapper{
+.workWithUsWrapper {
     padding: 0 12.5vw;
     margin: 200px 0 150px;
+    display: grid;
+    grid-template-columns: 1.5fr auto;
+    grid-template-rows: repeat(2, 1fr);
 }
 
-.tellAboutUsTitleButton{
+.tellAboutUsTitleButton {
     display: flex;
-    justify-content: space-between;
-    align-items: end;
+    justify-content: flex-end;
+    align-items: center;
+    grid-area: 1 / 2 / 2 / 3;
 }
+
 .tellAboutUsTitle p {
     color: #fff;
     size: 20px;
     font-weight: 100;
     margin-top: 20px;
-    width: 55%;
+    /* width: 55%; */
+}
+
+.tellAboutUsTitle {
+    grid-area: 1 / 1 / 2 / 2;
 }
 
 .tellAboutUsTitle h2 {
@@ -50,7 +59,7 @@
     border: 1px solid rgba(196, 1, 185, 0.6);
 }
 
-.workWithUsList{
+.workWithUsList {
     display: flex;
     width: 100%;
     justify-content: center;
@@ -92,4 +101,68 @@
     white-space: nowrap;
     will-change: transform;
     margin-top: 3.65vw;
+    grid-area: 2 / 1 / 3 / 3;
+}
+
+@media(max-width: 1440px) {
+    .tellAboutUsTitle h2 {
+        font-size: 35px;
+        line-height: 45px;
+    }
+
+    .tellAboutUsTitle p {
+        font-size: 16px;
+        line-height: 25px;
+    }
+}
+
+@media(max-width: 1150px) {
+    .workWithUsWrapper {
+        padding: 0 20px;
+        margin-top: 70px;
+        margin-bottom: 70px;
+    }
+
+    .tellAboutUsTitle {
+        padding: 0;
+        width: 100%;
+    }
+
+    .submitButton {
+        padding: 15px 35px;
+        font-size: 14px;
+    }
+}
+
+@media(max-width: 650px) {
+    .workWithUsWrapper {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 1fr) auto;
+    }
+
+    .workWithUsContainer {
+        margin-top: 0;
+        grid-area: 2 / 1 / 3 / 2;
+    }
+    .tellAboutUsTitle h2{
+        width: 100%;
+    }
+    .tellAboutUsTitle {
+        grid-area: 1 / 1 / 2 / 2;
+    }
+
+    .tellAboutUsTitleButton {
+        grid-area: 3 / 1 / 4 / 2;
+    }
+    .workWithUsEl img{
+        max-width: none;
+    }
+    .submitButton {
+        padding: 20px 35px;
+        font-size: 15px;
+        
+    }
+    .tellAboutUsTitleButton{
+        justify-content: flex-start;
+    }
 }
