@@ -90,3 +90,35 @@
     box-shadow: 0px 20px 40px rgba(196, 1, 185, 0.6);
     border: 1px solid rgba(196, 1, 185, 0.6);
 }
+@media(max-width:1440px){
+    .title,
+    .ourProjectsElTextWrapper h3{
+        font-size: 35px;
+        line-height: 45px;
+    }
+}
+@media(max-width:1150px){
+    .ourProjectsWrapper {
+        padding: 0 20px;
+        margin-top: 70px;
+        gap: 20px;
+    }
+    .ourProjectsList{
+        gap: 30px;
+    }
+    .ourProjectsEl,
+    .ourProjectsEl:nth-child(even) {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .ourProjectsEl > * {
+        width: 100%;
+    }
+    .ourProjectsWrapper{
+        font-size: 16px;
+    }
+}
+
+@media(max-width:650px){
+    
+}
