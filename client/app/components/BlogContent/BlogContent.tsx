@@ -62,6 +62,8 @@ const BlogContent: React.FC<Props> = ({ dictionary }) => {
               </li>
             ))}
           </ul>
+        </div>
+      </div>
           <div className={styles.pagination}>
             <button
               onClick={() => handlePageChange(currentPage - 1)}
@@ -69,7 +71,6 @@ const BlogContent: React.FC<Props> = ({ dictionary }) => {
               className={`${styles.paginationButton} ${styles.prevButton} ${currentPage === 1 ? styles.disabled : styles.active}`}
             >
               <i className="fa-solid fa-arrow-left"></i>
-              <span>{dictionary.prevButton}</span>
             </button>
             <ul className={styles.pageNumbers}>
               {pageNumbers.map((page) => (
@@ -87,12 +88,9 @@ const BlogContent: React.FC<Props> = ({ dictionary }) => {
               disabled={currentPage === totalPages}
               className={`${styles.paginationButton} ${styles.nextButton} ${currentPage === totalPages ? styles.disabled : styles.active}`}
             >
-              <span>{dictionary.nextButton}</span>
               <i className="fa-solid fa-arrow-right"></i>
             </button>
           </div>
-        </div>
-      </div>
     </div>
   );
 };
