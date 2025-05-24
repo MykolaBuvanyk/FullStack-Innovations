@@ -1,19 +1,29 @@
 .buttonTopWrapper{
-    position: fixed;
-    right: 35px;
-    top: 85%;
-    z-index: 1000;
-  }
+  position: fixed;
+  right: 35px;
+  top: 85%;
+  z-index: 1000;
+}
 
+.buttonTop{
+  background-color: transparent;
+  border: 1px solid #e81edd;
+  padding: 30px 34px;
+  color: #ffffff;
+  border-radius: 50%;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;;
+}
+@media(max-width:1150px){
   .buttonTop{
-    background-color: transparent;
-    border: 1px solid #e81edd;
-    padding: 30px 34px;
-    color: #ffffff;
-    border-radius: 50%;
-    font-size: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;;
+    padding: 25px 27.5px;
   }
+}
+@media(max-width:650px){
+  .buttonTopWrapper{
+    display: none;
+  }
+}

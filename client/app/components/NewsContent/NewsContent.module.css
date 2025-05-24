@@ -133,3 +133,22 @@
         -webkit-text-stroke: 1px #E81EDD;
     }
 }
+@media(max-width:1150px){
+    .container {
+        padding: 0 20px;
+    }
+    .image {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    .title {
+        font-size: 25px;
+    }
+    .paragraph{
+        font-size: 14px;
+    }
+    .bulletList{
+        
+    }
+}
