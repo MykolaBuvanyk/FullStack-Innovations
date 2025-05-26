@@ -42,3 +42,21 @@
     justify-content: center;
     align-items: center;
 }
+
+@media(max-width:1150px){
+    .socialLinksWrapper {
+        right: 20px;
+        top: 100px; 
+        gap: 5px;
+    }
+    .socialLinksList{
+        gap: 4px;
+        padding: 10px;
+    }
+}
+
+@media(max-width:650px){
+    .socialLinksWrapper{
+        right: 0;
+    }
+}

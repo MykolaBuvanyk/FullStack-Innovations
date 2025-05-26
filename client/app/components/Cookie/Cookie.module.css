@@ -1,5 +1,5 @@
 .cookieWrapper {
-    padding: 1vw;
+    padding: 20px;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -10,7 +10,7 @@
     bottom: 13%;
     color: rgba(255, 255, 255, 1);
     z-index: 1000000;
-    background-color: rgba(231, 30, 220, 0.07);
+    background-color: rgba(231, 30, 220, 0.1);
     border-radius: 30px;
     font-size: 16px;
     line-height: 26px;
@@ -38,4 +38,32 @@
     font-size: 15px;
     line-height: 22px;
     cursor: pointer;
+}
+
+@media(max-width:1150px){
+    .cookieWrapper{
+        max-width: fit-content;
+        font-size: 14px;
+        gap: 25px;
+        margin: 0 20px;
+    }
+    .cookieButton button{
+        padding: 10px 25px;
+    }
+}
+
+@media(max-width:650px){
+    .cookieWrapper{
+        flex-direction: column;
+        gap: 10px;
+        font-size: 12px;
+        line-height: 15px;
+        font-weight: 300;
+        top: 100px;
+        bottom: auto;
+    }
+    .cookieButton button{
+        padding: 5px 15px;
+        font-size: 10px;
+    }
 }
