@@ -237,3 +237,41 @@
   width: 16px;
   height: 16px;
 }
+@media(max-width:1440px){
+  .modalFeedbackWrapper {
+    width: 57.5vw;
+    left: 0;
+  }
+  .titleWrapper {
+    margin: 30% 0 40px;
+  }
+  .title{
+    font-size: 20px;
+  }
+  .submitBtn{
+    padding: 15px 30px;
+  }
+  .backButton {
+    position: absolute;
+    right: 20px;
+    top: 20px; 
+  }
+}
+@media(max-width:650px){
+  .modalOverlay {
+    padding: 0;
+  }
+
+  .modalFeedbackWrapper {
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    padding: 20px;
+  }
+  .backButton {
+    position: static;
+  }
+  .titleWrapper{
+    margin: 50px 0;
+  }
+}

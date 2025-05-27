@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import styles from "./ModalFeedback.module.css";
 
 interface ModalFeedbackProps {
@@ -14,7 +14,7 @@ const ModalFeedback: React.FC<ModalFeedbackProps> = ({
   closeModal,
   dictionary,
 }) => {
-  console.log("DICTIONARY")
+  console.log("DICTIONARY");
   console.log(dictionary);
   const [formData, setFormData] = useState({
     name: "",
@@ -30,7 +30,7 @@ const ModalFeedback: React.FC<ModalFeedbackProps> = ({
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [focused, setFocused] = useState({ feedbackType: true });
-  const [isFormValid, setIsFormValid] = useState(false);
+  const [showErrors, setShowErrors] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -38,7 +38,10 @@ const ModalFeedback: React.FC<ModalFeedbackProps> = ({
       ...prev,
       [name]: value,
     }));
-    setErrors((prev) => ({ ...prev, [name]: "" }));
+    // Clear error for the field being edited
+    if (showErrors) {
+      setErrors((prev) => ({ ...prev, [name]: "" }));
+    }
   };
 
   const validateForm = () => {
@@ -73,19 +76,17 @@ const ModalFeedback: React.FC<ModalFeedbackProps> = ({
       isValid = false;
     }
 
-    setErrors(newErrors);
-    return isValid;
+    return { isValid, newErrors };
   };
-
-  useEffect(() => {
-    setIsFormValid(validateForm());
-  }, [formData]);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (!isFormValid) {
-      validateForm();
+    const { isValid, newErrors } = validateForm();
+    setShowErrors(true); // Enable error display on submit
+    setErrors(newErrors);
+
+    if (!isValid) {
       return;
     }
 
@@ -98,6 +99,7 @@ const ModalFeedback: React.FC<ModalFeedbackProps> = ({
       message: "",
       feedbackType: "1",
     });
+    setShowErrors(false); // Reset error display after successful submission
 
     setTimeout(() => {
       setIsSubmitted(false);
@@ -132,7 +134,9 @@ const ModalFeedback: React.FC<ModalFeedbackProps> = ({
               <label htmlFor="name" className={styles.label}>
                 {dictionary.labels.name}
               </label>
-              {errors.name && <div className={styles.error}>{errors.name}</div>}
+              {showErrors && errors.name && (
+                <div className={styles.error}>{errors.name}</div>
+              )}
             </div>
             <div className={styles.formGroup}>
               <input
@@ -147,7 +151,7 @@ const ModalFeedback: React.FC<ModalFeedbackProps> = ({
               <label htmlFor="email" className={styles.label}>
                 {dictionary.labels.email}
               </label>
-              {errors.email && (
+              {showErrors && errors.email && (
                 <div className={styles.error}>{errors.email}</div>
               )}
             </div>
@@ -164,7 +168,7 @@ const ModalFeedback: React.FC<ModalFeedbackProps> = ({
               <label htmlFor="message" className={styles.label}>
                 {dictionary.labels.message}
               </label>
-              {errors.message && (
+              {showErrors && errors.message && (
                 <div className={styles.error}>{errors.message}</div>
               )}
             </div>
@@ -209,7 +213,9 @@ const ModalFeedback: React.FC<ModalFeedbackProps> = ({
                           ...prev,
                           feedbackType: val,
                         }));
-                        setErrors((prev) => ({ ...prev, feedbackType: "" }));
+                        if (showErrors) {
+                          setErrors((prev) => ({ ...prev, feedbackType: "" }));
+                        }
                       }}
                     >
                       {dictionary.feedbackOptions[idx]}
@@ -219,16 +225,17 @@ const ModalFeedback: React.FC<ModalFeedbackProps> = ({
               )}
             </div>
 
-            {errors.feedbackType && (
+            {showErrors && errors.feedbackType && (
               <div className={styles.error}>{errors.feedbackType}</div>
             )}
           </div>
           <button
             type="submit"
             className={`${styles.submitBtn} ${
-              isFormValid ? styles.active : styles.inactive
+              !showErrors || Object.values(errors).every((e) => !e)
+                ? styles.active
+                : styles.inactive
             }`}
-            disabled={!isFormValid}
           >
             {dictionary.submitButton}
             <img src="/images/arrow_top_right.svg" alt="" />

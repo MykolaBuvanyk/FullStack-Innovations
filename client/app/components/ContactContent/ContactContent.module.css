@@ -40,9 +40,9 @@
 }
 
 .heroSectionLeft p{
-    font-weight: 100;
+    font-weight: 300;
     font-size: 18px;
-    line-height: 3vh;
+    line-height: 26px;
 }
 
 
@@ -57,5 +57,28 @@
 
     .heroSectionLeft p{
         font-size: 14px;
+    }
+}
+@media(max-width:1150px){
+    .container {
+        padding: 0 20px;
+        margin-bottom: 70px;
+    }
+    .mainContent {
+        margin-top: 70px;
+        gap: 0; 
+    }
+    .heroSectionLeft h1 {
+        font-size: 35px;  
+    }
+}
+@media(max-width:650px){
+    .mainContent {
+        margin-top: 25px;
+        flex-direction: column-reverse;
+        gap: 30px;
+    }
+    .mainContent > *{
+        width: 100%;
     }
 }
