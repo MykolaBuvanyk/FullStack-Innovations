@@ -1,9 +1,30 @@
+'use client';
+import { useState, useEffect } from 'react';
 import styles from './Technologies.module.css';
 import Image from 'next/image';
+
 type Props = {
     dictionary: any;
-  };
+};
+
 const Technologies: React.FC<Props> = ({ dictionary }) => {
+    const [showAll, setShowAll] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth < 1150);
+        };
+
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
+    const handleShowMore = () => {
+        setShowAll(true);
+    };
+
     const techCategories = [
         {
             category: 'Backend',
@@ -19,7 +40,6 @@ const Technologies: React.FC<Props> = ({ dictionary }) => {
                 '/images/Technologies/node_js.svg',
                 '/images/Technologies/go.svg',
                 '/images/Technologies/nginx.svg',
-
             ],
         },
         {
@@ -77,7 +97,7 @@ const Technologies: React.FC<Props> = ({ dictionary }) => {
             category: 'Native mobile app development',
             items: ['Android Java, Kotlin', 'iOS Swift'],
             logos: [
-               '/images/Technologies/android.svg',
+                '/images/Technologies/android.svg',
                 '/images/Technologies/kotlin.svg',
                 '/images/Technologies/java.svg',
                 '/images/Technologies/apple.svg',
@@ -92,7 +112,6 @@ const Technologies: React.FC<Props> = ({ dictionary }) => {
                 '/images/Technologies/Csharp.svg',
             ],
         },
-
         {
             category: 'Design',
             items: ['Adobe PS, Adobe AE, Adobe XD, Figma, Zeplin, ProtoPie'],
@@ -122,34 +141,48 @@ const Technologies: React.FC<Props> = ({ dictionary }) => {
         <section className={styles.technologies}>
             <h2 className={styles.title}>{dictionary.title}</h2>
             <div className={styles.grid}>
-                {techCategories.map((category, index) => (
-                    <div key={index} className={styles.categoryRow}>
-                        {/* Ліва частина: категорія та список технологій */}
-                        <div className={styles.categoryText}>
-                            <h3 className={styles.categoryTitle}>{category.category}</h3>
-                            <ul className={styles.items}>
-                                {category.items.map((item, itemIndex) => (
-                                    <li key={itemIndex} className={styles.item}>
-                                        {item}
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                        {/* Права частина: логотипи */}
-                        <div className={styles.logos}>
-                            {category.logos.map((logo, index) => (
-                                <div key={logo} className={styles.logoWrapper}>
-                                    <img
-                                        src={logo}
-                                        alt={`${category.items[index]} logo`}
-                                        className={styles.logo}
-                                    />
+                {techCategories
+                    .slice(0, isMobile && !showAll ? 3 : techCategories.length)
+                    .map((category, index) => (
+                        <div key={index} className={styles.categoryRow}>
+                            {/* Ліва частина: категорія та список технологій */}
+                            <div className={styles.categoryText}>
+                                <h3 className={styles.categoryTitle}>{category.category}</h3>
+                                <ul className={styles.items}>
+                                    {category.items.map((item, itemIndex) => (
+                                        <li key={itemIndex} className={styles.item}>
+                                            {item}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                            {/* Права частина: логотипи */}
+                            <div className={styles.categoryLogos}>
+                                <div className={styles.logos}>
+                                    {category.logos.map((logo, index) => (
+                                        <div key={logo} className={styles.logoWrapper}>
+                                            <img
+                                                src={logo}
+                                                alt={`${category.items[index] || category.category} logo`}
+                                                className={styles.logo}
+                                            />
+                                        </div>
+                                    ))}
                                 </div>
-                            ))}
+                            </div>
                         </div>
-                    </div>
-                ))}
+                    ))}
             </div>
+            {isMobile && !showAll && techCategories.length > 3 && (
+                <button
+                    className={styles.showMoreButton}
+                    onClick={handleShowMore}
+                    aria-label={dictionary.showMore}
+                >
+                    <p>{dictionary.showMore}</p>
+                    <img src="/images/arrow_top_right.svg" alt="" />
+                </button>
+            )}
         </section>
     );
 };
