@@ -35,7 +35,7 @@
 }
 
 /* Desktop - ПК */
-@media (min-width: 1151px) {
+@media (min-width: 1051px) {
     .servicesThirdWrapper {
         grid-template-columns: 55% 1fr;
         grid-template-rows: auto auto auto;
@@ -64,7 +64,7 @@
 }
 
 /* Tablet - Планшет */
-@media (min-width: 651px) and (max-width: 1150px) {
+@media (min-width: 651px) and (max-width: 1050px) {
     .servicesThirdWrapper {
         padding: 0px 20px;
         margin-top: 70px;

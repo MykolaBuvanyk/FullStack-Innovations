@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import styles from "./WhatWeUse.module.css";
 
 type Props = {
@@ -107,6 +108,124 @@ const allLogos = [
 ];
 
 const WhatWeUse: React.FC<Props> = ({ dictionary }) => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+  const [isSmallMobile, setIsSmallMobile] = useState(false);
+
+  // Перевірка чи це мобільний пристрій
+  useEffect(() => {
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth < 1150);
+      setIsSmallMobile(window.innerWidth <= 650);
+    };
+    
+    checkIsMobile();
+    window.addEventListener('resize', checkIsMobile);
+    
+    return () => window.removeEventListener('resize', checkIsMobile);
+  }, []);
+
+  // Створюємо слайди для мобільної версії
+  const createMobileSlides = () => {
+    const slides = [];
+    const itemsPerSlide = isSmallMobile ? 8 : 14; // 8 елементів (2 ряди по 4) для <= 650px, 14 (2 ряди по 7) для більших
+    
+    for (let i = 0; i < allLogos.length; i += itemsPerSlide) {
+      slides.push(allLogos.slice(i, i + itemsPerSlide));
+    }
+    return slides;
+  };
+
+  const mobileSlides = createMobileSlides();
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % mobileSlides.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + mobileSlides.length) % mobileSlides.length);
+  };
+
+  const goToSlide = (index: number) => {
+    setCurrentSlide(index);
+  };
+
+  // Автоматичне перемикання слайдів
+  useEffect(() => {
+    if (isMobile) {
+      const interval = setInterval(nextSlide, 4000);
+      return () => clearInterval(interval);
+    }
+  }, [isMobile, mobileSlides.length]);
+
+  if (isMobile) {
+    return (
+      <section className={styles.whatWeUseWrapper}>
+        <h2 className={styles.title}>{dictionary.title}</h2>
+        <div className={styles.sliderContainer}>
+          <div className={styles.sliderWrapper}>
+            <div 
+              className={styles.sliderTrack}
+              style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+            >
+              {mobileSlides.map((slide, slideIndex) => {
+                const itemsPerRow = isSmallMobile ? 4 : 7;
+                
+                return (
+                  <div key={slideIndex} className={styles.slide}>
+                    <div className={styles.slideRow}>
+                      {slide.slice(0, itemsPerRow).map((LogoComponent, logoIndex) => (
+                        <div key={logoIndex} className={styles.logoWrapper}>
+                          <LogoComponent className={styles.logo} />
+                        </div>
+                      ))}
+                    </div>
+                    <div className={styles.slideRow}>
+                      {slide.slice(itemsPerRow, itemsPerRow * 2).map((LogoComponent, logoIndex) => (
+                        <div key={logoIndex + itemsPerRow} className={styles.logoWrapper}>
+                          <LogoComponent className={styles.logo} />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+          
+          {/* Навігаційні кнопки */}
+          {/* <button 
+            className={`${styles.sliderButton} ${styles.prevButton}`}
+            onClick={prevSlide}
+            aria-label="Previous slide"
+          >
+            &#8249;
+          </button>
+          <button 
+            className={`${styles.sliderButton} ${styles.nextButton}`}
+            onClick={nextSlide}
+            aria-label="Next slide"
+          >
+            &#8250;
+          </button> */}
+          
+          {/* Індикатори */}
+          <div className={styles.indicators}>
+            {mobileSlides.map((_, index) => (
+              <button
+                key={index}
+                className={`${styles.indicator} ${currentSlide === index ? styles.active : ''}`}
+                onClick={() => goToSlide(index)}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  // Десктопна версія (залишається незмінною)
   return (
     <section className={styles.whatWeUseWrapper}>
       <h2 className={styles.title}>{dictionary.title}</h2>
@@ -117,8 +236,8 @@ const WhatWeUse: React.FC<Props> = ({ dictionary }) => {
               const logoIndex = rowIndex * 8 + colIndex;
               const LogoComponent = allLogos[logoIndex];
               return logoIndex < allLogos.length ? (
-                <div className={styles.logoWrapper}>
-                  <LogoComponent key={colIndex} className={styles.logo} />
+                <div key={colIndex} className={styles.logoWrapper}>
+                  <LogoComponent className={styles.logo} />
                 </div>
               ) : null;
             })}
@@ -128,4 +247,5 @@ const WhatWeUse: React.FC<Props> = ({ dictionary }) => {
     </section>
   );
 };
+
 export default WhatWeUse;
