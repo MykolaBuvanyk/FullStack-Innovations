@@ -146,8 +146,98 @@
     margin: 0 50%;
 }
 
-@media(max-width:1440px) {
+@media(max-width:1150px) {
     .portfolioHeroTitle {
-        font-size: 50px;
+        font-size: 35px;
+        line-height: 35px;
+    }
+
+    .portfolioHeroWrapper {
+        padding: 0 20px;
+    }
+
+    .portfolioHeroTextWrapper {
+        gap: 0;
+
+    }
+
+    .portfolioHeroDescription {
+        font-size: 16px;
+        line-height: 26px;
+        margin-top: 15px;
+    }
+
+    .btn {
+        padding: 15px 25px;
+        font-size: 14px;
+        margin-top: 30px;
+    }
+
+    .portfolioHeroSphereWrapper {
+        width: 50%;
+        justify-content: center;
+    }
+
+    .sphereLarge {
+        width: 27.125vw;
+        top: 23%;
+        right: 6%;
+    }
+
+    .sphereSmall {
+        width: 5vw;
+        bottom: -22%;
+        left: -33%;
+    }
+
+    .sphereMedium {
+        width: 6.8vw;
+        top: 5%;
+        right: -20%;
+    }
+
+    .spheraWrapper {
+        top: 0%;
+    }
+}
+
+@media(max-width:650px) {
+    .portfolioHeroWrapper {
+        flex-direction: column-reverse;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .portfolioHeroSphereWrapper {
+        width: 62%;
+    }
+
+    .portfolioHeroTextWrapper {
+        width: 100%;
+    }
+    .portfolioHeroDescription{
+        margin-top: 20px;
+    }
+    .btn{
+        padding: 20px;
+        margin-top: 40px;
+        font-size: 15px;
+    }
+    .sphereLarge {
+        width: 51vw;
+        right: -21%;
+        top: 8%;
+    }
+
+    .sphereSmall {
+        width: 9.5vw;
+        bottom: -100%;
+        left: -123%;
+    }
+
+    .sphereMedium {
+        width: 12.8vw;
+        top: -13%;
+        right: -69%;
     }
 }

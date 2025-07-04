@@ -1,5 +1,6 @@
 import styles from './ServicesSecond.module.css';
 import Image from 'next/image';
+import Link from 'next/link';
 
 // Лічильник для унікальних ідентифікаторів градієнта
 let gradientCounter = 0;
@@ -33,14 +34,22 @@ const GradientTextSvg = (text: string) => {
 };
 
 type Props = {
-  dictionary: any;
+  dictionary: {
+    items: {
+      svgText: string;
+      subtitle: string;
+      description: string;
+      link: string;
+      buttonText: string;
+    }[];
+  };
 };
 
 const ServicesSecond: React.FC<Props> = ({ dictionary }) => {
   return (
     <section className={styles.servicesSecond}>
       <div className={styles.servicesSecondGrid}>
-        {dictionary.items.map((item: { svgText: string; subtitle: string; description: string }, index: number) => (
+        {dictionary.items.map((item, index) => (
           <div key={index} className={styles.servicesSecondItem}>
             <div className={styles.servicesSecondContent}>
               <div className={styles.servicesSecondSharpNumber}>
@@ -48,6 +57,12 @@ const ServicesSecond: React.FC<Props> = ({ dictionary }) => {
               </div>
               <h4>{item.subtitle}</h4>
               <p>{item.description}</p>
+            </div>
+            <div className={styles.linkWrapper}>
+              <Link href={item.link} className={styles.detailsButton}>
+                {item.buttonText}
+              </Link>
+              <img src="/images/arrow_top_right.svg" alt=""></img>
             </div>
           </div>
         ))}

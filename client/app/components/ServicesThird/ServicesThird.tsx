@@ -7,19 +7,25 @@ type Props = {
 
 const ServicesThird: React.FC<Props> = ({ dictionary }) => {
     return (
-        <section >
+        <section>
             <div className={styles.servicesThirdWrapper}>
-                <div className={styles.servicesThirdTextWrapper}>
-                    <h2 className={styles.servicesThirdTitle}>
-                        {dictionary.title}
-                    </h2>
-                    <p
-                        className={styles.servicesThirdDescription}
-                        dangerouslySetInnerHTML={{ __html: dictionary.description }}
-                    />
-                </div>
+                <h2 className={styles.servicesThirdTitle}>
+                    {dictionary.title}
+                </h2>
                 <div className={styles.servicesThirdImgWrapper}>
                     <img src="/images/people_discussing_office.png" alt="temp" />
+                </div>
+                <div className={styles.servicesThirdFirstTextWrapper}>
+                    <p
+                        className={styles.servicesThirdDescription}
+                        dangerouslySetInnerHTML={{ __html: dictionary.descriptionFirst }}
+                    />
+                </div>
+                <div className={styles.servicesThirdSecondTextWrapper}>
+                    <p
+                        className={styles.servicesThirdDescription}
+                        dangerouslySetInnerHTML={{ __html: dictionary.descriptionSecond }}
+                    />
                 </div>
             </div>
         </section>
