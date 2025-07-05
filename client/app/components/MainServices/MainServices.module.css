@@ -505,3 +505,9 @@
         display: none;
     }
 }
+
+@media (max-width:650px){
+    .mainServices{
+        margin-top: 70px;
+    }
+}
