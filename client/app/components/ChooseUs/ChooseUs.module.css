@@ -132,6 +132,9 @@
 }
 
 @media (max-width: 650px) {
+    .chooseUs{
+        margin-top: 70px;
+    }
     .chooseUs h2 {
         font-size: 35px;
         line-height: 35px;
@@ -154,6 +157,8 @@
     .chooseUsItem p {
         font-size: 16px;
         margin-top: 15px;
+        line-height: 26px;
+        font-weight: 100;
     }
 }
 

@@ -104,4 +104,9 @@
         margin-top: 30px;
         grid-gap: 20px;
     }
+    .benefitItem p{
+        font-size: 14px;
+        line-height: 24px;
+        font-weight: 100;
+    }
 }

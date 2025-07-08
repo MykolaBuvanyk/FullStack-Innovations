@@ -262,10 +262,19 @@
     .footerLogo img{
         width: 33vw;
     }
+    .footerText{
+        white-space: nowrap;
+    }
     .languagesList{
         flex-wrap: wrap;
         justify-content:flex-start;
         row-gap: 10px;
         column-gap: 20px;
+    }
+}
+
+@media(max-width:430px){
+    .linksList li:nth-child(4){
+        margin: 0;
     }
 }
