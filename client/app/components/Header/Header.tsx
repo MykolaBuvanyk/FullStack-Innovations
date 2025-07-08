@@ -176,11 +176,11 @@ const Header: React.FC<Props> = ({ dictionary }) => {
                 {isServicesDropdownOpen && (
                   <div className={styles.servicesDropdown}>
                     <div className={styles.servicesGrid}>
-                      {servicesData.map((category, index) => (
+                      {dictionary.dropDown.categories.map((category: any, index: number) => (
                         <div key={index} className={styles.serviceCategory}>
                           <h4 className={styles.serviceCategoryTitle}>{category.title}</h4>
                           <ul className={styles.serviceList}>
-                            {category.items.map((item, itemIndex) => (
+                            {category.items.map((item: string, itemIndex: number) => (
                               <li key={itemIndex} className={styles.serviceItem}>
                                 <Link href={`/${currentLang}/services/${item.toLowerCase().replace(/\s+/g, '-')}`}>
                                   {item}
@@ -190,9 +190,10 @@ const Header: React.FC<Props> = ({ dictionary }) => {
                           </ul>
                         </div>
                       ))}
+
                     </div>
                     <div className={styles.servicesFooter}>
-                      <p>Що ми використовуємо у роботі</p>
+                      <p>{dictionary.dropDown.title}</p>
                       <div className={styles.techStack}>
                         <div className={styles.techItem}>
                           <img src="/images/Technologies/php.svg" alt="PHP" />
@@ -260,7 +261,7 @@ const Header: React.FC<Props> = ({ dictionary }) => {
                       </div>
                       <div className={styles.linkWrapper}>
                         <Link href={`/${currentLang}/technologies`} className={styles.detailsButton}>
-                          Усі технології та послуги
+                          {dictionary.dropDown.button}
                         </Link>
                         <img src="/images/arrow_top_right.svg" alt=""></img>
                       </div>
