@@ -16,7 +16,9 @@ const Header: React.FC<Props> = ({ dictionary }) => {
   const [isLangDropdownOpen, setIsLangDropdownOpen] = useState(false);
   const [isTelDropdownOpen, setIsTelDropdownOpen] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
   const langDropdownRef = useRef<HTMLDivElement | null>(null);
+  const servicesDropdownRef = useRef<HTMLLIElement | null>(null);
 
   const languages = [
     { code: "uk", name: "Українська", flag: "🇺🇦" },
@@ -41,6 +43,56 @@ const Header: React.FC<Props> = ({ dictionary }) => {
     { code: "no", name: "Norsk", flag: "🇳🇴" },
   ];
 
+  // Структура послуг на основі дизайну
+  const servicesData = [
+    {
+      title: "Веб Сайти",
+      items: [
+        "Аналіз/Аудит",
+        "UI/UX",
+        "Лендинг",
+        "Корпоративний",
+        "Інтернет магазин",
+        "Редизайн"
+      ]
+    },
+    {
+      title: "Інтернет-маркетинг",
+      items: [
+        "SEO",
+        "SMM",
+        "Media реклама",
+        "Фото/Відео"
+      ]
+    },
+    {
+      title: "Брендинг",
+      items: [
+        "Лого",
+        "Брендбук",
+        "Упаковка",
+        "Ребрендинг",
+        "Копірайтинг"
+      ]
+    },
+    {
+      title: "APP/Додаток",
+      items: [
+        "APP для Android",
+        "APP для IOS",
+        "PWA",
+        "APP дизайн"
+      ]
+    },
+    {
+      title: "Техпідтримка",
+      items: [
+        "Підтримка сайту",
+        "Підтримка APP"
+      ]
+    }
+  ];
+
   const isValidLanguageCode = (code: string) => {
     return languages.some((lang) => lang.code === code);
   };
@@ -61,9 +113,8 @@ const Header: React.FC<Props> = ({ dictionary }) => {
   };
 
   const handleLanguageChange = (langCode: string) => {
-    document.cookie = `preferred-locale=${langCode}; path=/; max-age=${
-      60 * 60 * 24 * 30
-    }`;
+    document.cookie = `preferred-locale=${langCode}; path=/; max-age=${60 * 60 * 24 * 30
+      }`;
     const newPath = getNewPath(langCode);
     router.push(newPath);
     setIsLangDropdownOpen(false);
@@ -77,6 +128,13 @@ const Header: React.FC<Props> = ({ dictionary }) => {
         !langDropdownRef.current.contains(event.target as Node)
       ) {
         setIsLangDropdownOpen(false);
+      }
+
+      if (
+        servicesDropdownRef.current &&
+        !servicesDropdownRef.current.contains(event.target as Node)
+      ) {
+        setIsServicesDropdownOpen(false);
       }
     };
 
@@ -104,11 +162,111 @@ const Header: React.FC<Props> = ({ dictionary }) => {
             <ul className={styles.headerList}>
               <li
                 className={[styles.headerEl, styles.headerDropdown].join(" ")}
+                ref={servicesDropdownRef}
               >
-                <Link href={`/${currentLang}/services`}>
-                  {dictionary.nav.services}
-                </Link>
-                <i className="fa-solid fa-chevron-down"></i>
+                <div
+                  className={styles.servicesLink}
+                  onClick={() => setIsServicesDropdownOpen(!isServicesDropdownOpen)}
+                >
+                  <Link href={`/${currentLang}/services`}>
+                    {dictionary.nav.services}
+                  </Link>
+                  <i className={`fa-solid fa-chevron-${isServicesDropdownOpen ? 'up' : 'down'}`}></i>
+                </div>
+                {isServicesDropdownOpen && (
+                  <div className={styles.servicesDropdown}>
+                    <div className={styles.servicesGrid}>
+                      {servicesData.map((category, index) => (
+                        <div key={index} className={styles.serviceCategory}>
+                          <h4 className={styles.serviceCategoryTitle}>{category.title}</h4>
+                          <ul className={styles.serviceList}>
+                            {category.items.map((item, itemIndex) => (
+                              <li key={itemIndex} className={styles.serviceItem}>
+                                <Link href={`/${currentLang}/services/${item.toLowerCase().replace(/\s+/g, '-')}`}>
+                                  {item}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
+                    <div className={styles.servicesFooter}>
+                      <p>Що ми використовуємо у роботі</p>
+                      <div className={styles.techStack}>
+                        <div className={styles.techItem}>
+                          <img src="/images/Technologies/php.svg" alt="PHP" />
+                          <span>PHP</span>
+                        </div>
+                        <div className={styles.techItem}>
+                          <img src="/images/Technologies/laravel.svg" alt="Laravel" />
+                          <span>Laravel</span>
+                        </div>
+                        <div className={styles.techItem}>
+                          <img src="/images/Technologies/symfony.svg" alt="Symfony" />
+                          <span>Symfony</span>
+                        </div>
+                        <div className={styles.techItem}>
+                          <img src="/images/Technologies/python.svg" alt="Python" />
+                          <span>Python</span>
+                        </div>
+                        <div className={styles.techItem}>
+                          <img src="/images/Technologies/flask.svg" alt="Flask" />
+                          <span>Flask</span>
+                        </div>
+                        <div className={styles.techItem}>
+                          <img src="/images/Technologies/django.svg" alt="Django" />
+                          <span>Django</span>
+                        </div>
+                        <div className={styles.techItem}>
+                          <img src="/images/Technologies/rails.svg" alt="Rails" />
+                          <span>Ruby on Rails</span>
+                        </div>
+                        <div className={styles.techItem}>
+                          <img src="/images/Technologies/node_js.svg" alt="Node.js" />
+                          <span>Node.js</span>
+                        </div>
+                        <div className={styles.techItem}>
+                          <img src="/images/Technologies/go.svg" alt="Go" />
+                          <span>Go lang</span>
+                        </div>
+                        <div className={styles.techItem}>
+                          <img src="/images/Technologies/nginx.svg" alt="Nginx" />
+                          <span>Nginx & Load</span>
+                        </div>
+                        <div className={styles.techItem}>
+                          <div className={styles.jstsWrapper}>
+                            <img src="/images/Technologies/js.svg" alt="JavaScript" />
+                            <img src="/images/Technologies/ts.svg" alt="TypeScript" />
+                          </div>
+                          <span>Javascript /<br />Typescript</span>
+                        </div>
+                        <div className={styles.techItem}>
+                          <img src="/images/Technologies/react.svg" alt="React" />
+                          <span>React</span>
+                        </div>
+                        <div className={styles.techItem}>
+                          <img src="/images/Technologies/angular.svg" alt="Angular" />
+                          <span>Angular</span>
+                        </div>
+                        <div className={styles.techItem}>
+                          <img src="/images/Technologies/vue.svg" alt="Vue.js" />
+                          <span>Vue.js</span>
+                        </div>
+                        <div className={styles.techItem}>
+                          <img src="/images/Technologies/webpack.svg" alt="Webpack" />
+                          <span>WebPack</span>
+                        </div>
+                      </div>
+                      <div className={styles.linkWrapper}>
+                        <Link href={`/${currentLang}/technologies`} className={styles.detailsButton}>
+                          Усі технології та послуги
+                        </Link>
+                        <img src="/images/arrow_top_right.svg" alt=""></img>
+                      </div>
+                    </div>
+                  </div>
+                )}
               </li>
               <li className={styles.headerEl}>
                 <Link href={`/${currentLang}/portfolio`}>
@@ -139,9 +297,8 @@ const Header: React.FC<Props> = ({ dictionary }) => {
                 <span>🇺🇦</span> +(380) 63 682 6299
               </a>
               <i
-                className={`fa-solid fa-chevron-${
-                  isTelDropdownOpen ? "up" : "down"
-                }`}
+                className={`fa-solid fa-chevron-${isTelDropdownOpen ? "up" : "down"
+                  }`}
                 onClick={() => setIsTelDropdownOpen(!isTelDropdownOpen)}
               ></i>
             </div>
@@ -152,9 +309,8 @@ const Header: React.FC<Props> = ({ dictionary }) => {
               >
                 <span>{currentLang.toUpperCase()}</span>
                 <i
-                  className={`fa-solid fa-chevron-${
-                    isLangDropdownOpen ? "up" : "down"
-                  }`}
+                  className={`fa-solid fa-chevron-${isLangDropdownOpen ? "up" : "down"
+                    }`}
                 ></i>
               </div>
               {isLangDropdownOpen && (
@@ -189,9 +345,8 @@ const Header: React.FC<Props> = ({ dictionary }) => {
             >
               <span>{currentLang.toUpperCase()}</span>
               <i
-                className={`fa-solid fa-chevron-${
-                  isLangDropdownOpen ? "up" : "down"
-                }`}
+                className={`fa-solid fa-chevron-${isLangDropdownOpen ? "up" : "down"
+                  }`}
               ></i>
             </div>
             {isLangDropdownOpen && (
@@ -210,9 +365,8 @@ const Header: React.FC<Props> = ({ dictionary }) => {
             )}
           </div>
           <img
-            className={`${styles.menuBtn} ${
-              isSidebarOpen ? styles.menuBtnActive : ""
-            }`}
+            className={`${styles.menuBtn} ${isSidebarOpen ? styles.menuBtnActive : ""
+              }`}
             src="/images/mobile-header-menu-icon.svg"
             alt=""
             onClick={() => setIsSidebarOpen(!isSidebarOpen)}
@@ -220,9 +374,8 @@ const Header: React.FC<Props> = ({ dictionary }) => {
         </div>
       </div>
       <div
-        className={`${styles.sideBar} ${
-          isSidebarOpen ? styles.sideBarOpen : ""
-        }`}
+        className={`${styles.sideBar} ${isSidebarOpen ? styles.sideBarOpen : ""
+          }`}
       >
         <div className={styles.sideBarLogoWrapper}>
           <Link
@@ -302,9 +455,8 @@ const Header: React.FC<Props> = ({ dictionary }) => {
                 <span>🇺🇦</span> +(380) 63 682 6299
               </a>
               <i
-                className={`fa-solid fa-chevron-${
-                  isTelDropdownOpen ? "up" : "down"
-                }`}
+                className={`fa-solid fa-chevron-${isTelDropdownOpen ? "up" : "down"
+                  }`}
                 onClick={() => setIsTelDropdownOpen(!isTelDropdownOpen)}
               ></i>
             </div>

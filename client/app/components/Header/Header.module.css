@@ -156,13 +156,13 @@
         justify-content: space-between;
         align-items: center;
     }
-    
-    .sideBar{
+
+    .sideBar {
         width: 44vw;
         height: 100vh;
     }
 
-    .sideBarLogoWrapper{
+    .sideBarLogoWrapper {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -173,7 +173,7 @@
         width: 170px;
     }
 
-    .arrowLeftWrapper{
+    .arrowLeftWrapper {
         width: 32px;
         height: 32px;
         border: 2px solid #fff;
@@ -209,7 +209,8 @@
         line-height: 28px;
         border-bottom: 1px solid #FFFFFF1A;
     }
-    .contactUsWrapper{
+
+    .contactUsWrapper {
         padding: 0 20px;
         height: 100%;
         margin-top: 13.3%;
@@ -217,19 +218,23 @@
         flex-direction: column;
         gap: 30px;
     }
+
     .contactUs,
-    .socialNetwork{
+    .socialNetwork {
         display: flex;
         flex-direction: column;
         gap: 20px;
     }
-    .contactUsWrapperPara{
+
+    .contactUsWrapperPara {
         color: #FFFFFF33;
     }
-    .headerTel{
+
+    .headerTel {
         justify-content: flex-start
     }
-    .socialNetworkList{
+
+    .socialNetworkList {
         display: flex;
         width: 100%;
         justify-content: space-between;
@@ -237,15 +242,255 @@
     }
 }
 
-@media(max-width:650px){
+@media(max-width:650px) {
     .sideBar {
         width: 75vw;
     }
+
     .logoImage {
         width: 130px;
     }
+
     .arrowLeftWrapper {
         width: 30px;
         height: 30px;
+    }
+}
+
+
+
+/* Services Dropdown Styles */
+.servicesLink {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.servicesDropdown {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    gap: 30px;
+    /* margin-top: 10px; */
+    background: rgba(15, 15, 33, 0.98);
+    /* border-radius: 20px; */
+    border: 1px solid rgba(231, 30, 220, 0.1);
+    padding: 50px 12.5vw;
+    z-index: 1000;
+    width: 100%;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.servicesGrid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px 80px;
+    /* margin-bottom: 30px; */
+    /* padding-bottom: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); */
+}
+
+.serviceCategory {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.serviceCategoryTitle {
+    font-size: 20px;
+    line-height: 40px;
+    font-weight: 700;
+    color: #fff;
+    margin: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.serviceList {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.serviceItem {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+    color: rgba(255, 255, 255, 1);
+    transition: color 0.3s;
+}
+
+/* .serviceItem:hover {
+    color: rgba(232, 30, 221, 1);
+} */
+
+.serviceItem a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.servicesFooter {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.servicesFooter p {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 40px;
+    color: rgba(255, 255, 255, 0.7);
+    text-align: start;
+    align-self: flex-start;
+}
+
+.techStack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+.techStack img {
+    width: auto;
+    height: 33px;
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+
+.techStack img:hover {
+    opacity: 1.1;
+}
+
+.techItem span {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 30px;
+    text-align: center;
+    vertical-align: middle;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.techStack {
+    display: flex;
+    flex-wrap: wrap;
+    /* grid-template-columns: repeat(5, 1fr); */
+    gap: 40px 15px;
+    max-width: 630px;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.techItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.jstsWrapper {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.linkWrapper {
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 400;
+    display: flex;
+    gap: 10px;
+}
+
+.detailsButton {
+    border-bottom: 1px solid #fff !important;
+}
+
+.detailsButton:hover {
+    color: #C400B9;
+    border-bottom: 1px solid #C400B9;
+    cursor: inherit;
+}
+
+.serviceItem a {
+    color: inherit;
+    /* Зберігає колір посилання всередині serviceItem */
+    text-decoration: none;
+}
+
+.serviceItem a:hover {
+    color: rgba(232, 30, 221, 1);
+    /* Ваш бажаний колір при наведенні для serviceItem a */
+}
+
+.linkWrapper {
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 400;
+    display: flex;
+    gap: 10px;
+    color: inherit;
+    border-bottom-color: inherit;
+}
+
+.detailsButton {
+    border-bottom: 1px solid #fff !important;
+    color: #fff;
+}
+
+.detailsButton:hover {
+    color: #C400B9 !important;
+    border-bottom: 1px solid #C400B9 !important;
+    cursor: pointer;
+}
+
+.linkWrapper:hover img {
+    filter: brightness(0) saturate(100%) invert(24%) sepia(99%) saturate(2006%) hue-rotate(285deg) brightness(79%) contrast(141%);
+}
+
+@media (max-width: 1150px) {
+    .servicesDropdown {
+        display: none;
+    }
+}
+
+@media (max-width: 900px) {
+    .servicesGrid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .servicesDropdown {
+        width: 600px;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 650px) {
+    .servicesGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .servicesDropdown {
+        width: 90vw;
+        padding: 15px;
+    }
+
+    .techStack {
+        gap: 10px;
+    }
+
+    .techStack img {
+        width: 24px;
+        height: 24px;
     }
 }
