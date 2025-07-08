@@ -85,7 +85,8 @@
     max-height: fit-content;
     transition: max-height 1s ease, opacity 0.5s ease;
 }
-@media(max-width:1440px){
+
+@media(max-width:1150px){
     .commonQuestionsWrapper {
         padding: 0 20px; 
         margin: 0;
@@ -94,8 +95,6 @@
         font-size: 35px;
         line-height: 45px;
     }
-}
-@media(max-width:1150px){
     .columnsWrapper{
         flex-direction: column;
         align-items: center;
