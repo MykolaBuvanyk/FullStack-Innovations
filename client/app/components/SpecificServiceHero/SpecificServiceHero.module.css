@@ -138,27 +138,122 @@
     transform: translate(-50%, 70%);
 }
 
-.scrollDownWrapper{
+.scrollDownWrapper {
     /* position: absolute; */
     width: 80px;
     height: 80px;
-    margin: 0 50%;
-  }
+    margin: 0;
+    margin-left: calc(50% - 40px);
+    margin-right: calc(50% - 40px);
+}
+
+.btnWrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 30px;
+    height: fit-content;
+}
+
+.btnWrapper button {
+    position: relative;
+}
+
+.btnWrapper :nth-child(2) {
+    display: none;
+}
+
+.btnWrapper :nth-child(2) {
+    width: 55px;
+    height: 55px;
+}
+
+.btnWrapper :nth-child(2) p svg {
+    width: 55px;
+    height: 55px;
+}
+
+.btnWrapper :nth-child(2) div {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btnWrapper :nth-child(2) div svg :nth-child(2) {
+    width: 1.4px;
+    height: 2.7px;
+}
+
 @media(max-width:1440px) {
     .portfolioHeroTitle {
         font-size: 45px;
     }
 }
-@media(max-width:1150px){
+
+@media(max-width:1150px) {
     .portfolioHeroWrapper {
         padding: 0 20px;
     }
-    .portfolioHeroDescription{
+
+    .btnWrapper {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 30px;
+        height: fit-content;
+    }
+
+    .btnWrapper button {
+        position: relative;
+    }
+
+    .btnWrapper :nth-child(2) {
+        display: none;
+    }
+
+    .btnWrapper :nth-child(2) {
+        width: 55px;
+        height: 55px;
+    }
+
+    .btnWrapper :nth-child(2) p svg {
+        width: 55px;
+        height: 55px;
+    }
+
+    .btnWrapper :nth-child(2) div {
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .btnWrapper :nth-child(2) div svg :nth-child(2) {
+        width: 1.4px;
+        height: 2.7px;
+    }
+
+    .scrollDownWrapper {
+        display: none;
+    }
+
+    .btnWrapper {
+        margin-top: 30px;
+    }
+
+    .btnWrapper :nth-child(2) {
+        display: block;
+    }
+
+    .portfolioHeroDescription {
         font-size: 16px;
     }
-    .btn{
+
+    .btn {
         padding: 15px 25px;
     }
+
     .spheraWrapper {
         width: 30vw;
         top: -10%;
@@ -180,20 +275,23 @@
         top: 70%;
     }
 }
-@media(max-width:650px){
-    .portfolioHeroWrapper{
+
+@media(max-width:650px) {
+    .portfolioHeroWrapper {
         flex-direction: column-reverse;
         margin: 0;
     }
+
     .portfolioHeroTextWrapper,
-    .portfolioHeroSphereWrapper{
+    .portfolioHeroSphereWrapper {
         width: 100%;
     }
+
     .portfolioHeroTextWrapper {
         gap: 0;
     }
 
-    .portfolioHeroTitle{
+    .portfolioHeroTitle {
         font-size: 35px;
     }
 

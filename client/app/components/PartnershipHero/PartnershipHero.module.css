@@ -180,12 +180,62 @@
     align-items: center;
     margin: 0 auto;
     bottom: 0%;
+    margin-left: calc(50% - 40px);
+    margin-right: calc(50% - 40px);
+}
+
+.btnWrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 30px;
+    height: fit-content;
+}
+
+.btnWrapper button {
+    position: relative;
+}
+
+.btnWrapper :nth-child(2) {
+    display: none;
+}
+
+.btnWrapper :nth-child(2) {
+    width: 55px;
+    height: 55px;
+}
+.btnWrapper :nth-child(2) p {
+   margin: 0;    
+}
+.btnWrapper :nth-child(2) p svg {
+    width: 55px;
+    height: 55px;
+}
+
+.btnWrapper :nth-child(2) div {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btnWrapper :nth-child(2) div svg :nth-child(2) {
+    width: 1.4px;
+    height: 2.7px;
 }
 
 @media (max-width: 1150px) {
     .hero {
         padding: 0 20px;
         height: 320px;
+    }
+
+    .btnWrapper {
+        margin-top: 30px;
+    }
+
+    .btnWrapper :nth-child(2) {
+        display: block;
     }
 
     .contentLeft {
@@ -216,7 +266,7 @@
         padding: 15px 25px;
         font-size: 14px;
         line-height: 22px;
-        margin-top: 30px;
+        margin-top: 0px;
     }
 
     .sphereLarge {

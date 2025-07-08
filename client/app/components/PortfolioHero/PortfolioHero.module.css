@@ -136,75 +136,145 @@
     transform: translate(-50%, 70%);
 }
 
-.scrollDownWrapper{
+.scrollDownWrapper {
     /* position: absolute; */
     width: 80px;
     height: 80px;
-    margin: 0 50%;
-  }
+    margin: 0;
+    margin-left: calc(50% - 40px);
+    margin-right: calc(50% - 40px);
+}
+
+.btnWrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 30px;
+    height: fit-content;
+}
+
+.btnWrapper button {
+    position: relative;
+}
+
+.btnWrapper :nth-child(2) {
+    display: none;
+}
+
+.btnWrapper :nth-child(2) {
+    width: 55px;
+    height: 55px;
+}
+
+.btnWrapper :nth-child(2) p svg {
+    width: 55px;
+    height: 55px;
+}
+
+.btnWrapper :nth-child(2) div {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btnWrapper :nth-child(2) div svg :nth-child(2) {
+    width: 1.4px;
+    height: 2.7px;
+}
+
 @media(max-width:1440px) {
     .portfolioHeroTitle {
         font-size: 50px;
     }
 }
-@media(max-width:1150px){
+
+@media(max-width:1150px) {
     .portfolioHeroWrapper {
         padding: 0 20px;
         margin-top: 70px;
     }
-    .portfolioHeroTextWrapper{
+
+    .btnWrapper {
+        margin-top: 30px;
+    }
+
+    .scrollDownWrapper {
+        display: none;
+    }
+
+    .btnWrapper :nth-child(2) {
+        display: block;
+    }
+
+    .portfolioHeroTextWrapper {
         width: 45%;
     }
-    .portfolioHeroSphereWrapper{
+
+    .portfolioHeroSphereWrapper {
         width: 50%;
     }
+
     .portfolioHeroTitle {
         max-width: fit-content;
     }
+
     .portfolioHeroDescription {
         font-size: 16px;
     }
+
     .btn {
         padding: 15px 25px;
     }
-    .spheraWrapper{
+
+    .spheraWrapper {
         width: 35vw;
         top: 7%;
         right: 15%;
     }
-    .sphereLarge{
+
+    .sphereLarge {
         width: 32vw;
     }
-    .sphereMedium{
+
+    .sphereMedium {
         width: 8vw;
         left: -20%;
     }
-    .sphereSmall{
+
+    .sphereSmall {
         width: 7.5vw;
         right: -7%;
     }
 }
-@media(max-width: 650px){
-    .portfolioHeroWrapper{
+
+@media(max-width: 650px) {
+    .portfolioHeroWrapper {
         flex-direction: column-reverse;
         margin: 0;
     }
+
     .portfolioHeroTextWrapper,
     .portfolioHeroSphereWrapper {
         width: 100%;
     }
-    .portfolioHeroTextWrapper{
+
+    .portfolioHeroTextWrapper {
         gap: 0;
     }
+
     .portfolioHeroDescription {
         margin: 20px 0 30px;
     }
-    .portfolioHeroTitle{
+
+    .portfolioHeroTitle {
         font-size: 35px;
     }
-    .portfolioHeroSphereWrapper{
+
+    .portfolioHeroSphereWrapper {
         aspect-ratio: 1/0.75;
     }
+
     .spheraWrapper {
         width: 100%;
         top: -5%;

@@ -18,10 +18,13 @@ const ServicesHero: React.FC<Props> = ({ dictionary }) => {
           <p className={styles.portfolioHeroDescription}>
             {dictionary.description}
           </p>
-          <button className={styles.btn}>
-            {dictionary.buttonText}
-            <img src="/images/arrow_top_right.svg" alt="" />
-          </button>
+          <div className={styles.btnWrapper}>
+            <button className={styles.btn}>
+              {dictionary.buttonText}
+              <img src="/images/arrow_top_right.svg" alt="" />
+            </button>
+            <ScrollDown />
+          </div>
         </div>
         <div className={styles.portfolioHeroSphereWrapper}>
           <div className={styles.spheraWrapper}>

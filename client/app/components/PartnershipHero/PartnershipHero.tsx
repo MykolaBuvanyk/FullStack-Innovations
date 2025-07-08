@@ -9,14 +9,17 @@ const PartnershipHero: React.FC<Props> = ({ dictionary }) => {
     <section className={styles.hero}>
       <div className={styles.heroContent}>
         <div className={styles.contentLeft}>
-                  <h1 className={styles.heroHeaderText}>{ dictionary.h1 }</h1>
+          <h1 className={styles.heroHeaderText}>{dictionary.h1}</h1>
           <p>
-            { dictionary.para }
+            {dictionary.para}
           </p>
-          <a href="#" className={styles.btn}>
-            { dictionary.button }
-            <img src="/images/arrow_top_right.svg" alt="" />
-          </a>
+          <div className={styles.btnWrapper}>
+            <a href="#" className={styles.btn}>
+              {dictionary.button}
+              <img src="/images/arrow_top_right.svg" alt="" />
+            </a>
+            <ScrollDown />
+          </div>
         </div>
         <div className={styles.contentRight}>
           <div className={styles.spheraWrapper}>

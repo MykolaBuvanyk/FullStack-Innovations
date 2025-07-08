@@ -143,13 +143,60 @@
     /* position: absolute; */
     width: 80px;
     height: 80px;
-    margin: 0 50%;
+    margin: 0;
+    margin-left: calc(50% - 40px);
+    margin-right: calc(50% - 40px);
+}
+
+.btnWrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 30px;
+    height: fit-content;
+}
+
+.btnWrapper button {
+    position: relative;
+}
+
+.btnWrapper :nth-child(2) {
+    display: none;
+}
+
+.btnWrapper :nth-child(2) {
+    width: 55px;
+    height: 55px;
+}
+
+.btnWrapper :nth-child(2) p svg {
+    width: 55px;
+    height: 55px;
+}
+.btnWrapper :nth-child(2) div {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btnWrapper :nth-child(2) div svg :nth-child(2) {
+    width: 1.4px;
+    height: 2.7px;
 }
 
 @media(max-width:1150px) {
+    .scrollDownWrapper{
+        display: none;
+    }
     .portfolioHeroTitle {
         font-size: 35px;
         line-height: 35px;
+    }
+    .btnWrapper {
+        margin-top: 30px;
+    }
+    .btnWrapper :nth-child(2) {
+        display: block;
     }
 
     .portfolioHeroWrapper {
@@ -170,7 +217,7 @@
     .btn {
         padding: 15px 25px;
         font-size: 14px;
-        margin-top: 30px;
+        /* margin-top: 30px; */
     }
 
     .portfolioHeroSphereWrapper {
@@ -215,14 +262,17 @@
     .portfolioHeroTextWrapper {
         width: 100%;
     }
-    .portfolioHeroDescription{
+
+    .portfolioHeroDescription {
         margin-top: 20px;
     }
-    .btn{
+
+    .btn {
         padding: 20px;
         margin-top: 40px;
         font-size: 15px;
     }
+
     .sphereLarge {
         width: 51vw;
         right: -21%;
