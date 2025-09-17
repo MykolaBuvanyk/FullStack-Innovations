@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import styles from "./Header.module.css";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
+import Flag from "react-world-flags";
 
 type Props = {
   dictionary: any;
@@ -24,26 +25,26 @@ const Header: React.FC<Props> = ({ dictionary }) => {
   const langDropdownRef = useRef<HTMLDivElement | null>(null);
 
   const languages = [
-    { code: "uk", name: "Українська", flag: "🇺🇦" },
-    { code: "ru", name: "Русский", flag: "🇷🇺" },
-    { code: "en", name: "English", flag: "🇬🇧" },
-    { code: "ja", name: "日本語", flag: "🇯🇵" },
-    { code: "hi", name: "हिंदी", flag: "🇮🇳" },
-    { code: "zh", name: "中文", flag: "🇨🇳" },
-    { code: "pt", name: "Português", flag: "🇵🇹" },
-    { code: "bg", name: "Български", flag: "🇧🇬" },
-    { code: "el", name: "Ελληνικά", flag: "🇬🇷" },
-    { code: "pl", name: "Polski", flag: "🇵🇱" },
-    { code: "cs", name: "Čeština", flag: "🇨🇿" },
-    { code: "de", name: "Deutsch", flag: "🇩🇪" },
-    { code: "it", name: "Italiano", flag: "🇮🇹" },
-    { code: "sv", name: "Svenska", flag: "🇸🇪" },
-    { code: "nl", name: "Nederlands", flag: "🇳🇱" },
-    { code: "lb", name: "Lëtzebuergesch", flag: "🇱🇺" },
-    { code: "fr", name: "Français", flag: "🇫🇷" },
-    { code: "es", name: "Español", flag: "🇪🇸" },
-    { code: "ga", name: "Gaeilge", flag: "🇮🇪" },
-    { code: "no", name: "Norsk", flag: "🇳🇴" },
+    { code: "uk", name: "Українська", countryCode: "UA" },
+    { code: "ru", name: "Русский", countryCode: "RU" },
+    { code: "en", name: "English", countryCode: "GB" },
+    { code: "ja", name: "日本語", countryCode: "JP" },
+    { code: "hi", name: "हिंदी", countryCode: "IN" },
+    { code: "zh", name: "中文", countryCode: "CN" },
+    { code: "pt", name: "Português", countryCode: "PT" },
+    { code: "bg", name: "Български", countryCode: "BG" },
+    { code: "el", name: "Ελληνικά", countryCode: "GR" },
+    { code: "pl", name: "Polski", countryCode: "PL" },
+    { code: "cs", name: "Čeština", countryCode: "CZ" },
+    { code: "de", name: "Deutsch", countryCode: "DE" },
+    { code: "it", name: "Italiano", countryCode: "IT" },
+    { code: "sv", name: "Svenska", countryCode: "SE" },
+    { code: "nl", name: "Nederlands", countryCode: "NL" },
+    { code: "lb", name: "Lëtzebuergesch", countryCode: "LU" },
+    { code: "fr", name: "Français", countryCode: "FR" },
+    { code: "es", name: "Español", countryCode: "ES" },
+    { code: "ga", name: "Gaeilge", countryCode: "IE" },
+    { code: "no", name: "Norsk", countryCode: "NO" },
   ];
 
   const isValidLanguageCode = (code: string) => {
@@ -101,20 +102,30 @@ const Header: React.FC<Props> = ({ dictionary }) => {
       <div
         className={styles.container}
         ref={headerRef}
-        onMouseMove={e => {
+        onMouseMove={(e) => {
           if (!servicesDropdownRef.current) return;
-          const dropdownRect = servicesDropdownRef.current.getBoundingClientRect();
+          const dropdownRect =
+            servicesDropdownRef.current.getBoundingClientRect();
           const mouseX = e.clientX;
           const mouseY = e.clientY;
-          let isOnDropdown = mouseX >= dropdownRect.left && mouseX <= dropdownRect.right && mouseY >= dropdownRect.top && mouseY <= dropdownRect.bottom;
+          let isOnDropdown =
+            mouseX >= dropdownRect.left &&
+            mouseX <= dropdownRect.right &&
+            mouseY >= dropdownRect.top &&
+            mouseY <= dropdownRect.bottom;
           let isOnModal = false;
           if (modalRef.current) {
             const modalRect = modalRef.current.getBoundingClientRect();
-            isOnModal = mouseX >= modalRect.left && mouseX <= modalRect.right && mouseY >= modalRect.top && mouseY <= modalRect.bottom;
+            isOnModal =
+              mouseX >= modalRect.left &&
+              mouseX <= modalRect.right &&
+              mouseY >= modalRect.top &&
+              mouseY <= modalRect.bottom;
           }
           if (!isOnDropdown && !isOnModal) {
             if (isServicesDropdownOpen) {
-              if (dropdownTimeout.current) clearTimeout(dropdownTimeout.current);
+              if (dropdownTimeout.current)
+                clearTimeout(dropdownTimeout.current);
               dropdownTimeout.current = setTimeout(() => {
                 setIsServicesDropdownOpen(false);
               }, 1500);
@@ -136,30 +147,35 @@ const Header: React.FC<Props> = ({ dictionary }) => {
                 className={[styles.headerEl, styles.headerDropdown].join(" ")}
                 ref={servicesDropdownRef}
                 onMouseEnter={() => {
-                  if (dropdownTimeout.current) clearTimeout(dropdownTimeout.current);
+                  if (dropdownTimeout.current)
+                    clearTimeout(dropdownTimeout.current);
                   setIsServicesDropdownOpen(true);
                 }}
-                  onMouseLeave={() => {
+                onMouseLeave={() => {
                   // Якщо мишка йде з li, але не на dropdown — закриваємо
-                  if (dropdownTimeout.current) clearTimeout(dropdownTimeout.current);
+                  if (dropdownTimeout.current)
+                    clearTimeout(dropdownTimeout.current);
                   dropdownTimeout.current = setTimeout(() => {
                     setIsServicesDropdownOpen(false);
                   }, 120);
                 }}
               >
-                <div
-                  className={styles.servicesLink}
-                >
+                <div className={styles.servicesLink}>
                   <Link href={`/${currentLang}/services`}>
                     {dictionary.nav.services}
                   </Link>
-                  <i className={`fa-solid fa-chevron-${isServicesDropdownOpen ? 'up' : 'down'}`}></i>
+                  <i
+                    className={`fa-solid fa-chevron-${
+                      isServicesDropdownOpen ? "up" : "down"
+                    }`}
+                  ></i>
                 </div>
                 {isServicesDropdownOpen && (
                   <div
                     className={styles.servicesDropdown}
                     onMouseEnter={() => {
-                      if (dropdownTimeout.current) clearTimeout(dropdownTimeout.current);
+                      if (dropdownTimeout.current)
+                        clearTimeout(dropdownTimeout.current);
                       setIsServicesDropdownOpen(true);
                     }}
                     onMouseLeave={() => {
@@ -167,20 +183,33 @@ const Header: React.FC<Props> = ({ dictionary }) => {
                     }}
                   >
                     <div className={styles.servicesGrid}>
-                      {dictionary.dropDown.categories.map((category: any, index: number) => (
-                        <div key={index} className={styles.serviceCategory}>
-                          <h4 className={styles.serviceCategoryTitle}>{category.title}</h4>
-                          <ul className={styles.serviceList}>
-                            {category.items.map((item: string, itemIndex: number) => (
-                              <li key={itemIndex} className={styles.serviceItem}>
-                                <Link href={`/${currentLang}/services/${item.toLowerCase().replace(/\s+/g, '-')}`}>
-                                  {item}
-                                </Link>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      ))}
+                      {dictionary.dropDown.categories.map(
+                        (category: any, index: number) => (
+                          <div key={index} className={styles.serviceCategory}>
+                            <h4 className={styles.serviceCategoryTitle}>
+                              {category.title}
+                            </h4>
+                            <ul className={styles.serviceList}>
+                              {category.items.map(
+                                (item: string, itemIndex: number) => (
+                                  <li
+                                    key={itemIndex}
+                                    className={styles.serviceItem}
+                                  >
+                                    <Link
+                                      href={`/${currentLang}/services/${item
+                                        .toLowerCase()
+                                        .replace(/\s+/g, "-")}`}
+                                    >
+                                      {item}
+                                    </Link>
+                                  </li>
+                                )
+                              )}
+                            </ul>
+                          </div>
+                        )
+                      )}
                     </div>
                     <div className={styles.servicesFooter}>
                       <p>{dictionary.dropDown.title}</p>
@@ -190,31 +219,52 @@ const Header: React.FC<Props> = ({ dictionary }) => {
                           <span>PHP</span>
                         </div>
                         <div className={styles.techItem}>
-                          <img src="/images/Technologies/laravel.svg" alt="Laravel" />
+                          <img
+                            src="/images/Technologies/laravel.svg"
+                            alt="Laravel"
+                          />
                           <span>Laravel</span>
                         </div>
                         <div className={styles.techItem}>
-                          <img src="/images/Technologies/symfony.svg" alt="Symfony" />
+                          <img
+                            src="/images/Technologies/symfony.svg"
+                            alt="Symfony"
+                          />
                           <span>Symfony</span>
                         </div>
                         <div className={styles.techItem}>
-                          <img src="/images/Technologies/python.svg" alt="Python" />
+                          <img
+                            src="/images/Technologies/python.svg"
+                            alt="Python"
+                          />
                           <span>Python</span>
                         </div>
                         <div className={styles.techItem}>
-                          <img src="/images/Technologies/flask.svg" alt="Flask" />
+                          <img
+                            src="/images/Technologies/flask.svg"
+                            alt="Flask"
+                          />
                           <span>Flask</span>
                         </div>
                         <div className={styles.techItem}>
-                          <img src="/images/Technologies/django.svg" alt="Django" />
+                          <img
+                            src="/images/Technologies/django.svg"
+                            alt="Django"
+                          />
                           <span>Django</span>
                         </div>
                         <div className={styles.techItem}>
-                          <img src="/images/Technologies/rails.svg" alt="Rails" />
+                          <img
+                            src="/images/Technologies/rails.svg"
+                            alt="Rails"
+                          />
                           <span>Ruby on Rails</span>
                         </div>
                         <div className={styles.techItem}>
-                          <img src="/images/Technologies/node_js.svg" alt="Node.js" />
+                          <img
+                            src="/images/Technologies/node_js.svg"
+                            alt="Node.js"
+                          />
                           <span>Node.js</span>
                         </div>
                         <div className={styles.techItem}>
@@ -222,35 +272,62 @@ const Header: React.FC<Props> = ({ dictionary }) => {
                           <span>Go lang</span>
                         </div>
                         <div className={styles.techItem}>
-                          <img src="/images/Technologies/nginx.svg" alt="Nginx" />
+                          <img
+                            src="/images/Technologies/nginx.svg"
+                            alt="Nginx"
+                          />
                           <span>Nginx & Load</span>
                         </div>
                         <div className={styles.techItem}>
                           <div className={styles.jstsWrapper}>
-                            <img src="/images/Technologies/js.svg" alt="JavaScript" />
-                            <img src="/images/Technologies/ts.svg" alt="TypeScript" />
+                            <img
+                              src="/images/Technologies/js.svg"
+                              alt="JavaScript"
+                            />
+                            <img
+                              src="/images/Technologies/ts.svg"
+                              alt="TypeScript"
+                            />
                           </div>
-                          <span>Javascript /<br />Typescript</span>
+                          <span>
+                            Javascript /<br />
+                            Typescript
+                          </span>
                         </div>
                         <div className={styles.techItem}>
-                          <img src="/images/Technologies/react.svg" alt="React" />
+                          <img
+                            src="/images/Technologies/react.svg"
+                            alt="React"
+                          />
                           <span>React</span>
                         </div>
                         <div className={styles.techItem}>
-                          <img src="/images/Technologies/angular.svg" alt="Angular" />
+                          <img
+                            src="/images/Technologies/angular.svg"
+                            alt="Angular"
+                          />
                           <span>Angular</span>
                         </div>
                         <div className={styles.techItem}>
-                          <img src="/images/Technologies/vue.svg" alt="Vue.js" />
+                          <img
+                            src="/images/Technologies/vue.svg"
+                            alt="Vue.js"
+                          />
                           <span>Vue.js</span>
                         </div>
                         <div className={styles.techItem}>
-                          <img src="/images/Technologies/webpack.svg" alt="Webpack" />
+                          <img
+                            src="/images/Technologies/webpack.svg"
+                            alt="Webpack"
+                          />
                           <span>WebPack</span>
                         </div>
                       </div>
                       <div className={styles.linkWrapper}>
-                        <Link href={`/${currentLang}/technologies`} className={styles.detailsButton}>
+                        <Link
+                          href={`/${currentLang}/technologies`}
+                          className={styles.detailsButton}
+                        >
                           {dictionary.dropDown.button}
                         </Link>
                         <img src="/images/arrow_top_right.svg" alt=""></img>
@@ -285,12 +362,10 @@ const Header: React.FC<Props> = ({ dictionary }) => {
           <li className={styles.headerWrapperEl}>
             <div className={styles.headerTel}>
               <a href="tel:+380636826299">
-                <span>🇺🇦</span> +(380) 63 682 6299
+                <Flag code="UA" height="14" width="21" /> +(380) 63 682 6299
               </a>
               <i
-                className={`fa-solid fa-chevron-${
-                  isTelDropdownOpen ? "up" : "down"
-                }`}
+                className={`fa-solid fa-chevron-${isTelDropdownOpen ? "up" : "down"}`}
                 onClick={() => setIsTelDropdownOpen(!isTelDropdownOpen)}
               ></i>
             </div>
@@ -301,9 +376,11 @@ const Header: React.FC<Props> = ({ dictionary }) => {
               >
                 <span>{currentLang.toUpperCase()}</span>
                 <i
-                  className={`fa-solid fa-chevron-${
-                    isLangDropdownOpen ? "up" : "down"
-                  }`}
+                  className={`fa-solid fa-chevron-${isLangDropdownOpen ? "up" : "down"}`}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setIsLangDropdownOpen(!isLangDropdownOpen);
+                  }}
                 ></i>
               </div>
               {isLangDropdownOpen && (
@@ -314,7 +391,7 @@ const Header: React.FC<Props> = ({ dictionary }) => {
                       onClick={() => handleLanguageChange(lang.code)}
                       className={styles.langOption}
                     >
-                      <span>{lang.flag}</span>
+                      <Flag code={lang.countryCode} height="16" width="24" />
                       <span>{lang.name}</span>
                     </div>
                   ))}
@@ -341,6 +418,10 @@ const Header: React.FC<Props> = ({ dictionary }) => {
                 className={`fa-solid fa-chevron-${
                   isLangDropdownOpen ? "up" : "down"
                 }`}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setIsLangDropdownOpen(!isLangDropdownOpen);
+                }}
               ></i>
             </div>
             {isLangDropdownOpen && (
@@ -351,7 +432,7 @@ const Header: React.FC<Props> = ({ dictionary }) => {
                     onClick={() => handleLanguageChange(lang.code)}
                     className={styles.langOption}
                   >
-                    <span>{lang.flag}</span>
+                    <Flag code={lang.countryCode} height="16" width="24" />
                     <span>{lang.name}</span>
                   </div>
                 ))}
@@ -445,12 +526,15 @@ const Header: React.FC<Props> = ({ dictionary }) => {
         </ul>
         <div className={styles.contactUsWrapper}>
           <div className={styles.contactUs}>
-            <a href={`/${currentLang}/contacts`} className={styles.contactUsWrapperPara}>
+            <a
+              href={`/${currentLang}/contacts`}
+              className={styles.contactUsWrapperPara}
+            >
               {dictionary.contactButton}
             </a>
             <div className={styles.headerTel}>
               <a href="tel:+380636826299">
-                <span>🇺🇦</span> +(380) 63 682 6299
+                <Flag code="UA" height="14" width="21" /> +(380) 63 682 6299
               </a>
               <i
                 className={`fa-solid fa-chevron-${
