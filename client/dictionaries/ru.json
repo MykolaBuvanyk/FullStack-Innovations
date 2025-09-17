@@ -72,14 +72,6 @@
             {
                 "label": "Mobile applications",
                 "value": "mobile-apps"
-            },
-            {
-                "label": "2D design",
-                "value": "design"
-            },
-            {
-                "label": "3D modeling",
-                "value": "modeling"
             }
         ],
         "costLabel": "Cost",
