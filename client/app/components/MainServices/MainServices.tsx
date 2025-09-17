@@ -144,7 +144,7 @@ const MainServices: React.FC<Props> = ({ dictionary }) => {
             </Swiper>
           ) : (
             <div className={styles.tabs}>
-              {dictionary.tabs.slice(0, -2).map((tab: { label: string; value: string }) => (
+              {dictionary.tabs.map((tab: { label: string; value: string }) => (
                 <button
                   key={tab.value}
                   className={`${styles.tabButton} ${

@@ -237,7 +237,7 @@
   width: 16px;
   height: 16px;
 }
-/* @media(max-width:1440px){
+@media(max-width:1440px){
   .modalFeedbackWrapper {
     width: 57.5vw;
     left: 0;
@@ -274,4 +274,4 @@
   .titleWrapper{
     margin: 25px 0;
   }
-} */
+}
