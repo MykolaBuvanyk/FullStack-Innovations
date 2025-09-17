@@ -19,10 +19,10 @@ const SpecificServiceHero: React.FC<Props> = ({ dictionary }) => {
             {dictionary.description}
           </p>
           <div className={styles.btnWrapper}>
-            <button className={styles.btn}>
+            <a href="/contacts" className={styles.btn}>
               {dictionary.buttonText}
               <img src="/images/arrow_top_right.svg" alt="" />
-            </button>
+            </a>
             <ScrollDown />
           </div>
         </div>

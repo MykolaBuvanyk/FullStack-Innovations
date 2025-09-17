@@ -24,7 +24,6 @@ const WorkWithUs: React.FC<Props> = ({ dictionary }) => {
         <section className={styles.workWithUsWrapper}>
             <div className={styles.tellAboutUsTitle}>
                 <h2 dangerouslySetInnerHTML={{ __html: dictionary.title }}></h2>
-                <p>{dictionary.description}</p>
             </div>
             <div className={styles.tellAboutUsTitleButton}>
                 <button className={styles.submitButton}>

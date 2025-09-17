@@ -14,7 +14,7 @@ const PartnershipHero: React.FC<Props> = ({ dictionary }) => {
             {dictionary.para}
           </p>
           <div className={styles.btnWrapper}>
-            <a href="#" className={styles.btn}>
+            <a href="/contacts" className={styles.btn}>
               {dictionary.button}
               <img src="/images/arrow_top_right.svg" alt="" />
             </a>
