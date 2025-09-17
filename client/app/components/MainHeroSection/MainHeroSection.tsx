@@ -1,14 +1,16 @@
 "use client";
 
+import Link from 'next/link';
 import styles from "./MainHeroSection.module.css";
 import Marquee from "../Marquee/Marquee";
 import { useEffect, useState } from "react";
 
 type Props = {
     dictionary: any;
+    currentLang: string;
 };
 
-const MainHeroSection: React.FC<Props> = ({ dictionary }) => {
+const MainHeroSection: React.FC<Props> = ({ dictionary, currentLang }) => {
     // Анімований лічильник сайтів
     const [count, setCount] = useState(1);
     const [isDone, setIsDone] = useState(false);
@@ -58,18 +60,18 @@ const MainHeroSection: React.FC<Props> = ({ dictionary }) => {
                 <div className={styles.contentLeft}>
                     <h1 className={styles.heroHeaderText}>{dictionary.header}</h1>
                     <p dangerouslySetInnerHTML={{ __html: dictionary.description }}></p>
-                    <a href="#" className={styles.btn}>
+                    <Link href={`/${currentLang}/contacts`} className={styles.btn}>
                         {dictionary.contactButton}
                         <img src="/images/arrow_top_right.svg" alt="" />
-                    </a>
+                    </Link>
                 </div>
                 <div className={styles.contentRight}>
                     <div className={styles.getOfferWrapper}>
-                        <a href="/contacts" className={styles.getOffer}>
+                        <Link href={`/${currentLang}/contacts`} className={styles.getOffer}>
                             <img src="/images/arrow_top_right.svg" alt="" />
                             <p>{dictionary.getOffer}</p>
                             <p>{dictionary.offer}</p>
-                        </a>
+                        </Link>
                     </div>
 
                     <div className={styles.spheraWrapper}>

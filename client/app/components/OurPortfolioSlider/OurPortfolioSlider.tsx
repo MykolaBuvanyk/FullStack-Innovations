@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import styles from './OurPortfolioSlider.module.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
@@ -9,6 +10,7 @@ import 'swiper/css/pagination';
 
 type Props = {
   dictionary: any;
+  currentLang: string;
 };
 
 const reviews = [
@@ -26,16 +28,16 @@ const reviews = [
   },
 ];
 
-const OurPortfolioSlider: React.FC<Props> = ({ dictionary }) => {
+const OurPortfolioSlider: React.FC<Props> = ({ dictionary, currentLang }) => {
   return (
     <section className={styles.ourPortfolio}>
       <div className={styles.container}>
         <h2 className={styles.title}>{dictionary.title}</h2>
         <div className={styles.btnWrapper}>
-          <button className={styles.btn}>
+          <Link href={`/${currentLang}/contacts`} className={styles.btn}>
             {dictionary.buttonText}
             <img src="/images/arrow_top_right.svg" alt="" />
-          </button>
+          </Link>
         </div>
         <div className={styles.sliderContainer}>
           <Swiper

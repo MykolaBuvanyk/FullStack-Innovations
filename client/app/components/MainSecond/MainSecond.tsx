@@ -1,21 +1,23 @@
 "use client";
 
+import Link from 'next/link';
 import styles from "./MainSecond.module.css";
 
 type Props = {
   dictionary: any;
+  currentLang: string;
 };
 
-const MainSecond: React.FC<Props> = ({ dictionary }) => {
+const MainSecond: React.FC<Props> = ({ dictionary, currentLang }) => {
   return (
     <section className={styles.mainSecondSection}>
       <div className={styles.container}>
         <h1 className={styles.title}>{dictionary.title}</h1>
         <div className={styles.btnWrapper}>
-          <a href="#" className={styles.btn}>
+          <Link href={`/${currentLang}/contacts`} className={styles.btn}>
             {dictionary.buttonText}
             <img src="/images/arrow_top_right.svg" alt="" />
-          </a>
+          </Link>
         </div>
         <div className={styles.contentRight}>
           <ul className={styles.contentList}>

@@ -1,9 +1,10 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "./WorkWithUs.module.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
+import ModalFeedback from "../ModalFeedback/ModalFeedback";
 import "swiper/css";
 import type { Swiper as SwiperType } from "swiper";
 
@@ -13,6 +14,10 @@ type Props = {
 
 const WorkWithUs: React.FC<Props> = ({ dictionary }) => {
     const swiperRef = useRef<SwiperType | null>(null);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const openModal = () => setIsModalOpen(true);
+    const closeModal = () => setIsModalOpen(false);
 
     useEffect(() => {
         if (swiperRef.current) {
@@ -26,7 +31,7 @@ const WorkWithUs: React.FC<Props> = ({ dictionary }) => {
                 <h2 dangerouslySetInnerHTML={{ __html: dictionary.title }}></h2>
             </div>
             <div className={styles.tellAboutUsTitleButton}>
-                <button className={styles.submitButton}>
+                <button className={styles.submitButton} onClick={openModal}>
                     {dictionary.buttonText}
                     <img src="/images/arrow_top_right.svg" alt="" />
                 </button>
@@ -94,6 +99,7 @@ const WorkWithUs: React.FC<Props> = ({ dictionary }) => {
                     </SwiperSlide>
                 </Swiper>
             </div>
+            <ModalFeedback isOpen={isModalOpen} closeModal={closeModal} dictionary={dictionary.modalFeedback} />
         </section>
     );
 };

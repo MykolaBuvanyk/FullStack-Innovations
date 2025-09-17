@@ -22,7 +22,7 @@
         return (
             <div>
                 <NavPath dictionary={navPath}/>
-                <AboutHero dictionary={aboutHero} />
+                <AboutHero dictionary={aboutHero} currentLang={lang}/>
                 <AboutPeopleSlider dictionary={aboutPeopleSlider}/>
                 {/* <ButtonTop /> */}
                 {/* <AboutServicesHero /> */}

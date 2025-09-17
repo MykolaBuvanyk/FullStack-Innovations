@@ -20,10 +20,10 @@ export default async function Home({ params }: Props) {
   const { mainHero,mainSecond,mainServices,ourPortfolioSlider,aboutHero,partnershipCards,tellAboutUs,worldMapPartnership,contactUsForm} = dictionary;
   return (
     <div className={styles.page}>
-      <MainHeroSection dictionary={mainHero} />
-      <MainSecond dictionary={mainSecond}/>
+      <MainHeroSection dictionary={mainHero} currentLang={lang} />
+      <MainSecond dictionary={mainSecond} currentLang={lang} />
       <MainServices dictionary={mainServices}/>
-      <OurPortfolioSlider dictionary={ourPortfolioSlider}/>
+      <OurPortfolioSlider dictionary={ourPortfolioSlider} currentLang={lang} />
       <AboutHero dictionary={aboutHero} currentLang={lang} />
       <PartnershipCards dictionary={partnershipCards}/>
       <TellAboutUs dictionary={tellAboutUs}/>
