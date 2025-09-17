@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import styles from "./Header.module.css";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
+import Flag from "react-world-flags";
 
 type Props = {
   dictionary: any;
@@ -21,26 +22,26 @@ const Header: React.FC<Props> = ({ dictionary }) => {
   const servicesDropdownRef = useRef<HTMLLIElement | null>(null);
 
   const languages = [
-    { code: "uk", name: "Українська", flag: "🇺🇦" },
-    { code: "ru", name: "Русский", flag: "🇷🇺" },
-    { code: "en", name: "English", flag: "🇬🇧" },
-    { code: "ja", name: "日本語", flag: "🇯🇵" },
-    { code: "hi", name: "हिंदी", flag: "🇮🇳" },
-    { code: "zh", name: "中文", flag: "🇨🇳" },
-    { code: "pt", name: "Português", flag: "🇵🇹" },
-    { code: "bg", name: "Български", flag: "🇧🇬" },
-    { code: "el", name: "Ελληνικά", flag: "🇬🇷" },
-    { code: "pl", name: "Polski", flag: "🇵🇱" },
-    { code: "cs", name: "Čeština", flag: "🇨🇿" },
-    { code: "de", name: "Deutsch", flag: "🇩🇪" },
-    { code: "it", name: "Italiano", flag: "🇮🇹" },
-    { code: "sv", name: "Svenska", flag: "🇸🇪" },
-    { code: "nl", name: "Nederlands", flag: "🇳🇱" },
-    { code: "lb", name: "Lëtzebuergesch", flag: "🇱🇺" },
-    { code: "fr", name: "Français", flag: "🇫🇷" },
-    { code: "es", name: "Español", flag: "🇪🇸" },
-    { code: "ga", name: "Gaeilge", flag: "🇮🇪" },
-    { code: "no", name: "Norsk", flag: "🇳🇴" },
+    { code: "uk", name: "Українська", countryCode: "UA" },
+    { code: "ru", name: "Русский", countryCode: "RU" },
+    { code: "en", name: "English", countryCode: "GB" },
+    { code: "ja", name: "日本語", countryCode: "JP" },
+    { code: "hi", name: "हिंदी", countryCode: "IN" },
+    { code: "zh", name: "中文", countryCode: "CN" },
+    { code: "pt", name: "Português", countryCode: "PT" },
+    { code: "bg", name: "Български", countryCode: "BG" },
+    { code: "el", name: "Ελληνικά", countryCode: "GR" },
+    { code: "pl", name: "Polski", countryCode: "PL" },
+    { code: "cs", name: "Čeština", countryCode: "CZ" },
+    { code: "de", name: "Deutsch", countryCode: "DE" },
+    { code: "it", name: "Italiano", countryCode: "IT" },
+    { code: "sv", name: "Svenska", countryCode: "SE" },
+    { code: "nl", name: "Nederlands", countryCode: "NL" },
+    { code: "lb", name: "Lëtzebuergesch", countryCode: "LU" },
+    { code: "fr", name: "Français", countryCode: "FR" },
+    { code: "es", name: "Español", countryCode: "ES" },
+    { code: "ga", name: "Gaeilge", countryCode: "IE" },
+    { code: "no", name: "Norsk", countryCode: "NO" },
   ];
 
   // Структура послуг на основі дизайну
@@ -138,8 +139,13 @@ const Header: React.FC<Props> = ({ dictionary }) => {
       }
     };
 
-    document.addEventListener("mousedown", handleClickOutside);
+    // Додаємо невелику затримку, щоб уникнути конфлікту з onClick
+    const timeoutId = setTimeout(() => {
+      document.addEventListener("mousedown", handleClickOutside);
+    }, 0);
+
     return () => {
+      clearTimeout(timeoutId);
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
@@ -295,7 +301,7 @@ const Header: React.FC<Props> = ({ dictionary }) => {
           <li className={styles.headerWrapperEl}>
             <div className={styles.headerTel}>
               <a href="tel:+380636826299">
-                <span>🇺🇦</span> +(380) 63 682 6299
+                <Flag code="UA" height="14" width="21" /> +(380) 63 682 6299
               </a>
               <i
                 className={`fa-solid fa-chevron-${isTelDropdownOpen ? "up" : "down"
@@ -312,6 +318,10 @@ const Header: React.FC<Props> = ({ dictionary }) => {
                 <i
                   className={`fa-solid fa-chevron-${isLangDropdownOpen ? "up" : "down"
                     }`}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setIsLangDropdownOpen(!isLangDropdownOpen);
+                  }}
                 ></i>
               </div>
               {isLangDropdownOpen && (
@@ -322,7 +332,7 @@ const Header: React.FC<Props> = ({ dictionary }) => {
                       onClick={() => handleLanguageChange(lang.code)}
                       className={styles.langOption}
                     >
-                      <span>{lang.flag}</span>
+                      <Flag code={lang.countryCode} height="16" width="24" />
                       <span>{lang.name}</span>
                     </div>
                   ))}
@@ -348,6 +358,10 @@ const Header: React.FC<Props> = ({ dictionary }) => {
               <i
                 className={`fa-solid fa-chevron-${isLangDropdownOpen ? "up" : "down"
                   }`}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setIsLangDropdownOpen(!isLangDropdownOpen);
+                }}
               ></i>
             </div>
             {isLangDropdownOpen && (
@@ -358,7 +372,7 @@ const Header: React.FC<Props> = ({ dictionary }) => {
                     onClick={() => handleLanguageChange(lang.code)}
                     className={styles.langOption}
                   >
-                    <span>{lang.flag}</span>
+                    <Flag code={lang.countryCode} height="16" width="24" />
                     <span>{lang.name}</span>
                   </div>
                 ))}
@@ -453,7 +467,7 @@ const Header: React.FC<Props> = ({ dictionary }) => {
             <p className={styles.contactUsWrapperPara}>Зв'язатись з нами</p>
             <div className={styles.headerTel}>
               <a href="tel:+380636826299">
-                <span>🇺🇦</span> +(380) 63 682 6299
+                <Flag code="UA" height="14" width="21" /> +(380) 63 682 6299
               </a>
               <i
                 className={`fa-solid fa-chevron-${isTelDropdownOpen ? "up" : "down"

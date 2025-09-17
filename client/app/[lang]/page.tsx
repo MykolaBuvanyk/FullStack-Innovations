@@ -24,7 +24,7 @@ export default async function Home({ params }: Props) {
       <MainSecond dictionary={mainSecond}/>
       <MainServices dictionary={mainServices}/>
       <OurPortfolioSlider dictionary={ourPortfolioSlider}/>
-      <AboutHero dictionary={aboutHero}/>
+      <AboutHero dictionary={aboutHero} currentLang={lang} />
       <PartnershipCards dictionary={partnershipCards}/>
       <TellAboutUs dictionary={tellAboutUs}/>
       <WorldMapPartnership dictionary={worldMapPartnership}/>

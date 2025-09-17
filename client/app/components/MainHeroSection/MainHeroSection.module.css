@@ -270,6 +270,9 @@
     -webkit-mask:
         linear-gradient(#fff 0 0) content-box,
         linear-gradient(#fff 0 0);
+    mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
     z-index: 1;
@@ -283,6 +286,33 @@
     width: 15px;
     height: 15px;
     margin-bottom: 5px;
+}
+
+/* Rotation animation for outer SVG parts while keeping inner icons static */
+@keyframes rotate360 {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.svgRotating {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: rotate360 18s linear infinite;
+}
+
+/* Counter-rotation with different speed for blurred foreignObject */
+.svgCounterRotate {
+    transform-box: fill-box;
+    transform-origin: center;
+    /* Use a subtle float/pulse so it doesn't track the main rotation */
+    animation: pulseBlur 3.6s ease-in-out infinite;
+}
+
+/* Gentle float + pulse to differentiate from the main rotation */
+@keyframes pulseBlur {
+    0%   { transform: translate(0px, 0px) scale(0.96); opacity: 0.7; }
+    50%  { transform: translate(0px, -3px) scale(1.06); opacity: 1; }
+    100% { transform: translate(0px, 0px) scale(0.96); opacity: 0.7; }
 }
 
 @media (max-width: 1150px) {

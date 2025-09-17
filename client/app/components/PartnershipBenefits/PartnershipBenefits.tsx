@@ -22,7 +22,7 @@ const PartnershipBenefits: React.FC<Props> = ({ dictionary }) => {
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <circle cx="17" cy="17" r="17" fill="#E81EDD" fillOpacity="0.3" />
+              <circle className={styles.blinkCircle} cx="17" cy="17" r="17" fill="#E81EDD" fillOpacity="0.3" />
               <g clipPath="url(#clip0_87_8277)">
                 <circle cx="17.5" cy="17.5" r="6.5" fill="white" />
                 <path
@@ -56,7 +56,7 @@ const PartnershipBenefits: React.FC<Props> = ({ dictionary }) => {
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <circle cx="17" cy="17" r="17" fill="#E81EDD" fillOpacity="0.3" />
+              <circle className={styles.blinkCircle} cx="17" cy="17" r="17" fill="#E81EDD" fillOpacity="0.3" />
               <g clipPath="url(#clip0_87_8277)">
                 <circle cx="17.5" cy="17.5" r="6.5" fill="white" />
                 <path
@@ -90,7 +90,7 @@ const PartnershipBenefits: React.FC<Props> = ({ dictionary }) => {
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <circle cx="17" cy="17" r="17" fill="#E81EDD" fillOpacity="0.3" />
+              <circle className={styles.blinkCircle} cx="17" cy="17" r="17" fill="#E81EDD" fillOpacity="0.3" />
               <g clipPath="url(#clip0_87_8277)">
                 <circle cx="17.5" cy="17.5" r="6.5" fill="white" />
                 <path
@@ -124,7 +124,7 @@ const PartnershipBenefits: React.FC<Props> = ({ dictionary }) => {
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <circle cx="17" cy="17" r="17" fill="#E81EDD" fillOpacity="0.3" />
+              <circle className={styles.blinkCircle} cx="17" cy="17" r="17" fill="#E81EDD" fillOpacity="0.3" />
               <g clipPath="url(#clip0_87_8277)">
                 <circle cx="17.5" cy="17.5" r="6.5" fill="white" />
                 <path
@@ -158,7 +158,7 @@ const PartnershipBenefits: React.FC<Props> = ({ dictionary }) => {
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <circle cx="17" cy="17" r="17" fill="#E81EDD" fillOpacity="0.3" />
+              <circle className={styles.blinkCircle} cx="17" cy="17" r="17" fill="#E81EDD" fillOpacity="0.3" />
               <g clipPath="url(#clip0_87_8277)">
                 <circle cx="17.5" cy="17.5" r="6.5" fill="white" />
                 <path
@@ -192,7 +192,7 @@ const PartnershipBenefits: React.FC<Props> = ({ dictionary }) => {
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <circle cx="17" cy="17" r="17" fill="#E81EDD" fillOpacity="0.3" />
+              <circle className={styles.blinkCircle} cx="17" cy="17" r="17" fill="#E81EDD" fillOpacity="0.3" />
               <g clipPath="url(#clip0_87_8277)">
                 <circle cx="17.5" cy="17.5" r="6.5" fill="white" />
                 <path

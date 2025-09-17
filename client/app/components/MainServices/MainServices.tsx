@@ -17,14 +17,14 @@ type Category =
   | "seo"
   | "ads"
   | "mobile-apps"
-  | "design"
-  | "modeling";
+  // | "design"
+  // | "modeling";
 
 // Filter services by category
 const getServicesByCategory = (category: Category, services: any[]) => {
   switch (category) {
     case "all":
-      return services;
+      return services.slice(0, -2);
     case "web-development":
       return services.filter((service) => [1, 2, 3, 4, 5].includes(service.id));
     case "seo":
@@ -33,10 +33,10 @@ const getServicesByCategory = (category: Category, services: any[]) => {
       return services.filter((service) => service.id === 7);
     case "mobile-apps":
       return services.filter((service) => service.id === 6);
-    case "design":
-      return services.filter((service) => service.id === 9);
-    case "modeling":
-      return services.filter((service) => service.id === 10);
+    // case "design":
+    //   return services.filter((service) => service.id === 9);
+    // case "modeling":
+    //   return services.filter((service) => service.id === 10);
     default:
       return [];
   }

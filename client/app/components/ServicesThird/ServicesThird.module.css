@@ -40,7 +40,7 @@
         grid-template-columns: 55% 1fr;
         grid-template-rows: auto auto auto;
         grid-template-areas:
-            "title image"
+            "title title"
             "text1 image"
             "text2 image";
     }

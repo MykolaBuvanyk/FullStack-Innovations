@@ -61,6 +61,16 @@
     margin-top: 20px;
 }
 
+/* Blink animation for outer pink circle in icons */
+@keyframes blinkOpacity {
+    0%, 100% { fill-opacity: 0.05; }
+    50% { fill-opacity: 0.48; }
+}
+
+.blinkCircle {
+    animation: blinkOpacity 2.4s ease-in-out infinite;
+}
+
 @media (max-width: 1150px) {
     .partnershipBenefitsTitle {
         width: 100%;

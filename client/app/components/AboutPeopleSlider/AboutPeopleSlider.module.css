@@ -72,7 +72,7 @@
     position: absolute;
     inset: 0;
     padding: 1px;
-    margin: -3px;
+    margin: -2px;
     border-radius: 50%;
     background: linear-gradient(180deg, #C400B9 0%, #5D0058 119.29%);
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);

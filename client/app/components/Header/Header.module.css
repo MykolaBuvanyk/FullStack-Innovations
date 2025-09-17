@@ -21,6 +21,14 @@
     font-family: 'Noto Color Emoji', 'Helvetica Neue';
 }
 
+.headerTel a {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+    color: inherit;
+}
+
 .container {
     padding: 0 12.5vw;
 }
@@ -97,6 +105,45 @@
     z-index: 1000;
     width: 160px;
     backdrop-filter: blur(10px);
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+/* Custom pink scrollbar for language dropdown */
+.langDropdown::-webkit-scrollbar {
+    width: 6px;
+}
+
+.langDropdown::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent;
+    background-clip: content-box;
+}
+
+.langDropdown::-webkit-scrollbar-thumb {
+    background: #C400B9;
+    border-radius: 50px;
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent;
+    background-clip: content-box;
+}
+
+.langDropdown::-webkit-scrollbar-thumb:hover {
+    background: rgba(232, 30, 221, 1);
+    border-radius: 50px;
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent;
+    background-clip: content-box;
+}
+
+.langDropdown::-webkit-scrollbar-thumb:active {
+    background: rgba(232, 30, 221, 1);
+    border-radius: 50px;
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent;
+    background-clip: content-box;
 }
 
 .langOption {
