@@ -84,6 +84,7 @@ const MainServices: React.FC<Props> = ({ dictionary }) => {
                 viewBox="0 0 23 23"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
+                className={styles.pulsingIcon}
               >
                 <circle
                   cx="11.5"
@@ -91,6 +92,7 @@ const MainServices: React.FC<Props> = ({ dictionary }) => {
                   r="11.5"
                   fill="#E81EDD"
                   fillOpacity="0.2"
+                  className={styles.outerCircle}
                 />
                 <circle
                   cx="11.5"
@@ -98,6 +100,7 @@ const MainServices: React.FC<Props> = ({ dictionary }) => {
                   r="7.5"
                   fill="#E81EDD"
                   fillOpacity="0.2"
+                  className={styles.middleCircle}
                 />
                 <circle cx="11.5" cy="11.5" r="3.5" fill="#E81EDD" />
               </svg>
@@ -123,7 +126,7 @@ const MainServices: React.FC<Props> = ({ dictionary }) => {
                 console.log("Tabs Swiper initialized:", swiper)
               }
             >
-              {dictionary.tabs.map((tab: { label: string; value: string }) => (
+              {dictionary.tabs.slice(0, -2).map((tab: { label: string; value: string }) => (
                 <SwiperSlide key={tab.value} className={styles.tabSlide}>
                   <button
                     className={`${styles.tabButton} ${
@@ -141,7 +144,7 @@ const MainServices: React.FC<Props> = ({ dictionary }) => {
             </Swiper>
           ) : (
             <div className={styles.tabs}>
-              {dictionary.tabs.map((tab: { label: string; value: string }) => (
+              {dictionary.tabs.slice(0, -2).map((tab: { label: string; value: string }) => (
                 <button
                   key={tab.value}
                   className={`${styles.tabButton} ${
@@ -151,6 +154,42 @@ const MainServices: React.FC<Props> = ({ dictionary }) => {
                 >
                   {tab.label}
                 </button>
+              ))}
+            </div>
+          )}
+
+          {!isMobile && (
+            <div className={styles.servicesList}>
+              {currentServices.map((service: any) => (
+                <div
+                  key={service.id}
+                  className={styles.serviceCard}
+                  onMouseEnter={() => setHoveredCard(service.id)}
+                  onMouseLeave={() => setHoveredCard(null)}
+                >
+                  <div className={styles.serviceCardText}>
+                    <h2 className={styles.serviceTitle}>{service.h1}</h2>
+                    <p className={styles.serviceDescription}>
+                      {dictionary.deadlineLabel}: <span>{service.p}</span>
+                    </p>
+                    <button className={styles.serviceButton}>
+                      {hoveredCard === service.id
+                        ? dictionary.detailsButton
+                        : `${dictionary.costLabel} ${service.buttonText}`}
+                    </button>
+                  </div>
+                  <div className={styles.serviceCardImageWrapper}>
+                    <div className={styles.serviceCardImage}>
+                      <img
+                        src={service.image}
+                        alt={service.name}
+                        className={`${styles.serviceImage} ${
+                          styles[service.imageClass]
+                        }`}
+                      />
+                    </div>
+                  </div>
+                </div>
               ))}
             </div>
           )}

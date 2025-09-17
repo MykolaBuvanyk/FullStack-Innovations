@@ -1,12 +1,14 @@
 'use client';
 
+import Link from 'next/link';
 import styles from './AboutHero.module.css';
 
 type Props = {
   dictionary: any;
+  currentLang: string;
 };
 
-const AboutHero: React.FC<Props> = ({ dictionary }) => {
+const AboutHero: React.FC<Props> = ({ dictionary, currentLang }) => {
   return (
     <section className={styles.aboutHeroWrapper}>
       <div className={styles.aboutHeroTopWrapper}>
@@ -50,10 +52,10 @@ const AboutHero: React.FC<Props> = ({ dictionary }) => {
           <div className={styles.backgroundElipse}></div>
         </div>
       </div>
-      <button className={styles.btn}>
+      <Link href={`/${currentLang}/contacts`} className={styles.btn}>
         {dictionary.buttonText}
         <img src="/images/arrow_top_right.svg" alt="" />
-      </button>
+      </Link>
     </section>
   );
 };

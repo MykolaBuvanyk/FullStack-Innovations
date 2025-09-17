@@ -1,208 +1,389 @@
-.aboutHeroWrapper{
-    padding: 0 12.5vw;
-    margin-top: 100px;
-    display: grid;
-    grid-template-columns: repeat(2, auto);
-    grid-template-rows: repeat(3, auto);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
+.aboutHeroWrapper {
+  padding: 0 12.5vw;
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: repeat(3, auto);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
 }
 
-.aboutHeroTopWrapper{
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    grid-area: 1 / 1 / 2 / 2;
+.aboutHeroTopWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  grid-area: 1 / 1 / 2 / 2;
 }
 
-.aboutHeroTitle{
-    max-width: 55%;
-    font-size: 70px;
-    font-weight: 500;
-    line-height: 80px;
-    background-image: url('/images/abstract-purple-blue-wave-background (2).png');
-    background-size: cover;
-    background-position: center;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+.aboutHeroTitle {
+  /* max-width: 55%; */
+  font-size: 70px;
+  font-weight: 500;
+  line-height: 80px;
+  background-image: url('/images/abstract-purple-blue-wave-background (2).png');
+  background-size: cover;
+  background-position: center;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.btn{
-    line-height: 22px;
-    font-weight: 400;
-    font-size: 15px;
-    padding: 25px 35px;
-    border-radius: 100px;
-    color: #fff;
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    background-color: transparent;
-    transition: 0.5s;
-    border: 1px solid white;
-    white-space: nowrap;
-    width: fit-content;
-    height: fit-content;
-    grid-area: 1 / 2 / 2 / 3;
-    justify-self: end;
-    align-self: start;
+.btn {
+  line-height: 22px;
+  font-weight: 400;
+  font-size: 15px;
+  padding: 25px 35px;
+  border-radius: 100px;
+  color: #fff;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  background-color: transparent;
+  transition: 0.5s;
+  border: 1px solid white;
+  white-space: nowrap;
+  width: fit-content;
+  height: fit-content;
+  grid-area: 1 / 2 / 2 / 3;
+  justify-self: end;
+  align-self: start;
 }
 
-.btn:hover{
-    background: linear-gradient(95.63deg, #C400B9 17.83%, #5D0058 159.96%);
-    box-shadow: 0px 20px 40px rgba(196, 1, 185, 0.6);
-    border: 1px solid rgba(196, 1, 185, 0.6);
+.btn:hover {
+  background: linear-gradient(95.63deg, #C400B9 17.83%, #5D0058 159.96%);
+  box-shadow: 0px 20px 40px rgba(196, 1, 185, 0.6);
+  border: 1px solid rgba(196, 1, 185, 0.6);
 }
 
-.aboutHeroBottomWrapper{
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    grid-area: 2 / 1 / 3 / 2;
+.aboutHeroBottomWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  grid-area: 2 / 1 / 3 / 2;
 }
 
-.aboutHeroTextWrapper{
-    display: flex;
-    gap: 2.6vw;
-    flex-direction: column;
-    margin-top: 2.08vw;
-    color: rgba(255, 255, 255, 1);
+.aboutHeroTextWrapper {
+  display: flex;
+  gap: 2.6vw;
+  flex-direction: column;
+  margin-top: 2.08vw;
+  color: rgba(255, 255, 255, 1);
 }
 
-.aboutHeroParaWrapper{
-    padding-right: 4.47vw;
-    display: flex;
-    flex-direction: column;
-    gap: 2vw;
+.aboutHeroParaWrapper {
+  padding-right: 4.47vw;
+  display: flex;
+  flex-direction: column;
+  gap: 2vw;
 }
 
-.aboutHeroPara{
-    font-weight: 100;
-    font-size: 18px;
-    line-height: 28px;
+.aboutHeroPara {
+  font-weight: 100;
+  font-size: 18px;
+  line-height: 28px;
 }
 
-.aboutHeroList{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    grid-area: 3 / 1 / 4 / 2;
-    color: white;
+.aboutHeroList {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  grid-area: 3 / 1 / 4 / 2;
+  color: white;
+  margin-top: 30px;
 }
 
-.aboutHeroEl{
-    display: flex;
-    flex-direction: column;
-    font-weight: 100;
+.aboutHeroEl {
+  display: flex;
+  flex-direction: column;
+  font-weight: 100;
 }
 
-.aboutHeroEl span{
-    font-size: 90px;
-    font-weight: 500;
-    background-image: url('/images/abstract-purple-blue-wave-background (2).png');
-    background-size: cover;
-    background-position: center;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+.aboutHeroEl span {
+  font-size: 90px;
+  font-weight: 500;
+  background-image: url('/images/abstract-purple-blue-wave-background (2).png');
+  background-size: cover;
+  background-position: center;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 
 
 
 .aboutHeroSphereWrapper {
-    display: flex;
-    width: 20.5vw;
-    position: relative;
-    aspect-ratio: 1/1;
-    grid-area: 2 / 2 / 4 / 3;
-  }
+  display: flex;
+  width: 20.5vw;
+  position: relative;
+  aspect-ratio: 1/1;
+  grid-area: 2 / 2 / 4 / 3;
+}
 
-  .spheraAdditionalWrapper{
-    position: absolute;
-    right: 0%;
-    
-  }
-  
+.spheraAdditionalWrapper {
+  position: absolute;
+  right: 0%;
+
+}
+
+.spheraWrapper {
+  position: absolute;
+  aspect-ratio: 1/1;
+  width: 20vw;
+  top: 0;
+}
+
+@media screen and (min-aspect-ratio: 16/9) {
   .spheraWrapper {
-    position: absolute;
-    aspect-ratio: 1/1;
-    width: 20vw;
-    top: 0;
+    top: calc(0px + (1920px - 100vw) * 0.0);
   }
-  
-  @media screen and (min-aspect-ratio: 16/9) {
-    .spheraWrapper {
-      top: calc(0px + (1920px - 100vw) * 0.0);
-    }
+}
+
+.sphereSmall,
+.sphereMedium,
+.sphereLarge {
+  position: absolute;
+}
+
+.sphereSmall img,
+.sphereMedium img,
+.sphereLarge img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Cosmic floating animations for spheres */
+@keyframes cosmicFloatLarge {
+  0% {
+    transform: translateY(0px) translateX(0px) rotate(0deg);
   }
-  
-  .sphereSmall,
-  .sphereMedium,
-  .sphereLarge {
-    position: absolute;
+
+  20% {
+    transform: translateY(-8px) translateX(4px) rotate(2deg);
   }
-  
-  .sphereSmall img,
-  .sphereMedium img,
-  .sphereLarge img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+
+  40% {
+    transform: translateY(-12px) translateX(-3px) rotate(-1deg);
   }
-  
-  
-  
-  .sphereLarge {
-    width: 19.9vw;
-    right: 0;
-    top: 0;
+
+  60% {
+    transform: translateY(-6px) translateX(6px) rotate(3deg);
   }
-  
-  .sphereMedium {
-    width: 2.7vw;
-    /* left: -19.5vw;
+
+  80% {
+    transform: translateY(-10px) translateX(-2px) rotate(-1.5deg);
+  }
+
+  100% {
+    transform: translateY(0px) translateX(0px) rotate(0deg);
+  }
+}
+
+@keyframes cosmicFloatMedium {
+  0% {
+    transform: translateY(0px) translateX(0px) rotate(0deg);
+  }
+
+  10% {
+    transform: translateY(-2px) translateX(-3px) rotate(-0.5deg);
+  }
+
+  20% {
+    transform: translateY(-5px) translateX(-5px) rotate(-1deg);
+  }
+
+  30% {
+    transform: translateY(-8px) translateX(-6px) rotate(-1.5deg);
+  }
+
+  40% {
+    transform: translateY(-10px) translateX(-3px) rotate(-1deg);
+  }
+
+  50% {
+    transform: translateY(-12px) translateX(0px) rotate(0deg);
+  }
+
+  60% {
+    transform: translateY(-10px) translateX(3px) rotate(1deg);
+  }
+
+  70% {
+    transform: translateY(-8px) translateX(6px) rotate(1.5deg);
+  }
+
+  80% {
+    transform: translateY(-5px) translateX(5px) rotate(1deg);
+  }
+
+  90% {
+    transform: translateY(-2px) translateX(3px) rotate(0.5deg);
+  }
+
+  100% {
+    transform: translateY(0px) translateX(0px) rotate(0deg);
+  }
+}
+
+@keyframes cosmicFloatSmall {
+  0% {
+    transform: translateY(0px) translateX(0px) rotate(0deg);
+  }
+
+  5% {
+    transform: translateY(-1px) translateX(2px) rotate(0.2deg);
+  }
+
+  10% {
+    transform: translateY(-2px) translateX(4px) rotate(0.5deg);
+  }
+
+  15% {
+    transform: translateY(-4px) translateX(6px) rotate(0.8deg);
+  }
+
+  20% {
+    transform: translateY(-6px) translateX(8px) rotate(1deg);
+  }
+
+  25% {
+    transform: translateY(-8px) translateX(9px) rotate(1.2deg);
+  }
+
+  30% {
+    transform: translateY(-10px) translateX(10px) rotate(1.3deg);
+  }
+
+  35% {
+    transform: translateY(-11px) translateX(9px) rotate(1.2deg);
+  }
+
+  40% {
+    transform: translateY(-12px) translateX(8px) rotate(1deg);
+  }
+
+  45% {
+    transform: translateY(-13px) translateX(6px) rotate(0.8deg);
+  }
+
+  50% {
+    transform: translateY(-14px) translateX(0px) rotate(0deg);
+  }
+
+  55% {
+    transform: translateY(-13px) translateX(-6px) rotate(-0.8deg);
+  }
+
+  60% {
+    transform: translateY(-12px) translateX(-8px) rotate(-1deg);
+  }
+
+  65% {
+    transform: translateY(-11px) translateX(-9px) rotate(-1.2deg);
+  }
+
+  70% {
+    transform: translateY(-10px) translateX(-10px) rotate(-1.3deg);
+  }
+
+  75% {
+    transform: translateY(-8px) translateX(-9px) rotate(-1.2deg);
+  }
+
+  80% {
+    transform: translateY(-6px) translateX(-8px) rotate(-1deg);
+  }
+
+  85% {
+    transform: translateY(-4px) translateX(-6px) rotate(-0.8deg);
+  }
+
+  90% {
+    transform: translateY(-2px) translateX(-4px) rotate(-0.5deg);
+  }
+
+  95% {
+    transform: translateY(-1px) translateX(-2px) rotate(-0.2deg);
+  }
+
+  100% {
+    transform: translateY(0px) translateX(0px) rotate(0deg);
+  }
+}
+
+
+
+.sphereLarge {
+  width: 19.9vw;
+  right: 0;
+  top: 0;
+  animation: cosmicFloatLarge 8s linear infinite;
+  transition: all 0.6s ease-out;
+}
+
+.sphereLarge:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+.sphereMedium {
+  width: 2.7vw;
+  /* left: -19.5vw;
     top: -2vh; */
-    top: 0%;
-    left: 0%;
-  }
-  
-  .sphereSmall {
-    width: 1.4vw;
-    /* top: 29vh;
+  top: 0%;
+  left: 0%;
+  animation: cosmicFloatMedium 6s linear infinite;
+  transition: all 0.5s ease-out;
+}
+
+.sphereMedium:hover {
+  transform: scale(1.1);
+  filter: brightness(1.15);
+}
+
+.sphereSmall {
+  width: 1.4vw;
+  /* top: 29vh;
     right: -1vw; */
-    bottom: 8%;
-    right: 0%;
-  }
-  
-  .backgroundElipse {
-    position: absolute;
-    z-index: -1;
-    width: 11.5vw;
-    height: 11.5vw;
-    background: rgba(232, 30, 221, 1);
-    border-radius: 50%;
-    top: 0;
-    right: 0;
-    filter: blur(120px);
-    transform: translate(-50%, 70%);
-  }
+  bottom: 8%;
+  right: 0%;
+  animation: cosmicFloatSmall 5s linear infinite;
+  transition: all 0.4s ease-out;
+}
+
+.sphereSmall:hover {
+  transform: scale(1.15);
+  filter: brightness(1.2);
+}
+
+.backgroundElipse {
+  position: absolute;
+  z-index: -1;
+  width: 11.5vw;
+  height: 11.5vw;
+  background: rgba(232, 30, 221, 1);
+  border-radius: 50%;
+  top: 0;
+  right: 0;
+  filter: blur(120px);
+  transform: translate(-50%, 70%);
+}
 
 
-@media(max-width:1440px){
-  .aboutHeroTitle{
-      font-size: 35px;
-      line-height: 45px;
+@media(max-width:1440px) {
+  .aboutHeroTitle {
+    font-size: 35px;
+    line-height: 45px;
   }
 
   .aboutHeroPara,
-  .btn{
+  .btn {
     font-size: 14px;
     line-height: 22px;
   }
 
-  .aboutHeroEl{
+  .aboutHeroEl {
     font-size: 14px;
   }
 
@@ -212,167 +393,213 @@
   }
 }
 
-@media(max-width:1150px){
+@media(max-width:1150px) {
 
   .aboutHeroWrapper {
     display: grid;
-      grid-template-columns: 1.25fr 0.5fr;
-      grid-template-rows: repeat(4, auto);
-      grid-column-gap: 0px;
-      grid-row-gap:0px;
-      padding: 0 20px;
-    }
-  
-    .aboutHeroTitle {
-      grid-area: 1 / 1 /2 / 2;
-      max-width: fit-content;
-    }
-  
-    .aboutHeroBottomWrapper  {
-      grid-area: 2 / 1 / 3 / 2;
-    }
-  
-    .aboutHeroSphereWrapper {
-      grid-area: 1 / 2 / 3 / 3;
-      width: 31.2vw;
-      display: flex;
-      justify-content: flex-end;
-      align-items: flex-start;
-      position: relative;
-    }
-  
-    .aboutHeroList  {
-      grid-area: 3 / 1 /4 / 3;
-      color: white;
-      max-width: 90%;
-    }
+    grid-template-columns: 1.25fr 0.5fr;
+    grid-template-rows: repeat(4, auto);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    padding: 0 20px;
+  }
 
-    .btn {
-      grid-area: 4 / 1 / 5 / 3;
-      width: fit-content;
-      margin-top: 30px;
-      padding: 15px 35px;
-      justify-self: start;
-      align-self: start;
-    }
+  .aboutHeroTitle {
+    grid-area: 1 / 1 /2 / 2;
+    max-width: fit-content;
+  }
 
-    .aboutHeroTextWrapper{
-      width: fit-content;
-      margin-top: 30px;
-    }
+  .aboutHeroBottomWrapper {
+    grid-area: 2 / 1 / 3 / 2;
+  }
 
-    .aboutHeroParaWrapper{
-      padding: 0;
-    }
-    
-    .spheraWrapper {
-      width: 30.6vw;
-      position: relative;
-      top: auto;
-      right: auto;
-      margin-left: auto;
-      margin-right: 0;
-    }
+  .aboutHeroList {
+    margin-top: 0;
+  }
 
-    .sphereLarge {
-      width: 30.12vw;
-    }
+  .aboutHeroSphereWrapper {
+    grid-area: 1 / 2 / 3 / 3;
+    width: 31.2vw;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    position: relative;
+  }
 
-    .sphereMedium {
-      width: 4.08vw;
-      top: 0%;
-      left: 0%;
-    }
+  .aboutHeroList {
+    grid-area: 3 / 1 /4 / 3;
+    color: white;
+    max-width: 90%;
+  }
 
-    .sphereSmall {
-      width: 2.16vw;
-      bottom: 8%;
-      right: 0%;
-    }
+  .btn {
+    grid-area: 4 / 1 / 5 / 3;
+    width: fit-content;
+    margin-top: 30px;
+    padding: 15px 35px;
+    justify-self: start;
+    align-self: start;
+  }
 
-    .backgroundElipse {
-      width: 17.4vw;
-      height: 17.4vw; 
-    }
+  .aboutHeroTextWrapper {
+    width: fit-content;
+    margin-top: 30px;
+  }
+
+  .aboutHeroParaWrapper {
+    padding: 0;
+  }
+
+  .spheraWrapper {
+    width: 30.6vw;
+    position: relative;
+    top: auto;
+    right: auto;
+    margin-left: auto;
+    margin-right: 0;
+  }
+
+  .sphereLarge {
+    width: 30.12vw;
+    animation: cosmicFloatLarge 8s linear infinite;
+    transition: all 0.6s ease-out;
+  }
+
+  .sphereLarge:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+  }
+
+  .sphereMedium {
+    width: 4.08vw;
+    top: 0%;
+    left: 0%;
+    animation: cosmicFloatMedium 6s linear infinite;
+    transition: all 0.5s ease-out;
+  }
+
+  .sphereMedium:hover {
+    transform: scale(1.1);
+    filter: brightness(1.15);
+  }
+
+  .sphereSmall {
+    width: 2.16vw;
+    bottom: 8%;
+    right: 0%;
+    animation: cosmicFloatSmall 5s linear infinite;
+    transition: all 0.4s ease-out;
+  }
+
+  .sphereSmall:hover {
+    transform: scale(1.15);
+    filter: brightness(1.2);
+  }
+
+  .backgroundElipse {
+    width: 17.4vw;
+    height: 17.4vw;
+  }
 }
 
-@media(max-width:650px){
+@media(max-width:650px) {
   .aboutHeroWrapper {
-      display: grid;
-      grid-template-columns: auto;
-      grid-template-rows: repeat(5, auto);
-      grid-column-gap: 0px;
-      grid-row-gap: 0px;
-    }
-  
-    .aboutHeroSphereWrapper {
-      grid-area: 1 / 1 / 2 / 2;
-      margin-left: 40px;
-    }
-  
-    .aboutHeroTopWrapper {
-      grid-area: 2 / 1 / 3 / 2;
-    }
-  
-    .aboutHeroBottomWrapper {
-      grid-area: 3 / 1 / 4 / 2;
-    }
-  
-    .aboutHeroList {
-      grid-area: 4 / 1 / 5 / 2;
-      width: 100%;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: auto auto;
-      gap: 2vw;
-      white-space: nowrap;
-      justify-content: space-between;
-    }
-  
-    .btn {
-      grid-area: 5 / 1 / 6 /2; 
-    }
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(5, auto);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  }
 
-    .aboutHeroSphereWrapper {
-      width: 75vw;
-      display: block;
-      position: relative;
-      aspect-ratio: 1/1;
-      margin: 0;
-      left: 10%;
-    }
+  .aboutHeroSphereWrapper {
+    grid-area: 1 / 1 / 2 / 2;
+    margin-left: 40px;
+  }
 
-    .spheraWrapper {
-      width: 68.656vw;
-      position: relative;
-      top: auto;
-      right: auto;
-      margin: 0;
-    }
+  .aboutHeroTopWrapper {
+    grid-area: 2 / 1 / 3 / 2;
+  }
 
-    .sphereLarge {
-      width: 64.578vw;
-      right: 0;
-      top: 0;
-    }
+  .aboutHeroBottomWrapper {
+    grid-area: 3 / 1 / 4 / 2;
+  }
 
-    .sphereMedium {
-      width: 9.156vw;
-      top: 0%;
-      left: 0%;
-    }
+  .aboutHeroList {
+    grid-area: 4 / 1 / 5 / 2;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 2vw;
+    white-space: nowrap;
+    justify-content: space-between;
+  }
 
-    .sphereSmall {
-      width: 4.844vw;
-      bottom: 8%;
-      right: 0%;
-    }
+  .btn {
+    grid-area: 5 / 1 / 6 /2;
+  }
 
-    .backgroundElipse {
-      width: 50.039vw;
-      height: 50.039vw;
-      top: -35%;
-      right: -55%;
-      transform: translate(-50%, 70%); 
-    }
+  .aboutHeroSphereWrapper {
+    width: 75vw;
+    display: block;
+    position: relative;
+    aspect-ratio: 1/1;
+    margin: 0;
+    left: 10%;
+  }
+
+  .spheraWrapper {
+    width: 68.656vw;
+    position: relative;
+    top: auto;
+    right: auto;
+    margin: 0;
+  }
+
+  .sphereLarge {
+    width: 64.578vw;
+    right: 0;
+    top: 0;
+    animation: cosmicFloatLarge 8s linear infinite;
+    transition: all 0.6s ease-out;
+  }
+
+  .sphereLarge:hover {
+    transform: scale(1.03);
+    filter: brightness(1.08);
+  }
+
+  .sphereMedium {
+    width: 9.156vw;
+    top: 0%;
+    left: 0%;
+    animation: cosmicFloatMedium 6s linear infinite;
+    transition: all 0.5s ease-out;
+  }
+
+  .sphereMedium:hover {
+    transform: scale(1.08);
+    filter: brightness(1.12);
+  }
+
+  .sphereSmall {
+    width: 4.844vw;
+    bottom: 8%;
+    right: 0%;
+    animation: cosmicFloatSmall 5s linear infinite;
+    transition: all 0.4s ease-out;
+  }
+
+  .sphereSmall:hover {
+    transform: scale(1.12);
+    filter: brightness(1.15);
+  }
+
+  .backgroundElipse {
+    width: 50.039vw;
+    height: 50.039vw;
+    top: -35%;
+    right: -55%;
+    transform: translate(-50%, 70%);
+  }
 }
