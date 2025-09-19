@@ -1,5 +1,5 @@
 .formContainer {
-  font-family: 'Helvetica Neue', sans-serif;
+  font-family: "Helvetica Neue", sans-serif;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -20,7 +20,7 @@
   font-weight: 700;
   font-size: 50px;
   width: 100%;
-  background-image: url('/images/abstract-purple-blue-wave-background (2).png');
+  background-image: url("/images/abstract-purple-blue-wave-background (2).png");
   background-size: cover;
   background-position: center;
   -webkit-background-clip: text;
@@ -35,7 +35,7 @@
   gap: 50px;
 }
 
-.formGroupWrapper>* {
+.formGroupWrapper > * {
   width: 50%;
 }
 
@@ -90,12 +90,12 @@
   color: transparent;
 }
 
-.input:focus+.label,
-.input:not(:placeholder-shown)+.label {
+.input:focus + .label,
+.input:not(:placeholder-shown) + .label {
   display: none;
 }
 
-textarea.input:not(:empty)+.label {
+textarea.input:not(:empty) + .label {
   display: none;
 }
 
@@ -113,6 +113,7 @@ textarea.input:not(:empty)+.label {
   padding-bottom: 20px;
   position: relative;
   /* Резервуємо місце для помилки */
+  gap: 0;
 }
 
 .checkbox {
@@ -123,7 +124,7 @@ textarea.input:not(:empty)+.label {
   border-radius: 50%;
   background-color: transparent;
   cursor: pointer;
-  margin-right: 10px;
+  margin-right: 8px;
 }
 
 .checkbox:checked {
@@ -148,6 +149,9 @@ textarea.input:not(:empty)+.label {
 .checkboxLabel {
   color: #888;
   font-size: 15px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
 }
 
 .messengerIcons {
@@ -162,7 +166,7 @@ textarea.input:not(:empty)+.label {
 
 .iconPara {
   font-size: 20px;
-  color: #FFFFFF66;
+  color: #ffffff66;
 }
 
 .messengerLink {
@@ -172,8 +176,8 @@ textarea.input:not(:empty)+.label {
   gap: 7%;
   flex-direction: column;
   align-items: center;
-  color: #FFFFFF66;
-  background-color: #FFFFFF05;
+  color: #ffffff66;
+  background-color: #ffffff05;
   border-radius: 15px;
   backdrop-filter: blur(20px);
   font-size: 12px;
@@ -224,7 +228,7 @@ textarea.input:not(:empty)+.label {
 }
 
 .submitButton:hover {
-  background: linear-gradient(95.63deg, #C400B9 17.83%, #5D0058 159.96%);
+  background: linear-gradient(95.63deg, #c400b9 17.83%, #5d0058 159.96%);
   box-shadow: 0px 20px 40px rgba(196, 1, 185, 0.6);
   border: 1px solid rgba(196, 1, 185, 0.6);
 }
@@ -239,7 +243,7 @@ textarea.input:not(:empty)+.label {
   display: flex;
   align-items: center;
   gap: 8px;
-  background-color: #E71EDC12;
+  background-color: #e71edc12;
   backdrop-filter: blur(20px);
   color: white;
   padding: 20px;
@@ -287,13 +291,13 @@ textarea.input:not(:empty)+.label {
   white-space: nowrap;
 }
 
-.checkboxGroup+.error {
+.checkboxGroup + .error {
   position: absolute;
   bottom: 0;
   left: 0;
 }
 
-.messengerIcons+.error {
+.messengerIcons + .error {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -333,7 +337,7 @@ textarea.input:not(:empty)+.label {
 
 @media screen and (min-aspect-ratio: 16/9) {
   .spheraWrapper {
-    top: calc(0px + (1920px - 100vw) * 0.0);
+    top: calc(0px + (1920px - 100vw) * 0);
   }
 }
 
@@ -382,7 +386,7 @@ textarea.input:not(:empty)+.label {
   transform: translate(-50%, 70%);
 }
 
-@media(max-width:1440px) {
+@media (max-width: 1440px) {
   .formContainerLeft h2 {
     font-size: 30px;
   }
@@ -402,30 +406,30 @@ textarea.input:not(:empty)+.label {
   }
 }
 
-@media(max-width: 1150px){
-  .formContainer{
+@media (max-width: 1150px) {
+  .formContainer {
     padding: 0 20px;
   }
   .formContainerLeft {
     width: 60%;
   }
-  .formContainerLeft h2{
+  .formContainerLeft h2 {
     font-size: 35px;
     line-height: 45px;
     margin-bottom: 50px;
   }
-  .formWrapper{
+  .formWrapper {
     width: 100%;
     margin-bottom: 35px;
   }
-  .formGroupWrapper{
+  .formGroupWrapper {
     flex-direction: column;
     gap: 0px;
   }
-  .formGroupWrapper > *{
+  .formGroupWrapper > * {
     width: 100%;
   }
-  .formGroup{
+  .formGroup {
     margin: 0;
     padding: 0;
     margin-bottom: 20px;
@@ -434,7 +438,7 @@ textarea.input:not(:empty)+.label {
   .input {
     padding: 5px;
   }
-  .label{
+  .label {
     padding: 0;
     margin: 0;
   }
@@ -442,60 +446,60 @@ textarea.input:not(:empty)+.label {
     width: 40%;
     top: 100px;
   }
-    .sphereLarge {
-      width: 24vw;
-      right: 5vw;
-      top: 5vh;
-    }
-  
-    .sphereMedium {
-      width: 7.5vw;
-      left: -16vw;
-      top: 2vh;
-    }
-  
-    .sphereSmall {
-      width: 5vw;
-      top: 17vh;
-      right: 1vw;
-    }
-  
-    .backgroundElipse {
-      width: 15vw;
-      height: 15vw;
-      filter: blur(100px);
-    }
-    .messengerLink{
-      padding: 10px 25px;
-      font-size: 8px;
-    }
-    .messengerLink img{
-      width: 17px;
-      height: 17px;
-    }
-    .notification {
-      width: 50vw;   
-    }
-    .error{
-      bottom: -10px;
-    }
+  .sphereLarge {
+    width: 24vw;
+    right: 5vw;
+    top: 5vh;
+  }
+
+  .sphereMedium {
+    width: 7.5vw;
+    left: -16vw;
+    top: 2vh;
+  }
+
+  .sphereSmall {
+    width: 5vw;
+    top: 17vh;
+    right: 1vw;
+  }
+
+  .backgroundElipse {
+    width: 15vw;
+    height: 15vw;
+    filter: blur(100px);
+  }
+  .messengerLink {
+    padding: 10px 25px;
+    font-size: 8px;
+  }
+  .messengerLink img {
+    width: 17px;
+    height: 17px;
+  }
+  .notification {
+    width: 50vw;
+  }
+  .error {
+    bottom: -10px;
+  }
 }
-@media(max-width:650px){
-  .formContainerLeft{
+@media (max-width: 650px) {
+  .formContainerLeft {
     width: 100%;
   }
-  .formContainerRight{
+  .formContainerRight {
     display: none;
   }
   .formContainerLeft h2 {
     margin-bottom: 40px;
   }
-  .buttonWrapper{
+  .buttonWrapper {
     flex-direction: column;
     align-items: start;
     gap: 40px;
   }
-  .notification{
+  .notification {
     width: 100%;
   }
 }

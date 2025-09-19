@@ -14,6 +14,9 @@ const Header: React.FC<Props> = ({ dictionary }) => {
   const modalRef = useRef<HTMLDivElement | null>(null);
   const headerRef = useRef<HTMLDivElement | null>(null);
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
+  const [isMobileServicesDropdownOpen, setIsMobileServicesDropdownOpen] =
+    useState(false);
+  const [activeLinkIndex, setActiveLinkIndex] = useState<string | null>(null);
   const servicesDropdownRef = useRef<HTMLLIElement | null>(null);
   const dropdownTimeout = useRef<NodeJS.Timeout | null>(null);
   const pathname = usePathname();
@@ -97,6 +100,11 @@ const Header: React.FC<Props> = ({ dictionary }) => {
     (_, i) => `/images/HeaderIcons/${i + 1}.svg`
   );
 
+  // Функция для закрытия модалки при клике вне контента
+  const handleModalOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    setIsServicesDropdownOpen(false);
+  };
+
   return (
     <header className={styles.header}>
       <div
@@ -173,6 +181,8 @@ const Header: React.FC<Props> = ({ dictionary }) => {
                 {isServicesDropdownOpen && (
                   <div
                     className={styles.servicesDropdown}
+                    ref={modalRef}
+                    onClick={handleModalOverlayClick}
                     onMouseEnter={() => {
                       if (dropdownTimeout.current)
                         clearTimeout(dropdownTimeout.current);
@@ -325,7 +335,7 @@ const Header: React.FC<Props> = ({ dictionary }) => {
                       </div>
                       <div className={styles.linkWrapper}>
                         <Link
-                          href={`/${currentLang}/technologies`}
+                          href={`/${currentLang}/services#technologies`}
                           className={styles.detailsButton}
                         >
                           {dictionary.dropDown.button}
@@ -365,7 +375,9 @@ const Header: React.FC<Props> = ({ dictionary }) => {
                 <Flag code="UA" height="14" width="21" /> +(380) 63 682 6299
               </a>
               <i
-                className={`fa-solid fa-chevron-${isTelDropdownOpen ? "up" : "down"}`}
+                className={`fa-solid fa-chevron-${
+                  isTelDropdownOpen ? "up" : "down"
+                }`}
                 onClick={() => setIsTelDropdownOpen(!isTelDropdownOpen)}
               ></i>
             </div>
@@ -376,7 +388,9 @@ const Header: React.FC<Props> = ({ dictionary }) => {
               >
                 <span>{currentLang.toUpperCase()}</span>
                 <i
-                  className={`fa-solid fa-chevron-${isLangDropdownOpen ? "up" : "down"}`}
+                  className={`fa-solid fa-chevron-${
+                    isLangDropdownOpen ? "up" : "down"
+                  }`}
                   onClick={(e) => {
                     e.stopPropagation();
                     setIsLangDropdownOpen(!isLangDropdownOpen);
@@ -439,20 +453,57 @@ const Header: React.FC<Props> = ({ dictionary }) => {
               </div>
             )}
           </div>
-          <img
+          <div
             className={`${styles.menuBtn} ${
               isSidebarOpen ? styles.menuBtnActive : ""
             }`}
-            src="/images/mobile-header-menu-icon.svg"
-            alt=""
             onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-          />
+            aria-label="Відкрити меню"
+            role="button"
+            tabIndex={0}
+          >
+            <svg
+              width="28"
+              height="20"
+              viewBox="0 0 28 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                x="0"
+                y="2"
+                width="28"
+                height="2"
+                rx="1"
+                fill="currentColor"
+              />
+              <rect
+                x="0"
+                y="9"
+                width="28"
+                height="2"
+                rx="1"
+                fill="currentColor"
+              />
+              <rect
+                x="0"
+                y="16"
+                height="2"
+                rx="1"
+                fill="currentColor"
+                width={isSidebarOpen ? 28 : 14}
+                className={
+                  isSidebarOpen ? styles.burgerLineActive : styles.burgerLine
+                }
+              />
+            </svg>
+          </div>
         </div>
       </div>
       <div
         className={`${styles.sideBar} ${
           isSidebarOpen ? styles.sideBarOpen : ""
-        }`}
+        } ${isMobileServicesDropdownOpen ? styles.sideBarWide : ""}`}
       >
         <div className={styles.sideBarLogoWrapper}>
           <Link
@@ -464,66 +515,157 @@ const Header: React.FC<Props> = ({ dictionary }) => {
           <div className={styles.arrowLeftWrapper}>
             <i
               className="fa-solid fa-arrow-left"
-              onClick={() => setIsSidebarOpen(false)}
+              onClick={() => {
+                if (isMobileServicesDropdownOpen) {
+                  setIsMobileServicesDropdownOpen(false);
+                } else {
+                  setIsSidebarOpen(false);
+                }
+              }}
             ></i>
           </div>
         </div>
-        <ul className={styles.headerList}>
-          <li className={styles.headerEl}>
-            <Link
-              href={`/${currentLang}`}
-              onClick={() => setIsSidebarOpen(false)}
-            >
-              {dictionary.nav.home}
-            </Link>
-          </li>
-          <li className={[styles.headerEl, styles.headerDropdown].join(" ")}>
-            <Link
-              href={`/${currentLang}/services`}
-              onClick={() => setIsSidebarOpen(false)}
-            >
-              {dictionary.nav.services}
-            </Link>
-            <i className="fa-solid fa-chevron-down"></i>
-          </li>
-          <li className={styles.headerEl}>
-            <Link
-              href={`/${currentLang}/portfolio`}
-              onClick={() => setIsSidebarOpen(false)}
-            >
-              {dictionary.nav.portfolio}
-            </Link>
-          </li>
-          <li className={styles.headerEl}>
-            <Link
-              href={`/${currentLang}/about`}
-              onClick={() => setIsSidebarOpen(false)}
-            >
-              {dictionary.nav.about}
-            </Link>
-          </li>
-          <li className={styles.headerEl}>
-            <Link href={`/partnership`} onClick={() => setIsSidebarOpen(false)}>
-              {dictionary.nav.partnership}
-            </Link>
-          </li>
-          <li className={styles.headerEl}>
-            <Link
-              href={`/${currentLang}/blog`}
-              onClick={() => setIsSidebarOpen(false)}
-            >
-              {dictionary.nav.blog}
-            </Link>
-          </li>
-          <li className={styles.headerEl}>
-            <Link
-              href={`/${currentLang}/contacts`}
-              onClick={() => setIsSidebarOpen(false)}
-            >
-              {dictionary.nav.contacts}
-            </Link>
-          </li>
-        </ul>
+        {/* Мобильное меню: если открыт servicesDropdown, показываем модальное наполнение */}
+        {isMobileServicesDropdownOpen ? (
+          <div className={styles.servicesDropdownMobile}>
+            <div className={styles.servicesGrid}>
+              {dictionary.dropDown.categories.map(
+                (category: any, catIdx: number) => (
+                  <div key={catIdx} className={styles.serviceCategory}>
+                    <h4 className={styles.serviceCategoryTitle}>
+                      {category.title}
+                    </h4>
+                    <ul className={styles.serviceList}>
+                      {category.items.map((item: string, itemIndex: number) => {
+                        const globalIndex = `${catIdx}-${itemIndex}`;
+                        return (
+                          <li key={itemIndex} className={styles.serviceItem}>
+                            <Link
+                              href={`/${currentLang}/services/${item
+                                .toLowerCase()
+                                .replace(/\s+/g, "-")}`}
+                              className={
+                                activeLinkIndex === globalIndex
+                                  ? styles.activeServiceLink
+                                  : ""
+                              }
+                              onClick={() => setActiveLinkIndex(globalIndex)}
+                            >
+                              {item}
+                              {activeLinkIndex === globalIndex && (
+                                <span className={styles.activeSvgWrapper}>
+                                  <svg
+                                    width="11"
+                                    height="12"
+                                    viewBox="0 0 11 12"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M10.75 1.5C10.75 1.08579 10.4142 0.75 10 0.75L3.25 0.75C2.83579 0.75 2.5 1.08579 2.5 1.5C2.5 1.91421 2.83579 2.25 3.25 2.25H9.25V8.25C9.25 8.66421 9.58579 9 10 9C10.4142 9 10.75 8.66421 10.75 8.25L10.75 1.5ZM1 10.5L1.53033 11.0303L10.5303 2.03033L10 1.5L9.46967 0.96967L0.46967 9.96967L1 10.5Z"
+                                      fill="#E81EDD"
+                                    />
+                                  </svg>
+                                </span>
+                              )}
+                            </Link>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </div>
+                )
+              )}
+            </div>
+            <div className={styles.servicesFooter}>
+              <p>{dictionary.dropDown.title}</p>
+              <div className={styles.linkWrapper}>
+                <Link
+                  href={`/${currentLang}/services#technologies`}
+                  className={styles.detailsButton}
+                >
+                  {dictionary.dropDown.button}
+                </Link>
+                <img src="/images/arrow_top_right.svg" alt=""></img>
+              </div>
+            </div>
+          </div>
+        ) : (
+          <ul className={styles.headerList}>
+            {/* ...стандартное меню... */}
+            <li className={styles.headerEl}>
+              <Link
+                href={`/${currentLang}`}
+                onClick={() => setIsSidebarOpen(false)}
+              >
+                {dictionary.nav.home}
+              </Link>
+            </li>
+            <li className={[styles.headerEl, styles.headerDropdown].join(" ")}>
+              <Link
+                href={`/${currentLang}/services`}
+                onClick={() => setIsSidebarOpen(false)}
+              >
+                {dictionary.nav.services}
+              </Link>
+              <i
+                className="fa-solid fa-chevron-down"
+                onClick={() => setIsMobileServicesDropdownOpen(true)}
+              ></i>
+            </li>
+            {/* Кнопка закриття мобільного servicesDropdown */}
+            {isMobileServicesDropdownOpen && (
+              <div className={styles.closeMobileServicesDropdown}>
+                <button
+                  onClick={() => setIsMobileServicesDropdownOpen(false)}
+                  className={styles.closeBtn}
+                >
+                  Закрити
+                </button>
+              </div>
+            )}
+            <li className={styles.headerEl}>
+              <Link
+                href={`/${currentLang}/portfolio`}
+                onClick={() => setIsSidebarOpen(false)}
+              >
+                {dictionary.nav.portfolio}
+              </Link>
+            </li>
+            <li className={styles.headerEl}>
+              <Link
+                href={`/${currentLang}/about`}
+                onClick={() => setIsSidebarOpen(false)}
+              >
+                {dictionary.nav.about}
+              </Link>
+            </li>
+            <li className={styles.headerEl}>
+              <Link
+                href={`/partnership`}
+                onClick={() => setIsSidebarOpen(false)}
+              >
+                {dictionary.nav.partnership}
+              </Link>
+            </li>
+            <li className={styles.headerEl}>
+              <Link
+                href={`/${currentLang}/blog`}
+                onClick={() => setIsSidebarOpen(false)}
+              >
+                {dictionary.nav.blog}
+              </Link>
+            </li>
+            <li className={styles.headerEl}>
+              <Link
+                href={`/${currentLang}/contacts`}
+                onClick={() => setIsSidebarOpen(false)}
+              >
+                {dictionary.nav.contacts}
+              </Link>
+            </li>
+          </ul>
+        )}
         <div className={styles.contactUsWrapper}>
           <div className={styles.contactUs}>
             <a

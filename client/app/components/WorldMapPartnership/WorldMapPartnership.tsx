@@ -1,28 +1,28 @@
-'use client';
+"use client";
 
-import styles from './WorldMapPartnership.module.css';
-import { useState } from 'react';
+import styles from "./WorldMapPartnership.module.css";
+import { useState } from "react";
 
 type Props = {
   dictionary: any;
 };
 
 const countries = [
-  { name: 'USA', x: 170, y: 130 },
-  { name: 'Canada', x: 130, y: 80 },
-  { name: 'Brazil', x: 220, y: 250 },
-  { name: 'UK', x: 330, y: 115 },
-  { name: 'Poland', x: 360, y: 120 },
-  { name: 'Germany', x: 350, y: 125 },
-  { name: 'France', x: 330, y: 135 },
-  { name: 'Spain', x: 320, y: 145 },
-  { name: 'New Zealand', x: 660, y: 320 },
-  { name: 'Australia', x: 590, y: 280 },
-  { name: 'China', x: 550, y: 160 },
-  { name: 'Japan', x: 600, y: 150 },
-  { name: 'UAE', x: 430, y: 180 },
-  { name: 'Ukraine', x: 370, y: 135 },
-  { name: 'Italy', x: 350, y: 145 },
+  { name: "USA", x: 170, y: 130 },
+  { name: "Canada", x: 130, y: 80 },
+  { name: "Brazil", x: 220, y: 250 },
+  { name: "UK", x: 330, y: 115 },
+  { name: "Poland", x: 360, y: 120 },
+  { name: "Germany", x: 350, y: 125 },
+  { name: "France", x: 330, y: 135 },
+  { name: "Spain", x: 320, y: 145 },
+  { name: "New Zealand", x: 660, y: 320 },
+  { name: "Australia", x: 590, y: 280 },
+  { name: "China", x: 550, y: 160 },
+  { name: "Japan", x: 600, y: 150 },
+  { name: "UAE", x: 430, y: 180 },
+  { name: "Ukraine", x: 370, y: 135 },
+  { name: "Italy", x: 350, y: 145 },
 ];
 
 const WorldMapPartnership: React.FC<Props> = ({ dictionary }) => {

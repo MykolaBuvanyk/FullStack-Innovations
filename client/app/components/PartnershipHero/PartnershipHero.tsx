@@ -1,5 +1,5 @@
-import ScrollDown from '../ScrollDown/ScrollDown';
-import styles from './PartnershipHero.module.css';
+import ScrollDown from "../ScrollDown/ScrollDown";
+import styles from "./PartnershipHero.module.css";
 
 type Props = {
   dictionary: any;
@@ -10,9 +10,7 @@ const PartnershipHero: React.FC<Props> = ({ dictionary }) => {
       <div className={styles.heroContent}>
         <div className={styles.contentLeft}>
           <h1 className={styles.heroHeaderText}>{dictionary.h1}</h1>
-          <p>
-            {dictionary.para}
-          </p>
+          <p>{dictionary.para}</p>
           <div className={styles.btnWrapper}>
             <a href="/contacts" className={styles.btn}>
               {dictionary.button}

@@ -16,7 +16,7 @@
   position: fixed;
   height: 100vh;
   width: 28.3vw;
-  font-family: 'Helvetica Neue', sans-serif;
+  font-family: "Helvetica Neue", sans-serif;
   background-color: #1a1f2e;
   color: #ffffff;
   padding: 20px;
@@ -99,8 +99,8 @@
   color: transparent;
 }
 
-.input:focus+.label,
-.input:not(:placeholder-shown)+.label {
+.input:focus + .label,
+.input:not(:placeholder-shown) + .label {
   display: none;
 }
 
@@ -155,13 +155,20 @@
 .customSelect {
   padding: 0.5rem 0;
 }
-
+.customSelect:hover {
+  cursor: pointer;
+}
 .dropDownPara {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   margin: 2.6vw 0 1vw;
+  cursor: pointer;
+}
+
+.dropDownPara svg {
+  cursor: pointer;
 }
 
 .active {
@@ -207,7 +214,7 @@
 
 .submitBtn.active {
   color: #fff;
-  background: linear-gradient(to right, #C300B8, #8c0285);
+  background: linear-gradient(to right, #c300b8, #8c0285);
   border: 1px solid transparent;
   cursor: pointer;
 }
@@ -225,7 +232,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  background-color: #E71EDC12;
+  background-color: #e71edc12;
   backdrop-filter: blur(20px);
   color: white;
   padding: 10px 15px;
@@ -237,29 +244,76 @@
   width: 16px;
   height: 16px;
 }
-@media(max-width:1440px){
+@media (max-width: 1440px) {
+  .customSelect {
+    padding: 0 !important;
+  }
+
+  .label {
+    font-size: 15px;
+  }
+  .input {
+    font-size: 15px;
+    padding: 8px 12px;
+    height: 34px;
+  }
   .modalFeedbackWrapper {
-    width: 57.5vw;
-    left: 0;
+    /* width: 57.5vw; */
+    /* left: 0; */
   }
   .titleWrapper {
-    margin: 30% 0 40px;
+    /* margin: 30% 0 40px; */
   }
-  .title{
+  .title {
     font-size: 20px;
   }
-  .submitBtn{
+  .submitBtn {
     padding: 15px 30px;
   }
   .backButton {
     position: absolute;
     right: 20px;
-    top: 20px; 
+    top: 20px;
   }
 }
-@media(max-width:650px){
+@media (max-width: 650px) {
+  .dropDownPara {
+    font-size: 14px;
+  }
+  .dropDownPara svg {
+    width: 14px;
+    height: 14px;
+  }
+  .input {
+    margin-bottom: 24px;
+  }
+  .customSelect {
+    margin-top: 24px;
+    margin-bottom: 0;
+  }
   .modalOverlay {
     padding: 0;
+  }
+  .dropdownClosed {
+    margin-top: 8px;
+  }
+  .label {
+    bottom: 32px;
+    left: 0;
+    font-size: 14px;
+  }
+  .input {
+    font-size: 14px;
+  }
+  .customSelect {
+    font-size: 14px;
+  }
+  .error {
+    bottom: 6px;
+    left: 0;
+    font-size: 12px;
+    position: absolute;
+    margin-top: 0;
   }
 
   .modalFeedbackWrapper {
@@ -271,7 +325,7 @@
   .backButton {
     position: static;
   }
-  .titleWrapper{
+  .titleWrapper {
     margin: 25px 0;
   }
 }

@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import ScrollDown from '../ScrollDown/ScrollDown';
-import styles from './ServicesHero.module.css';
+import ScrollDown from "../ScrollDown/ScrollDown";
+import styles from "./ServicesHero.module.css";
 
 type Props = {
   dictionary: any;
@@ -9,12 +9,10 @@ type Props = {
 
 const ServicesHero: React.FC<Props> = ({ dictionary }) => {
   return (
-    <section >
+    <section>
       <div className={styles.portfolioHeroWrapper}>
         <div className={styles.portfolioHeroTextWrapper}>
-          <h2 className={styles.portfolioHeroTitle}>
-            {dictionary.title}
-          </h2>
+          <h2 className={styles.portfolioHeroTitle}>{dictionary.title}</h2>
           <p className={styles.portfolioHeroDescription}>
             {dictionary.description}
           </p>
@@ -44,7 +42,6 @@ const ServicesHero: React.FC<Props> = ({ dictionary }) => {
       <div className={styles.scrollDownWrapper}>
         <ScrollDown />
       </div>
-
     </section>
   );
 };

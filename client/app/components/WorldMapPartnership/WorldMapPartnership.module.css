@@ -1,162 +1,190 @@
 .worldMap {
-    padding: 0 12.5vw;
-    margin: 150px 0;
+  padding: 0 12.5vw;
+  margin: 150px 0;
 }
 
 .worldMapTitle {
-    font-size: 70px;
-    font-weight: 500;
-    line-height: 80px;
-    background-image: url('/images/abstract-purple-blue-wave-background (2).png');
-    background-size: cover;
-    background-position: center;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    max-width: 50%;
+  font-size: 70px;
+  font-weight: 500;
+  line-height: 80px;
+  background-image: url("/images/abstract-purple-blue-wave-background (2).png");
+  background-size: cover;
+  background-position: center;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  max-width: 50%;
 }
 
 .mapContainer {
-    position: relative;
-    width: 100%;
-    padding-bottom: 49.93%;
-    /* Співвідношення сторін 352/705 ≈ 0.4993 */
-    height: 0;
-    /* Висота задається через padding-bottom */
-    margin-top: 70px;
+  position: relative;
+  width: 100%;
+  padding-bottom: 49.93%;
+  /* Співвідношення сторін 352/705 ≈ 0.4993 */
+  height: 0;
+  /* Висота задається через padding-bottom */
+  margin-top: 70px;
 }
 
 .mapBackground {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('/images/map.svg');
-    /* Шлях до вашої мапи */
-    background-size: cover;
-    background-position: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("/images/map.svg");
+  /* Шлях до вашої мапи */
+  background-size: cover;
+  background-position: center;
 
-
-
-    --parent-width: 705px;
+  --parent-width: 705px;
 }
 
 .mapPoint {
-    position: absolute;
-    background: #0F0F21;
-    border-radius: 50%;
-    border: 2.5px solid #E81EDD;
-    padding: 0.5%;
-    transform: translate(-50%, -50%);
-    cursor: pointer;
-    box-shadow: 0 0 10px #E81EDD;
-    z-index: 2;
-    border: calc(var(--parent-width) * 0.005) solid #E81EDD;
+  position: absolute;
+  background: #0f0f21;
+  border-radius: 50%;
+  border: 2.5px solid #e81edd;
+  padding: 0.5%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  box-shadow: 0 0 10px #e81edd;
+  z-index: 2;
+  border: calc(var(--parent-width) * 0.005) solid #e81edd;
+  animation: blink-shadow 1.2s infinite alternate;
+}
+
+@keyframes blink-shadow {
+  0% {
+    box-shadow: 0 0 10px #e81edd;
+  }
+  10% {
+    box-shadow: 0 0 14px #e81edd, 0 0 6px #fff2;
+  }
+  20% {
+    box-shadow: 0 0 18px #e81edd, 0 0 8px #fff2;
+  }
+  30% {
+    box-shadow: 0 0 22px #e81edd, 0 0 10px #fff2;
+  }
+  40% {
+    box-shadow: 0 0 26px #e81edd, 0 0 11px #fff2;
+  }
+  50% {
+    box-shadow: 0 0 28px #e81edd, 0 0 12px #fff2;
+  }
+  60% {
+    box-shadow: 0 0 26px #e81edd, 0 0 11px #fff2;
+  }
+  70% {
+    box-shadow: 0 0 22px #e81edd, 0 0 10px #fff2;
+  }
+  80% {
+    box-shadow: 0 0 18px #e81edd, 0 0 8px #fff2;
+  }
+  90% {
+    box-shadow: 0 0 14px #e81edd, 0 0 6px #fff2;
+  }
+  100% {
+    box-shadow: 0 0 10px #e81edd;
+  }
 }
 
 .tooltip {
-    position: absolute;
-    top: -30px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(255, 255, 255, 0.1);
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 14px;
-    white-space: nowrap;
-    backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: 3;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  white-space: nowrap;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 3;
 }
 
 .mapPoint:hover .tooltip {
-    opacity: 1;
-    z-index: 10;
+  opacity: 1;
+  z-index: 10;
 }
 
-
-
-
-
 .getOfferWrapper {
-    position: absolute;
-    display: flex;
-    left: 33%;
-    top: 70%;
+  position: absolute;
+  display: flex;
+  left: 33%;
+  top: 70%;
 }
 
 .getOffer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 120px;
-    height: 120px;
-    font-size: 12px;
-    font-weight: 500;
-    text-transform: uppercase;
-    text-align: center;
-    color: #fff;
-    flex-direction: column;
-    position: relative;
-    background-color: rgba(255, 255, 255, 0.06);
-    backdrop-filter: blur(2px);
-    border-radius: 50%;
-    z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 120px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+  flex-direction: column;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(2px);
+  border-radius: 50%;
+  z-index: 1;
 }
 
 .getOffer::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    /* Займає весь простір елемента */
-    padding: 2px;
-    margin: -2px;
-    border-radius: 50%;
-    /* Кругла форма для "межі" */
-    background: linear-gradient(180deg, #C400B9 0%, #5D0058 100%);
-    /* Градієнт */
-    -webkit-mask:
-        linear-gradient(#fff 0 0) content-box,
-        linear-gradient(#fff 0 0);
-    /* Маска для створення "межі" */
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    /* Виключаємо внутрішню частину */
-    z-index: 1;
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* Займає весь простір елемента */
+  padding: 2px;
+  margin: -2px;
+  border-radius: 50%;
+  /* Кругла форма для "межі" */
+  background: linear-gradient(180deg, #c400b9 0%, #5d0058 100%);
+  /* Градієнт */
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  /* Маска для створення "межі" */
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  /* Виключаємо внутрішню частину */
+  z-index: 1;
 }
 
 .getOffer p {
-    align-items: center;
+  align-items: center;
 }
 
 .getOffer img {
-    width: 20px;
-    height: 20px;
-    margin-bottom: 5px;
+  width: 20px;
+  height: 20px;
+  margin-bottom: 5px;
 }
 
 @media (max-width: 1440px) {
-    .worldMapTitle {
-        font-size: 35px;
-        line-height: 45px;
-    }
+  .worldMapTitle {
+    font-size: 35px;
+    line-height: 45px;
+  }
 }
 
 @media (max-width: 1150px) {
-    .worldMap {
-        padding-left: 20px;
-        padding-right: 20px;
-        margin: 70px 0;
-    }
-    .mapContainer{
-        margin-top: 50px;
-    }
-    .getOffer{
-        display: none;
-    }
-
+  .worldMap {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 70px 0;
+  }
+  .mapContainer {
+    margin-top: 50px;
+  }
+  .getOffer {
+    display: none;
+  }
 }
